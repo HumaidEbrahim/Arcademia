@@ -1,8 +1,9 @@
-[gd_scene load_steps=78 format=3 uid="uid://bjt4qv7jcgfjt"]
+[gd_scene load_steps=79 format=3 uid="uid://bjt4qv7jcgfjt"]
 
 [ext_resource type="Script" uid="uid://xvyvit15qnbp" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c00x7juwv0o2v" path="res://Character Art/PNG/Swordsman_lvl1/With_shadow/Swordsman_lvl1_Idle_with_shadow.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://dv25pbit8o3p6" path="res://Character Art/PNG/Swordsman_lvl1/With_shadow/Swordsman_lvl1_Walk_with_shadow.png" id="3_0hol4"]
+[ext_resource type="TileSet" uid="uid://djsf2eiicyowy" path="res://Farm Tiles/Tilemap/farmhouse_tileset.tres" id="4_0hol4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y32ns"]
 
@@ -539,8 +540,10 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(462, 316)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+z_index = 1
 script = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -549,3 +552,8 @@ shape = SubResource("CapsuleShape2D_y32ns")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_wtcfe")
 animation = &"walk_right"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_0hol4")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 327680, 3, 0, 65536, 2, 1, 65536, 2, 2, 393216, 3, 3, 65536, 2, 4, 65536, 2, 5, 393216, 3, -65531, 65536, 2, -65532, 65536, 2, -65533, 65536, 2, -65534, 65536, 2, -65535, 65536, 2, -1, 65536, 2, -2, 65536, 2, 65535, 65536, 2, 65534, 65536, 2, 6, 65536, 2, 8, 262144, 3, 9, 65536, 2, 10, 393216, 3, 11, 65536, 2, -65525, 65536, 2, -65526, 65536, 2, -65527, 65536, 2, -65528, 327680, 3, -65529, 65536, 2, -65530, 393216, 3, 131069, 0, 3, -65539, 0, 1, 65548, 131072, 3, -131060, 131072, 1, -131061, 65536, 1, -131062, 65536, 1, -131063, 65536, 1, -131064, 65536, 1, -131066, 65536, 1, -131067, 65536, 1, -131068, 65536, 1, -131069, 65536, 1, -131070, 65536, 1, -131071, 65536, 1, -131072, 65536, 1, -65537, 65536, 1, -65538, 65536, 1, -3, 0, 2, 65533, 0, 2, 131070, 65536, 3, 131071, 65536, 3, 65536, 65536, 3, 65537, 65536, 3, 65538, 65536, 3, 65539, 65536, 3, 65540, 65536, 3, 65541, 65536, 3, 65542, 65536, 3, 65543, 65536, 3, 65544, 65536, 3, 65545, 65536, 3, 65546, 65536, 3, 65547, 65536, 3, -65524, 131072, 2, 12, 131072, 2, -131065, 65536, 1, 7, 65536, 2)
