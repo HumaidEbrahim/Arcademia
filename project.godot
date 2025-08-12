@@ -10,18 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Example"
-run/main_scene="uid://ffhooscb5itk"
+config/name="Arcadamia"
+run/main_scene="uid://bjt4qv7jcgfjt"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_height=480
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/ldtk_importer/plugin.cfg")
 
 [input]
 
