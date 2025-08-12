@@ -540,7 +540,6 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(462, 316)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 
