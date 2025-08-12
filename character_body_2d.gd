@@ -6,7 +6,7 @@ extends CharacterBody2D
 # Stores the last movement direction to know which way to face.
 var last_direction = Vector2(0, 1) # Default to facing down
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Get input from your custom actions. We will check these in the next step.
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
