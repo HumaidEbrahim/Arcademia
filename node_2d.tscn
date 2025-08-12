@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ffhooscb5itk"]
+
+[ext_resource type="PackedScene" uid="uid://bkcc7ayoy0348" path="res://player.tscn" id="2_0e48y"]
+[ext_resource type="PackedScene" uid="uid://cdk26mhkjoxxj" path="res://Typical_TopDown_example.ldtk" id="2_epypp"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RootMap" parent="." instance=ExtResource("2_epypp")]
+
+[node name="Collisions" parent="RootMap/World_Level_0" index="2"]
+collision_visibility_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_0e48y")]
+
+[editable path="RootMap"]
+[editable path="RootMap/World_Level_0"]
+[editable path="RootMap/World_Level_1"]
+[editable path="RootMap/World_Level_2"]
