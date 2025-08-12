@@ -1,9 +1,18 @@
-[gd_scene load_steps=71 format=4 uid="uid://bjt4qv7jcgfjt"]
+[gd_scene load_steps=74 format=4 uid="uid://bjt4qv7jcgfjt"]
 
 [ext_resource type="Script" uid="uid://xvyvit15qnbp" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c00x7juwv0o2v" path="res://Character Art/PNG/Swordsman_lvl1/With_shadow/Swordsman_lvl1_Idle_with_shadow.png" id="2_epypp"]
 [ext_resource type="Texture2D" uid="uid://dv25pbit8o3p6" path="res://Character Art/PNG/Swordsman_lvl1/With_shadow/Swordsman_lvl1_Walk_with_shadow.png" id="3_0hol4"]
 [ext_resource type="TileSet" uid="uid://djsf2eiicyowy" path="res://Farm Tiles/Tilemap/farmhouse_tileset.tres" id="4_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(7, 58.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(70.5, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(7, 56.5)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y32ns"]
 
@@ -507,8 +516,27 @@ tile_set = ExtResource("4_0hol4")
 [node name="TileMap_House" type="TileMapLayer" parent="TileMapLayer"]
 
 [node name="Layer_House" type="TileMapLayer" parent="TileMapLayer/TileMap_House"]
-tile_map_data = PackedByteArray("AAADAPn/AAAAAAQAAAADAPr/AAAAAAUAAAAEAPr/AAABAAUAAAAFAPr/AAACAAUAAAAGAPr/AAADAAUAAAAKAPn/AAAJAAQAAAD+//n/AAAIAAMAAAD+//r/AAAIAAQAAAD+//v/AAAIAAQAAAD+//z/AAAIAAUAAAD///n/AAAJAAMAAAD///r/AAAJAAQAAAD///z/AAAJAAMAAAAAAPn/AAAJAAMAAAAAAPz/AAAJAAUAAAABAPn/AAAJAAMAAAABAPz/AAAJAAMAAAACAPn/AAAKAAMAAAACAPr/AAAKAAQAAAACAPv/AAAKAAQAAAACAPz/AAAKAAUAAAADAPv/AAAAAAYAAAADAPz/AAAAAAYAAAAEAPn/AAABAAQAAAAEAPv/AAABAAYAAAAEAPz/AAABAAcAAAAFAPn/AAACAAQAAAAFAPv/AAACAAYAAAAFAPz/AAABAAYAAAAGAPn/AAADAAQAAAAGAPv/AAADAAYAAAAGAPz/AAADAAYAAAAHAPz/AAALAAYAAAA=")
+texture_filter = 1
+tile_map_data = PackedByteArray("AAADAPn/AAAAAAQAAAADAPr/AAAAAAUAAAAEAPr/AAABAAUAAAAFAPr/AAACAAUAAAAGAPr/AAADAAUAAAAKAPn/AAAJAAQAAAD+//n/AAAIAAMAAAD+//r/AAAIAAQAAAD+//v/AAAIAAQAAAD+//z/AAAIAAUAAAD///n/AAAJAAMAAAD///r/AAAJAAQAAAAAAPn/AAAJAAMAAAABAPn/AAAJAAMAAAACAPn/AAAKAAMAAAACAPr/AAAIAAQAAAACAPv/AAAIAAQAAAACAPz/AAAKAAUAAAADAPv/AAAAAAYAAAADAPz/AAAAAAYAAAAEAPn/AAABAAQAAAAEAPv/AAABAAYAAAAEAPz/AAABAAcAAAAFAPn/AAACAAQAAAAFAPv/AAACAAYAAAAFAPz/AAABAAYAAAAGAPn/AAADAAQAAAAGAPv/AAADAAYAAAAGAPz/AAADAAYAAAAHAPz/AAALAAYAAAA=")
 tile_set = ExtResource("4_0hol4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer/TileMap_House/Layer_House"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(-24.5, -79.75)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(8, -110)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(40.5, -79.25)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_smoothed = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
@@ -520,7 +548,3 @@ shape = SubResource("CapsuleShape2D_y32ns")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_wtcfe")
 animation = &"idle"
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-limit_smoothed = true
