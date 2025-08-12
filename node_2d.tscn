@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://bjt4qv7jcgfjt"]
+[gd_scene load_steps=77 format=4 uid="uid://bjt4qv7jcgfjt"]
 
 [ext_resource type="Script" uid="uid://xvyvit15qnbp" path="res://character_body_2d.gd" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://c00x7juwv0o2v" path="res://Character Art/PNG/Swordsman_lvl1/With_shadow/Swordsman_lvl1_Idle_with_shadow.png" id="2_epypp"]
@@ -9,12 +9,22 @@
 size = Vector2(7, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
-size = Vector2(70.5, 11)
+size = Vector2(77.25, 10.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(7, 56.5)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y32ns"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d21ai"]
+size = Vector2(64, 56)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(16, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
+size = Vector2(13, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
 atlas = ExtResource("2_epypp")
@@ -522,17 +532,33 @@ tile_set = ExtResource("4_0hol4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMapLayer/TileMap_House/Layer_House"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+[node name="Fence3" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
 position = Vector2(-24.5, -79.75)
 shape = SubResource("RectangleShape2D_0hol4")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
-position = Vector2(8, -110)
+[node name="Fence2" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(11, -109.938)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+[node name="Fence" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
 position = Vector2(40.5, -79.25)
 shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="House1" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(80, -87)
+shape = SubResource("RectangleShape2D_d21ai")
+
+[node name="Well" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(152, -59.5)
+shape = SubResource("RectangleShape2D_4d7sh")
+
+[node name="Wheelbarrow2" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(168, -104)
+shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="Wheelbarrow" type="CollisionShape2D" parent="TileMapLayer/TileMap_House/Layer_House/StaticBody2D"]
+position = Vector2(-8, -88)
+shape = SubResource("RectangleShape2D_ir8iy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
@@ -540,10 +566,12 @@ limit_smoothed = true
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
+position = Vector2(-90, 29)
 script = ExtResource("1_wtcfe")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_y32ns")
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_rj586")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_wtcfe")
