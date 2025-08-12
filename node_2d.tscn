@@ -522,5 +522,5 @@ sprite_frames = SubResource("SpriteFrames_wtcfe")
 animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.25, 1.25)
+zoom = Vector2(2, 2)
 limit_smoothed = true
