@@ -565,14 +565,14 @@ tile_set = ExtResource("4_0hol4")
 tile_map_data = PackedByteArray("AAAJAPr/AAABAAcAAAAIAPr/AAAAAAYAAAAKAPr/AAABAAYAAAALAPr/AAADAAYAAAALAPn/AAADAAYAAAAKAPn/AAACAAYAAAAJAPn/AAABAAYAAAAIAPn/AAAAAAYAAAAIAPj/AAAAAAUAAAAJAPj/AAABAAUAAAAKAPj/AAACAAUAAAALAPj/AAADAAUAAAALAPf/AAADAAQAAAAKAPf/AAACAAQAAAAJAPf/AAABAAQAAAAIAPf/AAAAAAQAAAADAPr/AAAIAAUAAAADAPn/AAAIAAQAAAADAPj/AAAIAAQAAAADAPf/AAAIAAMAAAAEAPf/AAAJAAMAAAAFAPf/AAAJAAMAAAAGAPf/AAAJAAMAAAAHAPf/AAAKAAMAAAAHAPj/AAAKAAQAAAAHAPn/AAAKAAQAAAAHAPr/AAAKAAUAAAAFAPr/AAAJAAUAAAAEAPr/AAAJAAMAAAAGAPr/AAAJAAMAAAAEAPj/AAAJAAQAAAAMAPr/AAALAAYAAAAPAPf/AAAJAAQAAAA=")
 tile_set = ExtResource("4_0hol4")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
 script = ExtResource("1_wtcfe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_y32ns")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_wtcfe")
 animation = &"walk_right"
 
