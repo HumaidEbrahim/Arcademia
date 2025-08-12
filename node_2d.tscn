@@ -577,4 +577,5 @@ sprite_frames = SubResource("SpriteFrames_wtcfe")
 animation = &"walk_right"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 limit_smoothed = true
