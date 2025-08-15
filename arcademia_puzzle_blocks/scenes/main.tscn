@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0pq6srqqrr8e"]
+
+[ext_resource type="Script" uid="uid://oep3xlff005i" path="res://scripts/main.gd" id="1_tefeu"]
+[ext_resource type="PackedScene" uid="uid://ilqdwq3qk3q5" path="res://scenes/block.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://b3yer4vru6g0" path="res://scripts/Workspace.gd" id="2_tefeu"]
+[ext_resource type="Texture2D" uid="uid://br4k1chcbvc77" path="res://kenney_cursor-pixel-pack/Tiles/tile_0072.png" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://nsmdyo43ji5h" path="res://kenney_cursor-pixel-pack/Tiles/tile_0073.png" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://cdyjx1lq246es" path="res://scenes/character.tscn" id="5_tbgi4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
+bg_color = Color(0.254621, 0.703174, 0.373031, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_tefeu")
+
+[node name="MovementArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 97.0
+offset_top = 51.0
+offset_right = 1143.0
+offset_bottom = 639.0
+
+[node name="ColorRect" type="ColorRect" parent="MovementArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.43477, 0.438058, 1)
+
+[node name="Palette" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 9.0
+offset_top = 165.0
+offset_right = 49.0
+offset_bottom = 205.0
+
+[node name="MoveRightBlock" parent="Palette" instance=ExtResource("2_0wfyh")]
+is_template_block = true
+
+[node name="Background" parent="Palette/MoveRightBlock" index="0"]
+texture = ExtResource("3_jyhfs")
+
+[node name="MoveLeftBlock" parent="Palette" instance=ExtResource("2_0wfyh")]
+offset_left = 1.0
+offset_top = 45.0
+offset_right = 41.0
+offset_bottom = 85.0
+is_template_block = true
+block_type = "move_left"
+
+[node name="Background" parent="Palette/MoveLeftBlock" index="0"]
+texture = ExtResource("3_sugp2")
+
+[node name="WorkspaceArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 9.0
+offset_right = 1150.0
+offset_bottom = 48.0
+grow_horizontal = 2
+script = ExtResource("2_tefeu")
+
+[node name="Panel" type="Panel" parent="WorkspaceArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tefeu")
+
+[node name="Character" parent="." instance=ExtResource("5_tbgi4")]
+position = Vector2(600, 188)
+
+[node name="RunButton" type="Button" parent="."]
+texture_filter = 1
+offset_left = 6.0
+offset_top = 102.0
+offset_right = 56.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 18
+text = "Run"
+
+[node name="ClearButton" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 60.0
+offset_right = 55.0
+offset_bottom = 91.0
+text = "Clear
+"
+
+[editable path="Palette/MoveRightBlock"]
+[editable path="Palette/MoveLeftBlock"]
