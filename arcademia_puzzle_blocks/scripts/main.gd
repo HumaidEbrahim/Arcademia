@@ -48,10 +48,11 @@ func _process(delta: float) -> void:
 	match currentBlock.block_type:
 		"repeat":
 			for i in 5:
-				_process(delta)
+				print("hello")
 		"conditional":
 			if true:
-				_process(delta)
+				print("hello")
+				
 		_:
 			currentBlock.execute()
 

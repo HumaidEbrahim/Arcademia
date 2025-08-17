@@ -1,3 +1,4 @@
+@tool
 extends Control
 class_name PuzzleBlock
 
@@ -9,12 +10,14 @@ const Workspace = preload("res://scripts/Workspace.gd")
 @export var target_path: NodePath
 @export var duration: float = 0
 @export var repeat_count: int = 1
+@export var action_type: String = ""
 
 
 var dragging: bool = false        # True if currently being dragged
 var drag_offset: Vector2 = Vector2.ZERO  # Offset between mouse and block origin while dragging
 var workspace: Workspace          # Reference to the workspace
 var children: Array[PuzzleBlock]
+var target:Node
 
 func _ready() -> void:
 	# Find the workspace node
@@ -64,3 +67,43 @@ func _process(_delta: float) -> void:
 	# Update block position while dragging
 	if dragging:
 		position = get_parent().get_local_mouse_position() - drag_offset
+		
+func _get_property_list() -> Array:
+	var properties = []
+	
+	if target_path != NodePath() and has_node(target_path):
+		target = get_node(target_path)
+		if target:
+			var method_names = []
+			var target_script = target.get_script()
+			
+			if target_script:
+				# Get only methods defined in the script
+				var script_methods = target_script.get_script_method_list()
+				for method in script_methods:
+					var name = method["name"]
+					# Optional: exclude private methods
+					if not name.begins_with("_"):
+						method_names.append(name)
+			
+			# Fallback to all methods if no script (less ideal)
+			else:
+				for method in target.get_method_list():
+					var name = method["name"]
+					# Filter out common engine methods
+					if not name.begins_with("_") and \
+					   name != "get" and name != "set" and \
+					   name != "notification" and name != "to_string":
+						method_names.append(name)
+			
+			method_names.sort()
+			
+			if method_names.size() > 0:
+				properties.append({
+					"name": "action_type",
+					"type": TYPE_STRING,
+					"hint": PROPERTY_HINT_ENUM,
+					"hint_string": ",".join(method_names)
+				})
+	
+	return properties
