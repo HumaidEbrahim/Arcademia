@@ -6,9 +6,10 @@ class_name Main
 @onready var run_button: Button = $RunButton
 @onready var clear_button: Button = $ClearButton
 
-var move_queue: Array[String] = []   # List of block actions (e.g., ["move_left", "move_right"])
+var move_queue: Array[Control] = []   # List of blocks
 var executing: bool = false          # Whether the sequence is currently running
 var current_index: int = 0           # Current block being executed
+var action_timer: float = 0.0 
 
 func _ready() -> void:
 	# Connect UI buttons
@@ -22,6 +23,7 @@ func run_sequence() -> void:
 	executing = true
 	move_queue = workspace.get_sequence()  # Build sequence from blocks (left-to-right order)
 	current_index = 0
+	action_timer = 0.0   # reset timer
 	set_process(true)
 
 func _process(delta: float) -> void:
@@ -36,21 +38,17 @@ func _process(delta: float) -> void:
 
 	# Execute current action
 	var action = move_queue[current_index]
-	match action:
+	match action.block_type:
 		"move_left":
 			character.move_left(delta)
 		"move_right":
 			character.move_right(delta)
 
 	# Timer logic: hold each action for 0.5 seconds
-	if !has_meta("timer"):
-		set_meta("timer", 0.0)
-	var timer = get_meta("timer")
-	timer += delta
-	if timer >= 0.5:
-		timer = 0.0
+	action_timer += delta
+	if action_timer >= 0.5:
+		action_timer = 0.0
 		current_index += 1
-	set_meta("timer", timer)
 
 # --- Reset workspace and stop execution ---
 func clear_workspace() -> void:
