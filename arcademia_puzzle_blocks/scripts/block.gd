@@ -6,10 +6,15 @@ const Workspace = preload("res://scripts/Workspace.gd")
 @export var is_template_block: bool = false   # If true, this block is a template (spawns clones instead of moving itself)
 @export var block_type: String = "move_right" # Type of action this block represents
 @export var color: Color = Color(1,1,1)       # Visual color of the block
+@export var target_path: NodePath
+@export var duration: float = 0
+@export var repeat_count: int = 1
+
 
 var dragging: bool = false        # True if currently being dragged
 var drag_offset: Vector2 = Vector2.ZERO  # Offset between mouse and block origin while dragging
 var workspace: Workspace          # Reference to the workspace
+var children: Array[PuzzleBlock]
 
 func _ready() -> void:
 	# Find the workspace node
@@ -29,6 +34,7 @@ func _gui_input(event: InputEvent) -> void:
 				# Duplicate the block into the workspace
 				var clone: PuzzleBlock = duplicate() as PuzzleBlock
 				clone.is_template_block = false   # Clones are real blocks
+				clone.target_path = target_path
 
 				# Position clone at mouse cursor relative to workspace
 				var global_click_pos = get_global_mouse_position()

@@ -37,16 +37,27 @@ func _process(delta: float) -> void:
 		return
 
 	# Execute current action
-	var action = move_queue[current_index]
-	match action.block_type:
-		"move_left":
-			character.move_left(delta)
-		"move_right":
-			character.move_right(delta)
+	var currentBlock = move_queue[current_index]
+	var target = currentBlock.get_node_or_null(currentBlock.target_path)
+
+	if not target:
+		print("Warning: target not found for block ", currentBlock.block_type)
+		current_index += 1
+		return
+	
+	match currentBlock.block_type:
+		"repeat":
+			for i in 5:
+				_process(delta)
+		"conditional":
+			if true:
+				_process(delta)
+		_:
+			currentBlock.execute()
 
 	# Timer logic: hold each action for 0.5 seconds
 	action_timer += delta
-	if action_timer >= 0.5:
+	if action_timer >= currentBlock.duration:
 		action_timer = 0.0
 		current_index += 1
 
