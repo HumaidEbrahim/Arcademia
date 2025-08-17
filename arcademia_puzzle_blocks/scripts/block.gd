@@ -107,3 +107,22 @@ func _get_property_list() -> Array:
 				})
 	
 	return properties
+	
+func execute(delta:float) -> void:
+	# Ensure target exists
+	if target_path:
+		target = get_node_or_null(target_path)
+	if not target:
+		print("Warning: target not found for action_type ", action_type)
+		return
+
+	# Ensure action_type is selected
+	if action_type == "":
+		print("Warning: action_type not selected")
+		return
+
+	# Call the method
+	if target.has_method(action_type):
+		target.call(action_type,delta)
+	else:
+		print("Warning: target does not have method ", action_type)

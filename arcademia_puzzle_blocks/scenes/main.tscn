@@ -42,6 +42,8 @@ offset_bottom = 205.0
 is_template_block = true
 target_path = NodePath("../../Character")
 repeat_count = 0
+action_type = "move_right"
+action_type = "move_right"
 
 [node name="Background" parent="Palette/MoveRightBlock" index="0"]
 texture = ExtResource("3_jyhfs")
@@ -54,6 +56,8 @@ offset_bottom = 85.0
 is_template_block = true
 block_type = "move_left"
 target_path = NodePath("../../Character")
+action_type = "move_left"
+action_type = "move_left"
 
 [node name="Background" parent="Palette/MoveLeftBlock" index="0"]
 texture = ExtResource("3_sugp2")

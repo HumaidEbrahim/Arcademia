@@ -45,16 +45,17 @@ func _process(delta: float) -> void:
 		current_index += 1
 		return
 	
-	match currentBlock.block_type:
-		"repeat":
-			for i in 5:
-				print("hello")
-		"conditional":
-			if true:
-				print("hello")
-				
-		_:
-			currentBlock.execute()
+	#match currentBlock.block_type:
+		#"repeat":
+			#for i in 5:
+				#print("hello")
+		#"conditional":
+			#if true:
+				#print("hello")
+				#
+		#_:
+
+	currentBlock.execute(delta)
 
 	# Timer logic: hold each action for 0.5 seconds
 	action_timer += delta
