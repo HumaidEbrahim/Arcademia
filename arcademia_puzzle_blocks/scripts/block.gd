@@ -1,25 +1,32 @@
 @tool
 extends Control
-class_name PuzzleBlock
+class_name Block
 
 const Workspace = preload("res://scripts/Workspace.gd")
 
-@export var is_template_block: bool = false   # If true, this block is a template (spawns clones instead of moving itself)
-@export var block_type: String = "move_right" # Type of action this block represents
-@export var color: Color = Color(1,1,1)       # Visual color of the block
+@export var block_type: String = "Block" # Type of action this block represents
+@export var color: Color = Color(1,1,1,1)       # Visual color of the block
 @export var target_path: NodePath
-@export var duration: float = 0
-@export var repeat_count: int = 1
 @export var action_type: String = ""
+@export var block_icon: Texture2D
 
+@onready var label = $Label
+@onready var bg = $Background
 
+var is_template_block: bool = false   # If true, this block is a template (spawns clones instead of moving itself)
 var dragging: bool = false        # True if currently being dragged
 var drag_offset: Vector2 = Vector2.ZERO  # Offset between mouse and block origin while dragging
 var workspace: Workspace          # Reference to the workspace
-var children: Array[PuzzleBlock]
+var children: Array[Block]
 var target:Node
 
 func _ready() -> void:
+	
+	if label:
+		label.text = block_type
+	if bg:
+		bg.color = color
+
 	# Find the workspace node
 	workspace = get_parent().get_node("../WorkspaceArea") as Workspace
 	if workspace == null:
@@ -27,6 +34,8 @@ func _ready() -> void:
 
 	# Add this block to a group so it can be identified globally
 	add_to_group("draggable_blocks")
+	
+	
 
 func _gui_input(event: InputEvent) -> void:
 	# Handle mouse clicks
@@ -35,7 +44,7 @@ func _gui_input(event: InputEvent) -> void:
 			if is_template_block:
 				# --- Case 1: Template block clicked ---
 				# Duplicate the block into the workspace
-				var clone: PuzzleBlock = duplicate() as PuzzleBlock
+				var clone: Block = duplicate() as Block
 				clone.is_template_block = false   # Clones are real blocks
 				clone.target_path = target_path
 

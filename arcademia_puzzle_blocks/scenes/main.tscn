@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0pq6srqqrr8e"]
+[gd_scene load_steps=7 format=3 uid="uid://c0pq6srqqrr8e"]
 
 [ext_resource type="Script" uid="uid://oep3xlff005i" path="res://scripts/main.gd" id="1_tefeu"]
-[ext_resource type="PackedScene" uid="uid://ilqdwq3qk3q5" path="res://scenes/block.tscn" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://ilqdwq3qk3q5" path="res://scenes/blockScene.tscn" id="2_0wfyh"]
+[ext_resource type="Script" uid="uid://eaxrt576ev67" path="res://scripts/block.gd" id="2_jyhfs"]
 [ext_resource type="Script" uid="uid://b3yer4vru6g0" path="res://scripts/Workspace.gd" id="2_tefeu"]
-[ext_resource type="Texture2D" uid="uid://br4k1chcbvc77" path="res://kenney_cursor-pixel-pack/Tiles/tile_0072.png" id="3_jyhfs"]
-[ext_resource type="Texture2D" uid="uid://nsmdyo43ji5h" path="res://kenney_cursor-pixel-pack/Tiles/tile_0073.png" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cdyjx1lq246es" path="res://scenes/character.tscn" id="5_tbgi4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
@@ -37,30 +36,23 @@ offset_left = 9.0
 offset_top = 165.0
 offset_right = 49.0
 offset_bottom = 205.0
+script = ExtResource("2_jyhfs")
 
-[node name="MoveRightBlock" parent="Palette" instance=ExtResource("2_0wfyh")]
-is_template_block = true
+[node name="BlockScene" parent="Palette" instance=ExtResource("2_0wfyh")]
+offset_left = -1.0
+offset_top = -5.0
+offset_right = 39.0
+offset_bottom = 35.0
+block_type = "Hi"
+color = Color(0, 0.622366, 0.588794, 1)
 target_path = NodePath("../../Character")
-repeat_count = 0
-action_type = "move_right"
-action_type = "move_right"
 
-[node name="Background" parent="Palette/MoveRightBlock" index="0"]
-texture = ExtResource("3_jyhfs")
-
-[node name="MoveLeftBlock" parent="Palette" instance=ExtResource("2_0wfyh")]
-offset_left = 1.0
-offset_top = 45.0
-offset_right = 41.0
-offset_bottom = 85.0
-is_template_block = true
-block_type = "move_left"
-target_path = NodePath("../../Character")
-action_type = "move_left"
-action_type = "move_left"
-
-[node name="Background" parent="Palette/MoveLeftBlock" index="0"]
-texture = ExtResource("3_sugp2")
+[node name="BlockScene2" parent="Palette" instance=ExtResource("2_0wfyh")]
+offset_left = -3.0
+offset_top = 50.0
+offset_right = 37.0
+offset_bottom = 90.0
+color = Color(0.979917, 0.85417, 1.92523e-06, 1)
 
 [node name="WorkspaceArea" type="Control" parent="."]
 layout_mode = 3
@@ -100,6 +92,3 @@ offset_right = 55.0
 offset_bottom = 91.0
 text = "Clear
 "
-
-[editable path="Palette/MoveRightBlock"]
-[editable path="Palette/MoveLeftBlock"]
