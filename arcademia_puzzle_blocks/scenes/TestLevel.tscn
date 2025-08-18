@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0pq6srqqrr8e"]
+
+[ext_resource type="PackedScene" uid="uid://cdyjx1lq246es" path="res://scenes/character.tscn" id="2_i6x8u"]
+[ext_resource type="PackedScene" uid="uid://byciiqh3e5fa4" path="res://scenes/DragUI.tscn" id="3_8xg12"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="DragUi" parent="." instance=ExtResource("3_8xg12")]
+
+[node name="MoveRightBlock" parent="DragUi/Palette" index="0"]
+target_path = NodePath("../../../Character")
+
+[node name="MoveLeftBlock" parent="DragUi/Palette" index="1"]
+target_path = NodePath("../../../Character")
+
+[node name="RunButton" parent="DragUi" index="2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 58.0
+offset_right = 58.0
+offset_bottom = 103.0
+
+[node name="ClearButton" parent="DragUi" index="3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 115.0
+offset_right = 57.0
+offset_bottom = 146.0
+
+[node name="MovementArea" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 97.0
+offset_top = 51.0
+offset_right = 1143.0
+offset_bottom = 639.0
+
+[node name="ColorRect" type="ColorRect" parent="MovementArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.43477, 0.438058, 1)
+
+[node name="Character" parent="." instance=ExtResource("2_i6x8u")]
+position = Vector2(600, 188)
+
+[editable path="DragUi"]
+[editable path="DragUi/Palette/MoveRightBlock"]
+[editable path="DragUi/Palette/MoveLeftBlock"]

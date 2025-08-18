@@ -1,14 +1,15 @@
 extends Node
-class_name Main
+class_name Blockhandler
 
 @onready var workspace: Workspace = $WorkspaceArea
 @onready var character: Character = $Character
 @onready var run_button: Button = $RunButton
 @onready var clear_button: Button = $ClearButton
 
-var move_queue: Array[String] = []   # List of block actions (e.g., ["move_left", "move_right"])
+var move_queue: Array[Control] = []   # List of blocks
 var executing: bool = false          # Whether the sequence is currently running
 var current_index: int = 0           # Current block being executed
+var action_timer: float = 0.0 
 
 func _ready() -> void:
 	# Connect UI buttons
@@ -22,6 +23,7 @@ func run_sequence() -> void:
 	executing = true
 	move_queue = workspace.get_sequence()  # Build sequence from blocks (left-to-right order)
 	current_index = 0
+	action_timer = 0.0   # reset timer
 	set_process(true)
 
 func _process(delta: float) -> void:
@@ -35,22 +37,31 @@ func _process(delta: float) -> void:
 		return
 
 	# Execute current action
-	var action = move_queue[current_index]
-	match action:
-		"move_left":
-			character.move_left(delta)
-		"move_right":
-			character.move_right(delta)
+	var currentBlock = move_queue[current_index]
+	var target = currentBlock.get_node_or_null(currentBlock.target_path)
+
+	if not target:
+		print("Warning: target not found for block ", currentBlock.block_type)
+		current_index += 1
+		return
+	
+	#match currentBlock.block_type:
+		#"repeat":
+			#for i in 5:
+				#print("hello")
+		#"conditional":
+			#if true:
+				#print("hello")
+				#
+		#_:
+
+	currentBlock.execute(delta)
 
 	# Timer logic: hold each action for 0.5 seconds
-	if !has_meta("timer"):
-		set_meta("timer", 0.0)
-	var timer = get_meta("timer")
-	timer += delta
-	if timer >= 0.5:
-		timer = 0.0
+	action_timer += delta
+	if action_timer >= currentBlock.duration:
+		action_timer = 0.0
 		current_index += 1
-	set_meta("timer", timer)
 
 # --- Reset workspace and stop execution ---
 func clear_workspace() -> void:

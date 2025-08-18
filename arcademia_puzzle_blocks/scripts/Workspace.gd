@@ -25,26 +25,20 @@ func remove_block(block: Control) -> void:
 
 # --- Snap a block into sequence (left to right) ---
 func snap_block(block: Control) -> void:
-	var x_pos = 0
+	blocks.sort_custom(func(a, b):
+		return a.position.x < b.position.x
+	)
 
-	# Calculate x position based on all blocks before it
+	# Now re-align visually
+	var x_pos = 0
 	for b in blocks:
-		if b == block:
-			break
+		b.position = Vector2(x_pos, 0)
 		x_pos += b.size.x + horizontal_spacing
 
-	# Place the block at the computed position (y = 0 baseline)
-	block.position = Vector2(x_pos, 0)
 
 # --- Build the sequence of actions (for execution) ---
-func get_sequence() -> Array[String]:
-	var sequence: Array[String] = []
-
-	# Append each block's action type in order
-	for block in blocks:
-		sequence.append(block.block_type)
-
-	return sequence
+func get_sequence() -> Array[Control]:
+	return blocks.duplicate()
 
 # --- Clear all blocks from the workspace ---
 func clear_workspace() -> void:
