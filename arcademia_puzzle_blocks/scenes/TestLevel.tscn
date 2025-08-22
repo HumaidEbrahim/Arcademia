@@ -17,12 +17,16 @@ target_path = NodePath("../../../Character")
 
 [node name="Move_up" type="Control" parent="DragUi/Palette" index="2"]
 anchors_preset = 0
-offset_left = -2.0
-offset_top = 92.0
-offset_right = 38.0
-offset_bottom = 132.0
+offset_left = 4.0
+offset_top = 99.0
+offset_right = 44.0
+offset_bottom = 139.0
 script = ExtResource("2_8xg12")
+target_path = NodePath("../../../Character")
+action_type = "move_up"
+action_type = "move_up"
 metadata/_custom_type_script = "uid://eaxrt576ev67"
+metadata/_edit_group_ = true
 
 [node name="TextureRect" type="TextureRect" parent="DragUi/Palette/Move_up"]
 layout_mode = 0
@@ -41,14 +45,12 @@ offset_left = 1.0
 offset_right = 1.0
 
 [node name="RunButton" parent="DragUi" index="2"]
-layout_mode = 0
 offset_left = 8.0
 offset_top = 58.0
 offset_right = 58.0
 offset_bottom = 103.0
 
 [node name="ClearButton" parent="DragUi" index="3"]
-layout_mode = 0
 offset_left = 8.0
 offset_top = 115.0
 offset_right = 57.0
