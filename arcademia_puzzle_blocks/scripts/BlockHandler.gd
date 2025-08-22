@@ -16,6 +16,8 @@ func _ready() -> void:
 	run_button.pressed.connect(run_sequence)
 	clear_button.pressed.connect(clear_workspace)
 	run_button.grab_focus()
+	
+	# we are the champions
 
 # --- Start execution of block sequence ---
 func run_sequence() -> void:
