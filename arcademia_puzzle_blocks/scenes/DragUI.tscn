@@ -64,6 +64,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2mdjr")
 
 [node name="RunButton" type="Button" parent="."]
 texture_filter = 1
+layout_mode = 0
 offset_left = 6.0
 offset_top = 102.0
 offset_right = 56.0
@@ -72,6 +73,7 @@ theme_override_font_sizes/font_size = 18
 text = "Run"
 
 [node name="ClearButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 60.0
 offset_right = 55.0

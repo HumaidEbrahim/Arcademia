@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0pq6srqqrr8e"]
+[gd_scene load_steps=5 format=3 uid="uid://c0pq6srqqrr8e"]
 
+[ext_resource type="Script" uid="uid://eaxrt576ev67" path="res://scripts/block.gd" id="2_8xg12"]
 [ext_resource type="PackedScene" uid="uid://cdyjx1lq246es" path="res://scenes/character.tscn" id="2_i6x8u"]
+[ext_resource type="Texture2D" uid="uid://bvues1j4kaau2" path="res://kenney_cursor-pixel-pack/Tiles/tile_0070.png" id="3_5n3yh"]
 [ext_resource type="PackedScene" uid="uid://byciiqh3e5fa4" path="res://scenes/DragUI.tscn" id="3_8xg12"]
 
 [node name="TestLevel" type="Node2D"]
@@ -12,6 +14,31 @@ target_path = NodePath("../../../Character")
 
 [node name="MoveLeftBlock" parent="DragUi/Palette" index="1"]
 target_path = NodePath("../../../Character")
+
+[node name="Move_up" type="Control" parent="DragUi/Palette" index="2"]
+anchors_preset = 0
+offset_left = -2.0
+offset_top = 92.0
+offset_right = 38.0
+offset_bottom = 132.0
+script = ExtResource("2_8xg12")
+metadata/_custom_type_script = "uid://eaxrt576ev67"
+
+[node name="TextureRect" type="TextureRect" parent="DragUi/Palette/Move_up"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_5n3yh")
+
+[node name="btn_addUP" type="Button" parent="DragUi/Palette/Move_up"]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 41.0
+offset_bottom = 43.0
+
+[node name="Panel" parent="DragUi/WorkspaceArea" index="0"]
+offset_left = 1.0
+offset_right = 1.0
 
 [node name="RunButton" parent="DragUi" index="2"]
 layout_mode = 0
