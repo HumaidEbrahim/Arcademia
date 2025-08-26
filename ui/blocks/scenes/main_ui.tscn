@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=6 format=3 uid="uid://c4phshtsyfg0g"]
 
+[ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
 [ext_resource type="PackedScene" uid="uid://boir3nv0xdyjh" path="res://ui/blocks/scenes/function_block.tscn" id="1_hqxx3"]
+[ext_resource type="Texture2D" uid="uid://dvv183ecruxmd" path="res://assets/RuansTestingBtns/Test_init.png" id="2_5b30w"]
+[ext_resource type="Texture2D" uid="uid://c6da3scxvj1mu" path="res://assets/RuansTestingBtns/Test_press.png" id="3_bqloa"]
+[ext_resource type="Texture2D" uid="uid://xffekfsf3ji8" path="res://assets/RuansTestingBtns/Test_focus.png" id="5_kfyrt"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -11,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_bqloa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -37,6 +42,32 @@ layout_mode = 2
 [node name="FunctionBlock2" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("1_hqxx3")]
 layout_mode = 2
 
+[node name="do_something" type="Control" parent="HBoxContainer/FunctionPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="doSomethingBtn" type="TextureButton" parent="HBoxContainer/FunctionPanel/VBoxContainer/do_something"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 25.0
+offset_right = 78.0
+offset_bottom = 86.0
+texture_normal = ExtResource("2_5b30w")
+texture_pressed = ExtResource("3_bqloa")
+texture_focused = ExtResource("5_kfyrt")
+
+[node name="do_something2" type="Control" parent="HBoxContainer/FunctionPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="doSomethingBtn" type="TextureButton" parent="HBoxContainer/FunctionPanel/VBoxContainer/do_something2"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 100.0
+offset_right = 76.0
+offset_bottom = 161.0
+texture_normal = ExtResource("2_5b30w")
+texture_pressed = ExtResource("3_bqloa")
+texture_focused = ExtResource("5_kfyrt")
+
 [node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -49,6 +80,17 @@ handle_input_locally = false
 size = Vector2i(1300, 1080)
 render_target_update_mode = 4
 
+[node name="justAPopup" type="Control" parent="HBoxContainer/GameArea/SubViewportContainer"]
+layout_mode = 2
+
+[node name="lblShow" type="Label" parent="HBoxContainer/GameArea/SubViewportContainer/justAPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "This is showing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ScriptPanel" type="PanelContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -56,3 +98,5 @@ size_flags_horizontal = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScriptPanel"]
 layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/FunctionPanel/VBoxContainer/do_something/doSomethingBtn" to="." method="_on_do_something_btn_pressed"]
