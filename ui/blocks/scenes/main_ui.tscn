@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4phshtsyfg0g"]
+
+[ext_resource type="PackedScene" uid="uid://boir3nv0xdyjh" path="res://ui/blocks/scenes/function_block.tscn" id="1_hqxx3"]
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FunctionPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FunctionPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="FunctionBlock" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("1_hqxx3")]
+layout_mode = 2
+
+[node name="FunctionBlock2" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("1_hqxx3")]
+layout_mode = 2
+
+[node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/GameArea"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/GameArea/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1300, 1080)
+render_target_update_mode = 4
+
+[node name="ScriptPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScriptPanel"]
+layout_mode = 2
