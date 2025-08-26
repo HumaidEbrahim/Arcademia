@@ -99,4 +99,27 @@ size_flags_horizontal = 3
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScriptPanel"]
 layout_mode = 2
 
+[node name="RunClear" type="Control" parent="HBoxContainer/ScriptPanel"]
+layout_mode = 2
+
+[node name="Run" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
+z_index = 1
+layout_mode = 0
+offset_left = 18.0
+offset_top = 1033.0
+offset_right = 135.0
+offset_bottom = 1064.0
+text = "Run sequence"
+
+[node name="Clear" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
+z_index = 1
+layout_mode = 0
+offset_left = 147.0
+offset_top = 1031.0
+offset_right = 273.0
+offset_bottom = 1062.0
+text = "Clear sequence"
+
 [connection signal="pressed" from="HBoxContainer/FunctionPanel/VBoxContainer/do_something/doSomethingBtn" to="." method="_on_do_something_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]

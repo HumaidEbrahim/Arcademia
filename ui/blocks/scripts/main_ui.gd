@@ -17,7 +17,29 @@ func _process(delta: float) -> void:
 	#listen to when A button is pressed
 	if Input.is_action_just_pressed("btn_1"):
 		var focusedItem = get_viewport().gui_get_focus_owner()
-		focusedItem.emit_signal("pressed")
+		var functionsPanel = $HBoxContainer/FunctionPanel/VBoxContainer;
+		var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+		var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
+		
+		if ( focusedItem and functionsPanel.is_ancestor_of(focusedItem) ):
+			#add to script panel
+			var copy = focusedItem.duplicate()
+			scriptQuePanel.add_child(copy)
+			
+		elif ( focusedItem and scriptQuePanel.is_ancestor_of(focusedItem) ):
+			pass
+			
+		elif (focusedItem and runClearBtns.is_ancestor_of(focusedItem) ):
+			
+			#associate buttons
+			var runBtn = runClearBtns.get_child(0)
+			var clearBtn = runClearBtns.get_child(1)
+			
+			#Trigger runBtn or ClearBtn
+			if (focusedItem == runBtn ):
+				runBtn.emit_signal("pressed")
+			elif (focusedItem == clearBtn):
+				clearBtn.emit_signal("pressed")
 		
 	#listen to when S button is pressed
 	if Input.is_action_just_pressed("btn_2"):
@@ -31,20 +53,34 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("btn_4"):
 		pass
 
-
-func _on_do_something_btn_pressed() -> void:
-	#Add to execute que
-	toggleShow($HBoxContainer/GameArea/SubViewportContainer/justAPopup)
+func _on_run_pressed() -> void:
+	populateActionsArray()
 	
-
-func executeActions() -> void:
-	#Loop execute que and do something
 	for action in executeQue:
-		print("add code to check what and blah blah")
+		action.emit_signal("pressed")
+
+func _on_clear_pressed() -> void:
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
 	
+	for child in scriptQuePanel.get_children():
+		scriptQuePanel.remove_child(child)
 	
+	executeQue.clear()
+
+#Add children of ScriptPanel container to execution array
+func populateActionsArray() -> void:
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	
+	for child in scriptQuePanel.get_children():
+		executeQue.append(child)
+	
+#Toggles visibility of an object
 func toggleShow(itemToToggle: Object) -> void:
 	if (itemToToggle.visible == false):
 		itemToToggle.show()
 	elif (itemToToggle.visible == true):
 		itemToToggle.hide()
+
+func _on_do_something_btn_pressed() -> void:
+	#Add to execute que
+	toggleShow($HBoxContainer/GameArea/SubViewportContainer/justAPopup)
