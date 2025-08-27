@@ -43,7 +43,7 @@ func _on_run_pressed() -> void:
 	populateActionsArray()
 	
 	for action in executeQue:
-		action.emit_signal("pressed")
+		action._on_pressed()
 		
 		#Wait for first button to send finished signal
 		await action.finished
