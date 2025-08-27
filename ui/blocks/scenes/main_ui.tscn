@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
-[ext_resource type="PackedScene" uid="uid://boir3nv0xdyjh" path="res://ui/blocks/scenes/function_block.tscn" id="1_hqxx3"]
 [ext_resource type="Texture2D" uid="uid://dvv183ecruxmd" path="res://assets/RuansTestingBtns/Test_init.png" id="2_5b30w"]
 [ext_resource type="Texture2D" uid="uid://c6da3scxvj1mu" path="res://assets/RuansTestingBtns/Test_press.png" id="3_bqloa"]
 [ext_resource type="Texture2D" uid="uid://xffekfsf3ji8" path="res://assets/RuansTestingBtns/Test_focus.png" id="5_kfyrt"]
 [ext_resource type="Script" uid="uid://23w4fakj588m" path="res://ui/blocks/scripts/do_something_btn.gd" id="6_ot0qh"]
+[ext_resource type="Script" uid="uid://gy6jb7d07ms" path="res://ui/blocks/scripts/do_something_btn2.gd" id="6_whp6t"]
 [ext_resource type="Texture2D" uid="uid://co46fgqiwys6" path="res://assets/RuansTestingStickmen/sticky.png" id="7_whp6t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyw15"]
@@ -42,12 +42,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
-[node name="FunctionBlock" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("1_hqxx3")]
-layout_mode = 2
-
-[node name="FunctionBlock2" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("1_hqxx3")]
-layout_mode = 2
-
 [node name="do_something" type="Control" parent="HBoxContainer/FunctionPanel/VBoxContainer"]
 layout_mode = 2
 
@@ -75,6 +69,8 @@ offset_bottom = 161.0
 texture_normal = ExtResource("2_5b30w")
 texture_pressed = ExtResource("3_bqloa")
 texture_focused = ExtResource("5_kfyrt")
+script = ExtResource("6_whp6t")
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 
 [node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -114,19 +110,19 @@ layout_mode = 2
 [node name="Run" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
 z_index = 1
 layout_mode = 0
-offset_left = 18.0
-offset_top = 1033.0
-offset_right = 135.0
-offset_bottom = 1064.0
+offset_left = 89.0
+offset_top = 905.0
+offset_right = 206.0
+offset_bottom = 936.0
 text = "Run sequence"
 
 [node name="Clear" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
 z_index = 1
 layout_mode = 0
-offset_left = 147.0
-offset_top = 1031.0
-offset_right = 273.0
-offset_bottom = 1062.0
+offset_left = 87.0
+offset_top = 955.0
+offset_right = 213.0
+offset_bottom = 986.0
 text = "Clear sequence"
 
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
