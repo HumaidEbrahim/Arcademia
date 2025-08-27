@@ -1,15 +1,12 @@
 extends Control
 
+#Array to store execution commands
 var executeQue:Array = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Grab focus on launch
 	$HBoxContainer/FunctionPanel/VBoxContainer/do_something/doSomethingBtn.grab_focus()
-	
-	#temp feedback item (can be deleted if RUAN says so)
-	$HBoxContainer/GameArea/SubViewportContainer/justAPopup.hide();
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -22,25 +19,14 @@ func _process(delta: float) -> void:
 		var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
 		
 		if ( focusedItem and functionsPanel.is_ancestor_of(focusedItem) ):
-			#add to script panel
-			var copy = focusedItem.duplicate()
-			scriptQuePanel.add_child(copy)
+			execute_FunctionsPanel(focusedItem, scriptQuePanel)
 			
 		elif ( focusedItem and scriptQuePanel.is_ancestor_of(focusedItem) ):
-			pass
+			execute_ScriptPanel(focusedItem)
 			
 		elif (focusedItem and runClearBtns.is_ancestor_of(focusedItem) ):
-			
-			#associate buttons
-			var runBtn = runClearBtns.get_child(0)
-			var clearBtn = runClearBtns.get_child(1)
-			
-			#Trigger runBtn or ClearBtn
-			if (focusedItem == runBtn ):
-				runBtn.emit_signal("pressed")
-			elif (focusedItem == clearBtn):
-				clearBtn.emit_signal("pressed")
-		
+			const_buttons_ScriptPanel(focusedItem, runClearBtns)
+	
 	#listen to when S button is pressed
 	if Input.is_action_just_pressed("btn_2"):
 		pass
@@ -58,6 +44,9 @@ func _on_run_pressed() -> void:
 	
 	for action in executeQue:
 		action.emit_signal("pressed")
+		
+		#Wait for first button to send finished signal
+		await action.finished
 
 func _on_clear_pressed() -> void:
 	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
@@ -71,6 +60,9 @@ func _on_clear_pressed() -> void:
 func populateActionsArray() -> void:
 	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
 	
+	#Stop executeQue from being inflated by repeated runs without clear
+	executeQue.clear();
+	
 	for child in scriptQuePanel.get_children():
 		executeQue.append(child)
 	
@@ -81,6 +73,24 @@ func toggleShow(itemToToggle: Object) -> void:
 	elif (itemToToggle.visible == true):
 		itemToToggle.hide()
 
-func _on_do_something_btn_pressed() -> void:
-	#Add to execute que
-	toggleShow($HBoxContainer/GameArea/SubViewportContainer/justAPopup)
+#Happens when Btn_1 is pressed during functions panel focus
+func execute_FunctionsPanel( button : Object, locationToPut : Object ) -> void:
+	#add to script panel
+	var copy = button.duplicate()
+	locationToPut.add_child(copy)
+	
+#Happens when Btn_1 is pressed during ScriptPanel focus
+func execute_ScriptPanel(button : Object, _location : Object = null) -> void:
+	pass
+
+#Happens when Btn_1 is pressed on the Run/Clear buttons
+func const_buttons_ScriptPanel(button : Object, location : Object) -> void:
+	#associate buttons
+	var runBtn = location.get_child(0)
+	var clearBtn = location.get_child(1)
+	
+	#Trigger runBtn or ClearBtn
+	if (button == runBtn ):
+		runBtn.emit_signal("pressed")
+	elif (button == clearBtn):
+		clearBtn.emit_signal("pressed")
