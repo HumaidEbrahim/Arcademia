@@ -10,7 +10,7 @@ var node_to_move = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Grab focus on launch
-	$HBoxContainer/FunctionPanel/VBoxContainer/do_something/doSomethingBtn.grab_focus()
+	$HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button.grab_focus()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

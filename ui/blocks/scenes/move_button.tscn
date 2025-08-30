@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg2f0pnewvy4r"]
+
+[ext_resource type="Texture2D" uid="uid://ddbbfmiy1t1kg" path="res://assets/JuaneBtns/Right_Initial.png" id="1_cudjs"]
+[ext_resource type="Script" uid="uid://23w4fakj588m" path="res://ui/blocks/scripts/do_something_btn.gd" id="1_fjyw8"]
+[ext_resource type="Texture2D" uid="uid://cxstwwd8itcya" path="res://assets/JuaneBtns/Right_Press.png" id="2_ibt2a"]
+[ext_resource type="Texture2D" uid="uid://dfnna4qla16dk" path="res://assets/JuaneBtns/Right_Focus.png" id="3_nker2"]
+
+[node name="Move_Button" type="Control"]
+layout_mode = 3
+anchor_right = 0.095
+anchor_bottom = 0.099
+offset_right = -0.400009
+offset_bottom = 0.0799942
+grow_horizontal = 2
+
+[node name="Action_Button" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -78.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_cudjs")
+texture_pressed = ExtResource("2_ibt2a")
+texture_focused = ExtResource("3_nker2")
+script = ExtResource("1_fjyw8")
