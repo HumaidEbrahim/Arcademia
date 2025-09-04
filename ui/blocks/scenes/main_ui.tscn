@@ -1,0 +1,169 @@
+[gd_scene load_steps=14 format=3 uid="uid://c4phshtsyfg0g"]
+
+[ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
+[ext_resource type="Texture2D" uid="uid://dvibbu1iiuojk" path="res://assets/JuaneBtns/Left_Initial.png" id="3_ot0qh"]
+[ext_resource type="Texture2D" uid="uid://b2uofxt5htpes" path="res://assets/JuaneBtns/Left_Press.png" id="4_whp6t"]
+[ext_resource type="Texture2D" uid="uid://dupme3aefsvg0" path="res://assets/JuaneBtns/Left_Focus.png" id="5_eyw15"]
+[ext_resource type="Texture2D" uid="uid://wl3o185w7837" path="res://assets/JuaneBtns/Up_Initial.png" id="6_pbjw5"]
+[ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_eyw15"]
+[ext_resource type="Texture2D" uid="uid://woi00i0cp00y" path="res://assets/JuaneBtns/Up_Press.png" id="7_sje6e"]
+[ext_resource type="Texture2D" uid="uid://co46fgqiwys6" path="res://assets/RuansTestingStickmen/sticky.png" id="7_whp6t"]
+[ext_resource type="Texture2D" uid="uid://cwfxgfnw3t53u" path="res://assets/JuaneBtns/Up_Focus.png" id="8_ol5qr"]
+[ext_resource type="Texture2D" uid="uid://dsodvg4fpsjor" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
+[ext_resource type="Texture2D" uid="uid://c4y5m20oneyqr" path="res://assets/JuaneBtns/Down_Press.png" id="10_r40k7"]
+[ext_resource type="Texture2D" uid="uid://cppd6bamyv27c" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyw15"]
+radius = 31.0
+height = 104.0
+
+[node name="MainUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_bqloa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="FunctionPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/FunctionPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="Move_Right" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
+layout_mode = 2
+
+[node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+offset_left = -50.0
+offset_top = 20.0
+offset_right = 132.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
+
+[node name="Move_Left" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
+layout_mode = 2
+
+[node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+offset_left = -51.0
+offset_top = 136.0
+offset_right = 131.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_ot0qh")
+texture_pressed = ExtResource("4_whp6t")
+texture_focused = ExtResource("5_eyw15")
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
+move_direction = "Left"
+
+[node name="Move_Up" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
+layout_mode = 2
+
+[node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+offset_left = -52.0
+offset_top = 250.0
+offset_right = 130.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_pbjw5")
+texture_pressed = ExtResource("7_sje6e")
+texture_focused = ExtResource("8_ol5qr")
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
+move_direction = "Up"
+
+[node name="Move_Down" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
+layout_mode = 2
+
+[node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+offset_left = -52.0
+offset_top = 365.0
+offset_right = 130.0
+offset_bottom = 471.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_kdqsy")
+texture_pressed = ExtResource("10_r40k7")
+texture_focused = ExtResource("11_rdbyt")
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
+move_direction = "Down"
+
+[node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer/GameArea"]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="HBoxContainer/GameArea/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1300, 1080)
+render_target_update_mode = 4
+
+[node name="Player" type="Area2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport"]
+position = Vector2(78, 73)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
+texture = ExtResource("7_whp6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
+position = Vector2(-2, -2)
+rotation = -3.14159
+shape = SubResource("CapsuleShape2D_eyw15")
+
+[node name="ScriptPanel" type="PanelContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/ScriptPanel"]
+layout_mode = 2
+
+[node name="RunClear" type="Control" parent="HBoxContainer/ScriptPanel"]
+layout_mode = 2
+
+[node name="Run" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
+z_index = 1
+layout_mode = 0
+offset_left = 89.0
+offset_top = 905.0
+offset_right = 206.0
+offset_bottom = 936.0
+text = "Run sequence"
+
+[node name="Clear" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
+z_index = 1
+layout_mode = 0
+offset_left = 87.0
+offset_top = 955.0
+offset_right = 213.0
+offset_bottom = 986.0
+text = "Clear sequence"
+
+[connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
+[connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]
+
+[editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]

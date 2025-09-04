@@ -1,0 +1,59 @@
+extends TextureButton
+
+signal finished
+
+@export var target_sprite: NodePath
+@export var step_size: int = 50
+@export var move_duration: float = 0.5
+@export var move_direction: String = "Right"
+
+var move_offset: Vector2 = Vector2.ZERO          
+var sprite: Area2D
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
+	
+	# Convert string to vector
+	# Convert string to vector using match statement properly
+	match move_direction.to_lower():
+		"right":
+			move_offset = Vector2(step_size, 0)
+		"left":
+			move_offset = Vector2(-step_size, 0)
+		"up":
+			move_offset = Vector2(0, -step_size)
+		"down":
+			move_offset = Vector2(0, step_size)
+		_:
+			move_offset = Vector2.ZERO
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func spriteAnimation() -> void:
+	if not sprite:
+		push_error("Player not assigned")
+		return
+
+	var start_pos = sprite.position
+	var end_pos = start_pos + move_offset
+	var elapsed = 0.0
+
+	while elapsed < move_duration:
+		var delta = get_process_delta_time()
+		elapsed += delta
+		sprite.position = start_pos.lerp(end_pos, min(elapsed / move_duration, 1))
+		await get_tree().process_frame
+
+	sprite.position = end_pos
+	
+	# Add delay
+	await get_tree().create_timer(0.5).timeout
+	
+	#IMPORTANT - Send finished signal so next item in que can start
+	emit_signal("finished")
+
+func _on_pressed() -> void:
+	await spriteAnimation()
