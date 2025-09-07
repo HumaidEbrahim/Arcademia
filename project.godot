@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Arcademia (The good team)"
+run/main_scene="uid://bpx27qfoucswx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1600
+window/size/viewport_height=900
 
 [input]
 
