@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 		play_walk_animation(direction);
 	else:
 		play_idle_animation(last_direction);
+	
 		
 func get_depth_factor(y):
 	return clamp((bottom_y - y) / (bottom_y - top_y), 0.0, 1.0);
