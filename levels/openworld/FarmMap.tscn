@@ -214,7 +214,7 @@ animations = [{
 "texture": ExtResource("13_5hgic")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Smoke",
 "speed": 8.0
 }]
 
@@ -250,32 +250,6 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 2.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nhv08"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("28_4t6sw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_pmr81")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_rmhjy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_f4d0c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_mcune")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_vom2k")
-}],
-"loop": true,
-"name": &"default",
-"speed": 6.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_axulr"]
@@ -359,6 +333,32 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhv08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_4t6sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pmr81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_rmhjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_f4d0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_mcune")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_vom2k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
 [node name="FarmMap" type="Node2D"]
 
 [node name="FarmMapBg" type="Sprite2D" parent="."]
@@ -369,6 +369,7 @@ texture = ExtResource("1_7yifi")
 position = Vector2(1279.5, 691.25)
 scale = Vector2(0.272917, 0.319792)
 sprite_frames = SubResource("SpriteFrames_lvoov")
+autoplay = "default"
 frame_progress = 0.701616
 
 [node name="Birds" type="AnimatedSprite2D" parent="."]
@@ -381,12 +382,14 @@ frame_progress = 0.930413
 position = Vector2(758, 274)
 scale = Vector2(1.7549, 3.57843)
 sprite_frames = SubResource("SpriteFrames_goeqc")
-frame_progress = 0.936765
+animation = &"Smoke"
+autoplay = "Smoke"
 
 [node name="Barn" type="AnimatedSprite2D" parent="."]
 position = Vector2(1399, 656)
 scale = Vector2(0.389706, 0.389706)
 sprite_frames = SubResource("SpriteFrames_nvegv")
+autoplay = "default"
 frame_progress = 0.999259
 
 [node name="FarmMapHouse" type="Sprite2D" parent="."]
@@ -398,24 +401,21 @@ texture = ExtResource("14_l0jcl")
 position = Vector2(1450, 804)
 scale = Vector2(0.197998, 0.197998)
 sprite_frames = SubResource("SpriteFrames_qovtx")
+autoplay = "default"
 frame_progress = 0.0652872
-
-[node name="Mielie" type="AnimatedSprite2D" parent="."]
-position = Vector2(1216, 856)
-scale = Vector2(0.352539, 0.221191)
-sprite_frames = SubResource("SpriteFrames_nhv08")
-frame_progress = 0.903062
 
 [node name="Cow1" type="AnimatedSprite2D" parent="."]
 position = Vector2(1003.97, 731.003)
 scale = Vector2(0.101509, 0.0850708)
 sprite_frames = SubResource("SpriteFrames_axulr")
+autoplay = "default"
 frame_progress = 0.789242
 
 [node name="Cow2" type="AnimatedSprite2D" parent="."]
 position = Vector2(1088.13, 724.781)
 scale = Vector2(0.158488, 0.158488)
 sprite_frames = SubResource("SpriteFrames_ayt2f")
+autoplay = "default"
 frame_progress = 0.494019
 
 [node name="Huts2" type="Sprite2D" parent="."]
@@ -427,6 +427,7 @@ texture = ExtResource("63_6wkvg")
 position = Vector2(53, 824.875)
 scale = Vector2(0.406738, 0.420166)
 sprite_frames = SubResource("SpriteFrames_cdtih")
+autoplay = "default"
 frame_progress = 0.747943
 
 [node name="Bridge" type="Sprite2D" parent="."]
@@ -435,3 +436,10 @@ scale = Vector2(0.116071, 0.116071)
 texture = ExtResource("62_kjeei")
 
 [node name="Player" parent="." instance=ExtResource("73_htkvy")]
+
+[node name="Mielie" type="AnimatedSprite2D" parent="."]
+position = Vector2(1226, 874)
+scale = Vector2(0.352539, 0.221191)
+sprite_frames = SubResource("SpriteFrames_nhv08")
+autoplay = "default"
+frame_progress = 0.903062
