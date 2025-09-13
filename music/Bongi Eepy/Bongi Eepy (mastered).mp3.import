@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qml86gkxmfet"
+path="res://.godot/imported/Bongi Eepy (mastered).mp3-05c529169d7caa6cf608f60b9c1c8ac5.mp3str"
+
+[deps]
+
+source_file="res://music/Bongi Eepy/Bongi Eepy (mastered).mp3"
+dest_files=["res://.godot/imported/Bongi Eepy (mastered).mp3-05c529169d7caa6cf608f60b9c1c8ac5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
