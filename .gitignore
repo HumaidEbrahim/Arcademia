@@ -1,3 +1,4 @@
-# Godot 4+ specific ignores
+# The .godot folder contains imported assets and other generated files.
+# This folder is automatically recreated by the editor.
 .godot/
-/android/
+project.godot
