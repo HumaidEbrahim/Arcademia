@@ -91,8 +91,6 @@ func play_idle_animation(direction):
 	elif direction.y < 0:
 		anim_sprite.play("Girl_Idle");
 		
-
-
 func _on_walk_timer_timeout() -> void:
 	if walk_sounds.size() == 0:
 		return
