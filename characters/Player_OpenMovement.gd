@@ -13,10 +13,17 @@ var last_direction := Vector2();
 var depth :float = 0;
 var scale_factor = 0;
 
+var walk_sounds := []
+var current_sound_index = 0
+
 func _ready():
 	anim_sprite = $AnimatedSprite2D;
 	scale_factor = lerp(max_scale, min_scale, depth);
 	scale = Vector2.ONE * scale_factor;
+	walk_sounds.append($WalkSoundPlayer1)
+	walk_sounds.append($WalkSoundPlayer2)
+	walk_sounds.append($WalkSoundPlayer3)
+	walk_sounds.append($WalkSoundPlayer4)
 	
 func _physics_process(delta: float) -> void:
 	var input_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left");
@@ -45,10 +52,17 @@ func _physics_process(delta: float) -> void:
 		depth = get_depth_factor(position.y);
 		last_direction = direction;
 		play_walk_animation(direction);
+		if $WalkTimer.is_stopped():
+			walk_sounds[current_sound_index].play()
+			current_sound_index = (current_sound_index + 1) % walk_sounds.size()
+			$WalkTimer.start()
 	else:
 		play_idle_animation(last_direction);
-	
-		
+		$WalkTimer.stop()
+		for sound_player in walk_sounds:
+			if sound_player.playing:
+				sound_player.stop()
+
 func get_depth_factor(y):
 	return clamp((bottom_y - y) / (bottom_y - top_y), 0.0, 1.0);
 	
@@ -77,3 +91,12 @@ func play_idle_animation(direction):
 	elif direction.y < 0:
 		anim_sprite.play("Girl_Idle");
 		
+
+
+func _on_walk_timer_timeout() -> void:
+	if walk_sounds.size() == 0:
+		return
+	walk_sounds[current_sound_index].play()
+	current_sound_index = (current_sound_index + 1) % walk_sounds.size()
+	if last_direction.length() > 0:
+		$WalkTimer.start()  # continue stepping while moving

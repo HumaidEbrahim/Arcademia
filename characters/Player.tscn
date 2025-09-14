@@ -1,8 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://ytfctjva1p2f"]
+[gd_scene load_steps=25 format=3 uid="uid://ytfctjva1p2f"]
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cbfi6isesf8bx" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
 [ext_resource type="Texture2D" uid="uid://cprq4ande2joq" path="res://assets/Characters/Boy_448x448_Final.png" id="2_bd51o"]
+[ext_resource type="AudioStream" uid="uid://drgu5hldd6eme" path="res://sounds/Walking/footstep_grass_000.ogg" id="4_ypdjd"]
+[ext_resource type="AudioStream" uid="uid://cke5jp5c32i88" path="res://sounds/Walking/footstep_grass_003.ogg" id="5_v0k12"]
+[ext_resource type="AudioStream" uid="uid://d0bv8e6v27bm" path="res://sounds/Walking/footstep_grass_004.ogg" id="6_8nidd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn6ss"]
 atlas = ExtResource("2_bd51o")
@@ -154,3 +157,20 @@ frame_progress = 0.44072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_tpo30")
+
+[node name="WalkSoundPlayer1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ypdjd")
+
+[node name="WalkSoundPlayer2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_v0k12")
+
+[node name="WalkSoundPlayer3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8nidd")
+
+[node name="WalkSoundPlayer4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_v0k12")
+
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
