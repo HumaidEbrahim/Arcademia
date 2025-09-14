@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://buqnr2nll1k4o"
+path="res://.godot/imported/Walking Cycle (mastered).mp3-666afe623d4c588f6fdacd0d58ca793d.mp3str"
+
+[deps]
+
+source_file="res://sounds/Walking Cycle (mastered).mp3"
+dest_files=["res://.godot/imported/Walking Cycle (mastered).mp3-666afe623d4c588f6fdacd0d58ca793d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
