@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=15 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
 [ext_resource type="Texture2D" uid="uid://dvibbu1iiuojk" path="res://assets/JuaneBtns/Left_Initial.png" id="3_ot0qh"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dsodvg4fpsjor" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
 [ext_resource type="Texture2D" uid="uid://c4y5m20oneyqr" path="res://assets/JuaneBtns/Down_Press.png" id="10_r40k7"]
 [ext_resource type="Texture2D" uid="uid://cppd6bamyv27c" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
+[ext_resource type="AudioStream" uid="uid://dorxl1wqwbakp" path="res://music/Bongi Eepy/Bongi Eepy (mastered).mp3" id="13_sje6e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyw15"]
 radius = 31.0
@@ -160,6 +161,11 @@ offset_top = 821.0
 offset_right = 157.0
 offset_bottom = 852.0
 text = "Clear sequence"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_sje6e")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]
