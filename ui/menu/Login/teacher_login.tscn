@@ -1,0 +1,114 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkte4o267nyhj"]
+
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_bdfjx"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_shcu3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mloa"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 12
+
+[node name="TeacherLogin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bdfjx")
+
+[node name="HeaderPanel" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -388.0
+offset_top = 117.0
+offset_right = 388.0
+offset_bottom = 211.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4mloa")
+
+[node name="Label" type="Label" parent="Background/HeaderPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -37.5
+offset_right = 176.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 64
+text = "TEACHER LOGIN"
+
+[node name="HeaderPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -388.0
+offset_top = 234.0
+offset_right = 388.0
+offset_bottom = 755.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4mloa")
+
+[node name="Label" type="Label" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -255.0
+offset_top = 60.0
+offset_right = 255.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 64
+text = "ENTER PASSWORD"
+
+[node name="LineEdit" type="LineEdit" parent="HeaderPanel"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 261.0
+offset_top = 233.0
+offset_right = 509.0
+offset_bottom = 293.0
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+placeholder_text = "PASSWORD"
+alignment = 1
+secret = true
