@@ -511,4 +511,5 @@ shape = SubResource("RectangleShape2D_htkvy")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("75_gfkuq")
+volume_db = -15.052
 autoplay = true

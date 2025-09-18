@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmhrm36d2lnkc"
+path="res://.godot/imported/Bongi Epic (mastered).mp3-7574d1cb6b7ebc8420a9caee89162c50.mp3str"
+
+[deps]
+
+source_file="res://music/Bongi Epic/Bongi Epic (mastered).mp3"
+dest_files=["res://.godot/imported/Bongi Epic (mastered).mp3-7574d1cb6b7ebc8420a9caee89162c50.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
