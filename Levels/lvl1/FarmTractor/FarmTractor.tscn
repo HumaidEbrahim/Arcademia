@@ -1,0 +1,208 @@
+[gd_scene load_steps=22 format=3 uid="uid://cdjcvpjiowwki"]
+
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wbkxu"]
+[ext_resource type="Texture2D" uid="uid://c8ur3gjkhjyxd" path="res://assets/Farm/FarmLvl_Tractor.png" id="2_xb1bg"]
+[ext_resource type="Texture2D" uid="uid://cfsym1duj7aa2" path="res://assets/Farm/TractorActor/TractorPlay01.png" id="3_ctjss"]
+[ext_resource type="Script" uid="uid://dhdkp0t0jj8he" path="res://Levels/lvl1/FarmTractor/mielie.gd" id="3_ig6pj"]
+[ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="4_4hy2w"]
+[ext_resource type="Texture2D" uid="uid://ji2rufs3bfn8" path="res://assets/Farm/TractorActor/TractorPlay02.png" id="4_f18w4"]
+[ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="5_g5gjk"]
+[ext_resource type="Texture2D" uid="uid://bsu3dvqodxu20" path="res://assets/Farm/TractorActor/TractorPlay03.png" id="5_vt8cv"]
+[ext_resource type="Texture2D" uid="uid://ry74244btwir" path="res://assets/Farm/TractorActor/TractorPlay04.png" id="6_0g0oy"]
+[ext_resource type="Texture2D" uid="uid://cda7sgmr7d53o" path="res://assets/Farm/Mielie/Mielie_03.png" id="6_85xqk"]
+[ext_resource type="Texture2D" uid="uid://c14yw70ysnpwx" path="res://assets/Farm/Mielie/Mielie_04.png" id="7_l7v3p"]
+[ext_resource type="Texture2D" uid="uid://beku48264ywy0" path="res://assets/Farm/TractorActor/TractorPlay05.png" id="7_lvncf"]
+[ext_resource type="Texture2D" uid="uid://cjgqf8vrhescl" path="res://assets/Farm/Mielie/Mielie_05.png" id="8_1vcc8"]
+[ext_resource type="Texture2D" uid="uid://cobcbay4y805l" path="res://assets/Farm/TractorActor/TractorPlay06.png" id="8_ah6p3"]
+[ext_resource type="Texture2D" uid="uid://0l1t2a5l5d2h" path="res://assets/Farm/Mielie/Mielie_06.png" id="9_ctjss"]
+[ext_resource type="Texture2D" uid="uid://dwv4hgqa06wpo" path="res://assets/Farm/TractorActor/TractorPlay07.png" id="9_vf36m"]
+[ext_resource type="Texture2D" uid="uid://dnhgvbdy1xy1h" path="res://assets/Farm/TractorActor/TractorPlay08.png" id="10_ecpiv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hodr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ctjss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f18w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vt8cv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0g0oy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_lvncf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ah6p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vf36m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ecpiv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fpj"]
+size = Vector2(215.99988, 75.999954)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xpjmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4hy2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g5gjk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_85xqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l7v3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1vcc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ctjss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7id0o"]
+size = Vector2(186, 71.5)
+
+[node name="FarmTractor" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("1_wbkxu")]
+offset_top = 450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="TextureRect" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_xb1bg")
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+position = Vector2(112, 528)
+
+[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
+position = Vector2(33, -107)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_6hodr")
+animation = &"default"
+autoplay = "default"
+frame_progress = 0.0
+flip_h = true
+
+[node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
+position = Vector2(36.99996, -18.000305)
+shape = SubResource("RectangleShape2D_a3fpj")
+
+[node name="Mielie" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+script = ExtResource("3_ig6pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie"]
+position = Vector2(1032, 441)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xpjmn")
+autoplay = "default"
+frame_progress = 0.995857
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie"]
+position = Vector2(1030, 483)
+shape = SubResource("RectangleShape2D_7id0o")
+
+[node name="Mielie2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+script = ExtResource("3_ig6pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie2"]
+position = Vector2(739, 411)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xpjmn")
+autoplay = "default"
+frame_progress = 0.38790375
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie2"]
+position = Vector2(745, 460)
+shape = SubResource("RectangleShape2D_7id0o")
+
+[node name="Mielie3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+position = Vector2(-1, 160)
+script = ExtResource("3_ig6pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie3"]
+position = Vector2(689, 447)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xpjmn")
+autoplay = "default"
+frame_progress = 0.38790375
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie3"]
+position = Vector2(695, 477)
+shape = SubResource("RectangleShape2D_7id0o")
+
+[node name="Mielie4" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+position = Vector2(-1, 160)
+script = ExtResource("3_ig6pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie4"]
+position = Vector2(1015, 424)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xpjmn")
+autoplay = "default"
+frame_progress = 0.38790375
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie4"]
+position = Vector2(1020, 464)
+shape = SubResource("RectangleShape2D_7id0o")
+
+[node name="Mielie5" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+position = Vector2(-12, 346)
+script = ExtResource("3_ig6pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie5"]
+position = Vector2(688, 444)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xpjmn")
+autoplay = "default"
+frame_progress = 0.38790375
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie5"]
+position = Vector2(695, 481)
+shape = SubResource("RectangleShape2D_7id0o")
+
+[node name="Mielie6" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7"]
+position = Vector2(7, 335)
+script = ExtResource("3_ig6pj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie6"]
+position = Vector2(998, 421)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_xpjmn")
+autoplay = "default"
+frame_progress = 0.38790375
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie6"]
+position = Vector2(1001, 465)
+shape = SubResource("RectangleShape2D_7id0o")
+
+[connection signal="area_entered" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie" to="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie" method="_on_area_entered"]
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
