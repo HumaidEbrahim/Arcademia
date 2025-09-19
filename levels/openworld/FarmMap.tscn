@@ -495,7 +495,7 @@ frame_progress = 0.0652872
 
 [node name="Mielies" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
-target_level = "res://ui/blocks/scenes/main_ui.tscn"
+target_level = "res://levels/lvl1/FarmTractor/FarmTractor.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mielies"]
 position = Vector2(1226, 874)
