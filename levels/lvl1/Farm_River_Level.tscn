@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://diy7hae64ygie"]
+[gd_scene load_steps=15 format=3 uid="uid://diy7hae64ygie"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_uogxr"]
 [ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://levels/lvl1/River_Level.jpg" id="2_ool8g"]
@@ -23,6 +23,9 @@ size = Vector2(373, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y1fy7"]
 size = Vector2(435.5, 213.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4l8h"]
+size = Vector2(91, 93)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ool8g"]
 texture = ExtResource("3_ool8g")
@@ -76,6 +79,12 @@ shape = SubResource("RectangleShape2D_f8p5f")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
 position = Vector2(216.75, 690.75)
 shape = SubResource("RectangleShape2D_y1fy7")
+
+[node name="WinArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/WinArea"]
+position = Vector2(70, 691)
+shape = SubResource("RectangleShape2D_m4l8h")
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 2

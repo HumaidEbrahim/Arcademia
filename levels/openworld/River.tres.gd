@@ -1,12 +1,10 @@
 extends Area2D
 
-@export var target_level:String = ""
+@export var target_level: String = ""
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var original_scale: Vector2
 var player_inside := false
-
-var current_level_portal: Area2D = null
 
 func _ready():
 	original_scale = sprite.scale
@@ -27,8 +25,7 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if player_inside and Input.is_action_just_pressed("btn_1"):
-		# Ensure the target_level is not empty before trying to load it
-		if not target_level.is_empty():
-			get_tree().change_scene_to_file(target_level)
-		else:
-			print("Error: target_level is not set for this portal.")
+		get_tree().change_scene_to_file(target_level)
+
+func get_target_level() -> String:
+	return target_level
