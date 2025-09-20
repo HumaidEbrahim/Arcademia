@@ -95,18 +95,6 @@ offset_bottom = 450.0
 step_size = 100
 move_duration = 1.0
 
-[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
-step_size = 100
-move_duration = 1.0
-
-[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
-step_size = 100
-move_duration = 1.0
-
-[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
-step_size = 100
-move_duration = 1.0
-
 [node name="TextureRect" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
 offset_right = 40.0
 offset_bottom = 40.0

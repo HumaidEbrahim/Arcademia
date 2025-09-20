@@ -25,10 +25,10 @@ func _physics_process(delta: float) -> void:
 	var direction = Vector2(input_x, input_y).normalized();
 
 	# Get depth factor (0 at bottom, 1 at top)
-	var depth = get_depth_factor(position.y);
+	depth = get_depth_factor(position.y);
 	
 	# Scale character (same as before)
-	var scale_factor = lerp(max_scale, min_scale, depth);
+	scale_factor = lerp(max_scale, min_scale, depth);
 	scale = Vector2.ONE * scale_factor;
 	
 	# Speeds
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 	var y_speed = lerp(150.0, 50.0, depth);  # only vertical changes
 	
 	# Apply movement
-	var velocity = Vector2(direction.x * x_speed, direction.y * y_speed);
+	velocity = Vector2(direction.x * x_speed, direction.y * y_speed);
 	position += velocity * delta;
 	position.x = clamp(position.x, left_bound, right_bound);
 	position.y = clamp(position.y, top_bound, bottom_bound);

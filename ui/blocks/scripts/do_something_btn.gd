@@ -40,17 +40,19 @@ func spriteAnimation() -> void:
 	var start_pos = sprite.position
 	var end_pos = start_pos + move_offset
 	var elapsed = 0.0
-
+	
+	var tween = get_tree().create_tween()
+	tween.tween_property(sprite, "position", end_pos, move_duration)
+	
 	while elapsed < move_duration:
 		var delta = get_process_delta_time()
 		elapsed += delta
-		sprite.position = start_pos.lerp(end_pos, min(elapsed / move_duration, 1))
 		await get_tree().process_frame
 
-	sprite.position = end_pos
+	#sprite.position = end_pos
 	
 	# Add delay
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0).timeout
 	
 	#IMPORTANT - Send finished signal so next item in que can start
 	emit_signal("finished")
