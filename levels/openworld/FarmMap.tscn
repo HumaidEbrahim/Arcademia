@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://bpx27qfoucswx"]
+[gd_scene load_steps=92 format=3 uid="uid://bpx27qfoucswx"]
 
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="1_7yifi"]
 [ext_resource type="Texture2D" uid="uid://dp1q36qnkcfmr" path="res://assets/Effects/Birds/birds01.png" id="2_goeqc"]
@@ -59,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://dhoj3xvxlysef" path="res://assets/Farm/Cows/Cow_Standing_02.png" id="41_u851h"]
 [ext_resource type="Texture2D" uid="uid://boha7jusf0ekt" path="res://assets/Farm/FarmMap_House.png" id="42_htkvy"]
 [ext_resource type="Texture2D" uid="uid://w0tlaonb7pdl" path="res://assets/Farm/Cows/Cow_Standing_03.png" id="42_q3b8s"]
+[ext_resource type="Script" uid="uid://b38hgu5sxggky" path="res://levels/openworld/River.tres.gd" id="54_u26ar"]
 [ext_resource type="Texture2D" uid="uid://wi20mtjpk4od" path="res://assets/Farm/River/FarmRiver01.png" id="61_cdtih"]
 [ext_resource type="Texture2D" uid="uid://nbe8b8r5m8hf" path="res://assets/Farm/River/FarmRiver02.png" id="62_htkvy"]
 [ext_resource type="Texture2D" uid="uid://doxhh6wcyetwu" path="res://assets/Farm/Bridge.png" id="62_kjeei"]
@@ -74,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://4s14plqodcet" path="res://assets/Farm/River/FarmRiver10.png" id="70_sw8nl"]
 [ext_resource type="Texture2D" uid="uid://gyem0pehmerl" path="res://assets/Farm/River/FarmRiver11.png" id="71_lvoov"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="73_htkvy"]
+[ext_resource type="AudioStream" uid="uid://dorxl1wqwbakp" path="res://music/Bongi Eepy/Bongi Eepy (mastered).mp3" id="75_gfkuq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvoov"]
 animations = [{
@@ -341,7 +343,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u26ar"]
-size = Vector2(92, 146)
+size = Vector2(411.5, 95.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qovtx"]
 animations = [{
@@ -428,7 +430,6 @@ shape = SubResource("RectangleShape2D_bi5to")
 
 [node name="House" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
-target_level = "res://ui/blocks/scenes/main_ui.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="House"]
 position = Vector2(634, 655)
@@ -465,17 +466,19 @@ scale = Vector2(0.129849, 0.104282)
 texture = ExtResource("63_6wkvg")
 
 [node name="River" type="Area2D" parent="."]
-script = ExtResource("68_bi5to")
+monitorable = false
+script = ExtResource("54_u26ar")
+target_level = "res://levels/lvl1/Farm_River_Level.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="River"]
-position = Vector2(53, 824.875)
+position = Vector2(53, 841)
 scale = Vector2(0.406738, 0.420166)
 sprite_frames = SubResource("SpriteFrames_cdtih")
 autoplay = "default"
 frame_progress = 0.747943
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="River"]
-position = Vector2(262, 826)
+position = Vector2(206.25, 849.75)
 shape = SubResource("RectangleShape2D_u26ar")
 
 [node name="Bridge" type="Sprite2D" parent="."]
@@ -507,3 +510,15 @@ frame_progress = 0.903062
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mielies"]
 position = Vector2(1215.13, 864.375)
 shape = SubResource("RectangleShape2D_htkvy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("75_gfkuq")
+volume_db = -15.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("75_gfkuq")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="child_exiting_tree" from="House/CollisionShape2D" to="Barn" method="_on_collision_shape_2d_child_exiting_tree"]

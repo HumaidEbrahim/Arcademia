@@ -6,6 +6,8 @@ extends Area2D
 var original_scale: Vector2
 var player_inside := false
 
+var current_level_portal: Area2D = null
+
 func _ready():
 	original_scale = sprite.scale
 	body_entered.connect(_on_body_entered)
@@ -25,5 +27,8 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if player_inside and Input.is_action_just_pressed("btn_1"):
-		get_tree().change_scene_to_file(target_level)
-	
+		# Ensure the target_level is not empty before trying to load it
+		if not target_level.is_empty():
+			get_tree().change_scene_to_file(target_level)
+		else:
+			print("Error: target_level is not set for this portal.")

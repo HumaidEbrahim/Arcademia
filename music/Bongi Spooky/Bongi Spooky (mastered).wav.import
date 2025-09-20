@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bje0wghbg1a3p"
+path="res://.godot/imported/Bongi Spooky (mastered).wav-6bb67e6243f8ed2a5752ac270725e542.sample"
+
+[deps]
+
+source_file="res://music/Bongi Spooky/Bongi Spooky (mastered).wav"
+dest_files=["res://.godot/imported/Bongi Spooky (mastered).wav-6bb67e6243f8ed2a5752ac270725e542.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,113 @@
+[gd_scene load_steps=14 format=4 uid="uid://diy7hae64ygie"]
+
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
+[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
+[ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://assets/Farm/River/River_Level/River_Level.jpg" id="3_0vwdd"]
+[ext_resource type="Script" uid="uid://dyd3kaj3qn2bo" path="res://levels/lvl1/RiverLevel/win_area.gd" id="4_pyw0y"]
+[ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
+[ext_resource type="AudioStream" uid="uid://chnsjo38rm1n1" path="res://sounds/Walking/Bongi XMas/Bongi XMas (mastered).mp3" id="6_b4xwp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4l8h"]
+size = Vector2(167, 164.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ool8g"]
+size = Vector2(151.75, 177)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1n2c"]
+size = Vector2(191.5, 181.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyx1x"]
+size = Vector2(212.875, 176.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoy7n"]
+size = Vector2(195, 179)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wiq6v"]
+texture = ExtResource("5_e1fgg")
+texture_region_size = Vector2i(128, 128)
+2:1/size_in_atlas = Vector2i(6, 8)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_fckal"]
+sources/0 = SubResource("TileSetAtlasSource_wiq6v")
+
+[node name="FarmRiverLevel" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_b4xwp")
+volume_db = -15.0
+autoplay = true
+
+[node name="MainUI" parent="." instance=ExtResource("1_wiq6v")]
+offset_top = 450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+step_size = 200
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+step_size = 200
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+step_size = 200
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+step_size = 200
+move_duration = 1.0
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+position = Vector2(1138, 590)
+script = ExtResource("2_fckal")
+
+[node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+scale = Vector2(0.21405636, 0.22710067)
+texture = ExtResource("3_0vwdd")
+centered = false
+
+[node name="WinArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+script = ExtResource("4_pyw0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/WinArea"]
+position = Vector2(120, 584.25)
+shape = SubResource("RectangleShape2D_m4l8h")
+
+[node name="SafeArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(1138, 590)
+shape = SubResource("RectangleShape2D_ool8g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(378, 592)
+shape = SubResource("RectangleShape2D_t1n2c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(645, 592)
+shape = SubResource("RectangleShape2D_pyx1x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(899, 590)
+shape = SubResource("RectangleShape2D_qoy7n")
+
+[node name="TileMap" type="TileMap" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TileMap"]
+scale = Vector2(0.2, 0.2)
+tile_map_data = PackedByteArray("AACuAcAAAAACAAEAAABkAeQAAAACAAEAAAAcAeQAAAACAAEAAADKAOMAAAACAAEAAAB5AOEAAAACAAEAAAAoAOEAAAACAAEAAAA=")
+tile_set = SubResource("TileSet_fckal")
+
+[connection signal="area_exited" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" to="MainUI" method="_on_player_area_exited"]
+[connection signal="body_entered" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/WinArea" to="MainUI" method="_on_win_area_body_entered"]
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
