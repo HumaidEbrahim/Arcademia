@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 		if not is_walking:
 			is_walking = true
 			# Start the timer to trigger the first sound
-			walk_timer.start()
+			on_walk_timer_timeout()
 		depth = get_depth_factor(position.y);
 		last_direction = direction;
 		play_walk_animation(direction);

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://assets/Farm/River/River_Level/River_Level.jpg" id="3_0vwdd"]
 [ext_resource type="Script" uid="uid://dyd3kaj3qn2bo" path="res://levels/lvl1/RiverLevel/win_area.gd" id="4_pyw0y"]
 [ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
-[ext_resource type="AudioStream" uid="uid://chnsjo38rm1n1" path="res://sounds/Walking/Bongi XMas/Bongi XMas (mastered).mp3" id="6_b4xwp"]
+[ext_resource type="AudioStream" uid="uid://cuc7od0bw0gb3" path="res://music/Bongi XMas/Bongi XMas (mastered).wav" id="6_b4xwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4l8h"]
 size = Vector2(167, 164.5)
