@@ -13,17 +13,48 @@ var last_direction := Vector2();
 var depth :float = 0;
 var scale_factor = 0;
 
+#Walk Sound Variables
+var walk_sounds = []
+var current_sound_index = 0
+var is_walking = false
+var walk_timer : Timer
+
 func _ready():
 	anim_sprite = $AnimatedSprite2D;
 	scale_factor = lerp(max_scale, min_scale, depth);
 	scale = Vector2.ONE * scale_factor;
+	walk_timer = $WalkTimer
+	# Populate the array with your AudioStreamPlayer nodes
+	walk_sounds.append($WalkSoundPlayer1)
+	walk_sounds.append($WalkSoundPlayer2)
+	walk_sounds.append($WalkSoundPlayer3)
+	walk_sounds.append($WalkSoundPlayer4)
 	
+	# Connect the timer's timeout signal
+	walk_timer.timeout.connect(on_walk_timer_timeout)
+	scale_factor = lerp(max_scale, min_scale, depth)
+	scale = Vector2.ONE * scale_factor
+
+func on_walk_timer_timeout():
+	if is_walking:
+		var current_sound = walk_sounds[current_sound_index]
+		
+		# Add a safety check to make sure the node is valid
+		if current_sound != null:
+			current_sound.play()
+		else:
+			# This will help you debug which sound is missing
+			print("Error: AudioStreamPlayer at index ", current_sound_index, " is null.")
+		# Move to the next sound, looping back to the beginning
+		current_sound_index = (current_sound_index + 1) % walk_sounds.size()
+		# Restart the timer for the next step
+		walk_timer.start()
+
+
 func _physics_process(delta: float) -> void:
 	var input_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left");
 	var input_y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up");
-	
 	var direction = Vector2(input_x, input_y).normalized();
-
 	# Get depth factor (0 at bottom, 1 at top)
 	depth = get_depth_factor(position.y);
 	
@@ -42,10 +73,22 @@ func _physics_process(delta: float) -> void:
 	position.y = clamp(position.y, top_bound, bottom_bound);
 	
 	if direction.length() > 0:
+		# Character is moving
+		if not is_walking:
+			is_walking = true
+			# Start the timer to trigger the first sound
+			walk_timer.start()
 		depth = get_depth_factor(position.y);
 		last_direction = direction;
 		play_walk_animation(direction);
 	else:
+		# Character has stopped
+		if is_walking:
+			is_walking = false
+			walk_timer.stop()
+			# Stop all walking sounds immediately
+			for sound in walk_sounds:
+				sound.stop()
 		play_idle_animation(last_direction);
 	
 		

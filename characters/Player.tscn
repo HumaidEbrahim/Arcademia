@@ -1,11 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://ytfctjva1p2f"]
+[gd_scene load_steps=26 format=3 uid="uid://ytfctjva1p2f"]
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cbfi6isesf8bx" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
 [ext_resource type="Texture2D" uid="uid://cprq4ande2joq" path="res://assets/Characters/Boy_448x448_Final.png" id="2_bd51o"]
-[ext_resource type="AudioStream" uid="uid://cdg5ygyb7ue4b" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
-[ext_resource type="AudioStream" uid="uid://c1t22hig3t7nl" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
-[ext_resource type="AudioStream" uid="uid://c20326woj2yhm" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
+[ext_resource type="AudioStream" uid="uid://dwn4l3gpp72ru" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
+[ext_resource type="AudioStream" uid="uid://bmfrkb0le4ptg" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
+[ext_resource type="AudioStream" uid="uid://geyfgb364kms" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
+[ext_resource type="AudioStream" uid="uid://dygsara7rtut6" path="res://sounds/Walking/Walk4.wav" id="7_8nidd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn6ss"]
 atlas = ExtResource("2_bd51o")
@@ -160,7 +161,7 @@ shape = SubResource("RectangleShape2D_tpo30")
 
 [node name="WalkSoundPlayer1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_v0k12")
-volume_db = 14.421
+volume_db = 14.0
 
 [node name="WalkSoundPlayer2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8nidd")
@@ -171,7 +172,7 @@ stream = ExtResource("6_iii86")
 volume_db = 14.0
 
 [node name="WalkSoundPlayer4" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8nidd")
+stream = ExtResource("7_8nidd")
 volume_db = 14.0
 
 [node name="WalkTimer" type="Timer" parent="."]
