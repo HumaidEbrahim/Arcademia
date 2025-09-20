@@ -1,3 +1,4 @@
+#River_Player
 extends Area2D
 
 signal left_safe_area

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di1pm002tjj7q"
-path="res://.godot/imported/River_Level.jpg-132b5f613c2e428743d0d8621a08476f.ctex"
+path="res://.godot/imported/River_Level.jpg-e9ee1b684d4e7787111f5fe2e8545ae0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/lvl1/River_Level.jpg"
-dest_files=["res://.godot/imported/River_Level.jpg-132b5f613c2e428743d0d8621a08476f.ctex"]
+source_file="res://assets/Farm/River/River_Level/River_Level.jpg"
+dest_files=["res://.godot/imported/River_Level.jpg-e9ee1b684d4e7787111f5fe2e8545ae0.ctex"]
 
 [params]
 
