@@ -248,8 +248,6 @@ frame_progress = 0.38790375
 position = Vector2(1004, 458.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[connection signal="area_entered" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie" to="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie" method="_on_area_entered"]
-
 [editable path="MainUI"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
