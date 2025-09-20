@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://bpx27qfoucswx"]
+[gd_scene load_steps=90 format=3 uid="uid://bpx27qfoucswx"]
 
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="1_7yifi"]
 [ext_resource type="Texture2D" uid="uid://dp1q36qnkcfmr" path="res://assets/Effects/Birds/birds01.png" id="2_goeqc"]
@@ -341,9 +341,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u26ar"]
-size = Vector2(92, 146)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_qovtx"]
 animations = [{
 "frames": [{
@@ -466,18 +463,16 @@ scale = Vector2(0.129849, 0.104282)
 texture = ExtResource("63_6wkvg")
 
 [node name="River" type="Area2D" parent="."]
+monitorable = false
 script = ExtResource("68_bi5to")
+target_level = "res://FarmRiverLevel.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="River"]
-position = Vector2(53, 824.875)
+position = Vector2(53, 841)
 scale = Vector2(0.406738, 0.420166)
 sprite_frames = SubResource("SpriteFrames_cdtih")
 autoplay = "default"
 frame_progress = 0.747943
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="River"]
-position = Vector2(262, 826)
-shape = SubResource("RectangleShape2D_u26ar")
 
 [node name="Bridge" type="Sprite2D" parent="."]
 position = Vector2(183, 734)
@@ -513,3 +508,5 @@ shape = SubResource("RectangleShape2D_htkvy")
 stream = ExtResource("75_gfkuq")
 volume_db = -15.052
 autoplay = true
+
+[connection signal="child_exiting_tree" from="House/CollisionShape2D" to="Barn" method="_on_collision_shape_2d_child_exiting_tree"]

@@ -1,5 +1,10 @@
 extends Control
 
+var player_node: Area2D
+var player_original_position: Vector2
+var player_in_safe_area: bool = false
+
+
 #Array to store execution commands
 var executeQue:Array = []
 
@@ -11,6 +16,13 @@ var node_to_move = null
 func _ready() -> void:
 	#Grab focus on launch
 	$HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button.grab_focus()
+	player_node = $HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player
+	player_original_position = player_node.position
+	
+	var safe_area = $HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea
+	safe_area.connect("body_entered", Callable(self, "_on_safe_area_body_entered"))
+	safe_area.connect("body_exited", Callable(self, "_on_safe_area_body_exited"))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -169,3 +181,17 @@ func delete_item_from_queue(item_to_delete: Control) -> void:
 		var new_focus_index = min(index, child_count - 1)
 		var next_item = parent_container.get_child(new_focus_index)
 		next_item.grab_focus()
+
+
+func _on_safe_area_body_entered(body: Node) -> void:
+	if body == player_node:
+		player_in_safe_area = true
+
+func _on_safe_area_body_exited(body: Node) -> void:
+	if body == player_node:
+		player_in_safe_area = false
+		reset_player_position()
+		
+func reset_player_position():
+	if is_instance_valid(player_node):
+		player_node.position = player_original_position

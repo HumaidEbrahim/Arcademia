@@ -27,3 +27,10 @@ func _process(delta):
 	if player_inside and Input.is_action_just_pressed("btn_1"):
 		get_tree().change_scene_to_file(target_level)
 	
+
+func _on_collision_shape_2d_child_exiting_tree(node: Node) -> void:
+	pass # Replace with function body.
+
+
+func _on_collision_shape_2d_child_entered_tree(node: Node) -> void:
+	pass # Replace with function body.
