@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=23 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
 [ext_resource type="Texture2D" uid="uid://dvibbu1iiuojk" path="res://assets/JuaneBtns/Left_Initial.png" id="3_ot0qh"]
@@ -7,12 +7,80 @@
 [ext_resource type="Texture2D" uid="uid://wl3o185w7837" path="res://assets/JuaneBtns/Up_Initial.png" id="6_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_eyw15"]
 [ext_resource type="Texture2D" uid="uid://woi00i0cp00y" path="res://assets/JuaneBtns/Up_Press.png" id="7_sje6e"]
-[ext_resource type="Texture2D" uid="uid://co46fgqiwys6" path="res://assets/RuansTestingStickmen/sticky.png" id="7_whp6t"]
 [ext_resource type="Texture2D" uid="uid://cwfxgfnw3t53u" path="res://assets/JuaneBtns/Up_Focus.png" id="8_ol5qr"]
 [ext_resource type="Texture2D" uid="uid://dsodvg4fpsjor" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
 [ext_resource type="Texture2D" uid="uid://c4y5m20oneyqr" path="res://assets/JuaneBtns/Down_Press.png" id="10_r40k7"]
 [ext_resource type="Texture2D" uid="uid://cppd6bamyv27c" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
-[ext_resource type="AudioStream" uid="uid://dorxl1wqwbakp" path="res://music/Bongi Eepy/Bongi Eepy (mastered).mp3" id="13_sje6e"]
+[ext_resource type="Texture2D" uid="uid://cbfi6isesf8bx" path="res://assets/Characters/Girl_448x448_Final.png" id="12_pbjw5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sje6e"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(0, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol5qr"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(448, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdqsy"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(896, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r40k7"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(1344, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdbyt"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(1792, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x6s0"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(2240, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eql5s"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(2688, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlywj"]
+atlas = ExtResource("12_pbjw5")
+region = Rect2(3136, 0, 448, 448)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20m1x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sje6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol5qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdqsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r40k7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdbyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x6s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eql5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlywj")
+}],
+"loop": true,
+"name": &"running",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyw15"]
 radius = 31.0
@@ -124,9 +192,13 @@ render_target_update_mode = 4
 z_index = 100
 position = Vector2(86, 90)
 
-[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
 position = Vector2(0, -2)
-texture = ExtResource("7_whp6t")
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_20m1x")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
 position = Vector2(-1, 1)
@@ -161,10 +233,6 @@ offset_top = 821.0
 offset_right = 157.0
 offset_bottom = 852.0
 text = "Clear sequence"
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_sje6e")
-volume_db = -10.0
 
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]
