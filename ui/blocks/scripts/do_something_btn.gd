@@ -44,15 +44,15 @@ func spriteAnimation() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", end_pos, move_duration)
 	
-	while elapsed < move_duration:
-		var delta = get_process_delta_time()
-		elapsed += delta
-		await get_tree().process_frame
+	#while elapsed < move_duration:
+		#var delta = get_process_delta_time()
+		#elapsed += delta
+		#await get_tree().process_frame
 
 	#sprite.position = end_pos
 	
 	# Add delay
-	await get_tree().create_timer(0).timeout
+	await get_tree().create_timer(move_duration+0.2).timeout
 	
 	#IMPORTANT - Send finished signal so next item in que can start
 	emit_signal("finished")
