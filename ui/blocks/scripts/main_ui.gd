@@ -15,11 +15,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScriptsHousing/ScrollContainer/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
 	var functionsPanel = $HBoxContainer/FunctionPanel/VBoxContainer
 	var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
-	
-	setScrollContainerSize(750)
 	
 	# Handle movement ONLY when in move mode
 	if is_in_move_mode:
@@ -171,7 +169,3 @@ func delete_item_from_queue(item_to_delete: Control) -> void:
 		var new_focus_index = min(index, child_count - 1)
 		var next_item = parent_container.get_child(new_focus_index)
 		next_item.grab_focus()
-
-func setScrollContainerSize(sizetoSort: int) -> void:
-	var scrollContainer = $HBoxContainer/ScriptPanel/ScriptsHousing/ScrollContainer
-	scrollContainer.size.y = sizetoSort
