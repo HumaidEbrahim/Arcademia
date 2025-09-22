@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkte4o267nyhj"]
+[gd_scene load_steps=12 format=3 uid="uid://dkte4o267nyhj"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_bdfjx"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_shcu3"]
@@ -104,6 +104,18 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1ron"]
+bg_color = Color(0.945098, 0.890196, 0.784314, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
 [node name="TeacherLogin" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -159,14 +171,17 @@ text = "TEACHER LOGIN"
 [node name="HeaderPanel" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -388.0
-offset_top = 234.0
-offset_right = 388.0
-offset_bottom = 755.0
+anchor_bottom = 0.5
+offset_left = -433.0
+offset_top = -260.0
+offset_right = 421.0
+offset_bottom = 261.0
 grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4mloa")
 
@@ -197,9 +212,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -247.5
-offset_top = -63.0
+offset_top = -86.0
 offset_right = 247.5
-offset_bottom = 25.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/selection_color = Color(0, 0, 0, 1)
@@ -220,9 +235,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 133.0
-offset_top = -181.0
+offset_top = -206.0
 offset_right = 341.0
-offset_bottom = -85.0
+offset_bottom = -110.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
@@ -243,9 +258,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -336.0
-offset_top = -181.0
+offset_top = -206.0
 offset_right = -128.0
-offset_bottom = -85.0
+offset_bottom = -110.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
@@ -258,3 +273,214 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7rw7x")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c82h6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8t7ho")
 text = "ENTER"
+
+[node name="BtnZero" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = -83.0
+offset_right = 95.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "0"
+
+[node name="BtnOne" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 96.0
+offset_top = -83.0
+offset_right = 176.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "1"
+
+[node name="BtnTwo" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = -83.0
+offset_right = 258.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "2"
+
+[node name="BtnThree" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 263.0
+offset_top = -83.0
+offset_right = 343.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "3"
+
+[node name="BtnFour" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 347.0
+offset_top = -83.0
+offset_right = 427.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "4"
+
+[node name="BtnFive" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 429.0
+offset_top = -83.0
+offset_right = 509.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "5
+"
+
+[node name="BtnSix" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 512.0
+offset_top = -83.0
+offset_right = 592.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "6"
+
+[node name="BtnSeven" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 595.0
+offset_top = -83.0
+offset_right = 675.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "7"
+
+[node name="BtnEight" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 677.0
+offset_top = -83.0
+offset_right = 757.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "8"
+
+[node name="BtnNine" type="Button" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 758.0
+offset_top = -83.0
+offset_right = 838.0
+offset_bottom = -16.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.569106, 0.464353, 0.360271, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_shcu3")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxFlat_hv06m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_shcu3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_58hsh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m1ron")
+text = "9"
