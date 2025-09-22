@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://v8jrmklnvuvr"]
+[gd_scene load_steps=8 format=3 uid="uid://v8jrmklnvuvr"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_iolb4"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_ffrsd"]
@@ -17,6 +17,19 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iolb4"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 5
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l03oh"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
 border_width_left = 6
@@ -28,13 +41,15 @@ corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
-shadow_size = 12
+shadow_size = 6
 
 [node name="UserSelection" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -56,12 +71,14 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 250.0
-offset_top = -209.5
-offset_right = 661.0
-offset_bottom = 209.5
+offset_left = 252.0
+offset_top = -231.0
+offset_right = 663.0
+offset_bottom = 231.0
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iolb4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
 icon = ExtResource("2_iolb4")
 icon_alignment = 1
@@ -95,13 +112,15 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -660.0
-offset_top = -230.0
-offset_right = -249.0
-offset_bottom = 232.0
+offset_left = -659.0
+offset_top = -229.0
+offset_right = -248.0
+offset_bottom = 233.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l03oh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
 icon = ExtResource("4_3n2c1")
 icon_alignment = 1
