@@ -1,0 +1,148 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx2ta16vsi55j"]
+
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
+[ext_resource type="Texture2D" uid="uid://dc10frpiwf3oc" path="res://assets/Farm/FarmLvl_Barn.jpg" id="3_egmrn"]
+[ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
+[ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
+[ext_resource type="Texture2D" uid="uid://be41seeqqltia" path="res://assets/Farm/Barn/Chicken.png" id="4_xqak5"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqak5"]
+size = Vector2(170, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qghum"]
+size = Vector2(170, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qghum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_52y21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52y21"]
+size = Vector2(210, 210)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egmrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xqak5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm5u6"]
+size = Vector2(158.25, 131.5)
+
+[node name="BarnLevel" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("2_qghum")]
+offset_left = 801.0
+offset_top = 450.0
+offset_right = 801.0
+offset_bottom = 450.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+step_size = 200
+move_duration = 1.5
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+step_size = 200
+move_duration = 1.5
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+step_size = 100
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+step_size = 100
+move_duration = 1.0
+
+[node name="Pickup" type="Control" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Pickup"]
+layout_mode = 0
+offset_left = -93.0
+offset_top = 469.0
+offset_right = 89.0
+offset_bottom = 575.0
+texture_normal = SubResource("PlaceholderTexture2D_xqak5")
+script = ExtResource("2_egmrn")
+action = "pickup"
+
+[node name="Feed" type="Control" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Feed"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 585.0
+offset_right = 79.0
+offset_bottom = 685.0
+texture_normal = SubResource("PlaceholderTexture2D_qghum")
+script = ExtResource("2_egmrn")
+action = "feed"
+
+[node name="TextureRect" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+offset_right = 1200.0
+offset_bottom = 900.0
+texture = ExtResource("3_egmrn")
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+position = Vector2(278, 399)
+script = ExtResource("4_egmrn")
+
+[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
+frame = 1
+frame_progress = 0.670441
+
+[node name="Feed" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+position = Vector2(600, 374)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Feed"]
+position = Vector2(112, 34)
+scale = Vector2(0.355556, 0.347222)
+sprite_frames = SubResource("SpriteFrames_qghum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Feed"]
+position = Vector2(123, 31)
+shape = SubResource("RectangleShape2D_52y21")
+
+[node name="Chicken1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+position = Vector2(254, 618)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken1"]
+position = Vector2(0, 1)
+scale = Vector2(0.246269, 0.225373)
+sprite_frames = SubResource("SpriteFrames_egmrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken1"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mm5u6")
+
+[node name="Chicken2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+position = Vector2(733, 684)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
+position = Vector2(0, 1)
+scale = Vector2(0.246269, 0.225373)
+sprite_frames = SubResource("SpriteFrames_egmrn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
+position = Vector2(-7, -5)
+shape = SubResource("RectangleShape2D_mm5u6")
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]

@@ -416,6 +416,7 @@ autoplay = "Smoke"
 
 [node name="Barn" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
+target_level = "res://levels/lvl1/BarnLevel/BarnLevel.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Barn"]
 position = Vector2(1399, 656)

@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wbkxu"]
 [ext_resource type="Texture2D" uid="uid://c8ur3gjkhjyxd" path="res://assets/Farm/FarmLvl_Tractor.png" id="2_xb1bg"]
 [ext_resource type="Texture2D" uid="uid://cfsym1duj7aa2" path="res://assets/Farm/TractorActor/TractorPlay01.png" id="3_ctjss"]
-[ext_resource type="Script" uid="uid://dyelf6irpblia" path="res://Levels/lvl1/FarmTractor/PlayerTractorLevelgd.gd" id="3_f18w4"]
-[ext_resource type="Script" uid="uid://dhdkp0t0jj8he" path="res://Levels/lvl1/FarmTractor/mielie.gd" id="3_ig6pj"]
-[ext_resource type="Script" uid="uid://bq2wcoxqy6avs" path="res://Levels/lvl1/FarmTractor/TractorGameController.gd" id="3_vt8cv"]
+[ext_resource type="Script" uid="uid://dyelf6irpblia" path="res://levels/lvl1/FarmTractor/PlayerTractorLevelgd.gd" id="3_f18w4"]
+[ext_resource type="Script" uid="uid://dhdkp0t0jj8he" path="res://levels/lvl1/FarmTractor/mielie.gd" id="3_ig6pj"]
+[ext_resource type="Script" uid="uid://bq2wcoxqy6avs" path="res://levels/lvl1/FarmTractor/TractorGameController.gd" id="3_vt8cv"]
 [ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="4_4hy2w"]
 [ext_resource type="Texture2D" uid="uid://ji2rufs3bfn8" path="res://assets/Farm/TractorActor/TractorPlay02.png" id="4_f18w4"]
 [ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="5_g5gjk"]
@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fpj"]
-size = Vector2(215.99988, 75.999954)
+size = Vector2(216, 76)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpjmn"]
 animations = [{
@@ -127,7 +127,7 @@ frame_progress = 0.0
 flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
-position = Vector2(36.99996, -18.000305)
+position = Vector2(37, -18.0003)
 shape = SubResource("RectangleShape2D_a3fpj")
 
 [node name="Mielie" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2" groups=["Mielies"]]
@@ -152,7 +152,7 @@ position = Vector2(739, 411)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie2"]
 position = Vector2(745, 460)
@@ -167,7 +167,7 @@ position = Vector2(689, 447)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie3"]
 position = Vector2(695, 477)
@@ -182,7 +182,7 @@ position = Vector2(1015, 424)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie4"]
 position = Vector2(1020, 464)
@@ -197,7 +197,7 @@ position = Vector2(688, 444)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie5"]
 position = Vector2(695, 481)
@@ -212,7 +212,7 @@ position = Vector2(998, 421)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie6"]
 position = Vector2(1001, 465)
@@ -227,7 +227,7 @@ position = Vector2(1055, 446.25)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie7"]
 position = Vector2(1058, 490.25)
@@ -242,7 +242,7 @@ position = Vector2(1001, 414.25)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xpjmn")
 autoplay = "default"
-frame_progress = 0.38790375
+frame_progress = 0.387904
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie8"]
 position = Vector2(1004, 458.25)
