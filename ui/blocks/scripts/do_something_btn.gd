@@ -10,11 +10,21 @@ signal finished
 var move_offset: Vector2 = Vector2.ZERO          
 var sprite: Area2D
 
+var initial_polygon: Polygon2D
+var focus_polygon: Polygon2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
+	#sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
 	
-	# Convert string to vector
+	sprite = get_tree().get_root().find_child("Player", true, false) as Area2D
+	
+	initial_polygon = $"Initial" 
+	focus_polygon = $"Focus"
+	
+	initial_polygon.visible = true
+	focus_polygon.visible = false
+	
 	# Convert string to vector using match statement properly
 	match move_direction.to_lower():
 		"right":
@@ -59,3 +69,12 @@ func spriteAnimation() -> void:
 
 func _on_pressed() -> void:
 	await spriteAnimation()
+
+
+func _on_focus_entered() -> void:
+	initial_polygon.visible = false
+	focus_polygon.visible = true
+
+func _on_focus_exited() -> void:
+	initial_polygon.visible = true
+	focus_polygon.visible = false

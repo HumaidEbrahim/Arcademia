@@ -113,6 +113,8 @@ func execute_FunctionsPanel( button : Object, locationToPut : Object ) -> void:
 	var copy = button.duplicate()
 	locationToPut.add_child(copy)
 	
+	
+	
 #Happens when Btn_1 is pressed during ScriptPanel focus
 func execute_ScriptPanel(button : Object, _location : Object = null) -> void:
 	pass
