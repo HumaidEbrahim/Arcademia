@@ -1,0 +1,164 @@
+[gd_scene load_steps=5 format=3 uid="uid://tj267oc0bfw0"]
+
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_205yt"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_b6t1s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_areec"]
+bg_color = Color(0.68096, 0.398922, 0.143259, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrpqg"]
+bg_color = Color(0.68096, 0.398922, 0.143259, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="StudentSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -62.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_205yt")
+
+[node name="HeaderPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -390.0
+offset_top = 45.0
+offset_right = 386.0
+offset_bottom = 139.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_areec")
+
+[node name="Label" type="Label" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -37.5
+offset_right = 176.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_b6t1s")
+theme_override_font_sizes/font_size = 64
+text = "STUDENT SELECTION"
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+layout_mode = 0
+offset_left = 439.0
+offset_top = 192.0
+offset_right = 1208.0
+offset_bottom = 650.0
+
+[node name="StudentOne" type="Button" parent="VScrollBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 18.0
+offset_right = 286.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b6t1s")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrpqg")
+text = "Inge"
+
+[node name="StudentOne2" type="Button" parent="VScrollBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 105.0
+offset_right = 286.0
+offset_bottom = 174.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b6t1s")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrpqg")
+text = "Inge"
+
+[node name="StudentOne3" type="Button" parent="VScrollBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 197.0
+offset_right = 286.0
+offset_bottom = 266.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b6t1s")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrpqg")
+text = "Inge"
+
+[node name="StudentOne4" type="Button" parent="VScrollBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 290.0
+offset_right = 286.0
+offset_bottom = 359.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b6t1s")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrpqg")
+text = "Inge"
+
+[node name="StudentOne5" type="Button" parent="VScrollBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -266.0
+offset_top = 375.0
+offset_right = 286.0
+offset_bottom = 444.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_b6t1s")
+theme_override_font_sizes/font_size = 31
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrpqg")
+text = "Inge"
