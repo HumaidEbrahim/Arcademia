@@ -1,6 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=12 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
+[ext_resource type="Texture2D" uid="uid://duwpvq4fagg1p" path="res://assets/JuaneBtns/Left_Initial.png" id="3_0kc8j"]
+[ext_resource type="Texture2D" uid="uid://8ocnalu5aik0" path="res://assets/JuaneBtns/Right_Focus.png" id="3_1udnl"]
+[ext_resource type="Texture2D" uid="uid://bb43aamqqgijm" path="res://assets/JuaneBtns/Right_Initial.png" id="3_cguow"]
+[ext_resource type="Texture2D" uid="uid://1qaks0h3suob" path="res://assets/JuaneBtns/Left_Focus.png" id="4_1udnl"]
+[ext_resource type="Texture2D" uid="uid://ldfmt42gchv6" path="res://assets/JuaneBtns/Up_Initial.png" id="5_cguow"]
+[ext_resource type="Texture2D" uid="uid://dq2u55mcnv8y" path="res://assets/JuaneBtns/Up_Focus.png" id="6_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_eyw15"]
 [ext_resource type="Texture2D" uid="uid://yldo6mceyimd" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
 [ext_resource type="Texture2D" uid="uid://dldkhyew14rqv" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
@@ -46,9 +52,15 @@ layout_mode = 2
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
 offset_left = -90.0
 offset_top = 21.0
-offset_right = -69.0
-offset_bottom = 76.0
+offset_right = 86.0
+offset_bottom = 77.0
 target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="0"]
+texture = ExtResource("3_cguow")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="1"]
+texture = ExtResource("3_1udnl")
 
 [node name="Move_Left" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
 layout_mode = 2
@@ -56,10 +68,16 @@ layout_mode = 2
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
 offset_left = -89.0
 offset_top = 94.0
-offset_right = -68.0
-offset_bottom = 151.0
+offset_right = 87.0
+offset_bottom = 152.0
 target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 move_direction = "Left"
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="0"]
+texture = ExtResource("3_0kc8j")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="1"]
+texture = ExtResource("4_1udnl")
 
 [node name="Move_Up" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
 layout_mode = 2
@@ -67,19 +85,30 @@ layout_mode = 2
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
 offset_left = -90.0
 offset_top = 173.0
-offset_right = -66.0
-offset_bottom = 226.0
+offset_right = 84.0
+offset_bottom = 231.0
 target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 move_direction = "Up"
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
+texture = ExtResource("5_cguow")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="1"]
+texture = ExtResource("6_pbjw5")
 
 [node name="Move_Down" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
 layout_mode = 2
 
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -91.0
 offset_top = 246.0
-offset_right = -67.0
-offset_bottom = 302.0
+offset_right = 88.0
+offset_bottom = 301.0
+grow_horizontal = 1
+grow_vertical = 1
 target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 move_direction = "Down"
 
