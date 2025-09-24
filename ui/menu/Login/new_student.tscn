@@ -1,12 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://bk5pfd1he18n1"]
+[gd_scene load_steps=19 format=3 uid="uid://dy6t7hkqe3cok"]
 
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_a7aiq"]
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_a7aiq"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_ydma7"]
 [ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/triangleup.png" id="3_jvv66"]
 [ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_i84gg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7y6x"]
-bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+bg_color = Color(0.996193, 0.801939, 0.341226, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6

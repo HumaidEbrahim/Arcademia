@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://v8jrmklnvuvr"]
 
-[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_iolb4"]
-[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_ffrsd"]
-[ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/Teacher.png" id="2_iolb4"]
-[ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/Student.png" id="4_3n2c1"]
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_8x44b"]
+[ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/Teacher.png" id="2_j7f56"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_mrju7"]
+[ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/Student.png" id="4_yh0gi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffrsd"]
 bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
@@ -64,7 +64,7 @@ offset_right = 2.0
 offset_bottom = 122.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_iolb4")
+texture = ExtResource("1_8x44b")
 
 [node name="Teacher" type="Button" parent="Background"]
 layout_mode = 1
@@ -80,7 +80,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_iolb4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
-icon = ExtResource("2_iolb4")
+icon = ExtResource("2_j7f56")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Teacher"]
@@ -100,7 +100,7 @@ theme_override_colors/font_color = Color(0.9823, 0.899216, 0.846284, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_ffrsd")
+theme_override_fonts/font = ExtResource("3_mrju7")
 theme_override_font_sizes/font_size = 64
 text = "TEACHER"
 horizontal_alignment = 1
@@ -122,7 +122,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l03oh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
-icon = ExtResource("4_3n2c1")
+icon = ExtResource("4_yh0gi")
 icon_alignment = 1
 
 [node name="Label" type="Label" parent="Background/Student"]
@@ -142,7 +142,7 @@ theme_override_colors/font_color = Color(0.980392, 0.898039, 0.847059, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_ffrsd")
+theme_override_fonts/font = ExtResource("3_mrju7")
 theme_override_font_sizes/font_size = 64
 text = "STUDENT"
 horizontal_alignment = 1
@@ -178,6 +178,6 @@ theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_ffrsd")
+theme_override_fonts/font = ExtResource("3_mrju7")
 theme_override_font_sizes/font_size = 64
 text = "USER SELECTION"
