@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wbkxu"]
 [ext_resource type="Texture2D" uid="uid://c8ur3gjkhjyxd" path="res://assets/Farm/FarmLvl_Tractor.png" id="2_xb1bg"]
 [ext_resource type="Texture2D" uid="uid://cfsym1duj7aa2" path="res://assets/Farm/TractorActor/TractorPlay01.png" id="3_ctjss"]
-[ext_resource type="Script" uid="uid://dyelf6irpblia" path="res://levels/lvl1/FarmTractor/PlayerTractorLevelgd.gd" id="3_f18w4"]
-[ext_resource type="Script" uid="uid://dhdkp0t0jj8he" path="res://levels/lvl1/FarmTractor/mielie.gd" id="3_ig6pj"]
-[ext_resource type="Script" uid="uid://bq2wcoxqy6avs" path="res://levels/lvl1/FarmTractor/TractorGameController.gd" id="3_vt8cv"]
+[ext_resource type="Script" uid="uid://dyelf6irpblia" path="res://Levels/lvl1/FarmTractor/PlayerTractorLevelgd.gd" id="3_f18w4"]
+[ext_resource type="Script" uid="uid://dhdkp0t0jj8he" path="res://Levels/lvl1/FarmTractor/mielie.gd" id="3_ig6pj"]
+[ext_resource type="Script" uid="uid://bq2wcoxqy6avs" path="res://Levels/lvl1/FarmTractor/TractorGameController.gd" id="3_vt8cv"]
 [ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="4_4hy2w"]
 [ext_resource type="Texture2D" uid="uid://ji2rufs3bfn8" path="res://assets/Farm/TractorActor/TractorPlay02.png" id="4_f18w4"]
 [ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="5_g5gjk"]
@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fpj"]
-size = Vector2(216, 76)
+size = Vector2(256, 123.99968)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpjmn"]
 animations = [{
@@ -92,11 +92,11 @@ offset_right = 800.0
 offset_bottom = 450.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
-step_size = 100
+step_size = 200
 move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
-step_size = 100
+step_size = 200
 move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
@@ -115,7 +115,7 @@ script = ExtResource("3_vt8cv")
 
 [node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
 z_index = 0
-position = Vector2(105, 513)
+position = Vector2(101, 547)
 script = ExtResource("3_f18w4")
 
 [node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
@@ -127,7 +127,7 @@ frame_progress = 0.0
 flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
-position = Vector2(37, -18.0003)
+position = Vector2(35, -42.000153)
 shape = SubResource("RectangleShape2D_a3fpj")
 
 [node name="Mielie" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2" groups=["Mielies"]]

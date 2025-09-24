@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bpx27qfoucswx"]
+[gd_scene load_steps=91 format=3 uid="uid://bpx27qfoucswx"]
 
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="1_7yifi"]
 [ext_resource type="Texture2D" uid="uid://dp1q36qnkcfmr" path="res://assets/Effects/Birds/birds01.png" id="2_goeqc"]
@@ -59,7 +59,6 @@
 [ext_resource type="Texture2D" uid="uid://dhoj3xvxlysef" path="res://assets/Farm/Cows/Cow_Standing_02.png" id="41_u851h"]
 [ext_resource type="Texture2D" uid="uid://boha7jusf0ekt" path="res://assets/Farm/FarmMap_House.png" id="42_htkvy"]
 [ext_resource type="Texture2D" uid="uid://w0tlaonb7pdl" path="res://assets/Farm/Cows/Cow_Standing_03.png" id="42_q3b8s"]
-[ext_resource type="Script" uid="uid://b38hgu5sxggky" path="res://levels/openworld/River.tres.gd" id="54_u26ar"]
 [ext_resource type="Texture2D" uid="uid://wi20mtjpk4od" path="res://assets/Farm/River/FarmRiver01.png" id="61_cdtih"]
 [ext_resource type="Texture2D" uid="uid://nbe8b8r5m8hf" path="res://assets/Farm/River/FarmRiver02.png" id="62_htkvy"]
 [ext_resource type="Texture2D" uid="uid://doxhh6wcyetwu" path="res://assets/Farm/Bridge.png" id="62_kjeei"]
@@ -70,7 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://dny8j8n10tuy6" path="res://assets/Farm/River/FarmRiver06.png" id="66_oi3vk"]
 [ext_resource type="Texture2D" uid="uid://cycrm2fxdbl20" path="res://assets/Farm/River/FarmRiver07.png" id="67_vg46o"]
 [ext_resource type="Texture2D" uid="uid://u4xi2r0tsnvs" path="res://assets/Farm/River/FarmRiver08.png" id="68_2kaw3"]
-[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://levels/openworld/Level_Select.gd" id="68_bi5to"]
+[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://Levels/openworld/Level_Select.gd" id="68_bi5to"]
 [ext_resource type="Texture2D" uid="uid://bx416t0gq0vy4" path="res://assets/Farm/River/FarmRiver09.png" id="69_yriht"]
 [ext_resource type="Texture2D" uid="uid://4s14plqodcet" path="res://assets/Farm/River/FarmRiver10.png" id="70_sw8nl"]
 [ext_resource type="Texture2D" uid="uid://gyem0pehmerl" path="res://assets/Farm/River/FarmRiver11.png" id="71_lvoov"]
@@ -468,7 +467,7 @@ texture = ExtResource("63_6wkvg")
 
 [node name="River" type="Area2D" parent="."]
 monitorable = false
-script = ExtResource("54_u26ar")
+script = ExtResource("68_bi5to")
 target_level = "res://levels/lvl1/Farm_River_Level.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="River"]
