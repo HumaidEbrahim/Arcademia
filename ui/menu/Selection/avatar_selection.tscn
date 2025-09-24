@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://de8drvg88465v"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_uy30r"]
-[ext_resource type="Texture2D" uid="uid://dk2bst4lphrqk" path="res://assets/IngeUI/BOY.png" id="2_uy30r"]
+[ext_resource type="Texture2D" uid="uid://biql40u43hq3p" path="res://assets/IngeUI/stickerboy.png" id="2_uy30r"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_s6cyo"]
-[ext_resource type="Texture2D" uid="uid://bu1rxr18ci43u" path="res://assets/IngeUI/Girl.png" id="4_f8hwg"]
+[ext_resource type="Texture2D" uid="uid://bdo41wcbjqd0n" path="res://assets/IngeUI/stickergirl.png" id="4_f8hwg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uan72"]
 bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)

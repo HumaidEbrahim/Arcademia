@@ -638,7 +638,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 icon = ExtResource("4_aj1me")
 
-[node name="Card2" type="Panel" parent="."]
+[node name="CardAvatar" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 8
@@ -655,7 +655,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_5yd53")
 
-[node name="Label" type="Label" parent="Card2"]
+[node name="Label" type="Label" parent="CardAvatar"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
