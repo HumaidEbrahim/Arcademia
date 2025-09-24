@@ -10,12 +10,12 @@ var node_to_move = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Grab focus on launch
-	$HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button.grab_focus()
+	resetFocusToInit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
 	var functionsPanel = $HBoxContainer/FunctionPanel/VBoxContainer
 	var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
 	
@@ -26,10 +26,15 @@ func _process(delta: float) -> void:
 		elif Input.is_action_just_pressed("ui_down"):
 			move_node_in_queue(1) # 1 means move down
 	
+	#Set scriptScrollBar maximum height
+	setScrollMaxHeight(750)
+	
+	#Scrollbar release focus
+	scrollbarFocusChange(get_viewport().gui_get_focus_owner())
+	
 	#listen to when A button is pressed to execute commands
 	if Input.is_action_just_pressed("btn_1"):
 		var focusedItem = get_viewport().gui_get_focus_owner()
-		
 		
 		if ( focusedItem and functionsPanel.is_ancestor_of(focusedItem) ):
 			execute_FunctionsPanel(focusedItem, scriptQuePanel)
@@ -39,6 +44,7 @@ func _process(delta: float) -> void:
 			
 		elif (focusedItem and runClearBtns.is_ancestor_of(focusedItem) ):
 			const_buttons_ScriptPanel(focusedItem, runClearBtns)
+
 	
 	#listen to when S button is pressed to enter/exit move mode
 	if Input.is_action_just_pressed("btn_2"):
@@ -83,7 +89,7 @@ func _on_run_pressed() -> void:
 		await action.finished
 
 func _on_clear_pressed() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
 	
 	for child in scriptQuePanel.get_children():
 		scriptQuePanel.remove_child(child)
@@ -92,12 +98,13 @@ func _on_clear_pressed() -> void:
 
 #Add children of ScriptPanel container to execution array
 func populateActionsArray() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
 	
 	#Stop executeQue from being inflated by repeated runs without clear
 	executeQue.clear();
 	
 	for child in scriptQuePanel.get_children():
+		print("Child:", child, "Type:", child.get_class())
 		executeQue.append(child)
 	
 #Toggles visibility of an object
@@ -129,7 +136,8 @@ func const_buttons_ScriptPanel(button : Object, location : Object) -> void:
 	elif (button == clearBtn):
 		clearBtn.emit_signal("pressed")
 		
-func move_node_in_queue(direction: int) -> void:
+
+func move_node_in_queue(direction: int, selectedButton : Object = null) -> void:
 	#make sure we have a valid node to move
 	if not is_instance_valid(node_to_move):
 		is_in_move_mode = false # Exit move mode if invalid node
@@ -148,9 +156,14 @@ func move_node_in_queue(direction: int) -> void:
 	if new_index < 0 or new_index >= child_count:
 		return
 		
-	#reordering
+	#reordering - Note, this destroys and recreates node
 	parent_container.move_child(node_to_move, new_index)
 	
+	#Grab focus after move
+	await get_tree().process_frame
+	if is_instance_valid(node_to_move):
+		node_to_move.grab_focus()
+
 func delete_item_from_queue(item_to_delete: Control) -> void:
 	var parent_container = item_to_delete.get_parent()
 	var index = item_to_delete.get_index()
@@ -169,3 +182,25 @@ func delete_item_from_queue(item_to_delete: Control) -> void:
 		var new_focus_index = min(index, child_count - 1)
 		var next_item = parent_container.get_child(new_focus_index)
 		next_item.grab_focus()
+	elif child_count <= 0:
+		#Reset focus if no elements in panel
+		resetFocusToInit()
+
+func setScrollMaxHeight(maxHeight: int) -> void:
+	var scrollBox = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
+	
+	if ( scrollBox.size.y > maxHeight ):
+		scrollBox.size.y = maxHeight
+
+#TODO: Scrollbar still holds focus at end, ScrollContainer breaks execution for some reason
+func scrollbarFocusChange(focusedItem : Object) -> void:
+	#move focus once scroll is at the bottom
+	var scrollLocation = $HBoxContainer/ScriptPanel/ScrollContainer.get_v_scroll_bar()
+	if (scrollLocation.value >= scrollLocation.max_value):
+		print("end of list")
+		
+	#print(scrollLocation.value)
+	#print(scrollLocation.max_value)
+	
+func resetFocusToInit() -> void:
+	$HBoxContainer/FunctionPanel/VBoxContainer.get_child(0).get_child(0).grab_focus()

@@ -58,4 +58,4 @@ func spriteAnimation() -> void:
 	emit_signal("finished")
 
 func _on_pressed() -> void:
-	await spriteAnimation()
+	spriteAnimation()
