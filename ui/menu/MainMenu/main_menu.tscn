@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq4uh6see762d"]
+[gd_scene load_steps=12 format=3 uid="uid://dq4uh6see762d"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_agktw"]
+[ext_resource type="Script" uid="uid://roc6fg7jqgfx" path="res://ui/menu/MainMenu/main_menu.gd" id="1_fsnij"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_fsnij"]
 [ext_resource type="Texture2D" uid="uid://bv8aqm3y8ptdm" path="res://assets/IngeUI/play-3-48.png" id="3_61j2i"]
 [ext_resource type="Texture2D" uid="uid://dca73njn43dkn" path="res://assets/IngeUI/redo-48.png" id="4_8cy6t"]
@@ -79,6 +80,7 @@ offset_top = -1.0
 offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fsnij")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

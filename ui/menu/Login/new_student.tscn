@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://dy6t7hkqe3cok"]
+[gd_scene load_steps=20 format=3 uid="uid://dy6t7hkqe3cok"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_a7aiq"]
+[ext_resource type="Script" uid="uid://b2jcp16v6lhgc" path="res://ui/menu/Login/new_student.gd" id="1_ydma7"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_ydma7"]
 [ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/triangleup.png" id="3_jvv66"]
 [ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_i84gg"]
@@ -136,13 +137,14 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 6
 
-[node name="StudentLogin" type="Control"]
+[node name="NewStudent" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ydma7")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
