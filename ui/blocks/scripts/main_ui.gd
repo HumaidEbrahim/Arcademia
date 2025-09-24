@@ -110,11 +110,10 @@ func toggleShow(itemToToggle: Object) -> void:
 #Happens when Btn_1 is pressed during functions panel focus
 func execute_FunctionsPanel( button : Object, locationToPut : Object ) -> void:
 	#add to script panel
+	
 	var copy = button.duplicate()
-	
 	copy.position = Vector2.ZERO
-	copy.size = Vector2.ZERO
-	
+	copy.size = Vector2.ZERO	
 	locationToPut.add_child(copy)
 	copy.set_owner(locationToPut)
 	
