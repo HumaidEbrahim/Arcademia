@@ -1,11 +1,11 @@
 [gd_scene load_steps=14 format=4 uid="uid://diy7hae64ygie"]
 
+[ext_resource type="AudioStream" uid="uid://7a1y0qf38b2n" path="res://music/Bongi Rainforest/Bongi Rainforest (mastered).wav" id="1_fckal"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
 [ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
 [ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://assets/Farm/River/River_Level/River_Level.jpg" id="3_0vwdd"]
 [ext_resource type="Script" uid="uid://dyd3kaj3qn2bo" path="res://levels/lvl1/RiverLevel/win_area.gd" id="4_pyw0y"]
 [ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
-[ext_resource type="AudioStream" uid="uid://cuc7od0bw0gb3" path="res://music/Bongi XMas/Bongi XMas (mastered).wav" id="6_b4xwp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4l8h"]
 size = Vector2(167, 164.5)
@@ -34,7 +34,7 @@ sources/0 = SubResource("TileSetAtlasSource_wiq6v")
 [node name="FarmRiverLevel" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_b4xwp")
+stream = ExtResource("1_fckal")
 volume_db = -15.0
 autoplay = true
 
