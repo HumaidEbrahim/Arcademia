@@ -13,6 +13,7 @@ grow_horizontal = 2
 focus_mode = 2
 
 [node name="Action_Button" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(175, 55)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

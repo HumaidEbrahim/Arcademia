@@ -37,6 +37,9 @@ func _ready() -> void:
 			move_offset = Vector2(0, step_size)
 		_:
 			move_offset = Vector2.ZERO
+			
+	size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
