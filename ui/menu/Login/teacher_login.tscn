@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dkte4o267nyhj"]
+[gd_scene load_steps=13 format=3 uid="uid://dkte4o267nyhj"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_bdfjx"]
+[ext_resource type="Script" uid="uid://dtjoopuwta2jl" path="res://ui/menu/Login/teacher_login.gd" id="1_shcu3"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_shcu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mloa"]
@@ -123,6 +124,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_shcu3")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -139,9 +141,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -388.0
+offset_left = -719.0
 offset_top = 117.0
-offset_right = 388.0
+offset_right = 711.0
 offset_bottom = 211.0
 grow_horizontal = 2
 size_flags_vertical = 0

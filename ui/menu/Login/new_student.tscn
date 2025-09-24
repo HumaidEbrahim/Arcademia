@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_i84gg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7y6x"]
-bg_color = Color(0.996193, 0.801939, 0.341226, 1)
+bg_color = Color(0.956863, 0.784314, 0.258824, 1)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
@@ -241,9 +241,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -388.0
+offset_left = -716.0
 offset_top = 55.0
-offset_right = 388.0
+offset_right = 716.0
 offset_bottom = 149.0
 grow_horizontal = 2
 size_flags_vertical = 0
