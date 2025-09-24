@@ -19,30 +19,6 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfkon"]
-bg_color = Color(0.807033, 0.567642, 0.349084, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.431373, 0.27451, 0.137255, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dekd3"]
-bg_color = Color(1, 0.968627, 0.890196, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.431373, 0.27451, 0.137255, 1)
-corner_radius_top_left = 18
-corner_radius_top_right = 18
-corner_radius_bottom_right = 18
-corner_radius_bottom_left = 18
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3doq"]
 bg_color = Color(0.740949, 0.501192, 0.278082, 1)
 border_width_left = 3
@@ -57,25 +33,25 @@ corner_radius_bottom_left = 18
 shadow_color = Color(0, 0, 0, 0.643137)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul3ko"]
-bg_color = Color(0.383203, 0.825988, 0.396028, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dekd3"]
+bg_color = Color(1, 0.968627, 0.890196, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.180392, 0.435294, 0.207843, 1)
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a44yi"]
-bg_color = Color(0.227451, 0.580392, 0.25098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfkon"]
+bg_color = Color(0.807033, 0.567642, 0.349084, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.180392, 0.435294, 0.207843, 1)
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
@@ -94,6 +70,30 @@ corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 shadow_size = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a44yi"]
+bg_color = Color(0.227451, 0.580392, 0.25098, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.180392, 0.435294, 0.207843, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul3ko"]
+bg_color = Color(0.383203, 0.825988, 0.396028, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.180392, 0.435294, 0.207843, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4dr5"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
 border_width_left = 6
@@ -110,19 +110,19 @@ shadow_size = 12
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gyf88"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adqlv"]
-bg_color = Color(0.6, 0.6, 0.6, 0.454902)
-shadow_color = Color(0, 0, 0, 0)
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sfew"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw074"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lv8re"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mw074"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sfew"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adqlv"]
+bg_color = Color(0.6, 0.6, 0.6, 0.454902)
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxtja"]
 bg_color = Color(0.945098, 0.890196, 0.784314, 1)
@@ -205,10 +205,10 @@ theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
 theme_override_fonts/font = ExtResource("2_ydma7")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_pfkon")
-theme_override_styles/hover = SubResource("StyleBoxFlat_pfkon")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_dekd3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q3doq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dekd3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pfkon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pfkon")
 text = "BACK"
 
 [node name="BtnEnter" type="Button" parent="Card"]
@@ -229,10 +229,10 @@ theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
 theme_override_fonts/font = ExtResource("2_ydma7")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxFlat_ul3ko")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ul3ko")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_a44yi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hgobl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_a44yi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul3ko")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ul3ko")
 text = "ENTER"
 
 [node name="HearderPanel" type="Panel" parent="."]
@@ -307,10 +307,10 @@ offset_top = -5.0
 offset_right = 24.0
 offset_bottom = 43.0
 grow_horizontal = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3sfew")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lv8re")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lv8re")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3sfew")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("3_jvv66")
 
 [node name="ScrollDownOne" type="Button" parent="Input/ScrollOne"]
@@ -326,9 +326,9 @@ offset_right = 24.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("4_i84gg")
 
 [node name="LabelOne" type="Label" parent="Input/ScrollOne"]
@@ -374,9 +374,9 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("3_jvv66")
 
 [node name="ScrollDownTwo" type="Button" parent="Input/ScrollTwo"]
@@ -392,9 +392,9 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("4_i84gg")
 
 [node name="LabelTwo" type="Label" parent="Input/ScrollTwo"]
@@ -440,9 +440,9 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("3_jvv66")
 
 [node name="ScrollDownThree" type="Button" parent="Input/ScrollThree"]
@@ -458,9 +458,9 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("4_i84gg")
 
 [node name="LabelThree" type="Label" parent="Input/ScrollThree"]
@@ -484,19 +484,19 @@ text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollThree" type="Panel" parent="Input/ScrollThree"]
+[node name="ScrollFour" type="Panel" parent="Input"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 122.0
+offset_left = 363.0
 offset_top = -89.5
-offset_right = 236.0
+offset_right = 477.0
 offset_bottom = 89.5
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gyf88")
 
-[node name="ScrollUpThree" type="Button" parent="Input/ScrollThree/ScrollThree"]
+[node name="ScrollUpFour" type="Button" parent="Input/ScrollFour"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -506,12 +506,12 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("3_jvv66")
 
-[node name="ScrollDownThree" type="Button" parent="Input/ScrollThree/ScrollThree"]
+[node name="ScrollDownFour" type="Button" parent="Input/ScrollFour"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -524,127 +524,10 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("4_i84gg")
-
-[node name="LabelThree" type="Label" parent="Input/ScrollThree/ScrollThree"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = -38.0
-offset_right = 49.0
-offset_bottom = 38.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_ydma7")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_bxtja")
-text = "-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScrollThree" type="Panel" parent="Input/ScrollThree/ScrollThree"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 116.0
-offset_top = -89.5
-offset_right = 230.0
-offset_bottom = 89.5
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gyf88")
-
-[node name="ScrollUpThree" type="Button" parent="Input/ScrollThree/ScrollThree/ScrollThree"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -16.0
-offset_top = -5.0
-offset_right = 16.0
-offset_bottom = 34.0
-grow_horizontal = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
-icon = ExtResource("3_jvv66")
-
-[node name="ScrollDownThree" type="Button" parent="Input/ScrollThree/ScrollThree/ScrollThree"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -43.0
-offset_right = 24.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
-icon = ExtResource("4_i84gg")
-
-[node name="LabelThree" type="Label" parent="Input/ScrollThree/ScrollThree/ScrollThree"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -49.0
-offset_top = -38.0
-offset_right = 49.0
-offset_bottom = 38.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_ydma7")
-theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_bxtja")
-text = "-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ScrollFour" type="Panel" parent="Input"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -118.0
-offset_top = -89.5
-offset_right = -4.0
-offset_bottom = 89.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gyf88")
-
-[node name="ScrollUpFour" type="Button" parent="Input/ScrollFour"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -23.0
-offset_top = -5.0
-offset_right = 25.0
-offset_bottom = 43.0
-grow_horizontal = 2
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
-icon = ExtResource("3_jvv66")
 
 [node name="LabelFour" type="Label" parent="Input/ScrollFour"]
 layout_mode = 1
@@ -667,7 +550,124 @@ text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ScrollDownFour" type="Button" parent="Input/ScrollFour"]
+[node name="ScrollFive" type="Panel" parent="Input"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 479.0
+offset_top = -89.5
+offset_right = 593.0
+offset_bottom = 89.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gyf88")
+
+[node name="ScrollUpFive" type="Button" parent="Input/ScrollFive"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 16.0
+offset_bottom = 34.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
+icon = ExtResource("3_jvv66")
+
+[node name="ScrollDownFive" type="Button" parent="Input/ScrollFive"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -43.0
+offset_right = 24.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
+icon = ExtResource("4_i84gg")
+
+[node name="LabelFive" type="Label" parent="Input/ScrollFive"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -38.0
+offset_right = 49.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_ydma7")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_bxtja")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollSix" type="Panel" parent="Input"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -89.5
+offset_right = -4.0
+offset_bottom = 89.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gyf88")
+
+[node name="ScrollUpSix" type="Button" parent="Input/ScrollSix"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.0
+offset_top = -5.0
+offset_right = 25.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
+icon = ExtResource("3_jvv66")
+
+[node name="LabelSix" type="Label" parent="Input/ScrollSix"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -38.0
+offset_right = 49.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_fonts/font = ExtResource("2_ydma7")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_bxtja")
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollDownSix" type="Button" parent="Input/ScrollSix"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -680,7 +680,7 @@ offset_right = 25.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mw074")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_adqlv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_adqlv")
 icon = ExtResource("4_i84gg")
