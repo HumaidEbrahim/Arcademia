@@ -16,10 +16,8 @@ func call_action():
 		match action.to_lower():
 			"pickup":
 				sprite.action_pickup()
-				print("called pickup")
 			"feed":
 				sprite.action_feed()
-				print("called feed")
 			
 			
 	await get_tree().create_timer(0.2).timeout

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bx2ta16vsi55j"]
+[gd_scene load_steps=14 format=3 uid="uid://bx2ta16vsi55j"]
 
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
 [ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
 [ext_resource type="Texture2D" uid="uid://be41seeqqltia" path="res://assets/Farm/Barn/Chicken.png" id="4_xqak5"]
+[ext_resource type="Texture2D" uid="uid://cfqkji01kttnw" path="res://assets/Farm/Barn/Barn03.png" id="7_52y21"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqak5"]
 size = Vector2(170, 100)
@@ -32,8 +33,11 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("4_xqak5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_52y21")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]
