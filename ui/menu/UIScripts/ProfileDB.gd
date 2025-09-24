@@ -1,4 +1,4 @@
-# res://scripts/ProfileDB.gd
+# res://ui/menu/UIScripts/ProfileDB.gd
 extends Node
 
 const PATH := "user://students.json"
