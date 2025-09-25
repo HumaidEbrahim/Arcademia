@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_bdfjx"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_shcu3"]
-[ext_resource type="Script" path="res://ui/menu/Login/teacher_login.gd" id="3_shcu3"]
+[ext_resource type="Script" uid="uid://dj8b77umf411h" path="res://ui/menu/Login/teacher_login.gd" id="3_shcu3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mloa"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
