@@ -2,29 +2,25 @@ extends AnimatedSprite2D
 
 @export var min_speed := 60.0
 @export var max_speed := 160.0
-@export var bob_amplitude := 8.0     # pixels
+@export var bob_amplitude := 8   
 @export var bob_speed_factor := 1.0
+@export var min_height = 100
+@export var max_height = 370
 
 var speed := 100.0
 var direction := Vector2(1, 0)
 var base_y := 0.0
 var bob_phase := 0.0
 
+
 # RandomNumberGenerator instance (recommended)
 var rng := RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
-	# set a random speed using RNG
-	speed = rng.randf_range(min_speed, max_speed)
-	base_y = position.y
-	bob_phase = rng.randf() * TAU
+	spawn()
 	
-	# Start the sprite animation - FIXED
-	play("Birds_Fly") # Use your actual animation name
 	
-	set_process(true)
-
 func _process(delta):
 	# horizontal move
 	position.x += direction.x * speed * delta
@@ -38,5 +34,18 @@ func _process(delta):
 	var margin = 80
 	if position.x > vp_rect.size.x + margin:
 		position.x = -margin
+		visible = false
+		spawn()
 	elif position.x < -margin:
 		position.x = vp_rect.size.x + margin
+		visible = false
+		spawn()
+
+func spawn():
+	if rng.randf() < 0.5:
+		visible = true
+		speed = rng.randf_range(min_speed, max_speed)
+		position.y = rng.randf_range(min_height, max_height)
+		bob_amplitude = rng.randi_range(8,20)
+		bob_phase = rng.randf() * TAU
+		base_y = position.y
