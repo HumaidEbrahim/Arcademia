@@ -100,14 +100,6 @@ offset_right = 1200.0
 offset_bottom = 900.0
 texture = ExtResource("3_egmrn")
 
-[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
-position = Vector2(278, 399)
-script = ExtResource("4_egmrn")
-
-[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
-frame = 1
-frame_progress = 0.670441
-
 [node name="Feed" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
 position = Vector2(600, 374)
 
@@ -143,6 +135,14 @@ sprite_frames = SubResource("SpriteFrames_egmrn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
 position = Vector2(-7, -5)
 shape = SubResource("RectangleShape2D_mm5u6")
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+position = Vector2(278, 399)
+script = ExtResource("4_egmrn")
+
+[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
+frame = 1
+frame_progress = 0.670441
 
 [editable path="MainUI"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]

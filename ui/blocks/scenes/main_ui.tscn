@@ -115,6 +115,21 @@ handle_input_locally = false
 size = Vector2i(1200, 900)
 render_target_update_mode = 4
 
+[node name="TextBox" type="ColorRect" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport"]
+offset_left = 326.0
+offset_top = -1.0
+offset_right = 877.0
+offset_bottom = 93.0
+color = Color(0.11764706, 0.11764706, 0.11764706, 0.54509807)
+
+[node name="Text" type="Label" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 52.0
+offset_bottom = 32.0
+text = "Hi"
+
 [node name="Player" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport" instance=ExtResource("12_pbjw5")]
 position = Vector2(86, 90)
 
