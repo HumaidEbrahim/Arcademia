@@ -20,10 +20,10 @@ func action_pickup():
 func action_feed():
 	if area and area.name.begins_with("Chicken") and has_feed:
 		area.add_to_group("fed")
-		area.modulate = Color(0.7, 1.0, 0.7)
+	
 		var anim = area.get_node("AnimatedSprite2D")
 		if anim:
-			anim.play("default")
+			anim.play("eat")
 		check_win()
 	elif area and area.name.begins_with("Chicken") and not has_feed:
 		label.text = "Pickup feed first"

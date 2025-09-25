@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6da3scxvj1mu"
-path="res://.godot/imported/Test_press.png-040b5a1753e4f436dbcccd73589109bc.ctex"
+uid="uid://btkh70vrgosyg"
+path="res://.godot/imported/ChickenEat_02.png-d64bcf8a0c90124012119896838aed54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/RuansTestingBtns/Test_press.png"
-dest_files=["res://.godot/imported/Test_press.png-040b5a1753e4f436dbcccd73589109bc.ctex"]
+source_file="res://assets/Farm/Barn/ChickenEat_02.png"
+dest_files=["res://.godot/imported/ChickenEat_02.png-d64bcf8a0c90124012119896838aed54.ctex"]
 
 [params]
 

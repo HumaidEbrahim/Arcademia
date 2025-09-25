@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6da3scxvj1mu"
-path="res://.godot/imported/Test_press.png-040b5a1753e4f436dbcccd73589109bc.ctex"
+uid="uid://spj1ehbms0q5"
+path="res://.godot/imported/FarmLvl_Barn.png-ec2b2effbd764fcb9cddcedc035cac38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/RuansTestingBtns/Test_press.png"
-dest_files=["res://.godot/imported/Test_press.png-040b5a1753e4f436dbcccd73589109bc.ctex"]
+source_file="res://assets/Farm/FarmLvl_Barn.png"
+dest_files=["res://.godot/imported/FarmLvl_Barn.png-ec2b2effbd764fcb9cddcedc035cac38.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc10frpiwf3oc"
-path="res://.godot/imported/FarmLvl_Barn.jpg-967d0220f1e7ee309d9f4aab2fb0a706.ctex"
+uid="uid://dgsgg22dxsmlc"
+path="res://.godot/imported/ChickenIdle_02.png-93dc4f01ab937795fff92bcaed0a0762.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Farm/FarmLvl_Barn.jpg"
-dest_files=["res://.godot/imported/FarmLvl_Barn.jpg-967d0220f1e7ee309d9f4aab2fb0a706.ctex"]
+source_file="res://assets/Farm/Barn/ChickenIdle_02.png"
+dest_files=["res://.godot/imported/ChickenIdle_02.png-93dc4f01ab937795fff92bcaed0a0762.ctex"]
 
 [params]
 
