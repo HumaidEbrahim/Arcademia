@@ -16,12 +16,25 @@ extends Control
 	8: $HeaderPanel/BtnEight as Button,
 	9: $HeaderPanel/BtnNine as Button,
 }
+@onready var btn_back2: BaseButton  = $Background/HeaderPanel2/BtnBack
+@onready var btn_enter2: BaseButton = $Background/HeaderPanel2/BtnEnter
+
+const USER_SELECTION_PATH := "res://ui/menu/Selection/user_selection.tscn"
+const PROFILE_MANAGEMENT_PATH := "res://ui/menu/ProfileManagement/profile_management.tscn"
 
 func _ready() -> void:
 	for num in number_buttons:
 		var button: Button = number_buttons[num]
 		button.pressed.connect(add_num_to_pin.bind(num))
 	btn_enter.pressed.connect(func(): validate_pin())
+	# btn_back2.pressed.connect(_on_back_pressed)
+	# btn_enter2.pressed.connect(_on_enter_pressed)
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file(USER_SELECTION_PATH)
+
+func _on_enter_pressed() -> void:
+	get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
 
 func add_num_to_pin(num: int) -> void:
 	if line_edit_pin.text.length() < 4:
@@ -47,5 +60,3 @@ func validate_pin() -> void:
 		
 	line_edit_pin.text = ""
 		
-		
-	

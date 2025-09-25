@@ -63,7 +63,7 @@ border_color = Color(0.545098, 0.301961, 0.0235294, 1)
 corner_radius_top_left = 28
 corner_radius_top_right = 28
 corner_radius_bottom_right = 28
-corner_radius_bottom_left = 29
+corner_radius_bottom_left = 28
 expand_margin_left = 35.0
 expand_margin_top = 5.0
 expand_margin_right = 5.0
@@ -98,9 +98,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -390.0
+offset_left = -723.0
 offset_top = 45.0
-offset_right = 386.0
+offset_right = 700.0
 offset_bottom = 139.0
 grow_horizontal = 2
 size_flags_vertical = 0
@@ -142,21 +142,21 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Menu" type="VBoxContainer" parent="CenterContainer"]
-custom_minimum_size = Vector2(325, 150)
+custom_minimum_size = Vector2(600, 260)
 layout_mode = 2
 size_flags_vertical = 4
-theme_override_constants/separation = 45
+theme_override_constants/separation = 65
 metadata/_edit_use_anchors_ = true
 
 [node name="BtnNewGame" type="Button" parent="CenterContainer/Menu"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = 12
 theme_override_fonts/font = ExtResource("2_fsnij")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 38
 theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
@@ -165,14 +165,14 @@ text = "NEW GAME"
 icon = ExtResource("3_61j2i")
 
 [node name="BtnResume" type="Button" parent="CenterContainer/Menu"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = -72
 theme_override_fonts/font = ExtResource("2_fsnij")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 38
 theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
@@ -182,14 +182,14 @@ text = "RESUME
 icon = ExtResource("4_8cy6t")
 
 [node name="BtnControls" type="Button" parent="CenterContainer/Menu"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = -72
 theme_override_fonts/font = ExtResource("2_fsnij")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 38
 theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
@@ -198,14 +198,14 @@ text = "CONTROLS"
 icon = ExtResource("5_jbnbq")
 
 [node name="BtnBack" type="Button" parent="CenterContainer/Menu"]
-custom_minimum_size = Vector2(0, 60)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = -72
 theme_override_fonts/font = ExtResource("2_fsnij")
-theme_override_font_sizes/font_size = 34
+theme_override_font_sizes/font_size = 38
 theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")

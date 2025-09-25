@@ -23,7 +23,7 @@ var _center_wrap: CenterContainer
 
 # ---- Layout constants (tweak these) ----
 const ROW_HEIGHT := 96           # button height
-const MAX_ROWS   := 5
+const MAX_ROWS   := 6
 const LIST_WIDTH := 820          # button width (LONGER)
 const SCROLLBAR_PAD := 48        # extra width so the scrollbar sits a bit left of screen edge
 
@@ -126,10 +126,11 @@ func _apply_corner_radius_all(sb: StyleBoxFlat, r: int) -> void:
 	sb.corner_radius_bottom_left = r
 	sb.corner_radius_bottom_right = r
 
+#Style for the HEADERPANEL
 func _style_title_chip() -> void:
 	var sb := StyleBoxFlat.new()
-	sb.bg_color = Color("#E4822F")
-	sb.border_color = Color("#B8652A")
+	sb.bg_color = Color("#AE6625EE")
+	sb.border_color = Color("#3B1F0A")
 	_apply_border_all(sb, 4)
 	_apply_corner_radius_all(sb, 28)
 	sb.content_margin_left = 48
@@ -142,14 +143,15 @@ func _style_title_chip() -> void:
 	title_label.text = "STUDENT PROFILES"
 	title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	title_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	title_label.add_theme_color_override("font_color", Color("#FFFFFF"))
+	title_label.add_theme_color_override("font_color", Color("#F1B68F"))
 	title_label.add_theme_font_override("font", UI_FONT)
 	title_label.add_theme_font_size_override("font_size", 52)
 
+#Style for the BACK BUTTON
 func _style_back_plank() -> void:
 	var base := StyleBoxFlat.new()
-	base.bg_color = Color("#E4822F")
-	base.border_color = Color("#B8652A")
+	base.bg_color = Color("#AE6625EE")
+	base.border_color = Color("#3B1F0A")
 	_apply_border_all(base, 3)
 	_apply_corner_radius_all(base, 25)
 	base.content_margin_left = 20
@@ -158,7 +160,7 @@ func _style_back_plank() -> void:
 	base.content_margin_bottom = 12
 
 	var hov := base.duplicate()
-	hov.bg_color = Color("#F2913A")
+	hov.bg_color = Color("EC924CE7")
 
 	var prs := base.duplicate()
 	prs.bg_color = Color("#CC7328")
@@ -248,8 +250,8 @@ func _make_plank_button(text: String, accent: bool = false) -> Button:
 		base.bg_color = Color("#F4C842")
 		base.border_color = Color("#D1A935")
 	else:
-		base.bg_color = Color("#E4822F")
-		base.border_color = Color("#B8652A")
+		base.bg_color = Color("#AE6625EE")
+		base.border_color = Color("#3B1F0A")
 
 	_apply_border_all(base, 3)
 	_apply_corner_radius_all(base, 25)
@@ -262,7 +264,7 @@ func _make_plank_button(text: String, accent: bool = false) -> Button:
 	hov.bg_color = Color("#F7D454") if accent else Color("#F2913A")
 
 	var prs := base.duplicate()
-	prs.bg_color = Color("#E0B73A") if accent else Color("#CC7328")
+	prs.bg_color = Color("#AE6625EE") if accent else Color("EC924CE7")
 
 	b.add_theme_stylebox_override("normal", base)
 	b.add_theme_stylebox_override("hover",  hov)
