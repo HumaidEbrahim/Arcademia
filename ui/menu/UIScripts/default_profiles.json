@@ -1,5 +1,5 @@
 {
-	"active_student": "",
+	"active_student": "ZAZZZA",
 	"students": [
 		{
 			"name": "Amelia"
@@ -27,12 +27,6 @@
 		},
 		{
 			"name": "Mia"
-		},
-		{
-			"avatar": 0.0,
-			"created_at": 1758832195.655,
-			"name": "ABCBCC",
-			"updated_at": ""
 		}
 	]
 }

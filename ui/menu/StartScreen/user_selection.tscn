@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://v8jrmklnvuvr"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_8x44b"]
-[ext_resource type="Script" uid="uid://deauiljmkk7mn" path="res://ui/menu/Selection/user_selection.gd" id="1_j7f56"]
+[ext_resource type="Script" uid="uid://deauiljmkk7mn" path="res://ui/menu/StartScreen/user_selection.gd" id="1_j7f56"]
 [ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/Teacher.png" id="2_j7f56"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_mrju7"]
 [ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/Student.png" id="4_yh0gi"]

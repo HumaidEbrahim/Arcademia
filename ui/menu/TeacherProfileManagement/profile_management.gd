@@ -1,10 +1,10 @@
 extends Control
 
 # ---- Scene change paths ----
-const PATH_BACK: String          = "res://ui/menu/Selection/user_selection.tscn"
-const PATH_NEW_STUDENT: String   = "res://ui/menu/ProfileManagement/insert.tscn"
+const PATH_BACK: String          = "res://ui/menu/StartScreen/user_selection.tscn"
+const PATH_NEW_STUDENT: String   = "res://ui/menu/TeacherProfileManagement/insert.tscn"
 const PATH_AFTER_SELECT: String  = ""
-const UPDATE_PATH := "res://ui/menu/ProfileManagement/update.tscn"
+const UPDATE_PATH := "res://ui/menu/TeacherProfileManagement/update.tscn"
 
 # ---- Assets ----
 const PATH_FONT:   String = "res://assets/IngeUI/LilitaOne-Regular.ttf"
