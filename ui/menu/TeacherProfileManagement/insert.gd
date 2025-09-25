@@ -1,11 +1,11 @@
 # res://ui/menu/Login/new_student.gd
 extends Control
 
-const STUDENT_SELECTION_PATH := "res://ui/menu/Selection/student_selection.tscn"
-const MAIN_MENU_PATH := "res://ui/menu/MainMenu/main_menu.tscn"
-var PersonToUpdate :String = Global.PersonToEdit;
-@onready var btn_back  : BaseButton = $Card/BtnBack
-@onready var btn_enter : BaseButton = $Card/BtnEnter
+const STUDENT_SELECTION_PATH := "res://ui/menu/StudentScreens/student_selection.gd"
+const MAIN_MENU_PATH := "res://ui/menu/StudentMenu/main_menu.tscn"
+
+@onready var btn_back  : BaseButton = $BtnBack
+@onready var btn_enter : BaseButton = $BtnEnter
 
 # Player name character selection
 @onready var label_enter_name: Label = $Card/Label
@@ -64,7 +64,7 @@ func _ready() -> void:
 func _on_back_pressed() -> void:
 	pass
 	#TODO change scene to previous scene
-	get_tree().change_scene_to_file("res://ui/menu/ProfileManagement/profile_management.tscn") 
+	get_tree().change_scene_to_file("res://ui/menu/TeacherProfileManagement/profile_management.tscn") 
 
 func _on_enter_pressed() -> void: # check for appropriate length and Read/Save entered name 
 	var nameLabels = [label_one, label_two, label_three, label_four, label_five, label_six]
@@ -80,10 +80,9 @@ func _on_enter_pressed() -> void: # check for appropriate length and Read/Save e
 		# Ask the user to select at least 3 characters.
 		label_enter_name.text = "ENTER AT LEAST \n THREE CHARACTERS"
 	else:
-		#TODO Write new player name to text file.
-		ProfileDB.update_student(PersonToUpdate,newPlayerName,0);
+		ProfileDB.add_student(newPlayerName, 0)
 	#TODO change scene to next scene
-	#get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("res://ui/menu/TeacherProfileManagement/profile_management.tscn")
 	
 # Player name selection
 var alphabet = ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']

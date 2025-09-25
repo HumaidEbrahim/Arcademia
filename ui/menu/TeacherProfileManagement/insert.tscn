@@ -1,12 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://byv1m502ofqaw"]
+[gd_scene load_steps=20 format=3 uid="uid://b4e66wl0ugn48"]
 
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_1hht2"]
-[ext_resource type="Script" uid="uid://djspt8im7yakf" path="res://ui/menu/ProfileManagement/update.gd" id="1_alyyl"]
-[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_alyyl"]
-[ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/triangleup.png" id="3_bcubo"]
-[ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_xw7bh"]
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_7yajh"]
+[ext_resource type="Script" uid="uid://dcbu1rlu4wsga" path="res://ui/menu/TeacherProfileManagement/insert.gd" id="1_xd10w"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_xd10w"]
+[ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/triangleup.png" id="3_jkq2t"]
+[ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_aj1me"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2rjs"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijlng"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
 border_width_left = 6
 border_width_top = 6
@@ -19,7 +19,7 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axwrr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yd53"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
 border_width_left = 6
 border_width_top = 6
@@ -32,37 +32,24 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7uls7"]
-bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.231373, 0.121569, 0.0392157, 1)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
-shadow_size = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8ira"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op5kh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_048l1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0lhd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6ppo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj5kj"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg7va"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ooxto"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d0s"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u42dq"]
 bg_color = Color(0.6, 0.6, 0.6, 0.454902)
 shadow_color = Color(0, 0, 0, 0)
 shadow_size = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgfx1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eksia"]
 bg_color = Color(0.945098, 0.890196, 0.784314, 1)
 border_width_left = 3
 border_width_top = 3
@@ -75,7 +62,7 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcubo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oapja"]
 bg_color = Color(0.740949, 0.501192, 0.278082, 1)
 border_width_left = 3
 border_width_top = 3
@@ -89,7 +76,7 @@ corner_radius_bottom_left = 18
 shadow_color = Color(0, 0, 0, 0.643137)
 shadow_size = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_alyyl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt3ql"]
 bg_color = Color(1, 0.968627, 0.890196, 1)
 border_width_left = 3
 border_width_top = 3
@@ -101,7 +88,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hht2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8w1a"]
 bg_color = Color(0.807033, 0.567642, 0.349084, 1)
 border_width_left = 3
 border_width_top = 3
@@ -113,7 +100,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ch5v"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax2m2"]
 bg_color = Color(0.298039, 0.686275, 0.313726, 1)
 border_width_left = 3
 border_width_top = 3
@@ -126,7 +113,7 @@ corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 shadow_size = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrb6b"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cd1f"]
 bg_color = Color(0.227451, 0.580392, 0.25098, 1)
 border_width_left = 3
 border_width_top = 3
@@ -138,7 +125,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xw7bh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ic83"]
 bg_color = Color(0.383203, 0.825988, 0.396028, 1)
 border_width_left = 3
 border_width_top = 3
@@ -150,14 +137,14 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 
-[node name="Update" type="Control"]
+[node name="Insert" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_alyyl")
+script = ExtResource("1_xd10w")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -166,7 +153,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_1hht2")
+texture = ExtResource("1_7yajh")
 
 [node name="HeaderPanel" type="Panel" parent="Background"]
 custom_minimum_size = Vector2(50, 50)
@@ -180,7 +167,7 @@ offset_right = 711.0
 offset_bottom = 211.0
 grow_horizontal = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_g2rjs")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ijlng")
 
 [node name="Label" type="Label" parent="Background/HeaderPanel"]
 layout_mode = 1
@@ -199,45 +186,9 @@ theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 64
-text = "UPDATE STUDENT"
-
-[node name="CardAvatar" type="Panel" parent="Background"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 213.0
-offset_top = -252.0
-offset_right = 696.0
-offset_bottom = 269.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_axwrr")
-
-[node name="Label" type="Label" parent="Background/CardAvatar"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -182.0
-offset_top = 13.0
-offset_right = 182.0
-offset_bottom = 88.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_alyyl")
-theme_override_font_sizes/font_size = 64
-text = "AVATAR"
-horizontal_alignment = 1
+text = "INSERT STUDENT"
 
 [node name="Card" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)
@@ -254,7 +205,7 @@ offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_7uls7")
+theme_override_styles/panel = SubResource("StyleBoxFlat_5yd53")
 
 [node name="Label" type="Label" parent="Card"]
 layout_mode = 1
@@ -270,7 +221,7 @@ theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 64
 text = "ENTER NAME"
 
@@ -287,7 +238,7 @@ offset_right = 361.0
 offset_bottom = 121.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollOne" type="Panel" parent="Card/Input"]
 layout_mode = 1
@@ -299,7 +250,7 @@ offset_top = -89.5
 offset_right = 117.0
 offset_bottom = 89.5
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollUpOne" type="Button" parent="Card/Input/ScrollOne"]
 layout_mode = 1
@@ -311,11 +262,11 @@ offset_top = -5.0
 offset_right = 24.0
 offset_bottom = 43.0
 grow_horizontal = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_i6ppo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rg7va")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("3_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rj5kj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ooxto")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("3_jkq2t")
 
 [node name="ScrollDownOne" type="Button" parent="Card/Input/ScrollOne"]
 layout_mode = 1
@@ -330,10 +281,10 @@ offset_right = 24.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("4_xw7bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("4_aj1me")
 
 [node name="LabelOne" type="Label" parent="Card/Input/ScrollOne"]
 layout_mode = 1
@@ -349,9 +300,9 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_xgfx1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksia")
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -366,7 +317,7 @@ offset_top = -89.5
 offset_right = 236.0
 offset_bottom = 89.5
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollUpTwo" type="Button" parent="Card/Input/ScrollTwo"]
 layout_mode = 1
@@ -378,10 +329,10 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("3_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("3_jkq2t")
 
 [node name="ScrollDownTwo" type="Button" parent="Card/Input/ScrollTwo"]
 layout_mode = 1
@@ -396,10 +347,10 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("4_xw7bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("4_aj1me")
 
 [node name="LabelTwo" type="Label" parent="Card/Input/ScrollTwo"]
 layout_mode = 1
@@ -415,9 +366,9 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_xgfx1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksia")
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -432,7 +383,7 @@ offset_top = -89.5
 offset_right = 355.0
 offset_bottom = 89.5
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollUpThree" type="Button" parent="Card/Input/ScrollThree"]
 layout_mode = 1
@@ -444,10 +395,10 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("3_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("3_jkq2t")
 
 [node name="ScrollDownThree" type="Button" parent="Card/Input/ScrollThree"]
 layout_mode = 1
@@ -462,10 +413,10 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("4_xw7bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("4_aj1me")
 
 [node name="LabelThree" type="Label" parent="Card/Input/ScrollThree"]
 layout_mode = 1
@@ -481,9 +432,9 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_xgfx1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksia")
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -501,7 +452,7 @@ offset_right = -4.0
 offset_bottom = 89.5
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollUpFour" type="Button" parent="Card/Input/ScrollFour"]
 layout_mode = 1
@@ -513,10 +464,28 @@ offset_top = -5.0
 offset_right = 25.0
 offset_bottom = 43.0
 grow_horizontal = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("3_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("3_jkq2t")
+
+[node name="ScrollDownFour" type="Button" parent="Card/Input/ScrollFour"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -43.0
+offset_right = 25.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("4_aj1me")
 
 [node name="LabelFour" type="Label" parent="Card/Input/ScrollFour"]
 layout_mode = 1
@@ -532,30 +501,12 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_xgfx1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksia")
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="ScrollDownFour" type="Button" parent="Card/Input/ScrollFour"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -23.0
-offset_top = -43.0
-offset_right = 25.0
-offset_bottom = 5.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("4_xw7bh")
 
 [node name="ScrollFive" type="Panel" parent="Card/Input"]
 layout_mode = 1
@@ -567,7 +518,7 @@ offset_top = -89.5
 offset_right = 477.0
 offset_bottom = 89.5
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollUpFive" type="Button" parent="Card/Input/ScrollFive"]
 layout_mode = 1
@@ -579,10 +530,10 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("3_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("3_jkq2t")
 
 [node name="ScrollDownFive" type="Button" parent="Card/Input/ScrollFive"]
 layout_mode = 1
@@ -597,10 +548,10 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("4_xw7bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("4_aj1me")
 
 [node name="LabelFive" type="Label" parent="Card/Input/ScrollFive"]
 layout_mode = 1
@@ -616,9 +567,9 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_xgfx1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksia")
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -633,7 +584,7 @@ offset_top = -89.5
 offset_right = 593.0
 offset_bottom = 89.5
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_a8ira")
+theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
 
 [node name="ScrollUpSix" type="Button" parent="Card/Input/ScrollSix"]
 layout_mode = 1
@@ -645,10 +596,10 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("3_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("3_jkq2t")
 
 [node name="ScrollDownSix" type="Button" parent="Card/Input/ScrollSix"]
 layout_mode = 1
@@ -663,10 +614,10 @@ offset_right = 24.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q0d0s")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
-icon = ExtResource("4_xw7bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
+icon = ExtResource("4_aj1me")
 
 [node name="LabelSix" type="Label" parent="Card/Input/ScrollSix"]
 layout_mode = 1
@@ -682,54 +633,90 @@ offset_bottom = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/normal = SubResource("StyleBoxFlat_xgfx1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_eksia")
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BtnBack" type="Button" parent="Card"]
+[node name="CardAvatar" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 213.0
+offset_top = -252.0
+offset_right = 696.0
+offset_bottom = 269.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5yd53")
+
+[node name="Label" type="Label" parent="CardAvatar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -182.0
+offset_top = 13.0
+offset_right = 182.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_xd10w")
+theme_override_font_sizes/font_size = 64
+text = "AVATAR"
+horizontal_alignment = 1
+
+[node name="BtnBack" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 62.0
-offset_right = 324.0
-offset_bottom = 158.0
+offset_left = 87.0
+offset_top = -130.0
+offset_right = 409.0
+offset_bottom = -34.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_bcubo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_alyyl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1hht2")
-theme_override_styles/focus = SubResource("StyleBoxFlat_1hht2")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oapja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bt3ql")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g8w1a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g8w1a")
 text = "BACK"
 
-[node name="BtnEnter" type="Button" parent="Card"]
+[node name="BtnEnter" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 223.0
-offset_top = 62.0
-offset_right = 548.0
-offset_bottom = 158.0
+offset_left = -438.0
+offset_top = -130.0
+offset_right = -113.0
+offset_bottom = -34.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
-theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_8ch5v")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yrb6b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xw7bh")
-theme_override_styles/focus = SubResource("StyleBoxFlat_xw7bh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ax2m2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7cd1f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8ic83")
+theme_override_styles/focus = SubResource("StyleBoxFlat_8ic83")
 text = "ENTER"

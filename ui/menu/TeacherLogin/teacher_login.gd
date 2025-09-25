@@ -19,8 +19,8 @@ var password :String = "1234";
 @onready var btn_back2: BaseButton  = $Background/HeaderPanel2/BtnBack
 @onready var btn_enter2: BaseButton = $Background/HeaderPanel2/BtnEnter
 
-const USER_SELECTION_PATH := "res://ui/menu/Selection/user_selection.tscn"
-const PROFILE_MANAGEMENT_PATH := "res://ui/menu/ProfileManagement/profile_management.tscn"
+const USER_SELECTION_PATH := "res://ui/menu/StartScreen/user_selection.tscn"
+const PROFILE_MANAGEMENT_PATH := "res://ui/menu/TeacherProfileManagement/profile_management.tscn"
 
 func _ready() -> void:
 	for num in number_buttons:

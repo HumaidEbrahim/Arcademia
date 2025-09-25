@@ -1,7 +1,7 @@
 extends Control
 
-const TEACHER_PATH := "res://ui/menu/Login/teacher_login.tscn"
-const STUDENT_PATH := "res://ui/menu/Selection/student_selection.tscn"
+const TEACHER_PATH := "res://ui/menu/TeacherLogin/teacher_login.tscn"
+const STUDENT_PATH := "res://ui/menu/StudentScreens/student_selection.tscn"
 
 func _ready():
 	# Navigate through Background first

@@ -1,7 +1,7 @@
 # res://ui/menu/MainMenu/main_menu.gd
 extends Control
 
-const STUDENT_SELECTION_PATH := "res://ui/menu/Selection/student_selection.tscn"
+const STUDENT_SELECTION_PATH := "res://ui/menu/StudentScreens/student_selection.tscn"
 const NEWGAME_SELECTION_PATH := ""
 
 @onready var btn_back: BaseButton = $CenterContainer/Menu/BtnBack

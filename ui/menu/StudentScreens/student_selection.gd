@@ -2,9 +2,9 @@
 extends Control
 
 # ---- Scene change paths ----
-const PATH_BACK: String          = "res://ui/menu/Selection/user_selection.tscn"
-const PATH_NEW_STUDENT: String   = "res://ui/menu/Login/new_student.tscn"
-const PATH_AFTER_SELECT: String  = "res://ui/menu/MainMenu/main_menu.tscn"
+const PATH_BACK: String          = "res://ui/menu/StartScreen/user_selection.tscn"
+const PATH_NEW_STUDENT: String   = "res://ui/menu/StudentScreens/new_student.tscn"
+const PATH_AFTER_SELECT: String  = "res://ui/menu/StudentMenu/main_menu.tscn"
 
 # ---- Assets ----
 const PATH_FONT: String = "res://assets/IngeUI/LilitaOne-Regular.ttf"
@@ -65,7 +65,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var f := get_viewport().gui_get_focus_owner()
 		if f is Button:
 			f.emit_signal("pressed")
-			get_viewport().set_input_as_handled()
+			#get_viewport().set_input_as_handled()
 
 func _list_buttons() -> Array[Button]:
 	var out: Array[Button] = []
