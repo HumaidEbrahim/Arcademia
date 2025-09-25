@@ -78,8 +78,7 @@ func _on_enter_pressed() -> void: # check for appropriate length and Read/Save e
 		# Ask the user to select at least 3 characters.
 		label_enter_name.text = "ENTER AT LEAST \n THREE CHARACTERS"
 	else:
-		#TODO Write new player name to text file.
-		pass
+		ProfileDB.add_student(newPlayerName,0);
 		
 	get_tree().change_scene_to_file(MAIN_MENU_PATH)
 	

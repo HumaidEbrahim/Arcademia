@@ -20,39 +20,6 @@ corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
-bg_color = Color(0.898649, 0.577291, 0.14695, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.545098, 0.301961, 0.0235294, 1)
-corner_radius_top_left = 28
-corner_radius_top_right = 28
-corner_radius_bottom_right = 28
-corner_radius_bottom_left = 28
-expand_margin_left = 35.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-shadow_size = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
-bg_color = Color(0.852567, 0.5145, 0.0546667, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.545098, 0.301961, 0.0235294, 1)
-corner_radius_top_left = 28
-corner_radius_top_right = 28
-corner_radius_bottom_right = 28
-corner_radius_bottom_left = 28
-expand_margin_left = 35.0
-expand_margin_top = 5.0
-expand_margin_right = 5.0
-expand_margin_bottom = 5.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
 bg_color = Color(0.964706, 0.741176, 0.101961, 1)
 border_width_left = 4
@@ -70,6 +37,39 @@ expand_margin_right = 5.0
 expand_margin_bottom = 5.0
 shadow_size = 12
 shadow_offset = Vector2(0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.852567, 0.5145, 0.0546667, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.545098, 0.301961, 0.0235294, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+expand_margin_left = 35.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.898649, 0.577291, 0.14695, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.545098, 0.301961, 0.0235294, 1)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+expand_margin_left = 35.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_size = 3
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -151,32 +151,32 @@ metadata/_edit_use_anchors_ = true
 [node name="BtnNewGame" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
+theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = 12
 theme_override_fonts/font = ExtResource("2_fsnij")
 theme_override_font_sizes/font_size = 38
-theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 text = "NEW GAME"
 icon = ExtResource("3_61j2i")
 
 [node name="BtnResume" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
+theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = -72
 theme_override_fonts/font = ExtResource("2_fsnij")
 theme_override_font_sizes/font_size = 38
-theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 text = "RESUME
 "
 icon = ExtResource("4_8cy6t")
@@ -184,31 +184,31 @@ icon = ExtResource("4_8cy6t")
 [node name="BtnControls" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
+theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = -72
 theme_override_fonts/font = ExtResource("2_fsnij")
 theme_override_font_sizes/font_size = 38
-theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 text = "CONTROLS"
 icon = ExtResource("5_jbnbq")
 
 [node name="BtnBack" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
+theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
 theme_override_constants/h_separation = -72
 theme_override_fonts/font = ExtResource("2_fsnij")
 theme_override_font_sizes/font_size = 38
-theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
 text = "BACK"
 icon = ExtResource("6_jttsa")

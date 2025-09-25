@@ -1,5 +1,5 @@
 extends Control
-
+var password :String = "1234";
 @onready var label_password: Label = $HeaderPanel/Label
 @onready var line_edit_pin: LineEdit = $HeaderPanel/LineEdit
 @onready var btn_enter: Button = $HeaderPanel/BtnEnter
@@ -26,8 +26,8 @@ func _ready() -> void:
 	for num in number_buttons:
 		var button: Button = number_buttons[num]
 		button.pressed.connect(add_num_to_pin.bind(num))
-	btn_enter.pressed.connect(func(): validate_pin())
-	# btn_back2.pressed.connect(_on_back_pressed)
+	btn_enter.pressed.connect(validate_pin)
+	btn_back.pressed.connect(_on_back_pressed)
 	# btn_enter2.pressed.connect(_on_enter_pressed)
 
 func _on_back_pressed() -> void:
@@ -41,7 +41,7 @@ func add_num_to_pin(num: int) -> void:
 		line_edit_pin.text += str(num)
 
 func is_pin_valid(entered_pin) -> bool:
-	if entered_pin == entered_pin: # TODO fetch pin and check its valid
+	if entered_pin == password: # TODO fetch pin and check its valid
 		return true
 	else:
 		return false
@@ -51,10 +51,10 @@ func validate_pin() -> void:
 	
 	if line_edit_pin.text.length() < 4: # Debatable if this is needed but I have it here for now
 		label_password.text = "ENTER FULL PASSWORD"
-		return 
+		return
 		
 	if is_pin_valid(entered_pin):
-		pass # TODO go to next screen
+		get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
 	else:
 		label_password.text = "INCORRECT PASSWORD"
 		

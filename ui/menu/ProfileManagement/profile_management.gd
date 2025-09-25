@@ -2,8 +2,9 @@ extends Control
 
 # ---- Scene change paths ----
 const PATH_BACK: String          = "res://ui/menu/Selection/user_selection.tscn"
-const PATH_NEW_STUDENT: String   = "res://ui/menu/Login/new_student.tscn"
-const PATH_AFTER_SELECT: String  = "res://ui/menu/MainMenu/main_menu.tscn"
+const PATH_NEW_STUDENT: String   = "res://ui/menu/ProfileManagement/insert.tscn"
+const PATH_AFTER_SELECT: String  = ""
+const UPDATE_PATH := "res://ui/menu/ProfileManagement/update.tscn"
 
 # ---- Assets ----
 const PATH_FONT:   String = "res://assets/IngeUI/LilitaOne-Regular.ttf"
@@ -306,6 +307,12 @@ func _on_star_clicked(name: String) -> void:
 
 func _on_edit_clicked(name: String) -> void:
 	print("Edit clicked:", name)
+	Global.PersonToEdit = name;
+	get_tree().change_scene_to_file(UPDATE_PATH)
+	
 
 func _on_delete_clicked(name: String) -> void:
 	print("Delete clicked:", name)
+	Global.PersonToGogga = name;
+	ProfileDB.delete_student(name);
+	get_tree().reload_current_scene();
