@@ -221,8 +221,8 @@ func _refresh_list() -> void:
 	list.add_child(new_btn)
 
 	for s in ProfileDB.sorted_students():
-		var name: String = String(s.get("name", ""))
-		var btn := _make_plank_button(name, false)
+		var student_name: String = String(s.get("name", ""))
+		var btn := _make_plank_button(student_name, false)
 		btn.pressed.connect(func():
 			#ProfileDB.set_active(name)
 			get_tree().change_scene_to_file(PATH_AFTER_SELECT))

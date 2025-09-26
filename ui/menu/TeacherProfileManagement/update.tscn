@@ -1,10 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://byv1m502ofqaw"]
 
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_1hht2"]
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_1hht2"]
 [ext_resource type="Script" uid="uid://djspt8im7yakf" path="res://ui/menu/TeacherProfileManagement/update.gd" id="1_alyyl"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_alyyl"]
-[ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/triangleup.png" id="3_bcubo"]
-[ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_xw7bh"]
+[ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/UIIcons/triangleup.png" id="3_bcubo"]
+[ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/UIIcons/triangledown.png" id="4_xw7bh"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2rjs"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)

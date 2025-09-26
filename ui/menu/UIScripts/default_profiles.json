@@ -1,9 +1,6 @@
 {
-	"active_student": "ZAZZZA",
+	"active_student": "",
 	"students": [
-		{
-			"name": "Amelia"
-		},
 		{
 			"name": "James"
 		},

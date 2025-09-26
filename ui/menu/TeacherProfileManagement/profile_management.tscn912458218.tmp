@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dsee3tfu1u7jp"]
+[gd_scene load_steps=5 format=3 uid="uid://dsiopi6r2krw3"]
 
-[ext_resource type="Script" uid="uid://blwktn8xg5iqt" path="res://ui/menu/StudentScreens/student_selection.gd" id="1_bemkr"]
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="2_8y8sx"]
-[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_bemkr"]
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_1f44b"]
+[ext_resource type="Script" uid="uid://dm45t3yinba03" path="res://ui/menu/TeacherProfileManagement/profile_management.gd" id="1_a52v4"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_a52v4"]
 
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_areec"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qhfc"]
 bg_color = Color(0.68096, 0.398922, 0.143259, 1)
 border_width_left = 6
 border_width_top = 6
@@ -21,14 +20,14 @@ expand_margin_top = 3.0
 expand_margin_right = 3.0
 expand_margin_bottom = 3.0
 
-[node name="StudentSelection" type="Control"]
+[node name="ProfileManagement" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bemkr")
+script = ExtResource("1_a52v4")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -37,7 +36,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_8y8sx")
+texture = ExtResource("1_1f44b")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -59,7 +58,7 @@ theme_override_constants/separation = 16
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_areec")
+theme_override_styles/panel = SubResource("StyleBoxFlat_7qhfc")
 
 [node name="TitleLabel" type="Label" parent="MarginContainer/VBoxContainer/TitlePanel"]
 layout_mode = 1
@@ -78,9 +77,9 @@ theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_bemkr")
+theme_override_fonts/font = ExtResource("2_a52v4")
 theme_override_font_sizes/font_size = 64
-text = "STUDENT SELECTION"
+text = "PROFILE MANAGEMENT"
 
 [node name="Scroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
