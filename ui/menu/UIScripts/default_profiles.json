@@ -1,29 +1,50 @@
 {
-	"active_student": "",
+	"active_student": "Jack",
 	"students": [
 		{
+			"avatar": 0.0,
 			"name": "James"
 		},
 		{
-			"name": "Emma"
+			"avatar": 1,
+			"name": "EMMA",
+			"updated_at": 1758883137.632
 		},
 		{
+			"avatar": 0.0,
 			"name": "Jack"
 		},
 		{
+			"avatar": 1.0,
 			"name": "Sophia"
 		},
 		{
+			"avatar": 0.0,
 			"name": "Liam"
 		},
 		{
+			"avatar": 1.0,
 			"name": "Olivia"
 		},
 		{
+			"avatar": 0.0,
 			"name": "Noah"
 		},
 		{
+			"avatar": 1.0,
 			"name": "Mia"
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1758882445.482,
+			"name": "BEZ",
+			"updated_at": ""
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1758882473.866,
+			"name": "ZACK",
+			"updated_at": ""
 		}
 	]
 }
