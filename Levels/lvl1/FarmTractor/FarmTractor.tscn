@@ -92,22 +92,22 @@ offset_right = 800.0
 offset_bottom = 450.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
-target_sprite = NodePath("")
+level_bound = 1030
 step_size = 200
 move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
-target_sprite = NodePath("")
+level_bound = 100
 step_size = 200
 move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
-target_sprite = NodePath("")
+level_bound = 500
 step_size = 100
 move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
-target_sprite = NodePath("")
+level_bound = 900
 step_size = 100
 move_duration = 1.0
 
@@ -245,7 +245,6 @@ position = Vector2(33, -107)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_6hodr")
 animation = &"default"
-autoplay = ""
 frame_progress = 0.0
 flip_h = true
 
