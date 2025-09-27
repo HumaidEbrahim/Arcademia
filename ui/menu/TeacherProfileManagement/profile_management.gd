@@ -8,9 +8,9 @@ const UPDATE_PATH := "res://ui/menu/TeacherProfileManagement/update.tscn"
 
 # ---- Assets ----
 const PATH_FONT:   String = "res://assets/IngeUI/LilitaOne-Regular.ttf"
-const PATH_STAR:   String = "res://assets/IngeUI/star-8-32.png"
-const PATH_PENCIL: String = "res://assets/IngeUI/pencil-32.png"
-const PATH_TRASH:  String = "res://assets/IngeUI/trash-2-32.png"
+const PATH_STAR:   String = "res://assets/IngeUI/UIIcons/star.png"
+const PATH_PENCIL: String = "res://assets/IngeUI/UIIcons/pencil.png"
+const PATH_TRASH:  String = "res://assets/IngeUI/UIIcons/trash.png"
 
 @onready var UI_FONT: Font          = preload(PATH_FONT)
 @onready var STAR_ICON: Texture2D   = preload(PATH_STAR)
@@ -214,15 +214,15 @@ func _refresh_list() -> void:
 
 	# Existing profiles
 	for s in ProfileDB.sorted_students():
-		var name := ""
+		var student_name := ""
 		if typeof(s) == TYPE_DICTIONARY:
-			name = String(s.get("name", ""))
+			student_name = String(s.get("name", ""))
 		else:
-			name = String(s)
-		if name.is_empty():
+			student_name = String(s)
+		if student_name.is_empty():
 			continue
 
-		var row := _make_row_panel(name, false, false)
+		var row := _make_row_panel(student_name, false, false)
 		var main_btn: Button = row.get_node("HBox/MainButton")
 		main_btn.pressed.connect(func():
 			#ProfileDB.set_active(name)
@@ -301,18 +301,16 @@ func _make_icon_button(tex: Texture2D, cb: Callable) -> TextureButton:
 # =======================
 #   ICON CALLBACKS
 # =======================
+func _on_star_clicked(student_name: String) -> void:
+	print("Star clicked:", student_name)
 
-func _on_star_clicked(name: String) -> void:
-	print("Star clicked:", name)
-
-func _on_edit_clicked(name: String) -> void:
-	print("Edit clicked:", name)
-	Global.PersonToEdit = name;
+func _on_edit_clicked(student_name: String) -> void:
+	print("Edit clicked:", student_name)
+	Global.PersonToEdit = student_name;
 	get_tree().change_scene_to_file(UPDATE_PATH)
 	
-
-func _on_delete_clicked(name: String) -> void:
-	print("Delete clicked:", name)
-	Global.PersonToGogga = name;
-	ProfileDB.delete_student(name);
+func _on_delete_clicked(student_name: String) -> void:
+	print("Delete clicked:", student_name)
+	Global.PersonToGogga = student_name;
+	ProfileDB.delete_student(student_name);
 	get_tree().reload_current_scene();

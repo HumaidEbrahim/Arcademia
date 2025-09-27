@@ -1,23 +1,22 @@
 [gd_scene load_steps=10 format=3 uid="uid://de8drvg88465v"]
 
 [ext_resource type="Script" uid="uid://map8qmgnfye1" path="res://ui/menu/StudentScreens/avatar_selection.gd" id="1_06hn2"]
-[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="2_s4u65"]
-[ext_resource type="Texture2D" uid="uid://biql40u43hq3p" path="res://assets/IngeUI/stickerboy.png" id="3_ddjhc"]
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/UIBackground/Background2.0.png" id="2_s4u65"]
+[ext_resource type="Texture2D" uid="uid://biql40u43hq3p" path="res://assets/IngeUI/UIAvatars/stickerboy.png" id="3_ddjhc"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="4_hpvu0"]
-[ext_resource type="Texture2D" uid="uid://bdo41wcbjqd0n" path="res://assets/IngeUI/stickergirl.png" id="5_i6fq2"]
+[ext_resource type="Texture2D" uid="uid://bdo41wcbjqd0n" path="res://assets/IngeUI/UIAvatars/stickergirl.png" id="5_i6fq2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ntwm"]
-bg_color = Color(0.769681, 0.45838, 0.181348, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uan72"]
+bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.231373, 0.121569, 0.0392157, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
-shadow_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fl76"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -32,17 +31,18 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uan72"]
-bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ntwm"]
+bg_color = Color(0.769681, 0.45838, 0.181348, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 border_color = Color(0.231373, 0.121569, 0.0392157, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
+shadow_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_opcwc"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -89,10 +89,10 @@ offset_top = -257.0
 offset_right = 663.0
 offset_bottom = 205.0
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ntwm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8fl76")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uan72")
 theme_override_styles/focus = SubResource("StyleBoxFlat_uan72")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uan72")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8fl76")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ntwm")
 icon = ExtResource("3_ddjhc")
 icon_alignment = 1
 
@@ -131,10 +131,10 @@ offset_right = -248.0
 offset_bottom = 205.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_1ntwm")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_1ntwm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_uan72")
 theme_override_styles/focus = SubResource("StyleBoxFlat_uan72")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uan72")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1ntwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ntwm")
 icon = ExtResource("5_i6fq2")
 icon_alignment = 1
 

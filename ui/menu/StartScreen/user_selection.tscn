@@ -1,23 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://v8jrmklnvuvr"]
 
-[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_8x44b"]
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/UIBackground/Background2.0.png" id="1_8x44b"]
 [ext_resource type="Script" uid="uid://deauiljmkk7mn" path="res://ui/menu/StartScreen/user_selection.gd" id="1_j7f56"]
-[ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/Teacher.png" id="2_j7f56"]
+[ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/UIAvatars/Teacher.png" id="2_j7f56"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_mrju7"]
-[ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/Student.png" id="4_yh0gi"]
+[ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/UIAvatars/Student.png" id="4_yh0gi"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l03oh"]
-bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffrsd"]
+bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0.231373, 0.121569, 0.0392157, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
-shadow_size = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iolb4"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -32,17 +31,18 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffrsd"]
-bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l03oh"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 border_color = Color(0.231373, 0.121569, 0.0392157, 1)
 corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
+shadow_size = 6
 
 [node name="UserSelection" type="Control"]
 layout_mode = 3
@@ -78,10 +78,10 @@ offset_top = -231.0
 offset_right = 663.0
 offset_bottom = 231.0
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_iolb4")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iolb4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
 icon = ExtResource("2_j7f56")
 icon_alignment = 1
 
@@ -120,10 +120,10 @@ offset_right = -248.0
 offset_bottom = 233.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_l03oh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l03oh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
 icon = ExtResource("4_yh0gi")
 icon_alignment = 1
 

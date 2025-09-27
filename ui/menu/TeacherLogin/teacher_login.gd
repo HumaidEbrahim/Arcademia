@@ -16,8 +16,8 @@ var password :String = "1234";
 	8: $HeaderPanel/BtnEight as Button,
 	9: $HeaderPanel/BtnNine as Button,
 }
-@onready var btn_back2: BaseButton  = $Background/HeaderPanel2/BtnBack
-@onready var btn_enter2: BaseButton = $Background/HeaderPanel2/BtnEnter
+@onready var btn_back2: BaseButton  = $HeaderPanel/BtnBack
+@onready var btn_enter2: BaseButton = $HeaderPanel/BtnEnter 
 
 const USER_SELECTION_PATH := "res://ui/menu/StartScreen/user_selection.tscn"
 const PROFILE_MANAGEMENT_PATH := "res://ui/menu/TeacherProfileManagement/profile_management.tscn"
