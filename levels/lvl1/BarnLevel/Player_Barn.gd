@@ -13,15 +13,11 @@ func _ready():
 	area_exited.connect(_on_area_exited)
 	label.text = "Feed the chickens"
 	last_position = position
+	
 
 func _process(delta: float) -> void:
-	# anim
-	if position != last_position:
-		if(position < last_position):
-			player.flip_h = true
-		else:
-			player.flip_h = false
-	last_position = position
+
+	last_position = Utils.update_animation(self,last_position,true)
 		
 	
 func action_pickup():

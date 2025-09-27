@@ -54,6 +54,14 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_ctjss")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ctjss")
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_f18w4")
@@ -77,7 +85,7 @@ animations = [{
 "texture": ExtResource("10_ecpiv")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Walk",
 "speed": 15.0
 }]
 
@@ -244,8 +252,8 @@ script = ExtResource("3_f18w4")
 position = Vector2(33, -107)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_6hodr")
-animation = &"default"
-frame_progress = 0.0
+animation = &"Walk"
+frame_progress = 0.8758315
 flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
