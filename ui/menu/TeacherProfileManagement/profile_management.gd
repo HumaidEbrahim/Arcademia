@@ -225,7 +225,7 @@ func _refresh_list() -> void:
 		var row := _make_row_panel(name, false, false)
 		var main_btn: Button = row.get_node("HBox/MainButton")
 		main_btn.pressed.connect(func():
-			ProfileDB.set_active(name)
+			#ProfileDB.set_active(name)
 			get_tree().change_scene_to_file(PATH_AFTER_SELECT))
 		list.add_child(row)
 

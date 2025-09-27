@@ -167,6 +167,7 @@ func _style_back_plank() -> void:
 
 	back.add_theme_stylebox_override("normal", base)
 	back.add_theme_stylebox_override("hover",  hov)
+	back.add_theme_stylebox_override("focus",hov)
 	back.add_theme_stylebox_override("pressed", prs)
 	back.add_theme_color_override("font_color", Color("#FFFFFF"))
 	back.add_theme_font_override("font", UI_FONT)
@@ -223,9 +224,12 @@ func _refresh_list() -> void:
 	for s in ProfileDB.sorted_students():
 		var name: String = String(s.get("name", ""))
 		var btn := _make_plank_button(name, false)
-		btn.pressed.connect(func():
-			#ProfileDB.set_active(name)
-			get_tree().change_scene_to_file(PATH_AFTER_SELECT))
+		# capture both the index (avatar number) and the student data
+		var avatar_num = int(s.get("avatar", 0))
+		btn.pressed.connect(func(avatar :int= avatar_num):
+			Global.SelectedCharacter = avatar;
+			get_tree().change_scene_to_file(PATH_AFTER_SELECT)
+)
 		list.add_child(btn)
 
 	await get_tree().process_frame
@@ -268,6 +272,7 @@ func _make_plank_button(text: String, accent: bool = false) -> Button:
 
 	b.add_theme_stylebox_override("normal", base)
 	b.add_theme_stylebox_override("hover",  hov)
+	b.add_theme_stylebox_override("focus",hov)
 	b.add_theme_stylebox_override("pressed", prs)
 	b.add_theme_color_override("font_color", Color("#FFFFFF"))
 	b.add_theme_font_override("font", UI_FONT)

@@ -2,7 +2,7 @@
 extends Control
 
 const STUDENT_SELECTION_PATH := "res://ui/menu/StudentScreens/student_selection.tscn"
-const NEWGAME_SELECTION_PATH := ""
+const NEWGAME_SELECTION_PATH := "res://Levels/openworld/FarmMap.tscn"
 
 @onready var btn_back: BaseButton = $CenterContainer/Menu/BtnBack
 @onready var btn_NewGame: BaseButton = $CenterContainer/Menu/BtnNewGame

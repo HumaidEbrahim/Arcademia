@@ -56,6 +56,7 @@ func add_student(name: String, character: int, ) -> void:
 			"created_at": Time.get_unix_time_from_system(),
 			"updated_at": ""
 		})
+		save_db()
 	else:
 		print("IT EXISTS YOU TWINKY WINKY")
 		save_db()

@@ -1,6 +1,6 @@
 extends Control
 
-const GAME_PATH := ""
+const GAME_PATH := "res://Levels/openworld/FarmMap.tscn"
 @onready var btn_boy : BaseButton = $Background/Boy
 @onready var btn_girl : BaseButton = $Background/Girl
 
@@ -11,11 +11,11 @@ func _ready():
 	btn_boy.pressed.connect(_on_boy_pressed)
 
 func _on_girl_pressed():
-	ProfileDB.update_student(PersonToUpdate,PersonToUpdate,0);
+	ProfileDB.update_student(PersonToUpdate,"",0);
 	Global.SelectedCharacter = 0;
 	get_tree().change_scene_to_file(GAME_PATH)
 
 func _on_boy_pressed():
-	ProfileDB.update_student(PersonToUpdate,PersonToUpdate,1);
+	ProfileDB.update_student(PersonToUpdate,"",1);
 	Global.SelectedCharacter = 1;
 	get_tree().change_scene_to_file(GAME_PATH)
