@@ -1,0 +1,32 @@
+{
+	"active_student": "ZAZZZA",
+	"students": [
+		{
+			"name": "Amelia"
+		},
+		{
+			"name": "James"
+		},
+		{
+			"name": "Emma"
+		},
+		{
+			"name": "Jack"
+		},
+		{
+			"name": "Sophia"
+		},
+		{
+			"name": "Liam"
+		},
+		{
+			"name": "Olivia"
+		},
+		{
+			"name": "Noah"
+		},
+		{
+			"name": "Mia"
+		}
+	]
+}

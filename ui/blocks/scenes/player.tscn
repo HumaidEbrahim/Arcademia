@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dakwsq3euxbda"]
+
+[ext_resource type="Texture2D" uid="uid://cbfi6isesf8bx" path="res://assets/Characters/Girl_448x448_Final.png" id="1_dg3va"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmivm"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(0, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx273"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(448, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqyqs"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(896, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_soxev"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(1344, 0, 448, 448)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5j0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmivm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx273")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqyqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_soxev")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyw15"]
+radius = 31.0
+height = 104.0
+
+[node name="Player" type="Area2D"]
+z_index = 100
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_q5j0l")
+animation = &"new_animation"
+frame_progress = 0.76680815
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+rotation = -3.14159
+shape = SubResource("CapsuleShape2D_eyw15")
