@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4e66wl0ugn48"]
+[gd_scene load_steps=21 format=3 uid="uid://b4e66wl0ugn48"]
 
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_7yajh"]
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_7yajh"]
 [ext_resource type="Script" uid="uid://dcbu1rlu4wsga" path="res://ui/menu/TeacherProfileManagement/insert.gd" id="1_xd10w"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_xd10w"]
-[ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/triangleup.png" id="3_jkq2t"]
-[ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/triangledown.png" id="4_aj1me"]
+[ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/UIIcons/triangleup.png" id="3_jkq2t"]
+[ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/UIIcons/triangledown.png" id="4_aj1me"]
+[ext_resource type="Texture2D" uid="uid://biql40u43hq3p" path="res://assets/IngeUI/UIAvatars/stickerboy.png" id="6_xqrdu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijlng"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -262,6 +263,11 @@ offset_top = -5.0
 offset_right = 24.0
 offset_bottom = 43.0
 grow_horizontal = 2
+focus_neighbor_left = NodePath("../../ScrollSix/ScrollUpSix")
+focus_neighbor_top = NodePath("../ScrollDownOne")
+focus_neighbor_right = NodePath("../../ScrollTwo/ScrollUpTwo")
+focus_neighbor_bottom = NodePath("../ScrollDownOne")
+focus_next = NodePath("../ScrollDownOne")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rj5kj")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ooxto")
@@ -281,6 +287,11 @@ offset_right = 24.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_left = NodePath("../../ScrollSix/ScrollDownSix")
+focus_neighbor_top = NodePath("../ScrollUpOne")
+focus_neighbor_right = NodePath("../../ScrollTwo/ScrollDownTwo")
+focus_neighbor_bottom = NodePath("../../../../BtnBack")
+focus_next = NodePath("../../ScrollTwo/ScrollUpTwo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -329,6 +340,9 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
+focus_neighbor_left = NodePath("../../ScrollOne/ScrollUpOne")
+focus_neighbor_top = NodePath("../../ScrollThree/ScrollDownThree")
+focus_neighbor_right = NodePath("../../ScrollThree/ScrollUpThree")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -347,6 +361,8 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_right = NodePath("../../ScrollThree/ScrollDownThree")
+focus_neighbor_bottom = NodePath("../../../../BtnBack")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -395,6 +411,7 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
+focus_neighbor_right = NodePath("../../ScrollFour/ScrollUpFour")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -413,6 +430,7 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_bottom = NodePath("../../ScrollFour/ScrollDownFour")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -446,9 +464,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -118.0
+offset_left = -362.0
 offset_top = -89.5
-offset_right = -4.0
+offset_right = -248.0
 offset_bottom = 89.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -464,6 +482,7 @@ offset_top = -5.0
 offset_right = 25.0
 offset_bottom = 43.0
 grow_horizontal = 2
+focus_neighbor_right = NodePath("../../ScrollFive/ScrollUpFive")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -482,6 +501,7 @@ offset_right = 25.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_right = NodePath("../../ScrollFive/ScrollDownFive")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -513,9 +533,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 363.0
+offset_left = 477.0
 offset_top = -89.5
-offset_right = 477.0
+offset_right = 591.0
 offset_bottom = 89.5
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
@@ -530,6 +550,7 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
+focus_neighbor_right = NodePath("../../ScrollSix/ScrollUpSix")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -548,6 +569,7 @@ offset_right = 16.0
 offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_neighbor_right = NodePath("../../ScrollSix/ScrollDownSix")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -579,9 +601,9 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 479.0
+offset_left = 592.0
 offset_top = -89.5
-offset_right = 593.0
+offset_right = 706.0
 offset_bottom = 89.5
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_op5kh")
@@ -596,6 +618,7 @@ offset_top = -5.0
 offset_right = 16.0
 offset_bottom = 34.0
 grow_horizontal = 2
+focus_neighbor_right = NodePath("../../ScrollOne/ScrollUpOne")
 theme_override_styles/normal = SubResource("StyleBoxFlat_r0lhd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_u42dq")
 theme_override_styles/focus = SubResource("StyleBoxFlat_u42dq")
@@ -649,9 +672,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 213.0
-offset_top = -252.0
+offset_top = -260.0
 offset_right = 696.0
-offset_bottom = 269.0
+offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -675,6 +698,45 @@ theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 64
 text = "AVATAR"
 horizontal_alignment = 1
+
+[node name="AvatarImage" type="TextureRect" parent="CardAvatar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -173.0
+offset_right = 166.5
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xqrdu")
+
+[node name="BtnSwitch" type="Button" parent="CardAvatar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -72.0
+offset_right = 92.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_xd10w")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_g8w1a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g8w1a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bt3ql")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oapja")
+text = "SWITCH"
 
 [node name="BtnBack" type="Button" parent="."]
 layout_mode = 1
@@ -710,6 +772,7 @@ offset_right = -113.0
 offset_bottom = -34.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_neighbor_left = NodePath("../BtnBack")
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)

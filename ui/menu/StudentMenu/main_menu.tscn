@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dq4uh6see762d"]
 
-[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/Background2.0.png" id="1_agktw"]
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/UIBackground/Background2.0.png" id="1_agktw"]
 [ext_resource type="Script" uid="uid://roc6fg7jqgfx" path="res://ui/menu/StudentMenu/main_menu.gd" id="1_fsnij"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_fsnij"]
-[ext_resource type="Texture2D" uid="uid://bv8aqm3y8ptdm" path="res://assets/IngeUI/play-3-48.png" id="3_61j2i"]
-[ext_resource type="Texture2D" uid="uid://dca73njn43dkn" path="res://assets/IngeUI/redo-48.png" id="4_8cy6t"]
-[ext_resource type="Texture2D" uid="uid://bguvvnle6sjok" path="res://assets/IngeUI/joystick-48.png" id="5_jbnbq"]
-[ext_resource type="Texture2D" uid="uid://cvpmm56cwn0ea" path="res://assets/IngeUI/arrow-121-48.png" id="6_jttsa"]
+[ext_resource type="Texture2D" uid="uid://bv8aqm3y8ptdm" path="res://assets/IngeUI/UIIcons/play.png" id="3_61j2i"]
+[ext_resource type="Texture2D" uid="uid://dca73njn43dkn" path="res://assets/IngeUI/UIIcons/redo.png" id="4_8cy6t"]
+[ext_resource type="Texture2D" uid="uid://bguvvnle6sjok" path="res://assets/IngeUI/UIIcons/joystick.png" id="5_jbnbq"]
+[ext_resource type="Texture2D" uid="uid://cvpmm56cwn0ea" path="res://assets/IngeUI/UIIcons/arrowleft.png" id="6_jttsa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06t4h"]
 bg_color = Color(0.68096, 0.398922, 0.143259, 1)
@@ -151,6 +151,9 @@ metadata/_edit_use_anchors_ = true
 [node name="BtnNewGame" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+focus_neighbor_top = NodePath("../BtnBack")
+focus_neighbor_bottom = NodePath("../BtnResume")
+focus_next = NodePath("../BtnResume")
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
@@ -167,6 +170,9 @@ icon = ExtResource("3_61j2i")
 [node name="BtnResume" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+focus_neighbor_top = NodePath("../BtnNewGame")
+focus_neighbor_bottom = NodePath("../BtnControls")
+focus_next = NodePath("../BtnControls")
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
@@ -184,6 +190,9 @@ icon = ExtResource("4_8cy6t")
 [node name="BtnControls" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+focus_neighbor_top = NodePath("../BtnResume")
+focus_neighbor_bottom = NodePath("../BtnBack")
+focus_next = NodePath("../BtnBack")
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
@@ -200,6 +209,9 @@ icon = ExtResource("5_jbnbq")
 [node name="BtnBack" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+focus_neighbor_top = NodePath("../BtnControls")
+focus_neighbor_bottom = NodePath("../BtnNewGame")
+focus_next = NodePath("../BtnNewGame")
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4

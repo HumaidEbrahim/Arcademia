@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsiopi6r2krw3"]
 
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="1_1f44b"]
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_1f44b"]
 [ext_resource type="Script" uid="uid://dm45t3yinba03" path="res://ui/menu/TeacherProfileManagement/profile_management.gd" id="1_a52v4"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_a52v4"]
 
