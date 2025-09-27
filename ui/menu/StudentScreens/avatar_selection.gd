@@ -9,6 +9,7 @@ var PersonToUpdate :String = Global.PersonToEdit;
 func _ready():
 	btn_girl.pressed.connect(_on_girl_pressed)
 	btn_boy.pressed.connect(_on_boy_pressed)
+	btn_boy.grab_focus()
 
 func _on_girl_pressed():
 	ProfileDB.update_student(PersonToUpdate,"",0);

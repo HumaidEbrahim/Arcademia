@@ -83,8 +83,9 @@ func _on_enter_pressed() -> void: # check for appropriate length and Read/Save e
 	else:
 		#TODO Write new player name to text file.
 		ProfileDB.update_student(PersonToUpdate,newPlayerName,0);
+		get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
 	#TODO change scene to next scene
-	get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
+	
 	
 # Player name selection
 var alphabet = ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
