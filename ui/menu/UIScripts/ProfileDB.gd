@@ -3,7 +3,6 @@ extends Node
 
 const SAVE_PATH: String      = "user://profiles.json"
 const DEFAULT_PATH: String   = "res://ui/menu/UIScripts/default_profiles.json"
-const DEFAULT_AVATAR: String = "res://art/avatars/default.png"  # optional
 
 var students: Array = []    # keep generic for simplicity
 var active_student: String = ""
@@ -27,18 +26,25 @@ func load_db() -> void:
 		var txt2: String = FileAccess.get_file_as_string(DEFAULT_PATH)
 		var data2: Variant = JSON.parse_string(txt2)
 		if data2 is Dictionary:
-			var dict2: Dictionary = data2
-			students = dict2.get("students", [])
-			active_student = String(dict2.get("active_student", ""))
-			# save a copy to user:// so it persists
+			_load_from_dict(data2)
+			_migrate_fill_missing_avatar()
 			save_db()
 			return
-
 	# 3) Nothing found -> empty list
 	students = []
 	active_student = ""
 	save_db()
-
+	
+func _load_from_dict(dict: Dictionary) -> void:
+	students = dict.get("students", [])
+	active_student = String(dict.get("active_student", ""))
+	
+# If some students don't have "avatar", default them to 0 (boy)
+func _migrate_fill_missing_avatar() -> void:
+	for s in students:
+		if not s.has("avatar"):
+			s["avatar"] = 0
+	
 func save_db() -> void:
 	var data: Dictionary = {
 		"students": students,
@@ -48,21 +54,22 @@ func save_db() -> void:
 	f.store_string(JSON.stringify(data, "\t"))
 	f.close()
 
-func add_student(name: String, character: int, ) -> void:
-	if(!exists(name)):
+func add_student(student_name: String, character: int, ) -> void:
+	if(!exists(student_name)):
 		students.append({
-			"name": name,
+			"name": student_name,
 			"avatar": character,
 			"created_at": Time.get_unix_time_from_system(),
 			"updated_at": ""
 		})
+		save_db()
 	else:
 		print("IT EXISTS YOU TWINKY WINKY")
 		save_db()
 	
-func update_student(name: String, new_name: String = "", new_avatar: int = -1) -> bool:
+func update_student(student_name: String, new_name: String = "", new_avatar: int = -1) -> bool:
 	for s in students:
-		if s.get("name", "") == name:
+		if s.get("name", "") == student_name:
 			if new_name != "":
 				s["name"] = new_name
 			if new_avatar != -1:
@@ -72,26 +79,26 @@ func update_student(name: String, new_name: String = "", new_avatar: int = -1) -
 			return true
 	return false  # not found
 	
-func delete_student(name: String) -> bool:
+func delete_student(student_name: String) -> bool:
 	for i in range(students.size()):
-		if students[i].get("name", "") == name:
+		if students[i].get("name", "") == student_name:
 			students.remove_at(i)
 			
-			if active_student == name:
+			if active_student == student_name:
 				active_student = ""  # or pick another student if needed
 			
 			save_db()
 			return true  # success
 	return false  # not found
 
-func exists(name: String) -> bool:
+func exists(student_name: String) -> bool:
 	for s in students:
-		if String(s.get("name", "")) == name:
+		if String(s.get("name", "")) == student_name:
 			return true
 	return false
 
-func set_active(name: String) -> void:
-	active_student = name
+func set_active(student_name: String) -> void:
+	active_student = student_name
 	save_db()
 
 func sorted_students() -> Array:

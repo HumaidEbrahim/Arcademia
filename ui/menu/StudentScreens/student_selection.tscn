@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsee3tfu1u7jp"]
 
 [ext_resource type="Script" uid="uid://blwktn8xg5iqt" path="res://ui/menu/StudentScreens/student_selection.gd" id="1_bemkr"]
-[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/Sky.png" id="2_8y8sx"]
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="2_8y8sx"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_bemkr"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_areec"]
 bg_color = Color(0.68096, 0.398922, 0.143259, 1)
