@@ -111,28 +111,9 @@ func _on_enter_pressed() -> void: # check for appropriate length and Read/Save e
 		label_enter_name.text = "ENTER AT LEAST \n THREE CHARACTERS"
 	else:
 		#TODO Write new player name to text file.
-		ProfileDB.update_student(PersonToUpdate,newPlayerName,0);
+		ProfileDB.update_student(PersonToUpdate, newPlayerName, selected_character)
 		get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
-	#TODO change scene to next scene
-	
-	
-# Player name selection
-var alphabet = ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-
-func _on_enter_pressed() -> void:
-	var new_player_name := _collect_name_from_spinners()
-	if new_player_name.length() < 3:
-		label_enter_name.text = "ENTER AT LEAST \n THREE CHARACTERS"
-		return
-
-	# Persist avatar & (possibly changed) name
-	Global.SelectedCharacter = selected_character
-	ProfileDB.update_student(PersonToUpdate, new_player_name, selected_character)
-
-	# If the name changed, keep global pointer consistent
-	Global.PersonToEdit = new_player_name
-
-	get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
+	#TODO change scene to next screen
 
 
 # --------- NAME SPINNER HELPERS ---------
@@ -174,15 +155,14 @@ func _cycle_char_down(character_label: Label) -> void:
 # --------- AVATAR HELPERS ---------
 func _on_switch_avatar() -> void:
 	selected_character = (selected_character + 1) % 2
-	Global.SelectedCharacter = selected_character
 	_update_avatar_visuals()
 
 func _update_avatar_visuals() -> void:
 	if selected_character == 0:
-		avatar_image.texture = AVATAR_BOY
+		avatar_image.texture = AVATAR_GIRL
 		btn_switch.text = "Switch"
 	else:
-		avatar_image.texture = AVATAR_GIRL
+		avatar_image.texture = AVATAR_BOY
 		btn_switch.text = "Switch"
 
 func _get_current_avatar_index(student_name: String) -> int:

@@ -1,70 +1,16 @@
 {
-	"active_student": "Jack",
+	"active_student": "XCD",
 	"students": [
 		{
-			"avatar": 0.0,
-			"name": "James"
+			"avatar": 1.0,
+			"created_at": 1759008984.982,
+			"name": "XCD",
+			"updated_at": 1759009263.236
 		},
 		{
 			"avatar": 1,
-			"name": "EMMA",
-			"updated_at": 1758883137.632
-		},
-		{
-			"avatar": 0.0,
-			"name": "Jack"
-		},
-		{
-			"avatar": 1.0,
-			"name": "Sophia"
-		},
-		{
-			"avatar": 0.0,
-			"name": "Liam"
-		},
-		{
-			"avatar": 1.0,
-			"name": "Olivia"
-		},
-		{
-			"avatar": 0.0,
-			"name": "Noah"
-		},
-		{
-			"avatar": 1.0,
-			"name": "Mia"
-		},
-		{
-			"avatar": 1.0,
-			"created_at": 1758843888.383,
-			"name": "AAAAAA",
-			"updated_at": 1758843889.802
-		},
-		{
-			"avatar": 0.0,
-			"created_at": 1759007638.851,
-			"name": "ZYXWXT",
-			"updated_at": 1759007642.981
-		},
-		{
-			"avatar": 0,
-			"created_at": 1759007771.105,
-			"name": "DWW",
-			"updated_at": ""
-		},
-		{
-			"avatar": 1,
-			"created_at": 1759007827.426,
-			"name": "XXXYZZ",
-			"updated_at": 1759007829.157
-			"created_at": 1758882445.482,
-			"name": "BEZ",
-			"updated_at": ""
-		},
-		{
-			"avatar": 0.0,
-			"created_at": 1758882473.866,
-			"name": "ZACK",
+			"created_at": 1759009406.457,
+			"name": "AACDGD",
 			"updated_at": ""
 		}
 	]

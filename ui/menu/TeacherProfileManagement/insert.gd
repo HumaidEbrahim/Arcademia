@@ -1,7 +1,7 @@
 # res://ui/menu/Login/new_student.gd
 extends Control
 
-const PROFILE_MANAGEMENT_PATH         := "res://ui/menu/TeacherProfileManagement/profile_management.tscn"
+const PROFILE_MANAGEMENT_PATH := "res://ui/menu/TeacherProfileManagement/profile_management.tscn"
 
 # --- Avatar textures (boy first) ---
 const AVATAR_BOY  : Texture2D = preload("res://assets/IngeUI/UIAvatars/stickerboy.png")
@@ -98,10 +98,7 @@ func _on_enter_pressed() -> void:
 		return
 
 	# Persist avatar selection and create the student
-	Global.SelectedCharacter = selected_character
 	ProfileDB.add_student(new_player_name, selected_character)
-	ProfileDB.set_active(new_player_name)
-
 	get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
 
 # ---------- Name spinners ----------
@@ -126,38 +123,9 @@ func _on_switch_avatar() -> void:
 
 func _update_avatar_visuals() -> void:
 	if selected_character == 0:
-		avatar_image.texture = AVATAR_BOY
+		avatar_image.texture = AVATAR_GIRL
 		btn_switch.text = "Switch"
 	else:
-		ProfileDB.add_student(newPlayerName, 0)
-		get_tree().change_scene_to_file("res://ui/menu/TeacherProfileManagement/profile_management.tscn")
-	#TODO change scene to next scene
+		avatar_image.texture = AVATAR_BOY
+		btn_switch.text = "Switch"
 	
-# Player name selection
-var alphabet = ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-
-func _cycle_char_up(characterLabel: Label) -> void:
-	var currentChar = characterLabel.text
-	var currentPos = alphabet.find(currentChar)
-	var nextPos = 0
-
-	if currentPos == 0:
-		nextPos = alphabet.size() - 1
-	else:
-		nextPos = currentPos - 1
-
-	characterLabel.text = alphabet[nextPos]
-
-func _cycle_char_down(characterLabel: Label) -> void:
-	var currentChar = characterLabel.text
-	var currentPos = alphabet.find(currentChar)
-	var nextPos = 0
-	
-	if currentPos == 26:
-		nextPos = 0
-	else: 
-		nextPos = currentPos + 1
-	characterLabel.text = alphabet[nextPos]
-	
-	
-		
