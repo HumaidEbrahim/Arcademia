@@ -1,14 +1,28 @@
 extends Area2D
 
 @onready var label = get_parent().get_node("TextBox/Text")
+@onready var player = $Sprite2D
 
 var has_feed = false
 var area = null
+var last_position: Vector2
+
 
 func _ready():
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	label.text = "Feed the chickens"
+	last_position = position
+
+func _process(delta: float) -> void:
+	# anim
+	if position != last_position:
+		if(position < last_position):
+			player.flip_h = true
+		else:
+			player.flip_h = false
+	last_position = position
+		
 	
 func action_pickup():
 	if area and area.name == "Feed" and not has_feed:
