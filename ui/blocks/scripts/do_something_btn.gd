@@ -2,7 +2,7 @@ extends TextureButton
 
 signal finished
 
-@export var target_sprite: NodePath
+@export var level_bound = 0
 @export var step_size: int = 50
 @export var move_duration: float = 0.5
 @export var move_direction: String = "Right"
@@ -36,11 +36,21 @@ func spriteAnimation() -> void:
 	if not sprite:
 		push_error("Player not assigned")
 		return
-
+	
+	
 	var start_pos = sprite.position
 	var end_pos = start_pos + move_offset
-	var elapsed = 0.0
 	
+	match move_direction.to_lower():
+		"right":
+			end_pos.x = clamp(end_pos.x, start_pos.x, level_bound)
+		"left":
+			end_pos.x = clamp(end_pos.x, level_bound, start_pos.x)
+		"up":
+			end_pos.y = clamp(end_pos.y, level_bound, start_pos.y)
+		"down":
+			end_pos.y = clamp(end_pos.y, start_pos.y, level_bound)
+			
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", end_pos, move_duration)
 	

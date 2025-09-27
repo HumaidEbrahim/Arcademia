@@ -64,7 +64,7 @@ position = Vector2(1138, 590)
 script = ExtResource("2_fckal")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
-scale = Vector2(0.21405636, 0.22710067)
+scale = Vector2(0.214056, 0.227101)
 texture = ExtResource("3_0vwdd")
 centered = false
 

@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="28_4t6sw"]
 [ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="29_pmr81"]
 [ext_resource type="Texture2D" uid="uid://cda7sgmr7d53o" path="res://assets/Farm/Mielie/Mielie_03.png" id="30_rmhjy"]
+[ext_resource type="Script" uid="uid://cxmft53f0l46o" path="res://levels/openworld/Birds.gd" id="30_u26ar"]
 [ext_resource type="Texture2D" uid="uid://c14yw70ysnpwx" path="res://assets/Farm/Mielie/Mielie_04.png" id="31_f4d0c"]
 [ext_resource type="Texture2D" uid="uid://cjgqf8vrhescl" path="res://assets/Farm/Mielie/Mielie_05.png" id="32_mcune"]
 [ext_resource type="Texture2D" uid="uid://0l1t2a5l5d2h" path="res://assets/Farm/Mielie/Mielie_06.png" id="33_vom2k"]
@@ -59,7 +60,6 @@
 [ext_resource type="Texture2D" uid="uid://dhoj3xvxlysef" path="res://assets/Farm/Cows/Cow_Standing_02.png" id="41_u851h"]
 [ext_resource type="Texture2D" uid="uid://boha7jusf0ekt" path="res://assets/Farm/FarmMap_House.png" id="42_htkvy"]
 [ext_resource type="Texture2D" uid="uid://w0tlaonb7pdl" path="res://assets/Farm/Cows/Cow_Standing_03.png" id="42_q3b8s"]
-[ext_resource type="Script" uid="uid://b38hgu5sxggky" path="res://levels/openworld/River.tres.gd" id="54_u26ar"]
 [ext_resource type="Texture2D" uid="uid://wi20mtjpk4od" path="res://assets/Farm/River/FarmRiver01.png" id="61_cdtih"]
 [ext_resource type="Texture2D" uid="uid://nbe8b8r5m8hf" path="res://assets/Farm/River/FarmRiver02.png" id="62_htkvy"]
 [ext_resource type="Texture2D" uid="uid://doxhh6wcyetwu" path="res://assets/Farm/Bridge.png" id="62_kjeei"]
@@ -405,7 +405,9 @@ frame_progress = 0.701616
 position = Vector2(113, 308)
 scale = Vector2(0.401639, 0.360132)
 sprite_frames = SubResource("SpriteFrames_4t6sw")
+autoplay = "default"
 frame_progress = 0.930413
+script = ExtResource("30_u26ar")
 
 [node name="Smoke" type="AnimatedSprite2D" parent="."]
 position = Vector2(758, 274)
@@ -416,6 +418,7 @@ autoplay = "Smoke"
 
 [node name="Barn" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
+target_level = "res://levels/lvl1/BarnLevel/BarnLevel.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Barn"]
 position = Vector2(1399, 656)
@@ -467,7 +470,7 @@ texture = ExtResource("63_6wkvg")
 
 [node name="River" type="Area2D" parent="."]
 monitorable = false
-script = ExtResource("54_u26ar")
+script = ExtResource("68_bi5to")
 target_level = "res://levels/lvl1/Farm_River_Level.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="River"]
