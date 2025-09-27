@@ -1,25 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://byv1m502ofqaw"]
+[gd_scene load_steps=25 format=3 uid="uid://byv1m502ofqaw"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_1hht2"]
 [ext_resource type="Script" uid="uid://djspt8im7yakf" path="res://ui/menu/TeacherProfileManagement/update.gd" id="1_alyyl"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_alyyl"]
 [ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/UIIcons/triangleup.png" id="3_bcubo"]
 [ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/UIIcons/triangledown.png" id="4_xw7bh"]
+[ext_resource type="Texture2D" uid="uid://biql40u43hq3p" path="res://assets/IngeUI/UIAvatars/stickerboy.png" id="6_63kp6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2rjs"]
-bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.231373, 0.121569, 0.0392157, 1)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
-shadow_size = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axwrr"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
 border_width_left = 6
 border_width_top = 6
@@ -150,6 +138,57 @@ corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 shadow_size = 6
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf486"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wry8j"]
+bg_color = Color(0.807033, 0.567642, 0.349084, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isneu"]
+bg_color = Color(1, 0.968627, 0.890196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vh8qe"]
+bg_color = Color(0.740949, 0.501192, 0.278082, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
 [node name="Update" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -202,42 +241,6 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("2_alyyl")
 theme_override_font_sizes/font_size = 64
 text = "UPDATE STUDENT"
-
-[node name="CardAvatar" type="Panel" parent="Background"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 213.0
-offset_top = -252.0
-offset_right = 696.0
-offset_bottom = 269.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_axwrr")
-
-[node name="Label" type="Label" parent="Background/CardAvatar"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -182.0
-offset_top = 13.0
-offset_right = 182.0
-offset_bottom = 88.0
-grow_horizontal = 2
-theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
-theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("2_alyyl")
-theme_override_font_sizes/font_size = 64
-text = "AVATAR"
-horizontal_alignment = 1
 
 [node name="Card" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)
@@ -733,3 +736,78 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xw7bh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yrb6b")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ch5v")
 text = "ENTER"
+
+[node name="CardAvatar" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 212.5
+offset_top = -259.5
+offset_right = 695.5
+offset_bottom = 261.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rf486")
+
+[node name="Label" type="Label" parent="CardAvatar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -182.0
+offset_top = 13.0
+offset_right = 182.0
+offset_bottom = 88.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_font_sizes/font_size = 64
+text = "AVATAR"
+horizontal_alignment = 1
+
+[node name="AvatarImage" type="TextureRect" parent="CardAvatar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -166.5
+offset_top = -173.0
+offset_right = 166.5
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_63kp6")
+
+[node name="BtnSwitch" type="Button" parent="CardAvatar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -72.0
+offset_right = 92.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxFlat_wry8j")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wry8j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isneu")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vh8qe")
+text = "SWITCH"

@@ -28,6 +28,7 @@ func _ready() -> void:
 		button.pressed.connect(add_num_to_pin.bind(num))
 	btn_enter.pressed.connect(validate_pin)
 	btn_back.pressed.connect(_on_back_pressed)
+	btn_back.grab_focus()
 	# btn_enter2.pressed.connect(_on_enter_pressed)
 
 func _on_back_pressed() -> void:

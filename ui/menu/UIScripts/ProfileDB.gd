@@ -3,7 +3,6 @@ extends Node
 
 const SAVE_PATH: String      = "user://profiles.json"
 const DEFAULT_PATH: String   = "res://ui/menu/UIScripts/default_profiles.json"
-const DEFAULT_AVATAR: String = "res://art/avatars/default.png"  # optional
 
 var students: Array = []    # keep generic for simplicity
 var active_student: String = ""
@@ -27,18 +26,25 @@ func load_db() -> void:
 		var txt2: String = FileAccess.get_file_as_string(DEFAULT_PATH)
 		var data2: Variant = JSON.parse_string(txt2)
 		if data2 is Dictionary:
-			var dict2: Dictionary = data2
-			students = dict2.get("students", [])
-			active_student = String(dict2.get("active_student", ""))
-			# save a copy to user:// so it persists
+			_load_from_dict(data2)
+			_migrate_fill_missing_avatar()
 			save_db()
 			return
-
 	# 3) Nothing found -> empty list
 	students = []
 	active_student = ""
 	save_db()
-
+	
+func _load_from_dict(dict: Dictionary) -> void:
+	students = dict.get("students", [])
+	active_student = String(dict.get("active_student", ""))
+	
+# If some students don't have "avatar", default them to 0 (boy)
+func _migrate_fill_missing_avatar() -> void:
+	for s in students:
+		if not s.has("avatar"):
+			s["avatar"] = 0
+	
 func save_db() -> void:
 	var data: Dictionary = {
 		"students": students,

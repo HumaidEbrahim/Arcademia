@@ -68,7 +68,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var f := get_viewport().gui_get_focus_owner()
 		if f is Button:
 			f.emit_signal("pressed")
-			get_viewport().set_input_as_handled()
+			#get_viewport().set_input_as_handled()
 
 func _list_buttons() -> Array[Button]:
 	var out: Array[Button] = []
@@ -164,6 +164,7 @@ func _style_back_plank() -> void:
 
 	back.add_theme_stylebox_override("normal", base)
 	back.add_theme_stylebox_override("hover",  hov)
+	back.add_theme_stylebox_override("focus",  hov)
 	back.add_theme_stylebox_override("pressed", prs)
 	back.add_theme_color_override("font_color", Color("#FFFFFF"))
 	back.add_theme_font_override("font", UI_FONT)
