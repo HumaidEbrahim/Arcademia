@@ -7,15 +7,25 @@ var executeQue:Array = []
 var is_in_move_mode: bool = false
 var node_to_move = null
 
+#Toggle for running / resetting
+var runReset: bool = false;
+var current_level: Node
+var gameArea: Node
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#Grab focus on launch
 	resetFocusToInit()
+	
+	#Set game area
+	gameArea = $HBoxContainer/GameArea/SubViewportContainer
+	#Get instance of current game area
+	current_level = gameArea.get_child(0).duplicate(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
 	var functionsPanel = $HBoxContainer/FunctionPanel/VBoxContainer
 	var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
 	
@@ -27,10 +37,10 @@ func _process(delta: float) -> void:
 			move_node_in_queue(1) # 1 means move down
 	
 	#Set scriptScrollBar maximum height
-	setScrollMaxHeight(750)
+	#setScrollMaxHeight(750)
 	
 	#Scrollbar release focus
-	scrollbarFocusChange(get_viewport().gui_get_focus_owner())
+	#scrollbarFocusChange(get_viewport().gui_get_focus_owner())
 	
 	#listen to when A button is pressed to execute commands
 	if Input.is_action_just_pressed("btn_1"):
@@ -45,7 +55,6 @@ func _process(delta: float) -> void:
 		elif (focusedItem and runClearBtns.is_ancestor_of(focusedItem) ):
 			const_buttons_ScriptPanel(focusedItem, runClearBtns)
 
-	
 	#listen to when S button is pressed to enter/exit move mode
 	if Input.is_action_just_pressed("btn_2"):
 		#if we are already moving something, this button press will "drop" it
@@ -80,31 +89,56 @@ func _process(delta: float) -> void:
 		pass
 
 func _on_run_pressed() -> void:
-	populateActionsArray()
 	
-	for action in executeQue:
-		action._on_pressed()
+	#Change run to reset or not
+	if ( runReset == false ):
+		populateActionsArray()
+		exeqUserQue()
+		runReset = true
 		
-		#Wait for first button to send finished signal
-		await action.finished
+	else:
+		resetPlayerScene()
+		runReset = false
+	
 
 func _on_clear_pressed() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
 	
 	for child in scriptQuePanel.get_children():
 		scriptQuePanel.remove_child(child)
 	
 	executeQue.clear()
 
+#Run all execution blocks
+func exeqUserQue() -> void:
+	if ( executeQue.size() >= 1 ):
+		for action in executeQue:
+			action._on_pressed()
+		
+			#Wait for first button to send finished signal
+			await action.finished
+
+#Reset player area scene
+func resetPlayerScene() -> void:
+	
+	if gameArea.get_child_count() > 0 && current_level != null:
+		var old_level = gameArea.get_child(0)
+		#Remove old level
+		old_level.queue_free()
+		
+		#Create new instance of level
+		var new_level = current_level.duplicate(true)
+		gameArea.add_child(new_level)
+
 #Add children of ScriptPanel container to execution array
 func populateActionsArray() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
 	
 	#Stop executeQue from being inflated by repeated runs without clear
 	executeQue.clear();
 	
 	for child in scriptQuePanel.get_children():
-		print("Child:", child, "Type:", child.get_class())
+		#print("Child:", child, "Type:", child.get_class())
 		executeQue.append(child)
 	
 #Toggles visibility of an object
@@ -187,7 +221,8 @@ func delete_item_from_queue(item_to_delete: Control) -> void:
 		resetFocusToInit()
 
 func setScrollMaxHeight(maxHeight: int) -> void:
-	var scrollBox = $HBoxContainer/ScriptPanel/ScrollContainer/VBoxContainer
+	pass
+	var scrollBox = $HBoxContainer/ScriptPanel/VBoxContainer
 	
 	if ( scrollBox.size.y > maxHeight ):
 		scrollBox.size.y = maxHeight
@@ -196,11 +231,12 @@ func setScrollMaxHeight(maxHeight: int) -> void:
 func scrollbarFocusChange(focusedItem : Object) -> void:
 	#move focus once scroll is at the bottom
 	var scrollLocation = $HBoxContainer/ScriptPanel/ScrollContainer.get_v_scroll_bar()
-	if (scrollLocation.value >= scrollLocation.max_value):
-		print("end of list")
+	#if (scrollLocation.value >= scrollLocation.max_value):
+		#print("end of list")
 		
 	#print(scrollLocation.value)
 	#print(scrollLocation.max_value)
 	
+
 func resetFocusToInit() -> void:
-	$HBoxContainer/FunctionPanel/VBoxContainer.get_child(0).get_child(0).grab_focus()
+	$HBoxContainer/FunctionPanel.get_child(0).get_child(0).get_child(0).grab_focus()
