@@ -109,7 +109,7 @@ shape = SubResource("RectangleShape2D_m4l8h")
 position = Vector2(601, 447.50003)
 scale = Vector2(1.0135134, 1.0335649)
 sprite_frames = SubResource("SpriteFrames_q3h31")
-frame_progress = 0.60544294
+frame_progress = 0.24627689
 
 [node name="SafeArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbfi6isesf8bx"
-path="res://.godot/imported/Girl_448x448_Final.png-acbc2e25135217fdb33cc3b7621885cf.ctex"
+uid="uid://cqse1eqaddhft"
+path="res://.godot/imported/Full_Boy_Sprite.png-33d2ad2b13dd2a96e4ae089d742d521c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Characters/Girl_448x448_Final.png"
-dest_files=["res://.godot/imported/Girl_448x448_Final.png-acbc2e25135217fdb33cc3b7621885cf.ctex"]
+source_file="res://assets/Characters/Full_Boy_Sprite.png"
+dest_files=["res://.godot/imported/Full_Boy_Sprite.png-33d2ad2b13dd2a96e4ae089d742d521c.ctex"]
 
 [params]
 
