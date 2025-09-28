@@ -56,6 +56,7 @@ offset_left = -90.0
 offset_top = 21.0
 offset_right = 86.0
 offset_bottom = 77.0
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 
 [node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="0"]
 texture = ExtResource("3_cguow")
@@ -71,6 +72,7 @@ offset_left = -89.0
 offset_top = 94.0
 offset_right = 87.0
 offset_bottom = 152.0
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 move_direction = "Left"
 
 [node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="0"]
@@ -87,6 +89,7 @@ offset_left = -90.0
 offset_top = 173.0
 offset_right = 84.0
 offset_bottom = 231.0
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 move_direction = "Up"
 
 [node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
@@ -108,6 +111,7 @@ offset_right = 88.0
 offset_bottom = 301.0
 grow_horizontal = 1
 grow_vertical = 1
+target_sprite = NodePath("../../../../GameArea/SubViewportContainer/SubViewport/Player")
 move_direction = "Down"
 
 [node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
