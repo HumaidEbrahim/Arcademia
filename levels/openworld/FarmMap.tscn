@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bpx27qfoucswx"]
+[gd_scene load_steps=93 format=3 uid="uid://bpx27qfoucswx"]
 
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="1_7yifi"]
 [ext_resource type="Texture2D" uid="uid://dp1q36qnkcfmr" path="res://assets/Effects/Birds/birds01.png" id="2_goeqc"]
@@ -76,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://gyem0pehmerl" path="res://assets/Farm/River/FarmRiver11.png" id="71_lvoov"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="73_htkvy"]
 [ext_resource type="AudioStream" uid="uid://dorxl1wqwbakp" path="res://music/Bongi Eepy/Bongi Eepy (mastered).mp3" id="75_gfkuq"]
+[ext_resource type="AudioStream" uid="uid://tnvpcdl6f0ev" path="res://sounds/Open_World_Sounds/farm-rooster-63323.mp3" id="77_oi3vk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvoov"]
 animations = [{
@@ -522,6 +523,11 @@ autoplay = true
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("75_gfkuq")
 volume_db = -15.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("77_oi3vk")
+volume_db = -16.0
 autoplay = true
 
 [connection signal="child_exiting_tree" from="House/CollisionShape2D" to="Barn" method="_on_collision_shape_2d_child_exiting_tree"]

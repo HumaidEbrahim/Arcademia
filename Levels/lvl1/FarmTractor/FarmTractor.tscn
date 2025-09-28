@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdjcvpjiowwki"]
+[gd_scene load_steps=26 format=3 uid="uid://cdjcvpjiowwki"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wbkxu"]
 [ext_resource type="Texture2D" uid="uid://c8ur3gjkhjyxd" path="res://assets/Farm/FarmLvl_Tractor.png" id="2_xb1bg"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dwv4hgqa06wpo" path="res://assets/Farm/TractorActor/TractorPlay07.png" id="9_vf36m"]
 [ext_resource type="Texture2D" uid="uid://dnhgvbdy1xy1h" path="res://assets/Farm/TractorActor/TractorPlay08.png" id="10_ecpiv"]
 [ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="20_tenat"]
+[ext_resource type="AudioStream" uid="uid://dhe41pseskhwv" path="res://sounds/Tractor_Level_Sounds/tractor-sound-and-ambient-farm-sounds-145531.mp3" id="21_ifi7g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpjmn"]
 animations = [{
@@ -264,6 +265,11 @@ shape = SubResource("RectangleShape2D_a3fpj")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_tenat")
 volume_db = -14.0
+autoplay = true
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_ifi7g")
+volume_db = -30.0
 autoplay = true
 
 [editable path="MainUI"]
