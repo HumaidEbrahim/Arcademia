@@ -1,14 +1,46 @@
-[gd_scene load_steps=14 format=4 uid="uid://diy7hae64ygie"]
+[gd_scene load_steps=21 format=4 uid="uid://diy7hae64ygie"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
-[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
+[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://Levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
 [ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://assets/Farm/River/River_Level/River_Level.jpg" id="3_0vwdd"]
-[ext_resource type="Script" uid="uid://dyd3kaj3qn2bo" path="res://levels/lvl1/RiverLevel/win_area.gd" id="4_pyw0y"]
+[ext_resource type="Script" uid="uid://dyd3kaj3qn2bo" path="res://Levels/lvl1/RiverLevel/win_area.gd" id="4_pyw0y"]
 [ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
+[ext_resource type="Texture2D" uid="uid://dt8ogwalfdr10" path="res://assets/Farm/River/River_Level/River_Level_river1.png" id="5_s1kyp"]
 [ext_resource type="AudioStream" uid="uid://chnsjo38rm1n1" path="res://sounds/Walking/Bongi XMas/Bongi XMas (mastered).mp3" id="6_b4xwp"]
+[ext_resource type="Texture2D" uid="uid://cfd6y6vp4y5w2" path="res://assets/Farm/River/River_Level/River_Level_river2.png" id="7_s1kyp"]
+[ext_resource type="Texture2D" uid="uid://bdhmk7ufknvkm" path="res://assets/Farm/River/River_Level/River_Level_river3.png" id="9_xlawf"]
+[ext_resource type="Texture2D" uid="uid://e7evunkrkkix" path="res://assets/Farm/River/River_Level/River_Level_river4.png" id="10_okv6a"]
+[ext_resource type="Texture2D" uid="uid://bdnle7cve3o4x" path="res://assets/Farm/River/River_Level/River_Level_river5.png" id="11_p1icf"]
+[ext_resource type="Texture2D" uid="uid://bxlx4o4ihiae3" path="res://assets/Farm/River/River_Level/River_Level_river6.png" id="12_81u7j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4l8h"]
 size = Vector2(167, 164.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q3h31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_s1kyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s1kyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xlawf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_okv6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_p1icf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_81u7j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ool8g"]
 size = Vector2(151.75, 177)
@@ -59,10 +91,6 @@ move_duration = 1.0
 step_size = 200
 move_duration = 1.0
 
-[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
-position = Vector2(1138, 590)
-script = ExtResource("2_fckal")
-
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
 scale = Vector2(0.214056, 0.227101)
 texture = ExtResource("3_0vwdd")
@@ -75,7 +103,15 @@ script = ExtResource("4_pyw0y")
 position = Vector2(120, 584.25)
 shape = SubResource("RectangleShape2D_m4l8h")
 
-[node name="SafeArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+[node name="River" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/River"]
+position = Vector2(601, 447.50003)
+scale = Vector2(1.0135134, 1.0335649)
+sprite_frames = SubResource("SpriteFrames_q3h31")
+frame_progress = 0.60544294
+
+[node name="SafeArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
 position = Vector2(1138, 590)
@@ -95,16 +131,22 @@ shape = SubResource("RectangleShape2D_pyx1x")
 position = Vector2(899, 590)
 shape = SubResource("RectangleShape2D_qoy7n")
 
-[node name="TileMap" type="TileMap" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+[node name="TileMap" type="TileMap" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+visibility_layer = 512
 format = 2
 
 [node name="TileMapLayer" type="TileMapLayer" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TileMap"]
+light_mask = 0
 scale = Vector2(0.2, 0.2)
 tile_map_data = PackedByteArray("AACuAcAAAAACAAEAAABkAeQAAAACAAEAAAAcAeQAAAACAAEAAADKAOMAAAACAAEAAAB5AOEAAAACAAEAAAAoAOEAAAACAAEAAAA=")
 tile_set = SubResource("TileSet_fckal")
 
-[connection signal="area_exited" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" to="MainUI" method="_on_player_area_exited"]
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+position = Vector2(1138, 590)
+script = ExtResource("2_fckal")
+
 [connection signal="body_entered" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/WinArea" to="MainUI" method="_on_win_area_body_entered"]
+[connection signal="area_exited" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" to="MainUI" method="_on_player_area_exited"]
 
 [editable path="MainUI"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]

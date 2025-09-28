@@ -1,11 +1,11 @@
 [gd_scene load_steps=42 format=3 uid="uid://bx2ta16vsi55j"]
 
-[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://Levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
 [ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="3_xwafh"]
 [ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
-[ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
+[ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://Levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
 [ext_resource type="Texture2D" uid="uid://ba5vkwx8sprm" path="res://assets/Farm/Barn/Barn01.png" id="4_s8e1t"]
 [ext_resource type="Texture2D" uid="uid://18gj13xmkpyd" path="res://assets/Farm/Barn/Barn02.png" id="5_3ro4f"]
 [ext_resource type="Texture2D" uid="uid://cfqkji01kttnw" path="res://assets/Farm/Barn/Barn03.png" id="7_52y21"]
@@ -282,8 +282,7 @@ script = ExtResource("4_egmrn")
 
 [node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
 scale = Vector2(0.7, 0.7)
-frame = 1
-frame_progress = 0.670441
+frame_progress = 0.6332495
 
 [node name="Chicken1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
 position = Vector2(254, 618)
