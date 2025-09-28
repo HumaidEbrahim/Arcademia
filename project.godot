@@ -25,6 +25,7 @@ Utils="*res://levels/openworld/Utils.gd"
 
 window/size/viewport_width=1600
 window/size/viewport_height=900
+window/size/mode=3
 window/stretch/mode="viewport"
 
 [input]

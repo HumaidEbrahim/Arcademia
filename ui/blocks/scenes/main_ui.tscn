@@ -95,6 +95,8 @@ texture_pressed = ExtResource("10_r40k7")
 texture_focused = ExtResource("11_rdbyt")
 move_direction = "Down"
 
+[node name="Click_Sound" type="AudioStreamPlayer2D" parent="HBoxContainer/FunctionPanel"]
+
 [node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
 show_behind_parent = true
 z_index = -10
@@ -158,6 +160,7 @@ offset_right = 157.0
 offset_bottom = 852.0
 text = "Clear sequence"
 
+[connection signal="pressed" from="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" to="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" method="_on_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]
 

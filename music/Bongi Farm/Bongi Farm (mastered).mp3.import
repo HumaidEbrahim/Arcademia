@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://itlrae6e0rtd"
+path="res://.godot/imported/Bongi Farm (mastered).mp3-9431d84f10aab268d66339ca0c05af56.mp3str"
+
+[deps]
+
+source_file="res://music/Bongi Farm/Bongi Farm (mastered).mp3"
+dest_files=["res://.godot/imported/Bongi Farm (mastered).mp3-9431d84f10aab268d66339ca0c05af56.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
