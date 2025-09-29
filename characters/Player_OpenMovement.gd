@@ -12,12 +12,23 @@ var anim_sprite : AnimatedSprite2D;
 var last_direction := Vector2();
 var depth :float = 0;
 var scale_factor = 0;
+var walk:String = ""
+var idle:String = ""
+
 
 func _ready():
 	anim_sprite = $AnimatedSprite2D;
 	scale_factor = lerp(max_scale, min_scale, depth);
 	scale = Vector2.ONE * scale_factor;
 	
+	if Global.SelectedCharacter == 0:
+		walk = "Girl_Walk"
+		idle = "Girl_Idle"
+	elif Global.SelectedCharacter == 1:
+		walk = "Boy_Walk"
+		idle = "Boy_Idle"
+		
+		
 func _physics_process(delta: float) -> void:
 	var input_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left");
 	var input_y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up");
@@ -53,27 +64,18 @@ func get_depth_factor(y):
 	return clamp((bottom_y - y) / (bottom_y - top_y), 0.0, 1.0);
 	
 func play_walk_animation(direction):
+	anim_sprite.play(walk);
+	
 	if direction.x > 0:
-		anim_sprite.play("Girl_Walk");
 		anim_sprite.flip_h = false;
 	elif direction.x < 0:
 		anim_sprite.flip_h = true;
-		anim_sprite.play("Girl_Walk");
-	if direction.y > 0:
-		anim_sprite.play("Girl_Walk");
-	elif direction.y < 0:
-		anim_sprite.play("Girl_Walk");
 		
-
+		
 func play_idle_animation(direction):
+	anim_sprite.play(idle);
+	
 	if direction.x > 0:
-		anim_sprite.play("Girl_Idle");
 		anim_sprite.flip_h = false;
 	elif direction.x < 0:
 		anim_sprite.flip_h = true;
-		anim_sprite.play("Girl_Idle");
-	if direction.y > 0:
-		anim_sprite.play("Girl_Idle");
-	elif direction.y < 0:
-		anim_sprite.play("Girl_Idle");
-		
