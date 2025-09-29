@@ -25,7 +25,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	var functionsPanel = $HBoxContainer/FunctionPanel/VBoxContainer
 	var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
 	
@@ -35,9 +35,6 @@ func _process(delta: float) -> void:
 			move_node_in_queue(-1) # -1 means move up
 		elif Input.is_action_just_pressed("ui_down"):
 			move_node_in_queue(1) # 1 means move down
-	
-	#Set scriptScrollBar maximum height
-	#setScrollMaxHeight(750)
 	
 	#Scrollbar release focus
 	#scrollbarFocusChange(get_viewport().gui_get_focus_owner())
@@ -102,7 +99,7 @@ func _on_run_pressed() -> void:
 	
 
 func _on_clear_pressed() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	
 	for child in scriptQuePanel.get_children():
 		scriptQuePanel.remove_child(child)
@@ -132,7 +129,7 @@ func resetPlayerScene() -> void:
 
 #Add children of ScriptPanel container to execution array
 func populateActionsArray() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	
 	#Stop executeQue from being inflated by repeated runs without clear
 	executeQue.clear();
@@ -150,6 +147,9 @@ func toggleShow(itemToToggle: Object) -> void:
 
 #Happens when Btn_1 is pressed during functions panel focus
 func execute_FunctionsPanel( button : Object, locationToPut : Object ) -> void:
+	#Set scriptScrollBar height
+	#setScrollMaxHeight(750)
+	
 	#add to script panel
 	var copy = button.duplicate()
 	locationToPut.add_child(copy)
@@ -219,24 +219,6 @@ func delete_item_from_queue(item_to_delete: Control) -> void:
 	elif child_count <= 0:
 		#Reset focus if no elements in panel
 		resetFocusToInit()
-
-func setScrollMaxHeight(maxHeight: int) -> void:
-	pass
-	var scrollBox = $HBoxContainer/ScriptPanel/VBoxContainer
-	
-	if ( scrollBox.size.y > maxHeight ):
-		scrollBox.size.y = maxHeight
-
-#TODO: Scrollbar still holds focus at end, ScrollContainer breaks execution for some reason
-func scrollbarFocusChange(focusedItem : Object) -> void:
-	#move focus once scroll is at the bottom
-	var scrollLocation = $HBoxContainer/ScriptPanel/ScrollContainer.get_v_scroll_bar()
-	#if (scrollLocation.value >= scrollLocation.max_value):
-		#print("end of list")
-		
-	#print(scrollLocation.value)
-	#print(scrollLocation.max_value)
-	
 
 func resetFocusToInit() -> void:
 	$HBoxContainer/FunctionPanel.get_child(0).get_child(0).get_child(0).grab_focus()
