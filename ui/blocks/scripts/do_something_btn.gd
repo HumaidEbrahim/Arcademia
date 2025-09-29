@@ -14,7 +14,7 @@ var focus_polygon: Polygon2D
 
 func _ready() -> void:
 	# Find the player sprite in the scene
-	sprite = get_tree().get_root().find_child("Player", true, false) as Area2D
+	sprite = get_tree().root.find_child("Player", true, false)
 	
 	# Get visual state polygons
 	initial_polygon = $"Initial" 
@@ -44,6 +44,10 @@ func _process(delta: float) -> void:
 	pass
 
 func spriteAnimation() -> void:
+	#Re-assign sprite if null (when the scene has been recreated)
+	if sprite == null:
+		sprite = get_tree().root.find_child("Player", true, false)
+	
 	if not sprite:
 		push_error("Player not assigned")
 		return
