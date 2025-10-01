@@ -506,6 +506,7 @@ texture = ExtResource("62_kjeei")
 
 [node name="Flowers" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
+target_level = "res://levels/lvl1/GardenLevel/GardenLevel.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers"]
 position = Vector2(446, 695)
