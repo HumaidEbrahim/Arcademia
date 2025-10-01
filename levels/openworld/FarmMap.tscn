@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://bpx27qfoucswx"]
+[gd_scene load_steps=95 format=3 uid="uid://bpx27qfoucswx"]
 
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="1_7yifi"]
 [ext_resource type="Texture2D" uid="uid://dp1q36qnkcfmr" path="res://assets/Effects/Birds/birds01.png" id="2_goeqc"]
@@ -76,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://gyem0pehmerl" path="res://assets/Farm/River/FarmRiver11.png" id="71_lvoov"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="73_htkvy"]
 [ext_resource type="AudioStream" uid="uid://dorxl1wqwbakp" path="res://music/Bongi Eepy/Bongi Eepy (mastered).mp3" id="75_gfkuq"]
+[ext_resource type="Texture2D" uid="uid://ddmldfmnaqqej" path="res://assets/Farm/Garden/flowers.png" id="77_oi3vk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvoov"]
 animations = [{
@@ -343,7 +344,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u26ar"]
-size = Vector2(411.5, 95.5)
+size = Vector2(293.5, 95.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg46o"]
+size = Vector2(114, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg46o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_oi3vk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qovtx"]
 animations = [{
@@ -410,8 +425,8 @@ frame_progress = 0.930413
 script = ExtResource("30_u26ar")
 
 [node name="Smoke" type="AnimatedSprite2D" parent="."]
-position = Vector2(758, 274)
-scale = Vector2(1.7549, 3.57843)
+position = Vector2(794.22644, 268.74988)
+scale = Vector2(1.3333334, 3.57843)
 sprite_frames = SubResource("SpriteFrames_goeqc")
 animation = &"Smoke"
 autoplay = "Smoke"
@@ -435,12 +450,12 @@ shape = SubResource("RectangleShape2D_bi5to")
 script = ExtResource("68_bi5to")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="House"]
-position = Vector2(634, 655)
+position = Vector2(682.22644, 650.7499)
 scale = Vector2(0.355911, 0.355911)
 sprite_frames = SubResource("SpriteFrames_bi5to")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
-position = Vector2(625, 657)
+position = Vector2(673.22644, 652.7499)
 shape = SubResource("RectangleShape2D_gfkuq")
 
 [node name="Cows" type="Area2D" parent="."]
@@ -481,13 +496,25 @@ autoplay = "default"
 frame_progress = 0.747943
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="River"]
-position = Vector2(206.25, 849.75)
+position = Vector2(147.25, 849.75)
 shape = SubResource("RectangleShape2D_u26ar")
 
 [node name="Bridge" type="Sprite2D" parent="."]
 position = Vector2(183, 734)
 scale = Vector2(0.116071, 0.116071)
 texture = ExtResource("62_kjeei")
+
+[node name="Flowers" type="Area2D" parent="."]
+script = ExtResource("68_bi5to")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers"]
+position = Vector2(446, 695)
+shape = SubResource("RectangleShape2D_vg46o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flowers"]
+position = Vector2(447, 708)
+scale = Vector2(0.11990743, 0.11990743)
+sprite_frames = SubResource("SpriteFrames_vg46o")
 
 [node name="Player" parent="." instance=ExtResource("73_htkvy")]
 position = Vector2(-237, 183)
