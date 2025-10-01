@@ -1,0 +1,27 @@
+extends TextureButton
+
+signal finished
+
+@export var action: String
+var sprite: Area2D
+
+func _ready():
+	sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
+
+func call_action():
+	if not sprite:
+		push_error("Player not assigned")
+		return
+	if sprite:
+		match action.to_lower():
+			"water":
+				sprite.action_water()
+			"plant":
+				sprite.action_plant()
+			
+			
+	await get_tree().create_timer(0.2).timeout
+	emit_signal("finished")
+
+func _on_pressed():
+	await call_action()
