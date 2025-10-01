@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=18 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
 [ext_resource type="Texture2D" uid="uid://dvibbu1iiuojk" path="res://assets/JuaneBtns/Left_Initial.png" id="3_ot0qh"]
@@ -12,6 +12,30 @@
 [ext_resource type="Texture2D" uid="uid://c4y5m20oneyqr" path="res://assets/JuaneBtns/Down_Press.png" id="10_r40k7"]
 [ext_resource type="Texture2D" uid="uid://cppd6bamyv27c" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
 [ext_resource type="PackedScene" uid="uid://dakwsq3euxbda" path="res://ui/blocks/scenes/player.tscn" id="12_pbjw5"]
+[ext_resource type="Texture2D" uid="uid://cvm36y5mq2qki" path="res://assets/Characters/Gogo/Gogo_excited_01.png" id="12_r40k7"]
+[ext_resource type="Texture2D" uid="uid://dw3dbypq8d63i" path="res://assets/Characters/Gogo/Gogo_excited_02.png" id="13_rdbyt"]
+[ext_resource type="Texture2D" uid="uid://butkrkcbjkg8k" path="res://assets/Characters/Gogo/Gogo_excited_03.png" id="14_7x6s0"]
+[ext_resource type="Texture2D" uid="uid://b47yjodybsabw" path="res://assets/Characters/Gogo/Gogo_excited_04.png" id="15_eql5s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xlywj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_r40k7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rdbyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7x6s0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_eql5s")
+}],
+"loop": true,
+"name": &"Excited",
+"speed": 5.0
+}]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -120,11 +144,19 @@ color = Color(0.11764706, 0.11764706, 0.11764706, 0.54509807)
 
 [node name="Text" type="Label" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 9.0
-offset_right = 52.0
-offset_bottom = 32.0
+offset_left = 86.0
+offset_top = 10.0
+offset_right = 126.0
+offset_bottom = 33.0
 text = "Hi"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox"]
+position = Vector2(51.000004, 49)
+scale = Vector2(0.087268494, 0.08341031)
+sprite_frames = SubResource("SpriteFrames_xlywj")
+animation = &"Excited"
+autoplay = "Excited"
+frame_progress = 0.6240487
 
 [node name="Player" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport" instance=ExtResource("12_pbjw5")]
 position = Vector2(86, 90)
