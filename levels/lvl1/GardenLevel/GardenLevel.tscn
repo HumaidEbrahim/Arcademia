@@ -1,0 +1,155 @@
+[gd_scene load_steps=14 format=3 uid="uid://bwpyfjmbsk8ou"]
+
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2vog3"]
+[ext_resource type="Texture2D" uid="uid://co1lofo8thlb4" path="res://assets/JuaneBtns/Plant_Initial.png" id="2_dmm27"]
+[ext_resource type="Texture2D" uid="uid://bmld6xsqtku3v" path="res://assets/Farm/Garden/FarmLvl_Garden2.jpg" id="2_g4ln1"]
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_nkxik"]
+[ext_resource type="Script" uid="uid://cebss3n06xcgo" path="res://levels/lvl1/GardenLevel/Player_Garden.gd" id="3_0a0vv"]
+[ext_resource type="Texture2D" uid="uid://b53fm2xj7pyul" path="res://assets/JuaneBtns/Plant_Focus.png" id="3_nkxik"]
+[ext_resource type="Texture2D" uid="uid://b63beig7gy8fa" path="res://assets/Farm/Garden/FlowerPot.png" id="3_p85ah"]
+[ext_resource type="Texture2D" uid="uid://ddmldfmnaqqej" path="res://assets/Farm/Garden/flowers.png" id="4_p85ah"]
+[ext_resource type="Texture2D" uid="uid://drju6h2j3tpdx" path="res://assets/JuaneBtns/Water_Initial.png" id="5_c5gh3"]
+[ext_resource type="Texture2D" uid="uid://cf3vetwi580ln" path="res://assets/JuaneBtns/Water_Focus.png" id="6_coqvr"]
+[ext_resource type="Script" uid="uid://p8011ubitbd3" path="res://levels/lvl1/GardenLevel/Flowers.gd" id="11_c5gh3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p85ah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a0vv"]
+size = Vector2(157, 154.5)
+
+[node name="GardenLevel" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("1_2vog3")]
+offset_top = 450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+level_bound = 1100
+step_size = 180
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+level_bound = 58
+step_size = 180
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+script = ExtResource("2_nkxik")
+action = "plant"
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
+texture = ExtResource("2_dmm27")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="1"]
+texture = ExtResource("3_nkxik")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+script = ExtResource("2_nkxik")
+action = "water"
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
+texture = ExtResource("5_c5gh3")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="1"]
+texture = ExtResource("6_coqvr")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="FarmLvlGarden2" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+position = Vector2(600, 449)
+texture = ExtResource("2_g4ln1")
+
+[node name="Text" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="0"]
+offset_left = 83.0
+offset_top = 8.0
+offset_right = 500.0
+offset_bottom = 83.0
+text = "If there are flowers in the pots then water them.
+If there are no flowers in the pot then plant new ones."
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+z_index = 0
+position = Vector2(54, 606)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("3_0a0vv")
+
+[node name="FlowerPot" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+position = Vector2(694, 729)
+scale = Vector2(0.8325, 1)
+texture = ExtResource("3_p85ah")
+
+[node name="Flowers" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+position = Vector2(209, 765)
+scale = Vector2(0.3947916, 0.34722635)
+texture = ExtResource("4_p85ah")
+
+[node name="Pot_Full1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full1"]
+sprite_frames = SubResource("SpriteFrames_p85ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full1"]
+position = Vector2(273, 694.25)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Empty1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty1"]
+sprite_frames = SubResource("SpriteFrames_p85ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty1"]
+position = Vector2(445, 704)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Full2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full2"]
+sprite_frames = SubResource("SpriteFrames_p85ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full2"]
+position = Vector2(611, 704)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Full3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full3"]
+sprite_frames = SubResource("SpriteFrames_p85ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full3"]
+position = Vector2(778, 695)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Empty2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty2"]
+sprite_frames = SubResource("SpriteFrames_p85ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty2"]
+position = Vector2(945.5, 695)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Empty3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty3"]
+sprite_frames = SubResource("SpriteFrames_p85ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty3"]
+position = Vector2(1115, 696)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]

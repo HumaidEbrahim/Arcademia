@@ -50,5 +50,5 @@ func _on_area_exited(area2):
 func check_win():
 	var fed = get_tree().get_nodes_in_group("fed").size()
 	
-	if fed == 2:
+	if fed == 3:
 		label.text = "Chickens are all fed"
