@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2uofxt5htpes"
-path="res://.godot/imported/Left_Press.png-698e98048091b108f36c1ca06eb5b8d3.ctex"
+uid="uid://c0nohennd4fql"
+path="res://.godot/imported/Gate02.png-3c122853e9160102d4520f97eca24f6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JuaneBtns/Left_Press.png"
-dest_files=["res://.godot/imported/Left_Press.png-698e98048091b108f36c1ca06eb5b8d3.ctex"]
+source_file="res://assets/Farm/CowLevel/Gate02.png"
+dest_files=["res://.godot/imported/Gate02.png-3c122853e9160102d4520f97eca24f6d.ctex"]
 
 [params]
 

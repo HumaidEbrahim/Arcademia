@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ysnoknyjyvop"]
+
+[node name="WinScreen" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1600, 900)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.7542315, 0.33015105, 0, 0.60784316)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 739.0
+offset_top = 416.0
+offset_right = 1349.0
+offset_bottom = 683.0
+text = "Good Job!"

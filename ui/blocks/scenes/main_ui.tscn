@@ -1,17 +1,19 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=15 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
-[ext_resource type="Texture2D" uid="uid://dvibbu1iiuojk" path="res://assets/JuaneBtns/Left_Initial.png" id="3_ot0qh"]
-[ext_resource type="Texture2D" uid="uid://b2uofxt5htpes" path="res://assets/JuaneBtns/Left_Press.png" id="4_whp6t"]
-[ext_resource type="Texture2D" uid="uid://dupme3aefsvg0" path="res://assets/JuaneBtns/Left_Focus.png" id="5_eyw15"]
-[ext_resource type="Texture2D" uid="uid://wl3o185w7837" path="res://assets/JuaneBtns/Up_Initial.png" id="6_pbjw5"]
+[ext_resource type="Texture2D" uid="uid://duwpvq4fagg1p" path="res://assets/JuaneBtns/Left_Initial.png" id="3_0kc8j"]
+[ext_resource type="Texture2D" uid="uid://8ocnalu5aik0" path="res://assets/JuaneBtns/Right_Focus.png" id="3_1udnl"]
+[ext_resource type="Texture2D" uid="uid://bb43aamqqgijm" path="res://assets/JuaneBtns/Right_Initial.png" id="3_cguow"]
+[ext_resource type="Texture2D" uid="uid://1qaks0h3suob" path="res://assets/JuaneBtns/Left_Focus.png" id="4_1udnl"]
+[ext_resource type="Texture2D" uid="uid://ldfmt42gchv6" path="res://assets/JuaneBtns/Up_Initial.png" id="5_cguow"]
+[ext_resource type="Texture2D" uid="uid://dq2u55mcnv8y" path="res://assets/JuaneBtns/Up_Focus.png" id="6_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_eyw15"]
-[ext_resource type="Texture2D" uid="uid://woi00i0cp00y" path="res://assets/JuaneBtns/Up_Press.png" id="7_sje6e"]
-[ext_resource type="Texture2D" uid="uid://cwfxgfnw3t53u" path="res://assets/JuaneBtns/Up_Focus.png" id="8_ol5qr"]
-[ext_resource type="Texture2D" uid="uid://dsodvg4fpsjor" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
-[ext_resource type="Texture2D" uid="uid://c4y5m20oneyqr" path="res://assets/JuaneBtns/Down_Press.png" id="10_r40k7"]
-[ext_resource type="Texture2D" uid="uid://cppd6bamyv27c" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
+[ext_resource type="Texture2D" uid="uid://yldo6mceyimd" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
+[ext_resource type="PackedScene" uid="uid://c5nh6oaqv4rgh" path="res://ui/blocks/scenes/top_loop_block.tscn" id="11_pbjw5"]
+[ext_resource type="Texture2D" uid="uid://dldkhyew14rqv" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
 [ext_resource type="PackedScene" uid="uid://dakwsq3euxbda" path="res://ui/blocks/scenes/player.tscn" id="12_pbjw5"]
+[ext_resource type="PackedScene" uid="uid://bfdysmu7nej3t" path="res://ui/blocks/scenes/bottom_loop_block.tscn" id="12_sje6e"]
+[ext_resource type="PackedScene" uid="uid://ysnoknyjyvop" path="res://levels/openworld/WinScreen.tscn" id="14_ol5qr"]
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -51,49 +53,87 @@ size_flags_vertical = 0
 layout_mode = 2
 
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
-offset_left = -91.0
-offset_top = 13.0
-offset_right = 91.0
-offset_bottom = 119.0
+offset_left = -90.0
+offset_top = 21.0
+offset_right = 86.0
+offset_bottom = 77.0
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="0"]
+texture = ExtResource("3_cguow")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="1"]
+texture = ExtResource("3_1udnl")
 
 [node name="Move_Left" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
 layout_mode = 2
 
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
-offset_left = -92.0
-offset_top = 129.0
-offset_right = 90.0
-offset_bottom = 235.0
-texture_normal = ExtResource("3_ot0qh")
-texture_pressed = ExtResource("4_whp6t")
-texture_focused = ExtResource("5_eyw15")
+offset_left = -89.0
+offset_top = 94.0
+offset_right = 87.0
+offset_bottom = 152.0
 move_direction = "Left"
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="0"]
+texture = ExtResource("3_0kc8j")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="1"]
+texture = ExtResource("4_1udnl")
 
 [node name="Move_Up" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
 layout_mode = 2
 
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
-offset_left = -93.0
-offset_top = 243.0
-offset_right = 89.0
-offset_bottom = 349.0
-texture_normal = ExtResource("6_pbjw5")
-texture_pressed = ExtResource("7_sje6e")
-texture_focused = ExtResource("8_ol5qr")
+offset_left = -90.0
+offset_top = 173.0
+offset_right = 84.0
+offset_bottom = 231.0
 move_direction = "Up"
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
+texture = ExtResource("5_cguow")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="1"]
+texture = ExtResource("6_pbjw5")
 
 [node name="Move_Down" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("7_eyw15")]
 layout_mode = 2
 
 [node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
-offset_left = -93.0
-offset_top = 358.0
-offset_right = 89.0
-offset_bottom = 464.0
-texture_normal = ExtResource("9_kdqsy")
-texture_pressed = ExtResource("10_r40k7")
-texture_focused = ExtResource("11_rdbyt")
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -91.0
+offset_top = 246.0
+offset_right = 88.0
+offset_bottom = 301.0
+grow_horizontal = 1
+grow_vertical = 1
 move_direction = "Down"
+
+[node name="Initial" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
+texture = ExtResource("9_kdqsy")
+
+[node name="Focus" parent="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="1"]
+texture = ExtResource("11_rdbyt")
+
+[node name="Top_Loop_Block" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("11_pbjw5")]
+layout_mode = 2
+
+[node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block" index="0"]
+offset_left = -90.0
+offset_top = 316.0
+offset_right = 85.0
+offset_bottom = 371.0
+
+[node name="Bottom_Loop_Block" parent="HBoxContainer/FunctionPanel/VBoxContainer" instance=ExtResource("12_sje6e")]
+layout_mode = 2
+
+[node name="Action_Button" parent="HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block" index="0"]
+offset_left = -90.0
+offset_top = 386.0
+offset_right = 85.0
+offset_bottom = 441.0
 
 [node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
 show_behind_parent = true
@@ -120,10 +160,10 @@ color = Color(0.11764706, 0.11764706, 0.11764706, 0.54509807)
 
 [node name="Text" type="Label" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 9.0
-offset_right = 52.0
-offset_bottom = 32.0
+offset_left = 86.0
+offset_top = 10.0
+offset_right = 126.0
+offset_bottom = 33.0
 text = "Hi"
 
 [node name="Player" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport" instance=ExtResource("12_pbjw5")]
@@ -158,6 +198,9 @@ offset_right = 157.0
 offset_bottom = 852.0
 text = "Clear sequence"
 
+[node name="WinScreen" parent="HBoxContainer" instance=ExtResource("14_ol5qr")]
+visible = false
+
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]
 
@@ -165,3 +208,5 @@ text = "Clear sequence"
 [editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
 [editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
 [editable path="HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
+[editable path="HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
