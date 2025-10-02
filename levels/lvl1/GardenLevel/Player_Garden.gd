@@ -45,5 +45,6 @@ func _on_area_exited(area2):
 
 func check_win():
 	if success == 6:
-		print("won")
+		var winScreen = get_tree().root.find_child("WinScreen", true, false)
+		winScreen.visible = true
 	
