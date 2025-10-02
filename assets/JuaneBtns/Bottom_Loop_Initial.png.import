@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4y5m20oneyqr"
-path="res://.godot/imported/Down_Press.png-69ce1362e0c2bbb97b5ca04a8c4e62d2.ctex"
+uid="uid://cueupxa547p8t"
+path="res://.godot/imported/Bottom_Loop_Initial.png-ab8ef248e44459af263645d3b442a253.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JuaneBtns/Down_Press.png"
-dest_files=["res://.godot/imported/Down_Press.png-69ce1362e0c2bbb97b5ca04a8c4e62d2.ctex"]
+source_file="res://assets/JuaneBtns/Bottom_Loop_Initial.png"
+dest_files=["res://.godot/imported/Bottom_Loop_Initial.png-ab8ef248e44459af263645d3b442a253.ctex"]
 
 [params]
 

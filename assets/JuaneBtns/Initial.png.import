@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxstwwd8itcya"
-path="res://.godot/imported/Right_Press.png-66dc3f1519e09c247715ed09978615b9.ctex"
+uid="uid://cfamenhoammdv"
+path="res://.godot/imported/Initial.png-faf91ed3977537cd8e8300b4240adfc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JuaneBtns/Right_Press.png"
-dest_files=["res://.godot/imported/Right_Press.png-66dc3f1519e09c247715ed09978615b9.ctex"]
+source_file="res://assets/JuaneBtns/Initial.png"
+dest_files=["res://.godot/imported/Initial.png-faf91ed3977537cd8e8300b4240adfc5.ctex"]
 
 [params]
 

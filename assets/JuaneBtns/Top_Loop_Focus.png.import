@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dldkhyew14rqv"
-path="res://.godot/imported/Down_Focus.png-7ca3f1894e1f8032839ed6c9816fca91.ctex"
+uid="uid://dpn5sglj0vs26"
+path="res://.godot/imported/Top_Loop_Focus.png-36004622d1d9b19a5327969d0ae88ee9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JuaneBtns/Down_Focus.png"
-dest_files=["res://.godot/imported/Down_Focus.png-7ca3f1894e1f8032839ed6c9816fca91.ctex"]
+source_file="res://assets/JuaneBtns/Top_Loop_Focus.png"
+dest_files=["res://.godot/imported/Top_Loop_Focus.png-36004622d1d9b19a5327969d0ae88ee9.ctex"]
 
 [params]
 
