@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c716cqi8op8o4"
-path="res://.godot/imported/Flowers2.png-8915b396f8af839068893592d477ecb6.ctex"
+uid="uid://do7at34m8yd6g"
+path="res://.godot/imported/flower_fence5.png-465fadcdd47eb1d13f9f5a83e7a19d90.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Farm/Garden/Flowers2.png"
-dest_files=["res://.godot/imported/Flowers2.png-8915b396f8af839068893592d477ecb6.ctex"]
+source_file="res://assets/Farm/Garden/flower_fence5.png"
+dest_files=["res://.godot/imported/flower_fence5.png-465fadcdd47eb1d13f9f5a83e7a19d90.ctex"]
 
 [params]
 
