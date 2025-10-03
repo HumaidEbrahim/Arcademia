@@ -14,10 +14,10 @@ func call_action():
 		return
 	if sprite:
 		match action.to_lower():
-			"pickup":
-				sprite.action_pickup()
-			"feed":
-				sprite.action_feed()
+			"water":
+				sprite.action_water()
+			"plant":
+				sprite.action_plant()
 			
 			
 	await get_tree().create_timer(0.2).timeout

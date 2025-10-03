@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2uofxt5htpes"
-path="res://.godot/imported/Left_Press.png-698e98048091b108f36c1ca06eb5b8d3.ctex"
+uid="uid://m7vyj7fmf3ap"
+path="res://.godot/imported/move 1-Photoroom_resized.png-f4672f57cf42741083128557b59e3000.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JuaneBtns/Left_Press.png"
-dest_files=["res://.godot/imported/Left_Press.png-698e98048091b108f36c1ca06eb5b8d3.ctex"]
+source_file="res://assets/Characters/move 1-Photoroom_resized.png"
+dest_files=["res://.godot/imported/move 1-Photoroom_resized.png-f4672f57cf42741083128557b59e3000.ctex"]
 
 [params]
 

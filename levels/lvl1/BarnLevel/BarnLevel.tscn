@@ -1,13 +1,18 @@
-[gd_scene load_steps=42 format=3 uid="uid://bx2ta16vsi55j"]
+[gd_scene load_steps=45 format=3 uid="uid://bx2ta16vsi55j"]
 
-[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
+[ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="2_bcal8"]
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_egmrn"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
+[ext_resource type="Texture2D" uid="uid://dh6kymog2ws10" path="res://assets/JuaneBtns/Pickup_Initial.png" id="3_2wefm"]
 [ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="3_xwafh"]
 [ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
 [ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
+[ext_resource type="Texture2D" uid="uid://t1hp3ffd5itc" path="res://assets/JuaneBtns/Pickup_Focus.png" id="4_qduet"]
 [ext_resource type="Texture2D" uid="uid://ba5vkwx8sprm" path="res://assets/Farm/Barn/Barn01.png" id="4_s8e1t"]
 [ext_resource type="Texture2D" uid="uid://18gj13xmkpyd" path="res://assets/Farm/Barn/Barn02.png" id="5_3ro4f"]
+[ext_resource type="Texture2D" uid="uid://cde1jmoa7c8db" path="res://assets/JuaneBtns/Feed_Intitial.png" id="6_lkm0e"]
+[ext_resource type="Texture2D" uid="uid://y324xe7p5ai8" path="res://assets/JuaneBtns/Feed_Focus.png" id="6_qduet"]
 [ext_resource type="Texture2D" uid="uid://cfqkji01kttnw" path="res://assets/Farm/Barn/Barn03.png" id="7_52y21"]
 [ext_resource type="Texture2D" uid="uid://nkcqlyfyxsgd" path="res://assets/Effects/Leaves/leaves_00_delay-0.1s (1).png" id="8_6x1hn"]
 [ext_resource type="Texture2D" uid="uid://0xpyn0f2rouc" path="res://assets/Effects/Leaves/leaves_04_delay-0.1s (2).png" id="9_d22s8"]
@@ -33,12 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://dgsgg22dxsmlc" path="res://assets/Farm/Barn/ChickenIdle_02.png" id="30_bcal8"]
 [ext_resource type="Texture2D" uid="uid://btkh70vrgosyg" path="res://assets/Farm/Barn/ChickenEat_02.png" id="32_qduet"]
 [ext_resource type="Texture2D" uid="uid://bqaxtb6egbs5l" path="res://assets/Farm/Barn/ChickenEat_01.png" id="33_lkm0e"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqak5"]
-size = Vector2(170, 100)
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qghum"]
-size = Vector2(170, 100)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
 animations = [{
@@ -181,12 +180,12 @@ offset_bottom = 450.0
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
 level_bound = 800
 step_size = 200
-move_duration = 1.5
+move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
 level_bound = 200
 step_size = 200
-move_duration = 1.5
+move_duration = 1.0
 
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
 level_bound = 330
@@ -198,31 +197,61 @@ level_bound = 800
 step_size = 100
 move_duration = 1.0
 
-[node name="Pickup" type="Control" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="4"]
+[node name="Move_Down2" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="4" instance=ExtResource("2_bcal8")]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Pickup"]
-layout_mode = 0
-offset_left = -93.0
-offset_top = 469.0
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2" index="0"]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = 319.0
 offset_right = 89.0
-offset_bottom = 575.0
-texture_normal = SubResource("PlaceholderTexture2D_xqak5")
+offset_bottom = 374.0
+grow_horizontal = 1
+grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "pickup"
 
-[node name="Feed" type="Control" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="5"]
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2/Action_Button" index="0"]
+texture = ExtResource("3_2wefm")
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2/Action_Button" index="1"]
+texture = ExtResource("4_qduet")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Move_Down3" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="5" instance=ExtResource("2_bcal8")]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Feed"]
-layout_mode = 0
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3" index="0"]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
 offset_left = -91.0
-offset_top = 585.0
-offset_right = 79.0
-offset_bottom = 685.0
-texture_normal = SubResource("PlaceholderTexture2D_qghum")
+offset_top = 393.0
+offset_right = 88.0
+offset_bottom = 448.0
+grow_horizontal = 1
+grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "feed"
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3/Action_Button" index="0"]
+texture = ExtResource("6_lkm0e")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3/Action_Button" index="1"]
+texture = ExtResource("6_qduet")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Top_Loop_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="6"]
+visible = false
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block" index="0"]
+visible = false
+
+[node name="Bottom_Loop_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="7"]
+visible = false
 
 [node name="TextureRect2" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
 offset_right = 789.0
@@ -318,4 +347,8 @@ shape = SubResource("RectangleShape2D_mm5u6")
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
 [editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]

@@ -45,7 +45,7 @@ func spawn():
 	if rng.randf() < 0.5:
 		visible = true
 		speed = rng.randf_range(min_speed, max_speed)
-		position.y = rng.randf_range(min_height, max_height)
+		position.y = rng.randi_range(min_height, max_height)
 		bob_amplitude = rng.randi_range(8,20)
 		bob_phase = rng.randf() * TAU
 		base_y = position.y

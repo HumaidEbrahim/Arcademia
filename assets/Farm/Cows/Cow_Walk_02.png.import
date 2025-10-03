@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxstwwd8itcya"
-path="res://.godot/imported/Right_Press.png-66dc3f1519e09c247715ed09978615b9.ctex"
+uid="uid://5trog4svsxgn"
+path="res://.godot/imported/Cow_Walk_02.png-882b2ac29d2bc6fd207d3716d75e1972.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/JuaneBtns/Right_Press.png"
-dest_files=["res://.godot/imported/Right_Press.png-66dc3f1519e09c247715ed09978615b9.ctex"]
+source_file="res://assets/Farm/Cows/Cow_Walk_02.png"
+dest_files=["res://.godot/imported/Cow_Walk_02.png-882b2ac29d2bc6fd207d3716d75e1972.ctex"]
 
 [params]
 

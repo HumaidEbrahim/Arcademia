@@ -20,6 +20,7 @@ func _ready():
 	anim_sprite = $AnimatedSprite2D;
 	scale_factor = lerp(max_scale, min_scale, depth);
 	scale = Vector2.ONE * scale_factor;
+
 	
 	if Global.SelectedCharacter == 0:
 		walk = "Girl_Walk"
