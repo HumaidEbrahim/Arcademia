@@ -343,7 +343,7 @@ func is_in_script_panel(item: Control, script_panel: Control) -> bool:
 	return false
 
 func recalculate_all_indentations() -> void:
-	var scriptQuePanel = $HBoxContainer/ScriptPanel/VBoxContainer
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	var temp_indent_level = 0
 	
 	for container in scriptQuePanel.get_children():
