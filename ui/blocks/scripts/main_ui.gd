@@ -1,5 +1,7 @@
 extends Control
 
+@onready var run_button = $HBoxContainer/ScriptPanel/RunClear/Run
+
 var executeQue: Array = []
 
 # Variables to move commands in the queue
@@ -86,6 +88,7 @@ func _on_run_pressed() -> void:
 		return
 	
 	if not runReset:
+		run_button.text = "Reset sequence"
 		runInProgress = true
 		populateActionsArray()
 		await exeqUserQue()
@@ -105,8 +108,14 @@ func _on_clear_pressed() -> void:
 
 #Run all execution blocks
 func exeqUserQue() -> void:
+	
+	#ensure this changes if Player location changes
+	var player = get_node("HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player")
 	if ( executeQue.size() >= 1 ):
 		for action in executeQue:
+			
+			action.sprite = player
+			
 			action._on_pressed()
 		
 			#Wait for first button to send finished signal

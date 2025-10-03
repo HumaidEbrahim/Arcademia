@@ -7,13 +7,16 @@ signal finished
 @export var move_duration: float = 0.5
 @export var move_direction: String = "Right"
 
-var move_offset: Vector2 = Vector2.ZERO          
-var sprite: Area2D
+var move_offset: Vector2 = Vector2.ZERO
+var sprite: Area2D = null
 
+##### Removed this and set the player location in the main_ui #####
+##### This path is only valid when the button is in its original position in the editor #####
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
-	
+#func _ready() -> void:
+	#sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
+
+func _on_pressed() -> void:
 	# Convert string to vector
 	# Convert string to vector using match statement properly
 	match move_direction.to_lower():
@@ -27,17 +30,20 @@ func _ready() -> void:
 			move_offset = Vector2(0, step_size)
 		_:
 			move_offset = Vector2.ZERO
+			
+	spriteAnimation()
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
 func spriteAnimation() -> void:
-	if not sprite:
+	# Check if the target was successfully assigned.
+	if not is_instance_valid(sprite):
 		push_error("Player not assigned")
+		emit_signal("finished") # IMPORTANT: Still emit signal to avoid a freeze.
 		return
-	
-	
 	var start_pos = sprite.position
 	var end_pos = start_pos + move_offset
 	
@@ -54,18 +60,8 @@ func spriteAnimation() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", end_pos, move_duration)
 	
-	#while elapsed < move_duration:
-		#var delta = get_process_delta_time()
-		#elapsed += delta
-		#await get_tree().process_frame
-
-	#sprite.position = end_pos
+	# Wait for the tween to finish
+	await tween.finished
 	
-	# Add delay
-	await get_tree().create_timer(move_duration+0.2).timeout
-	
-	#IMPORTANT - Send finished signal so next item in que can start
+	# IMPORTANT - Send finished signal so next item in queue can start
 	emit_signal("finished")
-
-func _on_pressed() -> void:
-	spriteAnimation()
