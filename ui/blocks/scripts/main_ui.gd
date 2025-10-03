@@ -1,14 +1,15 @@
 extends Control
 
-#Array to store execution commands
-var executeQue:Array = []
+var executeQue: Array = []
 
 # Variables to move commands in the queue
 var is_in_move_mode: bool = false
 var node_to_move = null
 
 #Toggle for running / resetting
-var runReset: bool = false;
+var runReset: bool = false
+var runInProgress: bool = false
+
 var current_level: Node
 var gameArea: Node
 
@@ -17,10 +18,8 @@ func _ready() -> void:
 	#Grab focus on launch
 	resetFocusToInit()
 	
-	#Set game area
-	gameArea = $HBoxContainer/GameArea/SubViewportContainer
-	#Get instance of current game area
-	current_level = gameArea.get_child(0).duplicate(true)
+	if Global.populatedExecuteQue.size() >= 1:
+		rebuildScriptQue()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -35,9 +34,6 @@ func _process(delta: float) -> void:
 			move_node_in_queue(-1) # -1 means move up
 		elif Input.is_action_just_pressed("ui_down"):
 			move_node_in_queue(1) # 1 means move down
-	
-	#Scrollbar release focus
-	#scrollbarFocusChange(get_viewport().gui_get_focus_owner())
 	
 	#listen to when A button is pressed to execute commands
 	if Input.is_action_just_pressed("btn_1"):
@@ -86,17 +82,18 @@ func _process(delta: float) -> void:
 		pass
 
 func _on_run_pressed() -> void:
+	if (runInProgress):
+		return
 	
-	#Change run to reset or not
-	if ( runReset == false ):
+	if not runReset:
+		runInProgress = true
 		populateActionsArray()
-		exeqUserQue()
+		await exeqUserQue()
+		runInProgress = false
 		runReset = true
-		
 	else:
 		resetPlayerScene()
 		runReset = false
-	
 
 func _on_clear_pressed() -> void:
 	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
@@ -117,15 +114,25 @@ func exeqUserQue() -> void:
 
 #Reset player area scene
 func resetPlayerScene() -> void:
+	var scriptPanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	
-	if gameArea.get_child_count() > 0 && current_level != null:
-		var old_level = gameArea.get_child(0)
-		#Remove old level
-		old_level.queue_free()
+	#Duplicate script panel into global array
+	Global.populatedExecuteQue.clear()
+	for child in scriptPanel.get_children():
+		Global.populatedExecuteQue.append(child.duplicate())
+	
+	get_tree().reload_current_scene()
+
+func rebuildScriptQue() -> void:
+	var scriptPanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
+	
+	#Clear script panel manually - avoids duplication event
+	for child in scriptPanel.get_children():
+		scriptPanel.remove_child(child)
+		child.queue_free()
 		
-		#Create new instance of level
-		var new_level = current_level.duplicate(true)
-		gameArea.add_child(new_level)
+	for saved in Global.populatedExecuteQue:
+		scriptPanel.add_child(saved)
 
 #Add children of ScriptPanel container to execution array
 func populateActionsArray() -> void:
@@ -135,7 +142,6 @@ func populateActionsArray() -> void:
 	executeQue.clear();
 	
 	for child in scriptQuePanel.get_children():
-		#print("Child:", child, "Type:", child.get_class())
 		executeQue.append(child)
 	
 #Toggles visibility of an object
@@ -147,13 +153,10 @@ func toggleShow(itemToToggle: Object) -> void:
 
 #Happens when Btn_1 is pressed during functions panel focus
 func execute_FunctionsPanel( button : Object, locationToPut : Object ) -> void:
-	#Set scriptScrollBar height
-	#setScrollMaxHeight(750)
-	
 	#add to script panel
 	var copy = button.duplicate()
 	locationToPut.add_child(copy)
-	
+
 #Happens when Btn_1 is pressed during ScriptPanel focus
 func execute_ScriptPanel(button : Object, _location : Object = null) -> void:
 	pass
@@ -169,7 +172,7 @@ func const_buttons_ScriptPanel(button : Object, location : Object) -> void:
 		runBtn.emit_signal("pressed")
 	elif (button == clearBtn):
 		clearBtn.emit_signal("pressed")
-		
+	
 
 func move_node_in_queue(direction: int, selectedButton : Object = null) -> void:
 	#make sure we have a valid node to move
