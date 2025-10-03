@@ -201,19 +201,19 @@ shape = SubResource("RectangleShape2D_tpo30")
 
 [node name="Walk1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_v0k12")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="Walk2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8nidd")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="Walk3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_iii86")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="Walk4" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_8nidd")
-volume_db = 10.0
+volume_db = 20.0
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.45

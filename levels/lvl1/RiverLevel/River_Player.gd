@@ -5,6 +5,7 @@ signal entered_safe_area
 
 var original_position: Vector2
 @onready var main_ui_node = get_node("../main_ui")  
+@onready var anim_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")  # <-- reference to the AnimatedSprite2D
 
 # Movement-detection helpers
 var _last_position: Vector2
@@ -24,6 +25,9 @@ func _physics_process(_delta: float) -> void:
 			_schedule_check_running = true
 			_check_after_debounce()
 		_last_position = position
+		_play_movement_animation()
+	else:
+		_play_idle_animation()
 
 func _check_after_debounce() -> void:
 	await get_tree().create_timer(_CHECK_DEBOUNCE).timeout
@@ -62,3 +66,12 @@ func is_on_rock() -> bool:
 			return true
 
 	return false
+
+# --- Animation helpers ---
+func _play_movement_animation() -> void:
+	if anim_sprite and anim_sprite.animation != "Boy_Jump":
+		anim_sprite.play("Boy_Jump")
+
+func _play_idle_animation() -> void:
+	if anim_sprite and anim_sprite.animation != "Boy_Idle":
+		anim_sprite.play("Boy_Idle")
