@@ -13,12 +13,6 @@ var initial_polygon: Polygon2D
 var focus_polygon: Polygon2D
 
 func _ready() -> void:
-##### Removed this and set the player location in the main_ui #####
-##### This path is only valid when the button is in its original position in the editor #####
-# Called when the node enters the scene tree for the first time.
-	#sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
-	
-	# Get visual state polygons
 	initial_polygon = $"Initial" 
 	focus_polygon = $"Focus"
 	
@@ -42,8 +36,8 @@ func _on_pressed() -> void:
 			move_offset = Vector2(0, step_size)
 		_:
 			move_offset = Vector2.ZERO
-			
-	spriteAnimation()
+
+	await spriteAnimation()
 
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_SHRINK_BEGIN
@@ -51,7 +45,7 @@ func _on_pressed() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func spriteAnimation() -> void:
+func spriteAnimation():
 	# Check if the target was successfully assigned.
 	if not is_instance_valid(sprite):
 		push_error("Player not assigned")
@@ -69,13 +63,13 @@ func spriteAnimation() -> void:
 			end_pos.y = clamp(end_pos.y, level_bound, start_pos.y)
 		"down":
 			end_pos.y = clamp(end_pos.y, start_pos.y, level_bound)
-			
+	
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", end_pos, move_duration)
 	
 	# Wait for the tween to finish
 	await tween.finished
-	
+
 	# IMPORTANT - Send finished signal so next item in queue can start
 	emit_signal("finished")
 
