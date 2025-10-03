@@ -1,18 +1,52 @@
-[gd_scene load_steps=48 format=3 uid="uid://cxnk2m6gjxv7g"]
+[gd_scene load_steps=56 format=3 uid="uid://cxnk2m6gjxv7g"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2kjyl"]
 [ext_resource type="Texture2D" uid="uid://5woqwl5u7gtn" path="res://assets/Farm/CowLevel/FarmLvl_Cows.jpg" id="2_bu5ki"]
+[ext_resource type="Texture2D" uid="uid://dbn0fxo712iio" path="res://assets/JuaneBtns/OpenGate_Intitial.png" id="2_xcvnf"]
+[ext_resource type="Texture2D" uid="uid://di5qf2gueqvfa" path="res://assets/JuaneBtns/OpenGate_Focus.png" id="3_3oxy5"]
 [ext_resource type="Texture2D" uid="uid://c5dtywk1rkig6" path="res://assets/Farm/CowLevel/Leaves2.png" id="3_bu5ki"]
 [ext_resource type="Texture2D" uid="uid://cqs8p2h0us5sr" path="res://assets/Farm/CowLevel/Gate01.png" id="4_q1r0v"]
+[ext_resource type="Texture2D" uid="uid://d2hv3lqlpoq3t" path="res://assets/JuaneBtns/CloseGate_Initial.png" id="4_tc4uw"]
+[ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="5_jqlbn"]
 [ext_resource type="Texture2D" uid="uid://c0nohennd4fql" path="res://assets/Farm/CowLevel/Gate02.png" id="5_xomu3"]
 [ext_resource type="Texture2D" uid="uid://07ojklsxap72" path="res://assets/Farm/CowLevel/Gate03.png" id="6_eh817"]
+[ext_resource type="Texture2D" uid="uid://b8okwm83rlyms" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
+[ext_resource type="Texture2D" uid="uid://kfjavvkb21rk" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
 [ext_resource type="Texture2D" uid="uid://d142ty26xkdky" path="res://assets/Farm/CowLevel/Gate04.png" id="7_qkixp"]
 [ext_resource type="Texture2D" uid="uid://nems2ttuyao3" path="res://assets/Farm/CowLevel/Gate05.png" id="8_mc3ms"]
+[ext_resource type="Texture2D" uid="uid://g6y0cbof2btc" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://cqt1jpoay1mu5" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
 [ext_resource type="Texture2D" uid="uid://bi1323q7tgrsw" path="res://assets/Farm/CowLevel/Gate06.png" id="9_rba47"]
 [ext_resource type="Texture2D" uid="uid://di3x8vxr2p623" path="res://assets/Farm/Cows/Cow_Walk_01.png" id="10_mc3ms"]
 [ext_resource type="Texture2D" uid="uid://5trog4svsxgn" path="res://assets/Farm/Cows/Cow_Walk_02.png" id="11_rba47"]
 [ext_resource type="Texture2D" uid="uid://c4ewof6csgnv8" path="res://assets/Farm/Cows/Cow_Walk_03.png" id="12_xcvnf"]
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q1r0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xomu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eh817")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qkixp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mc3ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rba47")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiubf"]
 atlas = ExtResource("3_bu5ki")
@@ -232,32 +266,6 @@ animations = [{
 "speed": 14.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_q1r0v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_xomu3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_eh817")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_qkixp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_mc3ms")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_rba47")
-}],
-"loop": false,
-"name": &"default",
-"speed": 10.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc4uw"]
 animations = [{
 "frames": [{
@@ -288,44 +296,89 @@ offset_top = 449.0
 offset_right = 801.0
 offset_bottom = 449.0
 
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="0"]
+texture = ExtResource("2_xcvnf")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="1"]
+texture = ExtResource("3_3oxy5")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="0"]
+texture = ExtResource("4_tc4uw")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="1"]
+texture = ExtResource("5_jqlbn")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
+texture = ExtResource("6_orq4x")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="1"]
+texture = ExtResource("7_mgeaw")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
+texture = ExtResource("8_mgh5d")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="1"]
+texture = ExtResource("8_mgeaw")
+texture_scale = Vector2(7.06, 7.06)
+
 [node name="FarmLvlCows" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
 position = Vector2(601, 450)
 texture = ExtResource("2_bu5ki")
 
 [node name="Text" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="0"]
-text = "Only let the cows in. Don't let them escape!"
+text = "Whistle to call the cows. 
+Only let the cows in.
+"
 
-[node name="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="1"]
-frame_progress = 0.05584246
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+z_index = 100
+position = Vector2(829.5, 416.5)
+sprite_frames = SubResource("SpriteFrames_xcvnf")
 
-[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+z_index = 1
 position = Vector2(965, 348)
 
 [node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
-position = Vector2(-201, -51)
+position = Vector2(-62, -70)
 flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
-position = Vector2(-198, -45)
+position = Vector2(-59, -64)
 
-[node name="Leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+[node name="Leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
 position = Vector2(1099, 233)
 scale = Vector2(0.4085821, 0.3436567)
 sprite_frames = SubResource("SpriteFrames_wqo7n")
 autoplay = "default"
 frame_progress = 0.6788721
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
-position = Vector2(615, 407)
-sprite_frames = SubResource("SpriteFrames_xcvnf")
-frame = 5
-frame_progress = 1.0
-
 [node name="Cow1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
-position = Vector2(960, 486)
-scale = Vector2(0.6666666, 0.67563313)
+position = Vector2(187.71431, 463.87503)
+scale = Vector2(0.52380955, 0.5308547)
+sprite_frames = SubResource("SpriteFrames_tc4uw")
+frame_progress = 0.63293403
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1/AnimatedSprite2D"]
+position = Vector2(544.6362, 190.49466)
+scale = Vector2(1.0156609, 1.0293214)
+sprite_frames = SubResource("SpriteFrames_tc4uw")
+frame_progress = 0.63293403
+flip_h = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1/AnimatedSprite2D/AnimatedSprite2D"]
+position = Vector2(286.909, 333.66003)
+scale = Vector2(1.0156609, 1.0293214)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
 frame_progress = 0.63293403
 flip_h = true
@@ -334,7 +387,7 @@ flip_h = true
 shape = SubResource("RectangleShape2D_jqlbn")
 
 [node name="Gate01" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="1"]
-position = Vector2(736, 625.00006)
+position = Vector2(950.5, 634.50006)
 scale = Vector2(1.2305087, 1.3134328)
 texture = ExtResource("4_q1r0v")
 
@@ -343,4 +396,6 @@ texture = ExtResource("4_q1r0v")
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
 [editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]

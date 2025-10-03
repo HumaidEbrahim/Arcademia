@@ -30,7 +30,7 @@ func on_win(error):
 	if not error:
 		stars += 1
 	else:
-		message += "Idiot" 
+		message += "\nIdiot" 
 			
 	self.visible = true
 	
@@ -44,6 +44,6 @@ func on_win(error):
 		3: 
 			praise.text = "Outsanding Work!"
 			starAnim.play("threeStar")
-			
+	print(message)		
 	feedback.text = message
 	

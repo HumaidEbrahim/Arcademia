@@ -155,26 +155,26 @@ animation = &"threeStar"
 
 [node name="Praise" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 681.0
+offset_left = 486.0
 offset_top = 367.0
-offset_right = 1009.0
-offset_bottom = 450.0
+offset_right = 1153.0
+offset_bottom = 498.0
 theme_override_fonts/font = ExtResource("23_52l10")
 theme_override_font_sizes/font_size = 72
 text = "Good Job!"
 horizontal_alignment = 1
-vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Feedback" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 715.0
-offset_top = 457.0
-offset_right = 986.0
-offset_bottom = 532.0
+offset_left = 492.0
+offset_top = 514.0
+offset_right = 1145.0
+offset_bottom = 589.0
 theme_override_fonts/font = ExtResource("23_52l10")
 theme_override_font_sizes/font_size = 53
 text = "You dumb"
+horizontal_alignment = 1
 
 [node name="Btn_TryAgain" type="Button" parent="ColorRect"]
 layout_mode = 0
