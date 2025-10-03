@@ -7,21 +7,24 @@ signal finished
 @export var move_duration: float = 0.5
 @export var move_direction: String = "Right"
 
-var move_offset: Vector2 = Vector2.ZERO
+var move_offset: Vector2 = Vector2.ZERO          
 var sprite: Area2D
-var reset_position: Vector2 = Vector2.ZERO  # Player spawn point
+var initial_polygon: Polygon2D
+var focus_polygon: Polygon2D
 
 func _ready() -> void:
-	# Grab player node
-	sprite = get_parent().get_parent().get_parent().find_child("Player") as Area2D
-	if not sprite:
-		push_error("Player not found! Check node hierarchy.")
-		return
-
-	# Save original position
-	reset_position = sprite.position
-
-	# Calculate move offset
+	# Find the player sprite in the scene
+	sprite = get_tree().root.find_child("Player", true, false)
+	
+	# Get visual state polygons
+	initial_polygon = $"Initial" 
+	focus_polygon = $"Focus"
+	
+	# Show initial state, hide focus state
+	initial_polygon.visible = true
+	focus_polygon.visible = false
+	
+	# Set movement direction based on exported string
 	match move_direction.to_lower():
 		"right":
 			move_offset = Vector2(step_size, 0)
@@ -33,16 +36,26 @@ func _ready() -> void:
 			move_offset = Vector2(0, step_size)
 		_:
 			move_offset = Vector2.ZERO
+			
+	size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	size_flags_vertical = Control.SIZE_SHRINK_BEGIN
+
+func _process(delta: float) -> void:
+	pass
 
 func spriteAnimation() -> void:
+	#Re-assign sprite if null (when the scene has been recreated)
+	if sprite == null:
+		sprite = get_tree().root.find_child("Player", true, false)
+	
 	if not sprite:
 		push_error("Player not assigned")
 		return
-
+	
+	
 	var start_pos = sprite.position
 	var end_pos = start_pos + move_offset
-
-	# Clamp to level bounds
+	
 	match move_direction.to_lower():
 		"right":
 			end_pos.x = clamp(end_pos.x, start_pos.x, level_bound)
@@ -52,28 +65,23 @@ func spriteAnimation() -> void:
 			end_pos.y = clamp(end_pos.y, level_bound, start_pos.y)
 		"down":
 			end_pos.y = clamp(end_pos.y, start_pos.y, level_bound)
-
-	# Tween movement
+			
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", end_pos, move_duration)
-	await get_tree().create_timer(move_duration + 0.1).timeout
-
-	# --- RiverLevel-specific behavior ---
-	if get_tree().current_scene.name == "FarmRiverLevel":
-		# Only in RiverLevel, check rocks
-		if not is_on_rock():
-			sprite.position = reset_position
-
+	
+	# Wait for animation plus small buffer
+	await get_tree().create_timer(move_duration + 0.2).timeout
+	
+	# Signal that this action is complete
 	emit_signal("finished")
-
-func is_on_rock() -> bool:
-	if not sprite:
-		return false
-
-	for area in sprite.get_overlapping_areas():
-		if area.is_in_group("Rocks"):
-			return true
-	return false
 
 func _on_pressed() -> void:
 	await spriteAnimation()
+
+func _on_focus_entered() -> void:
+	initial_polygon.visible = false
+	focus_polygon.visible = true
+
+func _on_focus_exited() -> void:
+	initial_polygon.visible = true
+	focus_polygon.visible = false
