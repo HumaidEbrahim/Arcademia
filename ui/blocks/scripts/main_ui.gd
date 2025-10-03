@@ -119,13 +119,13 @@ func execute_commands(commands: Array) -> void:
 	
 	var i = 0
 	while i < commands.size():
-		var container = commands[i]
-		var actual_button = get_actual_button(container)
+		var action = commands[i]
+		var actual_button = get_actual_button(action)
 		if not actual_button:
 			i += 1
 			continue
 
-		if is_top_loop_block(actual_button):
+		if actual_button and is_top_loop_block(actual_button):
 			var loop_end_index = find_matching_loop_end(commands, i)
 			if loop_end_index != -1:
 				var loop_commands = commands.slice(i + 1, loop_end_index)
@@ -136,7 +136,7 @@ func execute_commands(commands: Array) -> void:
 			else:
 				print("Warning: Loop start found but no matching loop end!")
 				i += 1
-		elif is_bottom_loop_block(actual_button):
+		elif actual_button and is_bottom_loop_block(actual_button):
 			i += 1
 		else:
 			if "sprite" in actual_button:
@@ -182,9 +182,6 @@ func _on_clear_pressed() -> void:
 	executeQue.clear()
 	current_indent_level = 0
 
-# NOTE: The old exeqUserQue() function has been removed to avoid errors.
-# The new execute_commands() function replaces it.
-
 #Reset player area scene
 func resetPlayerScene() -> void:
 	var scriptPanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
@@ -212,8 +209,7 @@ func populateActionsArray() -> void:
 	executeQue.clear()
 	for child in scriptQuePanel.get_children():
 		executeQue.append(child)
-
-# NOTE: Original toggleShow function was unused in the logic, kept for reference.
+		
 func toggleShow(itemToToggle: Object) -> void:
 	if itemToToggle.visible == false:
 		itemToToggle.show()
@@ -226,6 +222,7 @@ func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
 	
 	# Handle loop end blocks - adjust indent before placement
 	if "indent_change_value" in copy and copy.indent_change_value < 0:
+		current_indent_level += copy.indent_change_value
 		current_indent_level = max(0, current_indent_level + copy.indent_change_value)
 	
 	# Wrap button in container with proper indentation
@@ -234,12 +231,15 @@ func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
 	margin_container.add_theme_constant_override("margin_left", indent_pixels)
 	
 	margin_container.add_child(copy)
+	copy.set_owner(margin_container)
 	
 	locationToPut.add_child(margin_container)
+	margin_container.set_owner(locationToPut)
 	
 	# Handle loop start blocks - adjust indent after placement
 	if "indent_change_value" in copy and copy.indent_change_value > 0:
 		current_indent_level += copy.indent_change_value
+		current_indent_level = max(0, current_indent_level)
 
 func execute_ScriptPanel(button: Object, _location: Object = null) -> void:
 	pass
@@ -259,7 +259,9 @@ func move_node_in_queue(direction: int) -> void:
 		return
 
 	# Find the container that needs to be moved
-	var container_to_move = node_to_move.get_parent()
+	var container_to_move = node_to_move
+	if node_to_move.get_parent() is MarginContainer:
+		container_to_move = node_to_move.get_parent()
 
 	var current_index = container_to_move.get_index()
 	var new_index = current_index + direction
@@ -278,7 +280,9 @@ func move_node_in_queue(direction: int) -> void:
 		node_to_move.grab_focus()
 
 func delete_item_from_queue(item_to_delete: Control) -> void:
-	var container_to_delete = item_to_delete.get_parent()
+	var container_to_delete = item_to_delete
+	if item_to_delete.get_parent() is MarginContainer:
+		container_to_delete = item_to_delete.get_parent()
 	
 	var parent_container = container_to_delete.get_parent()
 	var index = container_to_delete.get_index()
@@ -302,9 +306,13 @@ func delete_item_from_queue(item_to_delete: Control) -> void:
 		resetFocusToInit()
 
 func is_in_script_panel(item: Control, script_panel: Control) -> bool:
-	# A button is in the script panel if its parent's parent is the panel.
-	# item -> MarginContainer -> VBoxContainer
-	return script_panel.is_ancestor_of(item.get_parent())
+	if script_panel.is_ancestor_of(item):
+		return true
+
+	if item.get_parent() and script_panel.is_ancestor_of(item.get_parent()):
+		return true
+
+	return false
 
 func recalculate_all_indentations() -> void:
 	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
@@ -317,7 +325,8 @@ func recalculate_all_indentations() -> void:
 		
 		# Process loop end blocks first
 		if "indent_change_value" in button and button.indent_change_value < 0:
-			temp_indent_level = max(0, temp_indent_level + button.indent_change_value)
+			temp_indent_level += button.indent_change_value
+			temp_indent_level = max(0, temp_indent_level)
 		
 		# Apply indentation to this block
 		var indent_pixels = temp_indent_level * INDENT_OFFSET
@@ -327,6 +336,7 @@ func recalculate_all_indentations() -> void:
 		# Process loop start blocks after positioning
 		if "indent_change_value" in button and button.indent_change_value > 0:
 			temp_indent_level += button.indent_change_value
+			temp_indent_level = max(0, temp_indent_level)
 
 
 func resetFocusToInit() -> void:
