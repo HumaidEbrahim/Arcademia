@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/farm-rooster-63323.mp3-8f8f136b43022cd42c8b0a
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0
