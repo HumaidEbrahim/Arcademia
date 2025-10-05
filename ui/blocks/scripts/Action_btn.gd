@@ -32,6 +32,11 @@ func call_action():
 				sprite.action_water()
 			"plant":
 				sprite.action_plant()
+			"whistle":
+				sprite.action_whistle()
+			"opengate":
+				sprite.action_openGate()
+				
 				
 			
 			
