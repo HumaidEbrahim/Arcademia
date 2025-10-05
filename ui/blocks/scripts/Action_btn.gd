@@ -3,9 +3,11 @@ extends TextureButton
 signal finished
 
 @export var action: String
+@export var timer = 0.2
 var sprite: Area2D
 var initial_polygon: Polygon2D
 var focus_polygon: Polygon2D
+
 
 func _ready():
 	sprite = get_tree().root.find_child("Player", true, false)
@@ -36,11 +38,13 @@ func call_action():
 				sprite.action_whistle()
 			"opengate":
 				sprite.action_openGate()
+			"closegate":
+				sprite.action_closeGate()
 				
 				
 			
 			
-	await get_tree().create_timer(0.2).timeout
+	await get_tree().create_timer(timer).timeout
 	emit_signal("finished")
 
 func _on_pressed():

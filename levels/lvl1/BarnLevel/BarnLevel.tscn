@@ -212,6 +212,7 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "pickup"
+timer = 0.2
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2/Action_Button" index="0"]
 texture = ExtResource("3_2wefm")
@@ -235,6 +236,7 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "feed"
+timer = 0.2
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3/Action_Button" index="0"]
 texture = ExtResource("6_lkm0e")
