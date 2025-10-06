@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di4rw58mkgfq1"
-path="res://.godot/imported/flowerswheelbarrow.png-d703693af520af6e41e5fcb5bc8507d0.ctex"
+uid="uid://chuvltb7ivylv"
+path="res://.godot/imported/flower_fence3.png-ec5411f829ab1f66d863b6f6a1f872e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Farm/Garden/flowerswheelbarrow.png"
-dest_files=["res://.godot/imported/flowerswheelbarrow.png-d703693af520af6e41e5fcb5bc8507d0.ctex"]
+source_file="res://assets/Farm/Garden/flower_fence3.png"
+dest_files=["res://.godot/imported/flower_fence3.png-ec5411f829ab1f66d863b6f6a1f872e8.ctex"]
 
 [params]
 

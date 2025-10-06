@@ -1,18 +1,60 @@
-[gd_scene load_steps=48 format=3 uid="uid://cxnk2m6gjxv7g"]
+[gd_scene load_steps=71 format=3 uid="uid://cxnk2m6gjxv7g"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2kjyl"]
 [ext_resource type="Texture2D" uid="uid://5woqwl5u7gtn" path="res://assets/Farm/CowLevel/FarmLvl_Cows.jpg" id="2_bu5ki"]
+[ext_resource type="Texture2D" uid="uid://dbn0fxo712iio" path="res://assets/JuaneBtns/OpenGate_Intitial.png" id="2_xcvnf"]
+[ext_resource type="Texture2D" uid="uid://di5qf2gueqvfa" path="res://assets/JuaneBtns/OpenGate_Focus.png" id="3_3oxy5"]
 [ext_resource type="Texture2D" uid="uid://c5dtywk1rkig6" path="res://assets/Farm/CowLevel/Leaves2.png" id="3_bu5ki"]
 [ext_resource type="Texture2D" uid="uid://cqs8p2h0us5sr" path="res://assets/Farm/CowLevel/Gate01.png" id="4_q1r0v"]
+[ext_resource type="Texture2D" uid="uid://d2hv3lqlpoq3t" path="res://assets/JuaneBtns/CloseGate_Initial.png" id="4_tc4uw"]
+[ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="5_jqlbn"]
 [ext_resource type="Texture2D" uid="uid://c0nohennd4fql" path="res://assets/Farm/CowLevel/Gate02.png" id="5_xomu3"]
 [ext_resource type="Texture2D" uid="uid://07ojklsxap72" path="res://assets/Farm/CowLevel/Gate03.png" id="6_eh817"]
+[ext_resource type="Texture2D" uid="uid://b8okwm83rlyms" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
+[ext_resource type="Texture2D" uid="uid://kfjavvkb21rk" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
 [ext_resource type="Texture2D" uid="uid://d142ty26xkdky" path="res://assets/Farm/CowLevel/Gate04.png" id="7_qkixp"]
 [ext_resource type="Texture2D" uid="uid://nems2ttuyao3" path="res://assets/Farm/CowLevel/Gate05.png" id="8_mc3ms"]
+[ext_resource type="Texture2D" uid="uid://g6y0cbof2btc" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://cqt1jpoay1mu5" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
 [ext_resource type="Texture2D" uid="uid://bi1323q7tgrsw" path="res://assets/Farm/CowLevel/Gate06.png" id="9_rba47"]
 [ext_resource type="Texture2D" uid="uid://di3x8vxr2p623" path="res://assets/Farm/Cows/Cow_Walk_01.png" id="10_mc3ms"]
+[ext_resource type="Texture2D" uid="uid://c5cvrxpx3xt4t" path="res://assets/JuaneBtns/Whistle_Initial.png" id="11_dblru"]
 [ext_resource type="Texture2D" uid="uid://5trog4svsxgn" path="res://assets/Farm/Cows/Cow_Walk_02.png" id="11_rba47"]
+[ext_resource type="Texture2D" uid="uid://bdj8gww50oy8x" path="res://assets/JuaneBtns/Whistle_Focus.png" id="12_orjbe"]
 [ext_resource type="Texture2D" uid="uid://c4ewof6csgnv8" path="res://assets/Farm/Cows/Cow_Walk_03.png" id="12_xcvnf"]
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
+[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q1r0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xomu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eh817")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qkixp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mc3ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rba47")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_orjbe"]
+radius = 275.0072
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hiubf"]
 atlas = ExtResource("3_bu5ki")
@@ -232,32 +274,6 @@ animations = [{
 "speed": 14.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_q1r0v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_xomu3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_eh817")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_qkixp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_mc3ms")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_rba47")
-}],
-"loop": false,
-"name": &"default",
-"speed": 10.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc4uw"]
 animations = [{
 "frames": [{
@@ -279,6 +295,67 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqlbn"]
+size = Vector2(267.5, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqo7n"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(0, 0, 384, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ej5bv"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(384, 0, 384, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8isit"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(768, 0, 384, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0hc5"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(0, 288, 384, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taxnj"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(384, 288, 384, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pidrv"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(768, 288, 384, 288)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hblyf"]
+atlas = ExtResource("23_s5bsm")
+region = Rect2(0, 576, 384, 288)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_56emo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqo7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ej5bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8isit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w0hc5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taxnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pidrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hblyf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3nu3"]
+size = Vector2(164, 107)
 
 [node name="CowLevel" type="Node2D"]
 
@@ -288,59 +365,231 @@ offset_top = 449.0
 offset_right = 801.0
 offset_bottom = 449.0
 
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+script = ExtResource("13_dblru")
+action = "opengate"
+timer = 1.0
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="0"]
+texture = ExtResource("2_xcvnf")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button" index="1"]
+texture = ExtResource("3_3oxy5")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+script = ExtResource("13_dblru")
+action = "closegate"
+timer = 1.0
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="0"]
+texture = ExtResource("4_tc4uw")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Action_Button" index="1"]
+texture = ExtResource("5_jqlbn")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Whistle_Button" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="1"]
+custom_minimum_size = Vector2(175, 55)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = 480.0
+offset_right = 84.0
+offset_bottom = 538.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("13_dblru")
+action = "whistle"
+timer = 3.01
+
+[node name="Initial" type="Polygon2D" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button"]
+position = Vector2(0, 1.0899963)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("11_dblru")
+texture_scale = Vector2(7.06, 7.06)
+polygon = PackedVector2Array(0.12334156, 5.187191, 0.4931432, 4.2218933, 1.2037691, 3.6258848, 1.868548, 2.9840293, 2.4874802, 2.4338675, 3.2439528, 1.8607821, 4.2102437, 1.1450796, 5.18105, 0.6458076, 15.748972, 0.50712097, 17.163576, 0.89544356, 18.356281, 1.86625, 19.493511, 3.5582273, 20.686216, 5.166992, 21.60155, 6.692545, 23.071627, 8.883794, 38.679634, 8.939298, 39.53949, 8.162652, 40.343872, 7.1641083, 40.87088, 6.2487764, 41.39789, 5.167021, 42.20227, 3.891103, 43.06213, 2.6151862, 44.08841, 1.3103156, 45.170166, 0.062135696, 148.32251, -0.08008194, 149.21437, 0.3361206, 150.22514, 1.1685257, 151.05756, 2.536045, 151.94942, 3.7846527, 152.6629, 4.795429, 152.96019, 5.3305454, 153.0791, 46.837547, 152.72235, 47.907784, 152.2467, 49.037476, 151.17647, 49.929337, 149.69003, 50.999573, 47.749214, 51.95089, 45.72766, 52.72384, 44.716885, 53.912987, 43.82502, 55.637253, 42.814247, 57.599342, 41.6251, 58.966866, 40.554863, 59.979088, 22.95546, 60.098007, 21.609396, 58.849396, 20.895906, 57.36296, 19.528383, 55.28195, 18.160864, 53.6766, 16.13931, 52.844196, 5.7937145, 52.60637, 4.0099926, 52.130707, 2.3451843, 50.94156, 1.5127792, 49.871323, 0.20471573, 48.028145, 0.7800684, 48.85196, 0.7800684, 48.85196, 17.134918, 53.20716, 18.833164, 54.57314, 20.051472, 56.12371, 43.310062, 56.45598, 44.294823, 54.794647, 150.37436, 50.512115)
+uv = PackedVector2Array(0.12334156, 5.187191, 0.4931432, 4.2218933, 1.2037691, 3.6258848, 1.868548, 2.9840293, 2.4874802, 2.4338675, 3.2439528, 1.8607821, 4.2102437, 1.1450796, 5.18105, 0.6458076, 15.748972, 0.50712097, 17.163576, 0.89544356, 18.356281, 1.86625, 19.493511, 3.5582273, 20.686216, 5.166992, 21.60155, 6.692545, 23.071627, 8.883794, 38.679634, 8.939298, 39.53949, 8.162652, 40.343872, 7.1641083, 40.87088, 6.2487764, 41.39789, 5.167021, 42.20227, 3.891103, 43.06213, 2.6151862, 44.08841, 1.3103156, 45.170166, 0.062135696, 148.32251, -0.08008194, 149.21437, 0.3361206, 150.22514, 1.1685257, 151.05756, 2.536045, 151.94942, 3.7846527, 152.6629, 4.795429, 152.96019, 5.3305454, 153.0791, 46.837547, 152.72235, 47.907784, 152.2467, 49.037476, 151.17647, 49.929337, 149.69003, 50.999573, 47.749214, 51.95089, 45.72766, 52.72384, 44.716885, 53.912987, 43.82502, 55.637253, 42.814247, 57.599342, 41.6251, 58.966866, 40.554863, 59.979088, 22.95546, 60.098007, 21.609396, 58.849396, 20.895906, 57.36296, 19.528383, 55.28195, 18.160864, 53.6766, 16.13931, 52.844196, 5.7937145, 52.60637, 4.0099926, 52.130707, 2.3451843, 50.94156, 1.5127792, 49.871323, 0.20471573, 48.028145, 0.7800684, 48.85196, 0.7800684, 48.85196, 17.134918, 53.20716, 18.833164, 54.57314, 20.051472, 56.12371, 43.310062, 56.45598, 44.294823, 54.794647, 150.37436, 50.512115)
+internal_vertex_count = 8
+
+[node name="Focus" type="Polygon2D" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button"]
+position = Vector2(0, 1.0899963)
+scale = Vector2(1.15, 1.15)
+texture = ExtResource("12_orjbe")
+texture_scale = Vector2(7.06, 7.06)
+polygon = PackedVector2Array(0.12334156, 5.187191, 0.4931432, 4.2218933, 1.2037691, 3.6258848, 1.868548, 2.9840293, 2.4874802, 2.4338675, 3.2439528, 1.8607821, 4.2102437, 1.1450796, 5.18105, 0.6458076, 15.748972, 0.50712097, 17.163576, 0.89544356, 18.356281, 1.86625, 19.493511, 3.5582273, 20.686216, 5.166992, 21.60155, 6.692545, 23.071627, 8.883794, 38.679634, 8.939298, 39.53949, 8.162652, 40.343872, 7.1641083, 40.87088, 6.2487764, 41.39789, 5.167021, 42.20227, 3.891103, 43.06213, 2.6151862, 44.08841, 1.3103156, 45.170166, 0.062135696, 148.32251, -0.08008194, 149.21437, 0.3361206, 150.22514, 1.1685257, 151.05756, 2.536045, 151.94942, 3.7846527, 152.6629, 4.795429, 152.96019, 5.3305454, 153.0791, 46.837547, 152.72235, 47.907784, 152.2467, 49.037476, 151.17647, 49.929337, 149.69003, 50.999573, 47.749214, 51.95089, 45.72766, 52.72384, 44.716885, 53.912987, 43.82502, 55.637253, 42.814247, 57.599342, 41.6251, 58.966866, 40.554863, 59.979088, 22.95546, 60.098007, 21.609396, 58.849396, 20.895906, 57.36296, 19.528383, 55.28195, 18.160864, 53.6766, 16.13931, 52.844196, 5.7937145, 52.60637, 4.0099926, 52.130707, 2.3451843, 50.94156, 1.5127792, 49.871323, 0.20471573, 48.028145, 0.7800684, 48.85196, 0.7800684, 48.85196, 17.134918, 53.20716, 18.833164, 54.57314, 20.051472, 56.12371, 43.310062, 56.45598, 44.294823, 54.794647, 150.37436, 50.512115)
+uv = PackedVector2Array(0.12334156, 5.187191, 0.4931432, 4.2218933, 1.2037691, 3.6258848, 1.868548, 2.9840293, 2.4874802, 2.4338675, 3.2439528, 1.8607821, 4.2102437, 1.1450796, 5.18105, 0.6458076, 15.748972, 0.50712097, 17.163576, 0.89544356, 18.356281, 1.86625, 19.493511, 3.5582273, 20.686216, 5.166992, 21.60155, 6.692545, 23.071627, 8.883794, 38.679634, 8.939298, 39.53949, 8.162652, 40.343872, 7.1641083, 40.87088, 6.2487764, 41.39789, 5.167021, 42.20227, 3.891103, 43.06213, 2.6151862, 44.08841, 1.3103156, 45.170166, 0.062135696, 148.32251, -0.08008194, 149.21437, 0.3361206, 150.22514, 1.1685257, 151.05756, 2.536045, 151.94942, 3.7846527, 152.6629, 4.795429, 152.96019, 5.3305454, 153.0791, 46.837547, 152.72235, 47.907784, 152.2467, 49.037476, 151.17647, 49.929337, 149.69003, 50.999573, 47.749214, 51.95089, 45.72766, 52.72384, 44.716885, 53.912987, 43.82502, 55.637253, 42.814247, 57.599342, 41.6251, 58.966866, 40.554863, 59.979088, 22.95546, 60.098007, 21.609396, 58.849396, 20.895906, 57.36296, 19.528383, 55.28195, 18.160864, 53.6766, 16.13931, 52.844196, 5.7937145, 52.60637, 4.0099926, 52.130707, 2.3451843, 50.94156, 1.5127792, 49.871323, 0.20471573, 48.028145, 0.7800684, 48.85196, 0.7800684, 48.85196, 17.134918, 53.20716, 18.833164, 54.57314, 20.051472, 56.12371, 43.310062, 56.45598, 44.294823, 54.794647, 150.37436, 50.512115)
+internal_vertex_count = 8
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+script = ExtResource("13_dblru")
+action = "whistle"
+timer = 0.2
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
+texture = ExtResource("6_orq4x")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="1"]
+texture = ExtResource("7_mgeaw")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
+texture = ExtResource("8_mgh5d")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="1"]
+texture = ExtResource("8_mgeaw")
+texture_scale = Vector2(7.06, 7.06)
+
 [node name="FarmLvlCows" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
 position = Vector2(601, 450)
 texture = ExtResource("2_bu5ki")
 
 [node name="Text" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="0"]
-text = "Only let the cows in. Don't let them escape!"
+text = "Whistle to call the cows. 
+Only let the cows in.
+"
 
-[node name="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="1"]
-frame_progress = 0.05584246
+[node name="Gate" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+position = Vector2(829.5, 416.5)
+sprite_frames = SubResource("SpriteFrames_xcvnf")
 
-[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+z_index = 1
 position = Vector2(965, 348)
+script = ExtResource("18_3qt78")
 
 [node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
-position = Vector2(-201, -51)
+position = Vector2(-15, -91)
+autoplay = "Boy_Idle"
+frame_progress = 0.37088847
 flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
-position = Vector2(-198, -45)
+position = Vector2(238, 13)
+shape = SubResource("CircleShape2D_orjbe")
 
-[node name="Leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+[node name="Leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
 position = Vector2(1099, 233)
 scale = Vector2(0.4085821, 0.3436567)
 sprite_frames = SubResource("SpriteFrames_wqo7n")
 autoplay = "default"
 frame_progress = 0.6788721
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
-position = Vector2(615, 407)
-sprite_frames = SubResource("SpriteFrames_xcvnf")
-frame = 5
-frame_progress = 1.0
-
-[node name="Cow1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+[node name="Cow1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5" groups=["animals"]]
+y_sort_enabled = true
+position = Vector2(229, 397)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
-position = Vector2(960, 486)
-scale = Vector2(0.6666666, 0.67563313)
+position = Vector2(6.0000153, 29)
+scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
-frame_progress = 0.63293403
+frame = 3
+frame_progress = 0.59954
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_jqlbn")
 
+[node name="Cow3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6" groups=["animals"]]
+y_sort_enabled = true
+position = Vector2(634, 581)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow3"]
+position = Vector2(6.0000153, 29)
+scale = Vector2(0.52380955, 0.5308547)
+sprite_frames = SubResource("SpriteFrames_tc4uw")
+frame = 3
+frame_progress = 0.59954
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow3"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_jqlbn")
+
+[node name="Cow2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7" groups=["animals"]]
+y_sort_enabled = true
+position = Vector2(97, 723)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow2"]
+position = Vector2(6.0000153, 29)
+scale = Vector2(0.52380955, 0.5308547)
+sprite_frames = SubResource("SpriteFrames_tc4uw")
+frame = 3
+frame_progress = 0.59954
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow2"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_jqlbn")
+
+[node name="Sheep1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["animals"]]
+y_sort_enabled = true
+position = Vector2(350, 787)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep1"]
+position = Vector2(-0.99154663, -2.487793)
+scale = Vector2(0.656294, 0.59383464)
+sprite_frames = SubResource("SpriteFrames_56emo")
+frame = 2
+frame_progress = 0.19129471
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep1"]
+position = Vector2(1.0084534, -0.48779297)
+shape = SubResource("RectangleShape2D_u3nu3")
+
+[node name="Sheep3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9" groups=["animals"]]
+y_sort_enabled = true
+position = Vector2(462, 372)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep3"]
+position = Vector2(-0.99154663, -2.487793)
+scale = Vector2(0.656294, 0.59383464)
+sprite_frames = SubResource("SpriteFrames_56emo")
+frame = 2
+frame_progress = 0.19129471
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep3"]
+position = Vector2(1.0084534, -0.48779297)
+shape = SubResource("RectangleShape2D_u3nu3")
+
+[node name="Sheep2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10" groups=["animals"]]
+y_sort_enabled = true
+position = Vector2(199, 540)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep2"]
+position = Vector2(-0.99154663, -2.487793)
+scale = Vector2(0.656294, 0.59383464)
+sprite_frames = SubResource("SpriteFrames_56emo")
+frame = 2
+frame_progress = 0.19129471
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep2"]
+position = Vector2(1.0084534, -0.48779297)
+shape = SubResource("RectangleShape2D_u3nu3")
+
 [node name="Gate01" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="1"]
-position = Vector2(736, 625.00006)
+position = Vector2(950.5, 634.50006)
 scale = Vector2(1.2305087, 1.3134328)
 texture = ExtResource("4_q1r0v")
+
+[connection signal="focus_entered" from="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" to="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" method="_on_focus_entered"]
+[connection signal="focus_exited" from="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" to="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" method="_on_focus_exited"]
 
 [editable path="MainUI"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
 [editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]

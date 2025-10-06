@@ -286,3 +286,6 @@ func recalculate_all_indentations() -> void:
 		if "indent_change_value" in button and button.indent_change_value > 0:
 			temp_indent_level += button.indent_change_value
 			temp_indent_level = max(0, temp_indent_level)
+
+func get_num_blocks():
+	return executeQue.size()
