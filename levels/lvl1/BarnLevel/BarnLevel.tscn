@@ -1,7 +1,7 @@
 [gd_scene load_steps=47 format=3 uid="uid://bx2ta16vsi55j"]
 
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="2_bcal8"]
-[ext_resource type="Script" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_egmrn"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
 [ext_resource type="Texture2D" uid="uid://dpjn04i6ekuk2" path="res://assets/JuaneBtns/Pickup_Initial.png" id="3_2wefm"]
 [ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://bqaxtb6egbs5l" path="res://assets/Farm/Barn/ChickenEat_01.png" id="33_lkm0e"]
 [ext_resource type="AudioStream" uid="uid://tnvpcdl6f0ev" path="res://sounds/Open_World_Sounds/farm-rooster-63323.mp3" id="34_uitrl"]
 [ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="39_y6mu8"]
+
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
 animations = [{

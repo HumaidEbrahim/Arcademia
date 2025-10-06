@@ -508,7 +508,7 @@ texture = ExtResource("63_6wkvg")
 [node name="River" type="Area2D" parent="."]
 monitorable = false
 script = ExtResource("68_bi5to")
-target_level = "res://levels/lvl1/Farm_River_Level.tscn"
+target_level = "res://levels/lvl1/RiverLevel/Farm_River_Level.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="River"]
 position = Vector2(53, 841)
