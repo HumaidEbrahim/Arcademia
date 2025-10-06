@@ -10,21 +10,36 @@ var last_position: Vector2
 var completed_areas:Array = []
 var success = 0
 var error = false
+var plant = ""
+var water = ""
+var is_animating = false
 
 func _ready():
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	last_position = position
 	
-
-func _process(delta: float) -> void:
-
-	last_position = Utils.update_animation(self,last_position,true)
+	if Global.SelectedCharacter == 1:
+			plant = "Girl_Feed"
+			water = "Girl_Water"
+	elif Global.SelectedCharacter == 0:
+			plant = "Boy_Feed"
+			water = "Boy_Water"
 	
+
+func _process(delta):
+	if not is_animating:
+		last_position = Utils.update_animation(self, last_position, true)
+
+	
+
 func action_water():
 	if area and area.name.contains("Full"):
-		
 		if area.name not in completed_areas:
+			is_animating = true
+			player.play(water)
+			await player.animation_finished
+			is_animating = false
 			completed_areas.append(area.name)
 			area.action_watered()
 			success += 1
@@ -40,6 +55,10 @@ func action_plant():
 	if area and area.name.contains("Empty"):
 		
 		if area.name not in completed_areas:
+			is_animating = true
+			player.play(plant)
+			await player.animation_finished
+			is_animating = false
 			completed_areas.append(area.name)
 			area.action_planted()
 			success += 1
