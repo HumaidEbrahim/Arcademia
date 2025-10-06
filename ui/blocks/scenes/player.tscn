@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dakwsq3euxbda"]
+[gd_scene load_steps=60 format=3 uid="uid://dakwsq3euxbda"]
 
 [ext_resource type="Texture2D" uid="uid://cuum5v4hpj5k1" path="res://assets/Characters/Girl_448x448_Final.png" id="1_dg3va"]
 [ext_resource type="Texture2D" uid="uid://bvqdbmfqjbwou" path="res://assets/Characters/Boy_448x448_Final.png" id="1_jmivm"]
@@ -62,6 +62,26 @@ region = Rect2(4928, 0, 448, 448)
 [sub_resource type="AtlasTexture" id="AtlasTexture_04hy4"]
 atlas = ExtResource("2_fx273")
 region = Rect2(5376, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_towr5"]
+atlas = ExtResource("1_jmivm")
+region = Rect2(5824, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj4wa"]
+atlas = ExtResource("1_jmivm")
+region = Rect2(6272, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7w0jq"]
+atlas = ExtResource("1_jmivm")
+region = Rect2(6720, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_erdt5"]
+atlas = ExtResource("1_jmivm")
+region = Rect2(7168, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u85fw"]
+atlas = ExtResource("1_jmivm")
+region = Rect2(7616, 0, 448, 448)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7aplr"]
 atlas = SubResource("CompressedTexture2D_v0k12")
@@ -141,6 +161,26 @@ region = Rect2(896, 0, 448, 448)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wg7m2"]
 atlas = SubResource("CompressedTexture2D_8nidd")
 region = Rect2(1344, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcqux"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(5824, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o354t"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(6272, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8qc8"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(6720, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dph4y"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(7168, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr2np"]
+atlas = ExtResource("1_dg3va")
+region = Rect2(7616, 0, 448, 448)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1dmmj"]
 atlas = SubResource("CompressedTexture2D_8nidd")
@@ -237,6 +277,26 @@ animations = [{
 "name": &"Boy_Jump",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_towr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj4wa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7w0jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_erdt5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u85fw")
+}],
+"loop": false,
+"name": &"Boy_Pickup",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": false,
 "name": &"Boy_Plant",
@@ -319,6 +379,26 @@ animations = [{
 "name": &"Girl_Idle",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcqux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o354t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8qc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dph4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fr2np")
+}],
+"loop": false,
+"name": &"Girl_Pickup",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": false,
 "name": &"Girl_Plant",
@@ -373,7 +453,7 @@ z_index = 100
 position = Vector2(0, -1.00002)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jdoke")
-animation = &"Girl_Feed"
+animation = &"Boy_Pickup"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)

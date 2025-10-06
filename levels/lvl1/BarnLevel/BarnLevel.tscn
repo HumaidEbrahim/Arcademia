@@ -41,7 +41,6 @@
 [ext_resource type="AudioStream" uid="uid://tnvpcdl6f0ev" path="res://sounds/Open_World_Sounds/farm-rooster-63323.mp3" id="34_uitrl"]
 [ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="39_y6mu8"]
 
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
 animations = [{
 "frames": [{
@@ -215,7 +214,7 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "pickup"
-timer = 0.2
+timer = 1.01
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2/Action_Button" index="0"]
 texture = ExtResource("3_2wefm")
@@ -239,7 +238,7 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "feed"
-timer = 0.2
+timer = 1.01
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3/Action_Button" index="0"]
 texture = ExtResource("6_lkm0e")
