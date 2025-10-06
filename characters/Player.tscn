@@ -1,11 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://ytfctjva1p2f"]
+[gd_scene load_steps=32 format=3 uid="uid://ytfctjva1p2f"]
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cbfi6isesf8bx" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
 [ext_resource type="Texture2D" uid="uid://cprq4ande2joq" path="res://assets/Characters/Boy_448x448_Final.png" id="2_bd51o"]
-[ext_resource type="AudioStream" uid="uid://cdg5ygyb7ue4b" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
-[ext_resource type="AudioStream" uid="uid://c1t22hig3t7nl" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
-[ext_resource type="AudioStream" uid="uid://c20326woj2yhm" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
+[ext_resource type="Texture2D" uid="uid://dnitfqjt24kgb" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
+[ext_resource type="AudioStream" uid="uid://dwn4l3gpp72ru" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
+[ext_resource type="AudioStream" uid="uid://bmfrkb0le4ptg" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
+[ext_resource type="AudioStream" uid="uid://geyfgb364kms" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
+[ext_resource type="AudioStream" uid="uid://dygsara7rtut6" path="res://sounds/Walking/Walk4.wav" id="7_8nidd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nn6ss"]
 atlas = ExtResource("2_bd51o")
@@ -22,6 +24,26 @@ region = Rect2(896, 0, 448, 448)
 [sub_resource type="AtlasTexture" id="AtlasTexture_n2nrt"]
 atlas = ExtResource("2_bd51o")
 region = Rect2(1344, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjfpg"]
+atlas = ExtResource("3_iii86")
+region = Rect2(2240, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amrm4"]
+atlas = ExtResource("3_iii86")
+region = Rect2(1792, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1guou"]
+atlas = ExtResource("3_iii86")
+region = Rect2(4480, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f53j6"]
+atlas = ExtResource("3_iii86")
+region = Rect2(4928, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04hy4"]
+atlas = ExtResource("3_iii86")
+region = Rect2(5376, 0, 448, 448)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6dt4t"]
 atlas = ExtResource("2_bd51o")
@@ -92,6 +114,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_bjfpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amrm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1guou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f53j6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04hy4")
+}],
+"loop": true,
+"name": &"Boy_Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_6dt4t")
 }, {
 "duration": 1.0,
@@ -151,28 +193,27 @@ script = ExtResource("1_5ynbo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.99996)
 sprite_frames = SubResource("SpriteFrames_nn6ss")
-animation = &"Girl_Idle"
-frame_progress = 0.44072
+animation = &"Boy_Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_tpo30")
 
-[node name="WalkSoundPlayer1" type="AudioStreamPlayer2D" parent="."]
+[node name="Walk1" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_v0k12")
-volume_db = 14.421
+volume_db = 20.0
 
-[node name="WalkSoundPlayer2" type="AudioStreamPlayer2D" parent="."]
+[node name="Walk2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_8nidd")
-volume_db = 14.0
+volume_db = 20.0
 
-[node name="WalkSoundPlayer3" type="AudioStreamPlayer2D" parent="."]
+[node name="Walk3" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_iii86")
-volume_db = 14.0
+volume_db = 20.0
 
-[node name="WalkSoundPlayer4" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8nidd")
-volume_db = 14.0
+[node name="Walk4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8nidd")
+volume_db = 20.0
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.45
