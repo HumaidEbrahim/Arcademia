@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bx2ta16vsi55j"]
+[gd_scene load_steps=49 format=3 uid="uid://bx2ta16vsi55j"]
 
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="2_bcal8"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_egmrn"]
@@ -41,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://tnvpcdl6f0ev" path="res://sounds/Open_World_Sounds/farm-rooster-63323.mp3" id="34_uitrl"]
 [ext_resource type="AudioStream" uid="uid://c53e4s7s6w87h" path="res://sounds/ChickenLevel/nom_c_06-89142.mp3" id="38_t1wcu"]
 [ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="39_y6mu8"]
+[ext_resource type="AudioStream" uid="uid://ca7vig7ge357u" path="res://sounds/ChickenLevel/item-pickup-37089.mp3" id="40_bef7e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
 animations = [{
@@ -325,6 +326,9 @@ frame_progress = 0.670441
 
 [node name="EatSoundPlayer" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
 stream = ExtResource("38_t1wcu")
+
+[node name="PickupSoundPlayer" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="3"]
+stream = ExtResource("40_bef7e")
 
 [node name="Chicken1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
 position = Vector2(254, 618)

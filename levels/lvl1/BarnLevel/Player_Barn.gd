@@ -2,7 +2,8 @@ extends Area2D
 
 @onready var label = get_parent().get_node("TextBox/Text")
 @onready var player = $Sprite2D
-@onready var eat_sound: AudioStreamPlayer2D = get_node("../Player/EatSoundPlayer")  # <-- added eating sound
+@onready var eat_sound: AudioStreamPlayer2D = get_node("../Player/EatSoundPlayer")  # Eating sound
+@onready var pickup_sound: AudioStreamPlayer2D = get_node("../Player/PickupSoundPlayer")  # Pickup sound
 
 var has_feed = false
 var area = null
@@ -21,6 +22,10 @@ func action_pickup():
 	if area and area.name == "Feed" and not has_feed:
 		has_feed = true
 		area.queue_free()
+		
+		# Play pickup sound
+		if pickup_sound:
+			pickup_sound.play()
 	else:
 		label.text = "Go to the bag and pickup"
 
@@ -32,7 +37,7 @@ func action_feed():
 		if anim:
 			anim.play("eat")
 		
-		# --- Play eating sound ---
+		# Play eating sound
 		if eat_sound:
 			eat_sound.play()
 
