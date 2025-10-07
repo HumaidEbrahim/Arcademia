@@ -2,12 +2,14 @@ extends Area2D
 
 @onready var label = get_parent().get_node("TextBox/Text")
 @onready var player = $Sprite2D
+@onready var watering_sound: AudioStreamPlayer2D = get_node("../Player/PlayerWateringSound")
+@onready var planting_sound: AudioStreamPlayer2D = get_node("../Player/PlayerPlantingSound")
 
-signal levelWon(error:bool) 
+signal levelWon(error: bool) 
 
 var area = null
 var last_position: Vector2
-var completed_areas:Array = []
+var completed_areas: Array = []
 var success = 0
 var error = false
 var plant = ""
@@ -20,18 +22,15 @@ func _ready():
 	last_position = position
 	
 	if Global.SelectedCharacter == 1:
-			plant = "Girl_Feed"
-			water = "Girl_Water"
+		plant = "Girl_Feed"
+		water = "Girl_Water"
 	elif Global.SelectedCharacter == 0:
-			plant = "Boy_Feed"
-			water = "Boy_Water"
-	
+		plant = "Boy_Feed"
+		water = "Boy_Water"
 
 func _process(delta):
 	if not is_animating:
 		last_position = Utils.update_animation(self, last_position, true)
-
-	
 
 func action_water():
 	if area and area.name.contains("Full"):
@@ -42,6 +41,11 @@ func action_water():
 			is_animating = false
 			completed_areas.append(area.name)
 			area.action_watered()
+			
+			# Play watering sound
+			if watering_sound:
+				watering_sound.play()
+			
 			success += 1
 			check_win()
 		else:
@@ -53,7 +57,6 @@ func action_water():
 	
 func action_plant(): 
 	if area and area.name.contains("Empty"):
-		
 		if area.name not in completed_areas:
 			is_animating = true
 			player.play(plant)
@@ -61,6 +64,11 @@ func action_plant():
 			is_animating = false
 			completed_areas.append(area.name)
 			area.action_planted()
+			
+			# Play planting sound
+			if planting_sound:
+				planting_sound.play()
+			
 			success += 1
 			check_win()
 		else:
@@ -69,7 +77,6 @@ func action_plant():
 	else:
 		label.text = "You can only plant a new plant in an empty pot."
 		error = true
-		
 
 func _on_area_entered(area2):
 	area = area2
@@ -80,6 +87,5 @@ func _on_area_exited(area2):
 
 func check_win():
 	if success == 6:
-		emit_signal("levelWon",error)
+		emit_signal("levelWon", error)
 		print("won")
-		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cdjcvpjiowwki"]
+[gd_scene load_steps=25 format=3 uid="uid://cdjcvpjiowwki"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wbkxu"]
 [ext_resource type="Texture2D" uid="uid://c8ur3gjkhjyxd" path="res://assets/Farm/FarmLvl_Tractor.png" id="2_xb1bg"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://0l1t2a5l5d2h" path="res://assets/Farm/Mielie/Mielie_06.png" id="9_ctjss"]
 [ext_resource type="Texture2D" uid="uid://dwv4hgqa06wpo" path="res://assets/Farm/TractorActor/TractorPlay07.png" id="9_vf36m"]
 [ext_resource type="Texture2D" uid="uid://dnhgvbdy1xy1h" path="res://assets/Farm/TractorActor/TractorPlay08.png" id="10_ecpiv"]
+[ext_resource type="AudioStream" uid="uid://d1px76phhqc28" path="res://sounds/Tractor_Level_Sounds/bush-cut-103503.mp3" id="20_4oapr"]
 [ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="20_tenat"]
 [ext_resource type="AudioStream" uid="uid://dhe41pseskhwv" path="res://sounds/Tractor_Level_Sounds/tractor-sound-and-ambient-farm-sounds-145531.mp3" id="21_ifi7g"]
 
@@ -118,6 +119,10 @@ move_duration = 1.0
 level_bound = 890
 step_size = 195
 move_duration = 1.0
+
+[node name="SubViewport" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="0"]
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
 
 [node name="TextureRect" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
 offset_right = 40.0
@@ -264,6 +269,9 @@ flip_h = true
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
 position = Vector2(-7.6293945e-06, -66)
 shape = SubResource("RectangleShape2D_a3fpj")
+
+[node name="PlayerCutSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
+stream = ExtResource("20_4oapr")
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
 optimal_blocks = 11
