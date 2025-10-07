@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://bwpyfjmbsk8ou"]
+[gd_scene load_steps=33 format=3 uid="uid://bwpyfjmbsk8ou"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2vog3"]
 [ext_resource type="Texture2D" uid="uid://c1ghcu6c7v3k2" path="res://assets/JuaneBtns/Plant_Initial.png" id="2_dmm27"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://ujb56ny06bly" path="res://assets/Farm/Garden/flower_fence4.png" id="15_lui6u"]
 [ext_resource type="Texture2D" uid="uid://do7at34m8yd6g" path="res://assets/Farm/Garden/flower_fence5.png" id="16_xabjf"]
 [ext_resource type="Texture2D" uid="uid://b82a4w5uv8nx5" path="res://assets/Farm/Garden/flower_fence6.png" id="17_kox0e"]
-[ext_resource type="Script" uid="uid://bq4oxkmgxjynm" path="res://levels/openworld/win.gd" id="18_poicm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lui6u"]
 atlas = ExtResource("11_jyhvo")
@@ -165,6 +164,7 @@ move_duration = 1.0
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
 script = ExtResource("2_nkxik")
 action = "plant"
+timer = 1.01
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
 texture = ExtResource("2_dmm27")
@@ -177,6 +177,7 @@ texture_scale = Vector2(7.06, 7.06)
 [node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
 script = ExtResource("2_nkxik")
 action = "water"
+timer = 1.01
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
 texture = ExtResource("5_c5gh3")
@@ -203,6 +204,9 @@ z_index = 0
 position = Vector2(54, 606)
 scale = Vector2(1.2, 1.2)
 script = ExtResource("3_0a0vv")
+
+[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
+animation = &"Boy_Water"
 
 [node name="FlowerPot" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
 position = Vector2(694, 729)
@@ -294,7 +298,6 @@ sprite_frames = SubResource("SpriteFrames_kox0e")
 frame_progress = 0.009179345
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
-script = ExtResource("18_poicm")
 optimal_blocks = 12
 
 [editable path="MainUI"]
@@ -304,4 +307,5 @@ optimal_blocks = 12
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
+[editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
 [editable path="MainUI/HBoxContainer/WinScreen"]

@@ -582,6 +582,9 @@ position = Vector2(950.5, 634.50006)
 scale = Vector2(1.2305087, 1.3134328)
 texture = ExtResource("4_q1r0v")
 
+[node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
+optimal_blocks = 5
+
 [connection signal="focus_entered" from="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" to="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" method="_on_focus_entered"]
 [connection signal="focus_exited" from="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" to="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" method="_on_focus_exited"]
 

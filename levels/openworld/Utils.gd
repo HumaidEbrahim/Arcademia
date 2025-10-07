@@ -6,10 +6,10 @@ static func update_animation(area: Area2D, last_pos: Vector2, mainChar:bool, fli
 	var walk = "Walk"
 	var idle = "Idle"
 	
-	if Global.SelectedCharacter == 0 && mainChar == true:
+	if Global.SelectedCharacter == 1 && mainChar == true:
 			walk = "Girl_Walk"
 			idle = "Girl_Idle"
-	elif Global.SelectedCharacter == 1 && mainChar == true:
+	elif Global.SelectedCharacter == 0 && mainChar == true:
 			walk = "Boy_Walk"
 			idle = "Boy_Idle"
 		
