@@ -3,16 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="2_bcal8"]
 [ext_resource type="Script" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
-[ext_resource type="Texture2D" uid="uid://dh6kymog2ws10" path="res://assets/JuaneBtns/Pickup_Initial.png" id="3_2wefm"]
+[ext_resource type="Texture2D" uid="uid://dpjn04i6ekuk2" path="res://assets/JuaneBtns/Pickup_Initial.png" id="3_2wefm"]
 [ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="3_xwafh"]
 [ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
 [ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
-[ext_resource type="Texture2D" uid="uid://t1hp3ffd5itc" path="res://assets/JuaneBtns/Pickup_Focus.png" id="4_qduet"]
+[ext_resource type="Texture2D" uid="uid://ul2pefmekqy0" path="res://assets/JuaneBtns/Pickup_Focus.png" id="4_qduet"]
 [ext_resource type="Texture2D" uid="uid://ba5vkwx8sprm" path="res://assets/Farm/Barn/Barn01.png" id="4_s8e1t"]
 [ext_resource type="Texture2D" uid="uid://18gj13xmkpyd" path="res://assets/Farm/Barn/Barn02.png" id="5_3ro4f"]
-[ext_resource type="Texture2D" uid="uid://cde1jmoa7c8db" path="res://assets/JuaneBtns/Feed_Intitial.png" id="6_lkm0e"]
-[ext_resource type="Texture2D" uid="uid://y324xe7p5ai8" path="res://assets/JuaneBtns/Feed_Focus.png" id="6_qduet"]
+[ext_resource type="Texture2D" uid="uid://bgl0sob3ywrla" path="res://assets/JuaneBtns/Feed_Intitial.png" id="6_lkm0e"]
+[ext_resource type="Texture2D" uid="uid://coop71q08ewxr" path="res://assets/JuaneBtns/Feed_Focus.png" id="6_qduet"]
 [ext_resource type="Texture2D" uid="uid://cfqkji01kttnw" path="res://assets/Farm/Barn/Barn03.png" id="7_52y21"]
 [ext_resource type="Texture2D" uid="uid://nkcqlyfyxsgd" path="res://assets/Effects/Leaves/leaves_00_delay-0.1s (1).png" id="8_6x1hn"]
 [ext_resource type="Texture2D" uid="uid://0xpyn0f2rouc" path="res://assets/Effects/Leaves/leaves_04_delay-0.1s (2).png" id="9_d22s8"]
@@ -214,6 +214,7 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "pickup"
+timer = 0.2
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down2/Action_Button" index="0"]
 texture = ExtResource("3_2wefm")
@@ -237,6 +238,7 @@ grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_egmrn")
 action = "feed"
+timer = 0.2
 
 [node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down3/Action_Button" index="0"]
 texture = ExtResource("6_lkm0e")

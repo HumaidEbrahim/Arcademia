@@ -481,6 +481,7 @@ shape = SubResource("RectangleShape2D_gfkuq")
 
 [node name="Cows" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
+target_level = "res://levels/lvl1/CowLevel/Cow_Level.tscn"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cows"]
 position = Vector2(1003.97, 731.003)
@@ -537,7 +538,8 @@ shape = SubResource("RectangleShape2D_vg46o")
 position = Vector2(447, 708)
 scale = Vector2(0.11990743, 0.11990743)
 sprite_frames = SubResource("SpriteFrames_vg46o")
-frame_progress = 0.46329266
+autoplay = "default"
+frame_progress = 0.25429446
 
 [node name="Player" parent="." instance=ExtResource("73_htkvy")]
 position = Vector2(-237, 183)

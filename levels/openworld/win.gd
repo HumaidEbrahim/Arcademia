@@ -6,16 +6,20 @@ extends Node
 @onready var feedback = $ColorRect/Feedback
 @onready var starAnim = $ColorRect/Stars
 @onready var btn_continue = $ColorRect/Btn_Continue
+@onready var btn_retry = $ColorRect/Btn_TryAgain
 
 var message:String
 
 func _ready() -> void:
+	
 	var player = get_tree().root.find_child("Player", true, false)
 	player.connect("levelWon", Callable(self, "on_win"))
 	
 	btn_continue.pressed.connect(func():get_tree().change_scene_to_file("res://levels/openworld/FarmMap.tscn"))
+	btn_retry.pressed.connect(func():get_tree().reload_current_scene())
 
 func on_win(error):
+	
 	var ui = get_tree().root.find_child("MainUI", true, false)
 	var blocks_used = ui.get_num_blocks()
 	
@@ -30,7 +34,7 @@ func on_win(error):
 	if not error:
 		stars += 1
 	else:
-		message += "Idiot" 
+		message += "\nIdiot" 
 			
 	self.visible = true
 	
@@ -44,6 +48,6 @@ func on_win(error):
 		3: 
 			praise.text = "Outsanding Work!"
 			starAnim.play("threeStar")
-			
+	print(message)		
 	feedback.text = message
 	
