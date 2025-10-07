@@ -1,18 +1,18 @@
-[gd_scene load_steps=47 format=3 uid="uid://bx2ta16vsi55j"]
+[gd_scene load_steps=48 format=3 uid="uid://bx2ta16vsi55j"]
 
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="2_bcal8"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_egmrn"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
-[ext_resource type="Texture2D" uid="uid://dpjn04i6ekuk2" path="res://assets/JuaneBtns/Pickup_Initial.png" id="3_2wefm"]
+[ext_resource type="Texture2D" uid="uid://dh6kymog2ws10" path="res://assets/JuaneBtns/Pickup_Initial.png" id="3_2wefm"]
 [ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="3_xwafh"]
 [ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
 [ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
-[ext_resource type="Texture2D" uid="uid://ul2pefmekqy0" path="res://assets/JuaneBtns/Pickup_Focus.png" id="4_qduet"]
+[ext_resource type="Texture2D" uid="uid://t1hp3ffd5itc" path="res://assets/JuaneBtns/Pickup_Focus.png" id="4_qduet"]
 [ext_resource type="Texture2D" uid="uid://ba5vkwx8sprm" path="res://assets/Farm/Barn/Barn01.png" id="4_s8e1t"]
 [ext_resource type="Texture2D" uid="uid://18gj13xmkpyd" path="res://assets/Farm/Barn/Barn02.png" id="5_3ro4f"]
-[ext_resource type="Texture2D" uid="uid://bgl0sob3ywrla" path="res://assets/JuaneBtns/Feed_Intitial.png" id="6_lkm0e"]
-[ext_resource type="Texture2D" uid="uid://coop71q08ewxr" path="res://assets/JuaneBtns/Feed_Focus.png" id="6_qduet"]
+[ext_resource type="Texture2D" uid="uid://cde1jmoa7c8db" path="res://assets/JuaneBtns/Feed_Intitial.png" id="6_lkm0e"]
+[ext_resource type="Texture2D" uid="uid://y324xe7p5ai8" path="res://assets/JuaneBtns/Feed_Focus.png" id="6_qduet"]
 [ext_resource type="Texture2D" uid="uid://cfqkji01kttnw" path="res://assets/Farm/Barn/Barn03.png" id="7_52y21"]
 [ext_resource type="Texture2D" uid="uid://nkcqlyfyxsgd" path="res://assets/Effects/Leaves/leaves_00_delay-0.1s (1).png" id="8_6x1hn"]
 [ext_resource type="Texture2D" uid="uid://0xpyn0f2rouc" path="res://assets/Effects/Leaves/leaves_04_delay-0.1s (2).png" id="9_d22s8"]
@@ -39,6 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://btkh70vrgosyg" path="res://assets/Farm/Barn/ChickenEat_02.png" id="32_qduet"]
 [ext_resource type="Texture2D" uid="uid://bqaxtb6egbs5l" path="res://assets/Farm/Barn/ChickenEat_01.png" id="33_lkm0e"]
 [ext_resource type="AudioStream" uid="uid://tnvpcdl6f0ev" path="res://sounds/Open_World_Sounds/farm-rooster-63323.mp3" id="34_uitrl"]
+[ext_resource type="AudioStream" uid="uid://c53e4s7s6w87h" path="res://sounds/ChickenLevel/nom_c_06-89142.mp3" id="38_t1wcu"]
 [ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="39_y6mu8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
@@ -257,6 +258,10 @@ visible = false
 [node name="Bottom_Loop_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="7"]
 visible = false
 
+[node name="SubViewport" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="0"]
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+
 [node name="TextureRect2" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
 offset_right = 789.0
 offset_bottom = 469.0
@@ -317,6 +322,9 @@ script = ExtResource("4_egmrn")
 scale = Vector2(0.7, 0.7)
 frame = 1
 frame_progress = 0.670441
+
+[node name="EatSoundPlayer" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
+stream = ExtResource("38_t1wcu")
 
 [node name="Chicken1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
 position = Vector2(254, 618)
