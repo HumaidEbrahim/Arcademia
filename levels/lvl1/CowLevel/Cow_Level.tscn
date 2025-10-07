@@ -315,7 +315,7 @@ region = Rect2(970, 662, 470, 275)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc4uw"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 1.01,
 "texture": SubResource("AtlasTexture_gjd3p")
 }, {
 "duration": 1.0,
@@ -344,7 +344,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idel",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -434,7 +434,7 @@ region = Rect2(0, 576, 384, 288)
 [sub_resource type="SpriteFrames" id="SpriteFrames_56emo"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 5.81,
 "texture": SubResource("AtlasTexture_atbno")
 }, {
 "duration": 1.0,
@@ -619,7 +619,7 @@ position = Vector2(1099, 233)
 scale = Vector2(0.4085821, 0.3436567)
 sprite_frames = SubResource("SpriteFrames_wqo7n")
 autoplay = "default"
-frame_progress = 0.6788721
+frame_progress = 0.3138599
 
 [node name="Cow1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5" groups=["animals"]]
 y_sort_enabled = true
@@ -630,7 +630,8 @@ position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
 animation = &"Idel"
-frame_progress = 0.6867224
+frame = 7
+frame_progress = 0.8619791
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
@@ -676,7 +677,8 @@ position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
 animation = &"Idle"
-frame_progress = 0.8707972
+frame = 3
+frame_progress = 0.7169758
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep1"]
