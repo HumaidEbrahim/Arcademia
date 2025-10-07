@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cxnk2m6gjxv7g"]
+[gd_scene load_steps=91 format=3 uid="uid://cxnk2m6gjxv7g"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2kjyl"]
 [ext_resource type="Texture2D" uid="uid://5woqwl5u7gtn" path="res://assets/Farm/CowLevel/FarmLvl_Cows.jpg" id="2_bu5ki"]
@@ -24,8 +24,10 @@
 [ext_resource type="Texture2D" uid="uid://c4ewof6csgnv8" path="res://assets/Farm/Cows/Cow_Walk_03.png" id="12_xcvnf"]
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
-[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://Levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Texture2D" uid="uid://f18hh7ru33if" path="res://assets/Farm/Cows/Cow_Idel.png" id="22_atbno"]
 [ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
+[ext_resource type="Texture2D" uid="uid://ds3xkqthgygcp" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="26_yqk68"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
 animations = [{
@@ -274,8 +276,76 @@ animations = [{
 "speed": 14.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjd3p"]
+atlas = ExtResource("22_atbno")
+region = Rect2(0, 92, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdahn"]
+atlas = ExtResource("22_atbno")
+region = Rect2(485, 92, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr7d6"]
+atlas = ExtResource("22_atbno")
+region = Rect2(970, 92, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ai1l"]
+atlas = ExtResource("22_atbno")
+region = Rect2(0, 377, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m65fd"]
+atlas = ExtResource("22_atbno")
+region = Rect2(485, 377, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaimb"]
+atlas = ExtResource("22_atbno")
+region = Rect2(970, 377, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtpgt"]
+atlas = ExtResource("22_atbno")
+region = Rect2(0, 662, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skfku"]
+atlas = ExtResource("22_atbno")
+region = Rect2(485, 662, 470, 275)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cujja"]
+atlas = ExtResource("22_atbno")
+region = Rect2(970, 662, 470, 275)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc4uw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjd3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdahn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr7d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ai1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m65fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaimb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtpgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skfku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cujja")
+}],
+"loop": true,
+"name": &"Idel",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("10_mc3ms")
@@ -296,6 +366,42 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqlbn"]
 size = Vector2(267.5, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_atbno"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(63, 49, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfh1b"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(365, 49, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_earsa"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(667, 49, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtmla"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(63, 267, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqb6f"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(365, 267, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oya1n"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(667, 267, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s6m7"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(63, 485, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj6yx"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(365, 485, 288, 204)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgbv2"]
+atlas = ExtResource("26_yqk68")
+region = Rect2(667, 485, 288, 204)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wqo7n"]
 atlas = ExtResource("23_s5bsm")
@@ -327,6 +433,38 @@ region = Rect2(0, 576, 384, 288)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_56emo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_atbno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfh1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_earsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtmla")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mqb6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oya1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s6m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj6yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgbv2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 6.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqo7n")
@@ -466,8 +604,10 @@ script = ExtResource("18_3qt78")
 
 [node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
 position = Vector2(-15, -91)
+animation = &"Girl_Feed"
 autoplay = "Boy_Idle"
-frame_progress = 0.37088847
+frame = 4
+frame_progress = 1.0
 flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
@@ -489,8 +629,8 @@ position = Vector2(229, 397)
 position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
-frame = 3
-frame_progress = 0.59954
+animation = &"Idel"
+frame_progress = 0.6867224
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
@@ -518,11 +658,9 @@ y_sort_enabled = true
 position = Vector2(97, 723)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow2"]
-position = Vector2(6.0000153, 29)
+position = Vector2(15.000015, 9)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
-frame = 3
-frame_progress = 0.59954
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow2"]
@@ -537,8 +675,8 @@ position = Vector2(350, 787)
 position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
-frame = 2
-frame_progress = 0.19129471
+animation = &"Idle"
+frame_progress = 0.8707972
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep1"]
@@ -553,8 +691,8 @@ position = Vector2(462, 372)
 position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
-frame = 2
-frame_progress = 0.19129471
+animation = &"Idle"
+frame_progress = 0.011367752
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep3"]
@@ -569,8 +707,8 @@ position = Vector2(199, 540)
 position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
-frame = 2
-frame_progress = 0.19129471
+animation = &"Idle"
+frame_progress = 0.04822232
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep2"]
