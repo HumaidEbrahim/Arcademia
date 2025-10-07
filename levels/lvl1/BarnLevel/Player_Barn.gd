@@ -2,38 +2,40 @@ extends Area2D
 
 @onready var label = get_parent().get_node("TextBox/Text")
 @onready var player = $Sprite2D
+@onready var eat_sound: AudioStreamPlayer2D = get_node("../Player/EatSoundPlayer")  # <-- added eating sound
 
 var has_feed = false
 var area = null
 var last_position: Vector2
-
 
 func _ready():
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	label.text = "Feed the chickens"
 	last_position = position
-	
 
 func _process(delta: float) -> void:
+	last_position = Utils.update_animation(self, last_position, true)
 
-	last_position = Utils.update_animation(self,last_position,true)
-		
-	
 func action_pickup():
 	if area and area.name == "Feed" and not has_feed:
 		has_feed = true
 		area.queue_free()
 	else:
 		label.text = "Go to the bag and pickup"
-		
+
 func action_feed():
 	if area and area.name.begins_with("Chicken") and has_feed:
 		area.add_to_group("fed")
-	
+
 		var anim = area.get_node("AnimatedSprite2D")
 		if anim:
 			anim.play("eat")
+		
+		# --- Play eating sound ---
+		if eat_sound:
+			eat_sound.play()
+
 		check_win()
 	elif area and area.name.begins_with("Chicken") and not has_feed:
 		label.text = "Pickup feed first"
