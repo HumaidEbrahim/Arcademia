@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cxnk2m6gjxv7g"]
+[gd_scene load_steps=77 format=3 uid="uid://cxnk2m6gjxv7g"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2kjyl"]
 [ext_resource type="Texture2D" uid="uid://5woqwl5u7gtn" path="res://assets/Farm/CowLevel/FarmLvl_Cows.jpg" id="2_bu5ki"]
@@ -26,7 +26,11 @@
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
 [ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
 [ext_resource type="AudioStream" uid="uid://do2h4egrkmg7f" path="res://sounds/CowLevel/whistle-melody-12-362584.mp3" id="21_6er6f"]
+[ext_resource type="AudioStream" uid="uid://b4drmylr1ni7m" path="res://sounds/CowLevel/error-04-199275.mp3" id="23_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
+[ext_resource type="AudioStream" uid="uid://ceijxethstbbm" path="res://sounds/CowLevel/gate-latch-90988.mp3" id="23_waicu"]
+[ext_resource type="AudioStream" uid="uid://0t60rdc3twbl" path="res://sounds/CowLevel/sheep-352668.mp3" id="24_x46kd"]
+[ext_resource type="AudioStream" uid="uid://byh8mr2g3aj6t" path="res://sounds/CowLevel/cow-mooing-343423.mp3" id="25_fhpxi"]
 [ext_resource type="AudioStream" uid="uid://drvd1l3m8fpn8" path="res://music/Bongi_Blues/Bongi_Blues (mastered).mp3" id="27_0y1d1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
@@ -482,6 +486,24 @@ shape = SubResource("CircleShape2D_orjbe")
 
 [node name="WhistleSoundPlayer" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
 stream = ExtResource("21_6er6f")
+
+[node name="OpenGateSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="3"]
+stream = ExtResource("23_waicu")
+volume_db = 5.0
+
+[node name="CloseGateSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="4"]
+stream = ExtResource("23_waicu")
+volume_db = 5.0
+
+[node name="SheepErrorSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="5"]
+stream = ExtResource("23_fhpxi")
+volume_db = 5.0
+
+[node name="SheepBaaSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="6"]
+stream = ExtResource("24_x46kd")
+
+[node name="CowMooSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="7"]
+stream = ExtResource("25_fhpxi")
 
 [node name="Leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
 position = Vector2(1099, 233)
