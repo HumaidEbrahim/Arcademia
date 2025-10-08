@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://diy7hae64ygie"]
+[gd_scene load_steps=16 format=3 uid="uid://diy7hae64ygie"]
 
 [ext_resource type="AudioStream" uid="uid://7a1y0qf38b2n" path="res://music/Bongi Rainforest/Bongi Rainforest (mastered).wav" id="1_fckal"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
 [ext_resource type="Texture2D" uid="uid://g2u1dyukuoam" path="res://assets/Farm/River/River_Level/Butterfly_01.png" id="5_okv6a"]
 [ext_resource type="Texture2D" uid="uid://buvgrobxohu4k" path="res://assets/Farm/River/River_Level/Butterfly_02.png" id="6_p1icf"]
+[ext_resource type="AudioStream" uid="uid://di8swled3gb5b" path="res://sounds/River_Level_Sounds/splash-by-blaukreuz-6261.mp3" id="5_fckal"]
 [ext_resource type="AudioStream" uid="uid://b7y0fxjxvkwov" path="res://sounds/River_Level_Sounds/soothing-river-flow-372456.mp3" id="6_wiq6v"]
 [ext_resource type="Texture2D" uid="uid://dfmj8fb6yftmp" path="res://assets/Farm/River/River_Level/Butterfly_03.png" id="7_81u7j"]
 [ext_resource type="Texture2D" uid="uid://dt8ogwalfdr10" path="res://assets/Farm/River/River_Level/River_Level_river01.png" id="8_q3h31"]
@@ -115,6 +116,10 @@ level_bound = 700
 step_size = 200
 move_duration = 1.0
 
+[node name="SubViewport" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="0"]
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
 scale = Vector2(0.214056, 0.227101)
 texture = ExtResource("3_0vwdd")
@@ -149,6 +154,10 @@ sprite_frames = SubResource("SpriteFrames_m1pdk")
 frame_progress = 0.8501428
 
 [node name="Rock1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6" groups=["Rocks"]]
+[node name="SplashSoundPlayer" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
+stream = ExtResource("5_fckal")
+
+[node name="Rock1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock1"]
 position = Vector2(1141.5, 591.5)
