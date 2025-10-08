@@ -1,6 +1,7 @@
 extends Control
 
 @onready var run_button = $HBoxContainer/ScriptPanel/RunClear/Run
+@onready var clear_button = $HBoxContainer/ScriptPanel/RunClear/Clear
 
 # Storage for commands to be executed in sequence
 var executeQue: Array = []
@@ -103,6 +104,8 @@ func _on_run_pressed() -> void:
 	# If button is in "Run" state, execute the sequence
 	run_button.text = "Running..."
 	run_button.disabled = true
+	clear_button.disabled = true
+	
 	
 	populateActionsArray()
 	await execute_commands(executeQue)
@@ -110,6 +113,7 @@ func _on_run_pressed() -> void:
 	# After sequence is done, change button to "Reset" state
 	run_button.text = "Reset"
 	run_button.disabled = false
+	clear_button.disabled = false
 	runReset = true
 
 func execute_commands(commands: Array) -> void:
@@ -177,6 +181,10 @@ func get_actual_button(container):
 
 func _on_clear_pressed() -> void:
 	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
+	
+	if run_button.text == "Running...":
+		return
+	
 	for child in scriptQuePanel.get_children():
 		child.queue_free()
 	executeQue.clear()
