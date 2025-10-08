@@ -41,6 +41,18 @@ func _process(delta: float) -> void:
 	var functionsPanel = $HBoxContainer/FunctionPanel/VBoxContainer
 	var runClearBtns = $HBoxContainer/ScriptPanel/RunClear
 	
+	#Move focus to script panel
+	if Input.is_action_just_pressed("ui_right"):
+		var focusedItem = get_viewport().gui_get_focus_owner()
+		if focusedItem and functionsPanel.is_ancestor_of(focusedItem):
+			moveFocusToScriptPanel(scriptQuePanel)
+	
+	#move focus to functions panel
+	if Input.is_action_just_pressed("ui_left"):
+		var focusedItem = get_viewport().gui_get_focus_owner()
+		if focusedItem and scriptQuePanel.is_ancestor_of(focusedItem):
+			moveFocusToFunctionsPanel(functionsPanel)
+	
 	# Block movement controls (only when in move mode)
 	if is_in_move_mode:
 		if Input.is_action_just_pressed("ui_up"):
@@ -349,6 +361,25 @@ func recalculate_all_indentations() -> void:
 func get_num_blocks():
 	return executeQue.size()
 
+func moveFocusToScriptPanel(scriptPanel: Object) -> void:
+	var container = scriptPanel.get_child(0)
+	
+	if container == null:
+		run_button.grab_focus()
+		return
+	
+	var firstChild = container.get_child(0)
+	
+	if firstChild == null:
+		run_button.grab_focus()
+		return
+	else:
+		firstChild.grab_focus()
+
+func moveFocusToFunctionsPanel(functionsPanel: Object) -> void:
+	resetFocusToInit()
+
 func resetFocusToInit() -> void:
 	if has_node("HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button"):
 		$HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button.grab_focus()
+	return
