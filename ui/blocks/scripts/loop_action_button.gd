@@ -47,14 +47,14 @@ func _input(event):
 	# Only handle input when this button has focus
 	if not has_focus():
 		return
-		
+
 	# Handle editing mode toggle (using a shoulder button or trigger)
 	if event.is_action_pressed("btn_4"):  # F button - enter/exit edit mode
 		is_editing_count = !is_editing_count
 		update_label_display()
 		get_viewport().set_input_as_handled()
 		return
-	
+
 	# Handle count adjustment when in edit mode
 	if is_editing_count:
 		if event.is_action_pressed("ui_down"):
@@ -73,7 +73,7 @@ func _on_focus_entered() -> void:
 func _on_focus_exited() -> void:
 	initial_top_polygon.visible = true
 	focus_top_polygon.visible = false
-	
+
 	# Exit edit mode when losing focus
 	if is_editing_count:
 		is_editing_count = false

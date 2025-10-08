@@ -8,21 +8,21 @@ signal finished
 @export var move_direction: String = "Right"
 
 var move_offset: Vector2 = Vector2.ZERO          
-var sprite: Area2D
+var sprite: Area2D = null
 var initial_polygon: Polygon2D
 var focus_polygon: Polygon2D
 
 func _ready() -> void:
-	# Find the player sprite in the scene
-	sprite = get_tree().root.find_child("Player", true, false)
-	
-	# Get visual state polygons
 	initial_polygon = $"Initial" 
 	focus_polygon = $"Focus"
 	
 	# Show initial state, hide focus state
 	initial_polygon.visible = true
 	focus_polygon.visible = false
+
+func _on_pressed() -> void:
+	# Convert string to vector
+	# Convert string to vector using match statement properly
 	
 	# Set movement direction based on exported string
 	match move_direction.to_lower():
@@ -36,23 +36,21 @@ func _ready() -> void:
 			move_offset = Vector2(0, step_size)
 		_:
 			move_offset = Vector2.ZERO
-			
+
+	await spriteAnimation()
+
 	size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	size_flags_vertical = Control.SIZE_SHRINK_BEGIN
 
 func _process(delta: float) -> void:
 	pass
 
-func spriteAnimation() -> void:
-	#Re-assign sprite if null (when the scene has been recreated)
-	if sprite == null:
-		sprite = get_tree().root.find_child("Player", true, false)
-	
-	if not sprite:
+func spriteAnimation():
+	# Check if the target was successfully assigned.
+	if not is_instance_valid(sprite):
 		push_error("Player not assigned")
+		emit_signal("finished") # IMPORTANT: Still emit signal to avoid a freeze.
 		return
-	
-	
 	var start_pos = sprite.position
 	var end_pos = start_pos + move_offset
 	
@@ -65,18 +63,15 @@ func spriteAnimation() -> void:
 			end_pos.y = clamp(end_pos.y, level_bound, start_pos.y)
 		"down":
 			end_pos.y = clamp(end_pos.y, start_pos.y, level_bound)
-			
+	
 	var tween = get_tree().create_tween()
 	tween.tween_property(sprite, "position", end_pos, move_duration)
 	
-	# Wait for animation plus small buffer
-	await get_tree().create_timer(move_duration + 0.2).timeout
-	
-	# Signal that this action is complete
-	emit_signal("finished")
+	# Wait for the tween to finish
+	await tween.finished
 
-func _on_pressed() -> void:
-	await spriteAnimation()
+	# IMPORTANT - Send finished signal so next item in queue can start
+	emit_signal("finished")
 
 func _on_focus_entered() -> void:
 	initial_polygon.visible = false
