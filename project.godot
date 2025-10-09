@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 ProfileDB="*res://ui/menu/UIScripts/ProfileDB.gd"
 Global="*res://global.gd"
 Utils="*res://levels/openworld/Utils.gd"
+MusicPlayer="*res://MusicPlayer.tscn"
 
 [display]
 
