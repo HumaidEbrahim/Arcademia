@@ -7,7 +7,8 @@ var executeQue: Array = []
 
 # Indentation tracking for visual block hierarchy
 var current_indent_level: int = 0
-const INDENT_OFFSET: int = 23.5
+const INDENT_OFFSET: int = 10
+const MAX_INDENT_LEVEL: int = 2
 
 # Loop execution settings
 var loop_iterations: int = 3
@@ -264,6 +265,9 @@ func toggleShow(itemToToggle: Object) -> void:
 		itemToToggle.hide()
 
 func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
+	# ALWAYS recalculate indent level before adding a new block
+	update_current_indent_level()
+	
 	var copy = button.duplicate()
 	copy.position = Vector2.ZERO
 	
@@ -272,9 +276,21 @@ func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
 		current_indent_level += copy.indent_change_value
 		current_indent_level = max(0, current_indent_level)
 	
-	# Wrap button in container with proper indentation
+	# CHECK: Prevent adding blocks that would exceed max indent
+	var would_exceed_max = false
+	if "indent_change_value" in copy and copy.indent_change_value > 0:
+		if current_indent_level + copy.indent_change_value > MAX_INDENT_LEVEL:
+			would_exceed_max = true
+	
+	if would_exceed_max:
+		push_warning("Cannot add block: Maximum indentation level reached!")
+		copy.queue_free()
+		return
+	
+	# Wrap button in container with proper indentation (clamped visually)
 	var margin_container = MarginContainer.new()
-	var indent_pixels = current_indent_level * INDENT_OFFSET
+	var visual_indent = min(current_indent_level, MAX_INDENT_LEVEL)
+	var indent_pixels = visual_indent * INDENT_OFFSET
 	margin_container.add_theme_constant_override("margin_left", indent_pixels)
 	
 	margin_container.add_child(copy)
@@ -286,7 +302,7 @@ func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
 	# Handle start blocks (loop start and if) - adjust indent after placement
 	if "indent_change_value" in copy and copy.indent_change_value > 0:
 		current_indent_level += copy.indent_change_value
-		current_indent_level = max(0, current_indent_level)
+		current_indent_level = min(MAX_INDENT_LEVEL, current_indent_level)
 
 func execute_ScriptPanel(button: Object, _location: Object = null) -> void:
 	pass
@@ -372,12 +388,12 @@ func update_current_indent_level() -> void:
 		
 		# Update current_indent_level based on indent_change_value
 		if "indent_change_value" in button:
-			if button.indent_change_value < 0:
-				# End blocks: decrease before the block
-				current_indent_level += button.indent_change_value
-				current_indent_level = max(0, current_indent_level)
-			elif button.indent_change_value > 0:
+			if button.indent_change_value > 0:
 				# Start blocks: increase after the block
+				current_indent_level += button.indent_change_value
+				current_indent_level = min(MAX_INDENT_LEVEL, max(0, current_indent_level))
+			elif button.indent_change_value < 0:
+				# End blocks: decrease after the block
 				current_indent_level += button.indent_change_value
 				current_indent_level = max(0, current_indent_level)
 
