@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bwpyfjmbsk8ou"]
+[gd_scene load_steps=45 format=3 uid="uid://bwpyfjmbsk8ou"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2vog3"]
 [ext_resource type="Texture2D" uid="uid://co1lofo8thlb4" path="res://assets/JuaneBtns/Plant_Initial.png" id="2_dmm27"]
@@ -9,13 +9,20 @@
 [ext_resource type="Texture2D" uid="uid://b63beig7gy8fa" path="res://assets/Farm/Garden/FlowerPot.png" id="3_p85ah"]
 [ext_resource type="Texture2D" uid="uid://drju6h2j3tpdx" path="res://assets/JuaneBtns/Water_Initial.png" id="5_c5gh3"]
 [ext_resource type="Texture2D" uid="uid://cf3vetwi580ln" path="res://assets/JuaneBtns/Water_Focus.png" id="6_coqvr"]
+[ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_4way2"]
 [ext_resource type="AudioStream" uid="uid://j5nvcuj3sybs" path="res://sounds/GardenLevel/WateringCan.mp3" id="9_poicm"]
+[ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://levels/lvl1/GardenLevel/endif_block.gd" id="9_tii1p"]
 [ext_resource type="AudioStream" uid="uid://cwnyhvbckng6s" path="res://sounds/GardenLevel/hit-plant-03-266292.mp3" id="10_mndbt"]
+[ext_resource type="Texture2D" uid="uid://f6uscn7c30p" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_rhidi"]
 [ext_resource type="Script" uid="uid://p8011ubitbd3" path="res://levels/lvl1/GardenLevel/Flowers.gd" id="11_c5gh3"]
+[ext_resource type="Texture2D" uid="uid://dcepopsxomh6q" path="res://assets/JuaneBtns/If_End_Focus.png" id="11_dj04c"]
 [ext_resource type="Texture2D" uid="uid://d0as663q4fn8m" path="res://assets/Farm/Garden/flowerbloomspritersheet.png" id="11_jyhvo"]
 [ext_resource type="AudioStream" uid="uid://drh8xpgmur56t" path="res://sounds/Walking/Walk1.mp3" id="11_lui6u"]
+[ext_resource type="PackedScene" uid="uid://b6qnjrbr26lkq" path="res://ui/blocks/scenes/if_condition_block.tscn" id="11_wul3c"]
 [ext_resource type="Texture2D" uid="uid://bn7psg0sa71xr" path="res://assets/Farm/Garden/flower_fence1.png" id="12_jyhvo"]
 [ext_resource type="AudioStream" uid="uid://bxgmlnhpae7ks" path="res://sounds/Walking/Walk2.mp3" id="12_kox0e"]
+[ext_resource type="Texture2D" uid="uid://b2rm4k3glprtp" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="12_o28s5"]
+[ext_resource type="Texture2D" uid="uid://bc58n7fnr453n" path="res://assets/JuaneBtns/If_Empty_Focus.png" id="13_o54r1"]
 [ext_resource type="Texture2D" uid="uid://toi1baya7m15" path="res://assets/Farm/Garden/flower_fence2.png" id="13_poicm"]
 [ext_resource type="AudioStream" uid="uid://cbekycb5ip7xy" path="res://sounds/Walking/Walk3.mp3" id="13_y4x8x"]
 [ext_resource type="Texture2D" uid="uid://chuvltb7ivylv" path="res://assets/Farm/Garden/flower_fence3.png" id="14_mndbt"]
@@ -192,6 +199,67 @@ texture_scale = Vector2(7.06, 7.06)
 texture = ExtResource("6_coqvr")
 texture_scale = Vector2(7.06, 7.06)
 
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block" index="0"]
+offset_left = -91.0
+offset_top = 540.0
+offset_right = 84.0
+offset_bottom = 595.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block" index="0"]
+offset_left = -93.0
+offset_top = 616.0
+offset_right = 82.0
+offset_bottom = 671.0
+
+[node name="End_if_btn" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="6" instance=ExtResource("7_4way2")]
+layout_mode = 2
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn" index="0"]
+custom_minimum_size = Vector2(160, 55)
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = 457.0
+offset_right = 70.0
+offset_bottom = 512.0
+grow_vertical = 1
+script = ExtResource("9_tii1p")
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn/Action_Button" index="0"]
+texture = ExtResource("10_rhidi")
+polygon = PackedVector2Array(0.12674713, 5.18005, 0.49669266, 4.2148075, 1.2074051, 3.6189022, 1.8722801, 2.9771442, 2.491291, 2.4270725, 3.2478485, 1.8540993, 4.214245, 1.1385365, 5.1851234, 0.6394081, 38.399746, 1.0582592, 39.647343, 2.2741663, 40.969597, 3.590992, 41.544586, 5.066983, 42.34798, 6.416542, 43.52432, 7.83404, 45.037308, 9.13319, 59.885788, 9.064396, 60.682465, 8.4777565, 61.48699, 7.4160366, 62.140717, 5.931141, 62.73118, 4.279822, 63.34587, 2.8141408, 64.01604, 2.1079905, 65.29568, 0.86656404, 67.153656, 0.20049286, 137.95291, 0.07374139, 139.4713, 0.629321, 140.48195, 1.670741, 141.3838, 3.1080053, 142.20586, 4.2174993, 142.29257, 5.576494, 142.10226, 6.5277977, 142.14568, 46.57273, 142.2761, 47.991096, 141.86989, 49.190353, 140.66028, 50.012413, 138.68631, 51.22161, 44.291786, 51.697998, 43.085144, 52.736576, 42.2447, 53.847424, 41.54747, 55.5066, 40.50393, 57.273663, 39.606895, 58.868366, 38.796345, 60.010353, 19.056524, 60.201393, 17.782099, 58.559586, 16.282824, 57.108772, 15.380064, 55.5992, 14.477236, 54.27947, 12.681749, 52.51795, 5.7901764, 52.60006, 4.006523, 52.124138, 2.3418884, 50.934746, 1.5096397, 49.864388, 0.20184326, 48.021015, 0.7770767, 48.844917, 0.7770767, 48.844917, 13.708954, 53.506916, 17.221598, 57.784214, 18.403952, 59.334965, 40.025524, 58.1441, 41.95244, 54.63158, 139.92769, 50.734333)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn/Action_Button" index="1"]
+texture = ExtResource("11_dj04c")
+polygon = PackedVector2Array(6.1660957, -0.32084274, 4.7272243, 0.18276119, 2.4969769, 1.3338575, 0.9861622, 2.6288414, 0.0508976, 4.355485, -0.16464043, 48.741314, 0.9864559, 50.396015, 2.065609, 51.475166, 3.5044785, 52.33849, 4.7994633, 53.057922, 12.497419, 53.273758, 13.360741, 53.201813, 13.720818, 54.56816, 14.296366, 55.647316, 14.728025, 57.08618, 15.591349, 58.23728, 16.310781, 59.1006, 17.605768, 59.891983, 18.612974, 60.035866, 38.901047, 60.2517, 39.260765, 59.388374, 39.908257, 58.23728, 40.915466, 56.726467, 41.562958, 55.57537, 42.354332, 54.280388, 43.07377, 53.201233, 43.793205, 52.12208, 137.48413, 52.12208, 138.923, 51.25876, 139.78632, 50.323494, 140.50577, 49.747948, 141.44102, 48.596848, 141.94464, 47.58964, 142.08852, 4.858466, 141.47284, 3.4036942, 140.28993, 2.340443, 138.6961, 1.1100245, 136.69275, 0.25408077, 66.332, -0.17758036, 65.06532, 0.5418551, 64.13006, 1.5490639, 62.76313, 2.8440473, 61.827866, 4.498749, 60.892597, 6.153449, 60.245106, 7.952037, 59.813446, 8.815359, 44.849194, 8.743416, 43.55421, 7.448433, 42.762833, 6.0095625, 41.323963, 3.9951437, 40.46064, 2.5562732, 39.02177, 0.90157247, 37.36707, 0.11019373)
+uv = PackedVector2Array(6.1660957, -0.32084274, 4.7272243, 0.18276119, 2.4969769, 1.3338575, 0.9861622, 2.6288414, 0.0508976, 4.355485, -0.16464043, 48.741314, 0.9864559, 50.396015, 2.065609, 51.475166, 3.5044785, 52.33849, 4.7994633, 53.057922, 12.497419, 53.273758, 13.360741, 53.201813, 13.720818, 54.56816, 14.296366, 55.647316, 14.728025, 57.08618, 15.591349, 58.23728, 16.310781, 59.1006, 17.605768, 59.891983, 18.612974, 60.035866, 38.901047, 60.2517, 39.260765, 59.388374, 39.908257, 58.23728, 40.915466, 56.726467, 41.562958, 55.57537, 42.354332, 54.280388, 43.07377, 53.201233, 43.793205, 52.12208, 137.48413, 52.12208, 138.923, 51.25876, 139.78632, 50.323494, 140.50577, 49.747948, 141.44102, 48.596848, 141.94464, 47.58964, 142.08852, 4.858466, 141.00937, 3.6354258, 139.85828, 2.772104, 138.27551, 0.8296292, 136.69275, 0.25408077, 66.332, -0.17758036, 65.06532, 0.5418551, 64.13006, 1.5490639, 62.76313, 2.8440473, 61.827866, 4.498749, 60.892597, 6.153449, 60.245106, 7.952037, 59.813446, 8.815359, 44.849194, 8.743416, 43.55421, 7.448433, 42.762833, 6.0095625, 41.323963, 3.9951437, 40.46064, 2.5562732, 39.02177, 0.90157247, 37.36707, 0.11019373)
+internal_vertex_count = 0
+
+[node name="If_Empty_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="7" instance=ExtResource("11_wul3c")]
+layout_mode = 2
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block" index="0"]
+offset_left = -90.0
+offset_top = 305.0
+offset_right = 70.0
+offset_bottom = 360.0
+condition_type = "is_empty"
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block/Action_Button" index="0"]
+texture = ExtResource("12_o28s5")
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block/Action_Button" index="1"]
+texture = ExtResource("13_o54r1")
+
+[node name="If_Plant_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="8" instance=ExtResource("11_wul3c")]
+layout_mode = 2
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Plant_Block" index="0"]
+offset_left = -88.0
+offset_top = 375.0
+offset_right = 72.0
+offset_bottom = 430.0
+
 [node name="SubViewport" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="0"]
 audio_listener_enable_2d = true
 audio_listener_enable_3d = true
@@ -335,5 +403,8 @@ optimal_blocks = 12
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Plant_Block"]
 [editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
 [editable path="MainUI/HBoxContainer/WinScreen"]

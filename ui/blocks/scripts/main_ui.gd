@@ -113,8 +113,6 @@ func _on_run_pressed() -> void:
 	runReset = true
 
 func execute_commands(commands: Array) -> void:
-	# FIX: This is the single, correct execution function that handles loops
-	# and safely assigns sprites to only the buttons that need them.
 	var player = get_node("HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player")
 	
 	var i = 0
@@ -125,6 +123,7 @@ func execute_commands(commands: Array) -> void:
 			i += 1
 			continue
 
+		# Handle loop blocks
 		if actual_button and is_top_loop_block(actual_button):
 			var loop_end_index = find_matching_loop_end(commands, i)
 			if loop_end_index != -1:
@@ -136,8 +135,34 @@ func execute_commands(commands: Array) -> void:
 			else:
 				print("Warning: Loop start found but no matching loop end!")
 				i += 1
-		elif actual_button and is_bottom_loop_block(actual_button):
+		
+		# Handle if blocks
+		elif actual_button and is_if_block(actual_button):
+			var if_end_index = find_matching_if_end(commands, i)
+			if if_end_index != -1:
+				# Assign sprite to if-block for condition checking
+				if "sprite" in actual_button:
+					actual_button.sprite = player
+				
+				# Check the condition
+				var condition_met = actual_button.check_condition()
+				
+				if condition_met:
+					# Execute commands inside the if block
+					var if_commands = commands.slice(i + 1, if_end_index)
+					await execute_commands(if_commands)
+				# If condition not met, skip the block
+				
+				i = if_end_index + 1
+			else:
+				print("Warning: If block start found but no matching end!")
+				i += 1
+		
+		# Handle end markers (loop/if end blocks)
+		elif actual_button and (is_bottom_loop_block(actual_button) or is_endif_block(actual_button)):
 			i += 1
+		
+		# Handle regular action blocks
 		else:
 			if "sprite" in actual_button:
 				actual_button.sprite = player
@@ -148,11 +173,33 @@ func execute_commands(commands: Array) -> void:
 			
 			i += 1
 
+# Helper functions for if-blocks
+func is_if_block(action) -> bool:
+	return action.get_script() and action.get_script().resource_path.contains("if_condition_block")
+
+func is_endif_block(action) -> bool:
+	return action.get_script() and action.get_script().resource_path.contains("endif_block")
+
+func find_matching_if_end(commands: Array, start_index: int) -> int:
+	var nest_level = 0
+	for i in range(start_index + 1, commands.size()):
+		var command = commands[i]
+		var actual_command = get_actual_button(command)
+		
+		if actual_command and is_if_block(actual_command):
+			nest_level += 1
+		elif actual_command and is_endif_block(actual_command):
+			if nest_level == 0:
+				return i
+			else:
+				nest_level -= 1
+	return -1
+
 func is_top_loop_block(action) -> bool:
-	return "indent_change_value" in action and action.indent_change_value > 0
+	return action.get_script() and action.get_script().resource_path.contains("loop_action_button")
 
 func is_bottom_loop_block(action) -> bool:
-	return "indent_change_value" in action and action.indent_change_value < 0
+	return action.get_script() and action.get_script().resource_path.contains("bottom_loop_block")
 
 func find_matching_loop_end(commands: Array, start_index: int) -> int:
 	var nest_level = 0
@@ -220,10 +267,10 @@ func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
 	var copy = button.duplicate()
 	copy.position = Vector2.ZERO
 	
-	# Handle loop end blocks - adjust indent before placement
+	# Handle end blocks (loop end and endif) - adjust indent before placement
 	if "indent_change_value" in copy and copy.indent_change_value < 0:
 		current_indent_level += copy.indent_change_value
-		current_indent_level = max(0, current_indent_level + copy.indent_change_value)
+		current_indent_level = max(0, current_indent_level)
 	
 	# Wrap button in container with proper indentation
 	var margin_container = MarginContainer.new()
@@ -236,7 +283,7 @@ func execute_FunctionsPanel(button: Object, locationToPut: Object) -> void:
 	locationToPut.add_child(margin_container)
 	margin_container.set_owner(locationToPut)
 	
-	# Handle loop start blocks - adjust indent after placement
+	# Handle start blocks (loop start and if) - adjust indent after placement
 	if "indent_change_value" in copy and copy.indent_change_value > 0:
 		current_indent_level += copy.indent_change_value
 		current_indent_level = max(0, current_indent_level)
@@ -314,6 +361,26 @@ func is_in_script_panel(item: Control, script_panel: Control) -> bool:
 
 	return false
 
+func update_current_indent_level() -> void:
+	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
+	current_indent_level = 0
+	
+	for container in scriptQuePanel.get_children():
+		var button = get_actual_button(container)
+		if not button:
+			continue
+		
+		# Update current_indent_level based on indent_change_value
+		if "indent_change_value" in button:
+			if button.indent_change_value < 0:
+				# End blocks: decrease before the block
+				current_indent_level += button.indent_change_value
+				current_indent_level = max(0, current_indent_level)
+			elif button.indent_change_value > 0:
+				# Start blocks: increase after the block
+				current_indent_level += button.indent_change_value
+				current_indent_level = max(0, current_indent_level)
+
 func recalculate_all_indentations() -> void:
 	var scriptQuePanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	var temp_indent_level = 0
@@ -323,20 +390,26 @@ func recalculate_all_indentations() -> void:
 		if not button:
 			continue
 		
-		# Process loop end blocks first
+		# For end blocks (negative indent), decrease indent BEFORE applying it to this block
+		# This makes the end block appear at the outer level
 		if "indent_change_value" in button and button.indent_change_value < 0:
 			temp_indent_level += button.indent_change_value
 			temp_indent_level = max(0, temp_indent_level)
-		
-		# Apply indentation to this block
-		var indent_pixels = temp_indent_level * INDENT_OFFSET
-		if container is MarginContainer:
-			container.add_theme_constant_override("margin_left", indent_pixels)
-		
-		# Process loop start blocks after positioning
-		if "indent_change_value" in button and button.indent_change_value > 0:
-			temp_indent_level += button.indent_change_value
-			temp_indent_level = max(0, temp_indent_level)
+			
+			# Apply the decreased indentation to the end block itself
+			var indent_pixels = temp_indent_level * INDENT_OFFSET
+			if container is MarginContainer:
+				container.add_theme_constant_override("margin_left", indent_pixels)
+		else:
+			# For all other blocks, apply current indentation first
+			var indent_pixels = temp_indent_level * INDENT_OFFSET
+			if container is MarginContainer:
+				container.add_theme_constant_override("margin_left", indent_pixels)
+			
+			# Then increase indent for start blocks (after applying indentation)
+			if "indent_change_value" in button and button.indent_change_value > 0:
+				temp_indent_level += button.indent_change_value
+				temp_indent_level = max(0, temp_indent_level)
 
 func get_num_blocks():
 	return executeQue.size()

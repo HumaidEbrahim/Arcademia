@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dq2u55mcnv8y" path="res://assets/JuaneBtns/Up_Focus.png" id="6_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_eyw15"]
 [ext_resource type="Texture2D" uid="uid://yldo6mceyimd" path="res://assets/JuaneBtns/Down_Initial.png" id="9_kdqsy"]
-[ext_resource type="PackedScene" path="res://ui/blocks/scenes/top_loop_block.tscn" id="11_pbjw5"]
+[ext_resource type="PackedScene" uid="uid://c5nh6oaqv4rgh" path="res://ui/blocks/scenes/top_loop_block.tscn" id="11_pbjw5"]
 [ext_resource type="Texture2D" uid="uid://dldkhyew14rqv" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
 [ext_resource type="PackedScene" uid="uid://dakwsq3euxbda" path="res://ui/blocks/scenes/player.tscn" id="12_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://bfdysmu7nej3t" path="res://ui/blocks/scenes/bottom_loop_block.tscn" id="12_sje6e"]

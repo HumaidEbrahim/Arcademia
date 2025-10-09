@@ -126,6 +126,9 @@ func _on_area_exited(area2):
 	if area == area2:
 		area = null
 
+func get_current_area():
+	return area
+
 func check_win():
 	if success == 6:
 		emit_signal("levelWon", error)
