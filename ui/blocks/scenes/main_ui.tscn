@@ -198,16 +198,16 @@ offset_left = 31.0
 offset_top = 779.0
 offset_right = 148.0
 offset_bottom = 810.0
-text = "Run sequence"
+text = "Run"
 
 [node name="Clear" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
 z_index = 1
 layout_mode = 0
 offset_left = 31.0
 offset_top = 821.0
-offset_right = 157.0
+offset_right = 149.0
 offset_bottom = 852.0
-text = "Clear sequence"
+text = "Clear"
 
 [node name="WinScreen" parent="HBoxContainer" instance=ExtResource("14_ol5qr")]
 visible = false
