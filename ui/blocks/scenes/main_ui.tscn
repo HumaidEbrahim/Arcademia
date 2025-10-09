@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=28 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
 [ext_resource type="Texture2D" uid="uid://duwpvq4fagg1p" path="res://assets/JuaneBtns/Left_Initial.png" id="3_0kc8j"]
@@ -14,7 +14,31 @@
 [ext_resource type="PackedScene" uid="uid://dakwsq3euxbda" path="res://ui/blocks/scenes/player.tscn" id="12_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://bfdysmu7nej3t" path="res://ui/blocks/scenes/bottom_loop_block.tscn" id="12_sje6e"]
 [ext_resource type="PackedScene" uid="uid://ysnoknyjyvop" path="res://levels/openworld/WinScreen.tscn" id="14_ol5qr"]
+[ext_resource type="Texture2D" uid="uid://dpx1c87emonj6" path="res://assets/JuaneBtns/btn_initial.png" id="14_rdbyt"]
+[ext_resource type="Texture2D" uid="uid://bin1wr5dgsy2s" path="res://assets/JuaneBtns/btn_focus.png" id="15_7x6s0"]
 [ext_resource type="Script" uid="uid://bq4oxkmgxjynm" path="res://levels/openworld/win.gd" id="15_kdqsy"]
+[ext_resource type="Texture2D" uid="uid://yusux3ep8mba" path="res://assets/JuaneBtns/btn_disabled.png" id="15_xlywj"]
+[ext_resource type="Texture2D" uid="uid://ipjoqsox4qa5" path="res://assets/JuaneBtns/clear_btn_initial.png" id="16_eql5s"]
+[ext_resource type="Texture2D" uid="uid://bhx07gi7bhdlv" path="res://assets/JuaneBtns/clear_btn_focus.png" id="17_xlywj"]
+[ext_resource type="Texture2D" uid="uid://1hmhxs0vs8vo" path="res://assets/JuaneBtns/clear_btn_disabled.png" id="18_20m1x"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eql5s"]
+texture = ExtResource("14_rdbyt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fy8rc"]
+texture = ExtResource("15_xlywj")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xlywj"]
+texture = ExtResource("15_7x6s0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_20m1x"]
+texture = ExtResource("16_eql5s")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p2td"]
+texture = ExtResource("18_20m1x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn54"]
+texture = ExtResource("17_xlywj")
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -194,19 +218,33 @@ layout_mode = 2
 [node name="Run" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
 z_index = 1
 layout_mode = 0
-offset_left = 31.0
-offset_top = 779.0
-offset_right = 148.0
+offset_left = 17.0
+offset_top = 764.0
+offset_right = 168.0
 offset_bottom = 810.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_eql5s")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_fy8rc")
+theme_override_styles/focus = SubResource("StyleBoxTexture_xlywj")
 text = "Run"
 
 [node name="Clear" type="Button" parent="HBoxContainer/ScriptPanel/RunClear"]
 z_index = 1
 layout_mode = 0
-offset_left = 31.0
-offset_top = 821.0
-offset_right = 149.0
-offset_bottom = 852.0
+offset_left = 18.0
+offset_top = 816.0
+offset_right = 169.0
+offset_bottom = 862.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_20m1x")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1p2td")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn54")
 text = "Clear"
 
 [node name="WinScreen" parent="HBoxContainer" instance=ExtResource("14_ol5qr")]
