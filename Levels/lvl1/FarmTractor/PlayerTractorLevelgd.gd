@@ -10,11 +10,15 @@ var error = false
 
 signal levelWon(error: bool)
 
+var track = load("res://music/Bongi Farm/Bongi Farm (mastered).mp3")
+
 func _ready() -> void:
 	label.text = "Harvest all the corn"
 	last_position = position
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
+
+	MusicPlayer.play_stream(track, 2.0)
 
 func _process(_delta: float) -> void:
 	if position != last_position:

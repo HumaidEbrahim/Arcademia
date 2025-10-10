@@ -22,8 +22,12 @@ var cow_count: int = 0
 var error: bool = false
 var animals = null
 
+var track = load("res://music/Moo Melody.mp3")
+
 func _ready():
 	area_entered.connect(_on_area_entered)
+	
+	MusicPlayer.play_stream(track, 2.0)
 
 # --- Player actions ---
 func action_whistle():

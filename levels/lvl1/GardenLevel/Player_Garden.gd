@@ -13,6 +13,8 @@ extends Area2D
 
 signal levelWon(error: bool) 
 
+var track = load("res://music/MOOgwenya.mp3")
+
 var area = null
 var last_position: Vector2
 var completed_areas: Array = []
@@ -30,7 +32,9 @@ func _ready():
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 	last_position = position
-
+	
+	MusicPlayer.play_stream(track, 2.0)
+	
 	if Global.SelectedCharacter == 1:
 		plant = "Girl_Feed"
 		water = "Girl_Water"

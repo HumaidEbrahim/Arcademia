@@ -5,6 +5,8 @@ extends Area2D
 @onready var eat_sound: AudioStreamPlayer2D = get_node("../Player/EatSoundPlayer")  # Eating sound
 @onready var pickup_sound: AudioStreamPlayer2D = get_node("../Player/PickupSoundPlayer")  # Pickup sound
 
+var track = load("res://music/Bongi Farm/Bongi Farm (mastered).mp3")
+
 var has_feed = false
 var area = null
 var last_position: Vector2
@@ -14,6 +16,8 @@ func _ready():
 	area_exited.connect(_on_area_exited)
 	label.text = "Feed the chickens"
 	last_position = position
+	
+	MusicPlayer.play_stream(track, 2.0)
 
 func _process(delta: float) -> void:
 	last_position = Utils.update_animation(self, last_position, true)

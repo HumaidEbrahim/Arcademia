@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ewof6csgnv8" path="res://assets/Farm/Cows/Cow_Walk_03.png" id="12_xcvnf"]
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
-[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://Levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
 [ext_resource type="AudioStream" uid="uid://do2h4egrkmg7f" path="res://sounds/CowLevel/whistle-melody-12-362584.mp3" id="21_6er6f"]
 [ext_resource type="AudioStream" uid="uid://b4drmylr1ni7m" path="res://sounds/CowLevel/error-04-199275.mp3" id="23_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
@@ -623,10 +623,6 @@ texture = ExtResource("4_q1r0v")
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
 optimal_blocks = 5
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("27_0y1d1")
-autoplay = true
 
 [connection signal="focus_entered" from="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" to="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" method="_on_focus_entered"]
 [connection signal="focus_exited" from="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" to="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left/Whistle_Button" method="_on_focus_exited"]

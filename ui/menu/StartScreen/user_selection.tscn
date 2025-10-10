@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://v8jrmklnvuvr"]
+[gd_scene load_steps=10 format=3 uid="uid://v8jrmklnvuvr"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/UIBackground/Background2.0.png" id="1_8x44b"]
 [ext_resource type="Script" uid="uid://deauiljmkk7mn" path="res://ui/menu/StartScreen/user_selection.gd" id="1_j7f56"]
 [ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/UIAvatars/Teacher.png" id="2_j7f56"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_mrju7"]
 [ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/UIAvatars/Student.png" id="4_yh0gi"]
+[ext_resource type="PackedScene" uid="uid://db0ksevt3xaul" path="res://MusicPlayer.tscn" id="6_kxddf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l03oh"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -124,6 +125,7 @@ grow_horizontal = 0
 grow_vertical = 2
 focus_neighbor_left = NodePath("../Teacher")
 focus_neighbor_right = NodePath("../Teacher")
+mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_l03oh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
@@ -187,3 +189,5 @@ theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("3_mrju7")
 theme_override_font_sizes/font_size = 64
 text = "USER SELECTION"
+
+[node name="MusicPlayer" parent="." instance=ExtResource("6_kxddf")]
