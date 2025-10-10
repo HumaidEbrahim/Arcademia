@@ -40,10 +40,7 @@ func call_action():
 				sprite.action_openGate()
 			"closegate":
 				sprite.action_closeGate()
-				
-				
-			
-			
+
 	await get_tree().create_timer(timer).timeout
 	emit_signal("finished")
 
