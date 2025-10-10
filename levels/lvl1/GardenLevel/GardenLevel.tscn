@@ -13,16 +13,16 @@
 [ext_resource type="AudioStream" uid="uid://j5nvcuj3sybs" path="res://sounds/GardenLevel/WateringCan.mp3" id="9_poicm"]
 [ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://levels/lvl1/GardenLevel/endif_block.gd" id="9_tii1p"]
 [ext_resource type="AudioStream" uid="uid://cwnyhvbckng6s" path="res://sounds/GardenLevel/hit-plant-03-266292.mp3" id="10_mndbt"]
-[ext_resource type="Texture2D" uid="uid://f6uscn7c30p" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_rhidi"]
+[ext_resource type="Texture2D" uid="uid://cr0k1ofuhdkqu" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_rhidi"]
 [ext_resource type="Script" uid="uid://p8011ubitbd3" path="res://levels/lvl1/GardenLevel/Flowers.gd" id="11_c5gh3"]
-[ext_resource type="Texture2D" uid="uid://dcepopsxomh6q" path="res://assets/JuaneBtns/If_End_Focus.png" id="11_dj04c"]
-[ext_resource type="Texture2D" uid="uid://d0as663q4fn8m" path="res://assets/Farm/Garden/flowerbloomspritersheet.png" id="11_jyhvo"]
+[ext_resource type="Texture2D" uid="uid://cakm4aeop7qps" path="res://assets/JuaneBtns/If_End_Focus.png" id="11_dj04c"]
+[ext_resource type="Texture2D" uid="uid://34bu6jbnx52g" path="res://assets/Farm/Garden/flowerbloomspritersheet.png" id="11_jyhvo"]
 [ext_resource type="AudioStream" uid="uid://drh8xpgmur56t" path="res://sounds/Walking/Walk1.mp3" id="11_lui6u"]
 [ext_resource type="PackedScene" uid="uid://b6qnjrbr26lkq" path="res://ui/blocks/scenes/if_condition_block.tscn" id="11_wul3c"]
 [ext_resource type="Texture2D" uid="uid://bn7psg0sa71xr" path="res://assets/Farm/Garden/flower_fence1.png" id="12_jyhvo"]
 [ext_resource type="AudioStream" uid="uid://bxgmlnhpae7ks" path="res://sounds/Walking/Walk2.mp3" id="12_kox0e"]
-[ext_resource type="Texture2D" uid="uid://b2rm4k3glprtp" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="12_o28s5"]
-[ext_resource type="Texture2D" uid="uid://bc58n7fnr453n" path="res://assets/JuaneBtns/If_Empty_Focus.png" id="13_o54r1"]
+[ext_resource type="Texture2D" uid="uid://cn12liowmhgjo" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="12_o28s5"]
+[ext_resource type="Texture2D" uid="uid://s8a1o7grtugm" path="res://assets/JuaneBtns/If_Empty_Focus.png" id="13_o54r1"]
 [ext_resource type="Texture2D" uid="uid://toi1baya7m15" path="res://assets/Farm/Garden/flower_fence2.png" id="13_poicm"]
 [ext_resource type="AudioStream" uid="uid://cbekycb5ip7xy" path="res://sounds/Walking/Walk3.mp3" id="13_y4x8x"]
 [ext_resource type="Texture2D" uid="uid://chuvltb7ivylv" path="res://assets/Farm/Garden/flower_fence3.png" id="14_mndbt"]
@@ -286,6 +286,8 @@ script = ExtResource("3_0a0vv")
 
 [node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
 animation = &"Boy_Idle"
+frame = 0
+frame_progress = 0.0
 
 [node name="PlayerWateringSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
 stream = ExtResource("9_poicm")

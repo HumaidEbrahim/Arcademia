@@ -1,18 +1,22 @@
 extends Node
 
-var is_paused := false
+
 var pause_scene_path := "res://ui/menu/StudentMenu/main_menu.tscn"
 var pause_scene_instance :Node= null
+@onready var scenes = ["FarmMap","GardenLevel","BarnLevel","FarmRiverLevel","BarnLevel","TractorLevel"]
 
+
+	
 func _input(event):
 	if event.is_action_pressed("btn_4"):
-		toggle_pause()
+		var scene = get_tree().current_scene.name
+		if scene in scenes:
+			toggle_pause()
 
 func toggle_pause():
-	is_paused = !is_paused
+	Global.GamePaused = !Global.GamePaused
 	
-	
-	if is_paused:
+	if Global.GamePaused:
 		show_main_menu()
 	else:
 		hide_main_menu()

@@ -25,11 +25,19 @@ func _ready() -> void:
 	buttons[selected_index].grab_focus()
 
 func _on_back_pressed() -> void:
-	get_tree().change_scene_to_file(STUDENT_SELECTION_PATH)
-
+	if not Global.GamePaused:
+		get_tree().change_scene_to_file(STUDENT_SELECTION_PATH)
+	else:
+		Pause.toggle_pause()
+		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
+		
 func _on_new_game_pressed() -> void:
-	get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
-	
+	if not Global.GamePaused:
+		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
+	else:
+		Pause.toggle_pause()
+		get_tree().change_scene_to_file(STUDENT_SELECTION_PATH)
+		
 	MusicPlayer.play_stream(new_music, 2.5)
 
 func _on_resume() -> void:

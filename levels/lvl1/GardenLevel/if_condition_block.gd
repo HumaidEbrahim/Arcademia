@@ -60,5 +60,9 @@ func check_condition() -> bool:
 				if animated_sprite.animation == "" or (animated_sprite.animation == "plant" and animated_sprite.frame == 0):
 					return true
 				return false
+			"gate_opened":
+				print("open")
+			"gate_closed":
+				print("closed")
 	
 	return false

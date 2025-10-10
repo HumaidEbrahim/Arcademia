@@ -93,7 +93,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fpj"]
 size = Vector2(166.99998, 123.99968)
 
-[node name="FarmTractor" type="Node2D"]
+[node name="TractorLevel" type="Node2D"]
 
 [node name="MainUI" parent="." instance=ExtResource("1_wbkxu")]
 offset_top = 450.0
@@ -263,8 +263,8 @@ position = Vector2(-2, -118)
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_6hodr")
 animation = &"Walk"
+frame = 0
 frame_progress = 0.8758315
-flip_h = true
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
 position = Vector2(-7.6293945e-06, -66)
