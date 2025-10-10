@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="5_jqlbn"]
 [ext_resource type="Texture2D" uid="uid://c0nohennd4fql" path="res://assets/Farm/CowLevel/Gate02.png" id="5_xomu3"]
 [ext_resource type="Texture2D" uid="uid://07ojklsxap72" path="res://assets/Farm/CowLevel/Gate03.png" id="6_eh817"]
-[ext_resource type="Texture2D" uid="uid://dhskxi10brhet" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
-[ext_resource type="Texture2D" uid="uid://ckkhw4helcady" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://b8okwm83rlyms" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
+[ext_resource type="Texture2D" uid="uid://kfjavvkb21rk" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
 [ext_resource type="Texture2D" uid="uid://d142ty26xkdky" path="res://assets/Farm/CowLevel/Gate04.png" id="7_qkixp"]
 [ext_resource type="Texture2D" uid="uid://nems2ttuyao3" path="res://assets/Farm/CowLevel/Gate05.png" id="8_mc3ms"]
-[ext_resource type="Texture2D" uid="uid://c2qa73xwabwf3" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
-[ext_resource type="Texture2D" uid="uid://sx50qe4pdx0p" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
+[ext_resource type="Texture2D" uid="uid://g6y0cbof2btc" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://cqt1jpoay1mu5" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
 [ext_resource type="Texture2D" uid="uid://bi1323q7tgrsw" path="res://assets/Farm/CowLevel/Gate06.png" id="9_rba47"]
 [ext_resource type="Texture2D" uid="uid://di3x8vxr2p623" path="res://assets/Farm/Cows/Cow_Walk_01.png" id="10_mc3ms"]
 [ext_resource type="Texture2D" uid="uid://c5cvrxpx3xt4t" path="res://assets/JuaneBtns/Whistle_Initial.png" id="11_dblru"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ewof6csgnv8" path="res://assets/Farm/Cows/Cow_Walk_03.png" id="12_xcvnf"]
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
-[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://Levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
 [ext_resource type="AudioStream" uid="uid://do2h4egrkmg7f" path="res://sounds/CowLevel/whistle-melody-12-362584.mp3" id="21_6er6f"]
 [ext_resource type="AudioStream" uid="uid://b4drmylr1ni7m" path="res://sounds/CowLevel/error-04-199275.mp3" id="23_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
@@ -32,7 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://0t60rdc3twbl" path="res://sounds/CowLevel/sheep-352668.mp3" id="24_x46kd"]
 [ext_resource type="AudioStream" uid="uid://byh8mr2g3aj6t" path="res://sounds/CowLevel/cow-mooing-343423.mp3" id="25_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://cqoggy771jfty" path="res://assets/Farm/Cows/Cow_Idel (1).png" id="27_mqb6f"]
-[ext_resource type="Texture2D" uid="uid://ds3xkqthgygcp" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="33_oya1n"]
+[ext_resource type="Texture2D" uid="uid://tyyo780rur8e" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="33_oya1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
 animations = [{
@@ -320,7 +320,7 @@ region = Rect2(1008, 684, 478, 319)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc4uw"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_oya1n")
 }, {
 "duration": 1.0,
@@ -332,7 +332,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bgbv2")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_gjd3p")
 }, {
 "duration": 1.0,
@@ -349,7 +349,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 4.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -465,7 +465,7 @@ animations = [{
 "speed": 6.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 6.0,
 "texture": SubResource("AtlasTexture_qaimb")
 }, {
 "duration": 1.0,
@@ -494,7 +494,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3nu3"]
@@ -667,7 +667,8 @@ position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
 animation = &"idle"
-frame_progress = 0.9981264
+autoplay = "idle"
+frame_progress = 0.117672764
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
@@ -683,7 +684,8 @@ position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
 animation = &"idle"
-frame_progress = 0.13371392
+autoplay = "idle"
+frame_progress = 0.16333573
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow3"]
@@ -699,7 +701,8 @@ position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
 animation = &"idle"
-frame_progress = 0.17777698
+autoplay = "idle"
+frame_progress = 0.834225
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow2"]
@@ -714,8 +717,9 @@ position = Vector2(350, 787)
 position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
-frame = 2
-frame_progress = 0.19129471
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.8732423
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep1"]
@@ -731,7 +735,8 @@ position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
 animation = &"idle"
-frame_progress = 0.91611755
+autoplay = "idle"
+frame_progress = 0.34125894
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep3"]
@@ -746,8 +751,9 @@ position = Vector2(199, 540)
 position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
-frame = 2
-frame_progress = 0.19129471
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.45677114
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep2"]
