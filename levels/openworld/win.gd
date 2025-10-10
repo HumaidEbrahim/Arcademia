@@ -24,9 +24,11 @@ func _ready() -> void:
 	btn_continue.pressed.connect(func():get_tree().change_scene_to_file("res://levels/openworld/FarmMap.tscn"))
 	btn_retry.pressed.connect(func():get_tree().reload_current_scene())
 
-func on_win(error):
-	
+func on_win(error) -> void:
 	running = false
+
+	await get_tree().create_timer(1).timeout
+
 	var ui = get_tree().root.find_child("MainUI", true, false)
 	var blocks_used = ui.get_num_blocks()
 	
@@ -36,7 +38,6 @@ func on_win(error):
 		stars += 1
 	else:
 		message += "Try using less blocks"
-		
 		
 	if not error:
 		stars += 1
@@ -53,9 +54,9 @@ func on_win(error):
 			praise.text = "Well Done!"
 			starAnim.play("twoStar")
 		3: 
-			praise.text = "Outsanding Work!"
+			praise.text = "Outstanding Work!"
 			starAnim.play("threeStar")
+
 	print(message)		
 	feedback.text = message
 	ProfileDB.update_level_result(ProfileDB.active_student, get_tree().current_scene.name, stars, time_elapsed)
-	

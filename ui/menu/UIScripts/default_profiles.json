@@ -13,15 +13,15 @@
 						"time_taken": 25.2772908643574
 					},
 					"GardenLevel": {
-						"completed_at": 1760097082.613,
-						"stars": 3.0,
-						"time_taken": 25.3406844761901
+						"completed_at": 1760129436.185,
+						"stars": 3,
+						"time_taken": 28.383258333333
 					}
 				},
 				"total_stars": 6.0,
-				"total_time": 50.6179753405475
+				"total_time": 53.6605491976904
 			},
-			"updated_at": 1760097395.935
+			"updated_at": 1760129436.185
 		},
 		{
 			"avatar": 1.0,
