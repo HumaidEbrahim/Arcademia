@@ -60,7 +60,12 @@ func add_student(student_name: String, character: int, ) -> void:
 			"name": student_name,
 			"avatar": character,
 			"created_at": Time.get_unix_time_from_system(),
-			"updated_at": ""
+			"updated_at": "",
+			"progress": { 
+				"levels": {},
+				"total_stars": 0,
+				"total_time": 0.0
+				}
 		})
 		save_db()
 	else:
@@ -107,3 +112,32 @@ func sorted_students() -> Array:
 		return String(a.get("name", "")).nocasecmp_to(String(b.get("name", ""))) < 0
 	)
 	return arr
+
+func update_level_result(student_name: String, level_id: String, stars: int, time_taken: float) -> void:
+	for s in students:
+		if s.get("name", "") == student_name:
+			var progress = s.get("progress", {})
+			var levels = progress.get("levels", {})
+			
+			# Store or update this level’s result
+			levels[level_id] = {
+				"stars": stars,
+				"time_taken": time_taken,
+				"completed_at": Time.get_unix_time_from_system()
+			}
+			
+			# Recalculate totals
+			var total_stars = 0
+			var total_time = 0.0
+			for level_data in levels.values():
+				total_stars += level_data.get("stars", 0)
+				total_time += level_data.get("time_taken", 0.0)
+			
+			progress["levels"] = levels
+			progress["total_stars"] = total_stars
+			progress["total_time"] = total_time
+			s["progress"] = progress
+			s["updated_at"] = Time.get_unix_time_from_system()
+			print("Added level result")
+			save_db()
+			return

@@ -9,6 +9,12 @@ extends Node
 @onready var btn_retry = $ColorRect/Btn_TryAgain
 
 var message:String
+var time_elapsed: float = 0.0
+var running: bool = true
+
+func _process(delta: float) -> void:
+	if running:
+		time_elapsed += delta
 
 func _ready() -> void:
 	
@@ -20,6 +26,7 @@ func _ready() -> void:
 
 func on_win(error):
 	
+	running = false
 	var ui = get_tree().root.find_child("MainUI", true, false)
 	var blocks_used = ui.get_num_blocks()
 	
@@ -34,7 +41,7 @@ func on_win(error):
 	if not error:
 		stars += 1
 	else:
-		message += "\nIdiot" 
+		message += "\nWhoops, you made a few mistakes!" 
 			
 	self.visible = true
 	
@@ -50,4 +57,5 @@ func on_win(error):
 			starAnim.play("threeStar")
 	print(message)		
 	feedback.text = message
+	ProfileDB.update_level_result(ProfileDB.active_student, get_tree().current_scene.name, stars, time_elapsed)
 	

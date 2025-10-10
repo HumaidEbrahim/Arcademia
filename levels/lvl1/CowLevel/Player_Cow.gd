@@ -21,19 +21,42 @@ var chosen_animal = null
 var cow_count: int = 0
 var error: bool = false
 var animals = null
-
+var whistle =""
+var open = ""
+var idle = ""
+var is_animating = false
 var track = load("res://music/Moo Melody.mp3")
 
 func _ready():
 	area_entered.connect(_on_area_entered)
 	
 	MusicPlayer.play_stream(track, 2.0)
+	
+	if Global.SelectedCharacter == 1:
+		whistle = "Girl_Whistle"
+		open = "Girl_Open"
+		idle = "Girl_Idle"
+	elif Global.SelectedCharacter == 0:
+		whistle = "Boy_Whistle"
+		open = "Boy_Open"
+		idle = "Boy_Idle"
 
+func _process(delta):
+	if not is_animating:
+		player.play(idle)
+		
 # --- Player actions ---
 func action_whistle():
 	label.text = "Whistle"
+	
+	
 	if whistle_sound:
 		whistle_sound.play()
+	
+	is_animating = true
+	player.play(whistle)
+	await player.animation_finished
+	is_animating = false
 
 	animals = get_tree().get_nodes_in_group("animals")
 	if animals.size() == 0:

@@ -5,7 +5,23 @@
 			"avatar": 1.0,
 			"created_at": 1759008984.982,
 			"name": "XCD",
-			"updated_at": 1759009263.236
+			"progress": {
+				"levels": {
+					"FarmTractor": {
+						"completed_at": 1760097395.925,
+						"stars": 3.0,
+						"time_taken": 25.2772908643574
+					},
+					"GardenLevel": {
+						"completed_at": 1760097082.613,
+						"stars": 3.0,
+						"time_taken": 25.3406844761901
+					}
+				},
+				"total_stars": 6.0,
+				"total_time": 50.6179753405475
+			},
+			"updated_at": 1760097395.935
 		},
 		{
 			"avatar": 1.0,

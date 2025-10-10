@@ -329,7 +329,7 @@ stream = ExtResource("38_t1wcu")
 stream = ExtResource("40_bef7e")
 
 [node name="Chicken1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
-position = Vector2(254, 618)
+position = Vector2(385, 616)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken1"]
 position = Vector2(-92.00001, 99.00003)
@@ -355,6 +355,9 @@ frame_progress = 0.8108581
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken3"]
 position = Vector2(-23, 132)
 shape = SubResource("RectangleShape2D_mm5u6")
+
+[node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
+optimal_blocks = 12
 
 [editable path="MainUI"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]

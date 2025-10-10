@@ -1,8 +1,10 @@
-[gd_scene load_steps=60 format=3 uid="uid://dakwsq3euxbda"]
+[gd_scene load_steps=66 format=3 uid="uid://dakwsq3euxbda"]
 
 [ext_resource type="Texture2D" uid="uid://cuum5v4hpj5k1" path="res://assets/Characters/Girl_448x448_Final.png" id="1_dg3va"]
 [ext_resource type="Texture2D" uid="uid://bvqdbmfqjbwou" path="res://assets/Characters/Boy_448x448_Final.png" id="1_jmivm"]
-[ext_resource type="Texture2D" uid="uid://hunwnxuq8ay" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="2_fx273"]
+[ext_resource type="Texture2D" uid="uid://dnitfqjt24kgb" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="2_fx273"]
+[ext_resource type="Texture2D" uid="uid://dd2gj2ubh8exn" path="res://assets/Characters/Boy_Whistle.png" id="3_bqyqs"]
+[ext_resource type="Texture2D" uid="uid://bigwtxof6mgpr" path="res://assets/Characters/Girl_Whistle.png" id="5_soxev"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fx273"]
 atlas = ExtResource("1_jmivm")
@@ -123,6 +125,14 @@ region = Rect2(12096, 0, 448, 448)
 atlas = ExtResource("1_jmivm")
 region = Rect2(12544, 0, 448, 448)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_65h2x"]
+atlas = ExtResource("3_bqyqs")
+region = Rect2(1792, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcuse"]
+atlas = ExtResource("3_bqyqs")
+region = Rect2(896, 0, 448, 448)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubi47"]
 atlas = ExtResource("1_dg3va")
 region = Rect2(8064, 0, 448, 448)
@@ -217,6 +227,14 @@ region = Rect2(12096, 0, 448, 448)
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbva7"]
 atlas = ExtResource("1_dg3va")
 region = Rect2(12544, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tyey"]
+atlas = ExtResource("5_soxev")
+region = Rect2(1792, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jg4t"]
+atlas = ExtResource("5_soxev")
+region = Rect2(896, 0, 448, 448)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jdoke"]
 animations = [{
@@ -344,6 +362,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_65h2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mcuse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65h2x")
+}],
+"loop": false,
+"name": &"Boy_Whistle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ubi47")
 }, {
 "duration": 1.0,
@@ -440,6 +472,20 @@ animations = [{
 "loop": false,
 "name": &"Girl_Water",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tyey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jg4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tyey")
+}],
+"loop": false,
+"name": &"Girl_Whistle",
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eyw15"]
@@ -453,7 +499,10 @@ z_index = 100
 position = Vector2(0, -1.00002)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jdoke")
-animation = &"Boy_Pickup"
+animation = &"Girl_Whistle"
+frame = 2
+frame_progress = 1.0
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
