@@ -21,6 +21,7 @@ ProfileDB="*res://ui/menu/UIScripts/ProfileDB.gd"
 Global="*res://global.gd"
 Utils="*res://levels/openworld/Utils.gd"
 MusicPlayer="*res://MusicPlayer.tscn"
+Pause="*res://ui/menu/StudentMenu/Pause.gd"
 
 [display]
 
