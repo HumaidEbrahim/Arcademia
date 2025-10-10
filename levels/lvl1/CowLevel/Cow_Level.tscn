@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://cxnk2m6gjxv7g"]
+[gd_scene load_steps=96 format=3 uid="uid://cxnk2m6gjxv7g"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2kjyl"]
 [ext_resource type="Texture2D" uid="uid://5woqwl5u7gtn" path="res://assets/Farm/CowLevel/FarmLvl_Cows.jpg" id="2_bu5ki"]
@@ -10,12 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="5_jqlbn"]
 [ext_resource type="Texture2D" uid="uid://c0nohennd4fql" path="res://assets/Farm/CowLevel/Gate02.png" id="5_xomu3"]
 [ext_resource type="Texture2D" uid="uid://07ojklsxap72" path="res://assets/Farm/CowLevel/Gate03.png" id="6_eh817"]
-[ext_resource type="Texture2D" uid="uid://b8okwm83rlyms" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
-[ext_resource type="Texture2D" uid="uid://kfjavvkb21rk" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://dhskxi10brhet" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
+[ext_resource type="Texture2D" uid="uid://ckkhw4helcady" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
 [ext_resource type="Texture2D" uid="uid://d142ty26xkdky" path="res://assets/Farm/CowLevel/Gate04.png" id="7_qkixp"]
 [ext_resource type="Texture2D" uid="uid://nems2ttuyao3" path="res://assets/Farm/CowLevel/Gate05.png" id="8_mc3ms"]
-[ext_resource type="Texture2D" uid="uid://g6y0cbof2btc" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
-[ext_resource type="Texture2D" uid="uid://cqt1jpoay1mu5" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
+[ext_resource type="Texture2D" uid="uid://c2qa73xwabwf3" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://sx50qe4pdx0p" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
 [ext_resource type="Texture2D" uid="uid://bi1323q7tgrsw" path="res://assets/Farm/CowLevel/Gate06.png" id="9_rba47"]
 [ext_resource type="Texture2D" uid="uid://di3x8vxr2p623" path="res://assets/Farm/Cows/Cow_Walk_01.png" id="10_mc3ms"]
 [ext_resource type="Texture2D" uid="uid://c5cvrxpx3xt4t" path="res://assets/JuaneBtns/Whistle_Initial.png" id="11_dblru"]
@@ -24,13 +24,15 @@
 [ext_resource type="Texture2D" uid="uid://c4ewof6csgnv8" path="res://assets/Farm/Cows/Cow_Walk_03.png" id="12_xcvnf"]
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
-[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://Levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
 [ext_resource type="AudioStream" uid="uid://do2h4egrkmg7f" path="res://sounds/CowLevel/whistle-melody-12-362584.mp3" id="21_6er6f"]
 [ext_resource type="AudioStream" uid="uid://b4drmylr1ni7m" path="res://sounds/CowLevel/error-04-199275.mp3" id="23_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
 [ext_resource type="AudioStream" uid="uid://ceijxethstbbm" path="res://sounds/CowLevel/gate-latch-90988.mp3" id="23_waicu"]
 [ext_resource type="AudioStream" uid="uid://0t60rdc3twbl" path="res://sounds/CowLevel/sheep-352668.mp3" id="24_x46kd"]
 [ext_resource type="AudioStream" uid="uid://byh8mr2g3aj6t" path="res://sounds/CowLevel/cow-mooing-343423.mp3" id="25_fhpxi"]
+[ext_resource type="Texture2D" uid="uid://cqoggy771jfty" path="res://assets/Farm/Cows/Cow_Idel (1).png" id="27_mqb6f"]
+[ext_resource type="Texture2D" uid="uid://ds3xkqthgygcp" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="33_oya1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
 animations = [{
@@ -279,12 +281,75 @@ animations = [{
 "speed": 14.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_oya1n"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(34, 38, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8s6m7"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(521, 38, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vj6yx"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(1008, 38, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgbv2"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(34, 361, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjd3p"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(521, 361, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdahn"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(1008, 361, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr7d6"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(34, 684, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ai1l"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(521, 684, 478, 319)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m65fd"]
+atlas = ExtResource("27_mqb6f")
+region = Rect2(1008, 684, 478, 319)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tc4uw"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oya1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8s6m7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vj6yx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgbv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjd3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdahn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr7d6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ai1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m65fd")
+}],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -335,6 +400,42 @@ region = Rect2(768, 288, 384, 288)
 atlas = ExtResource("23_s5bsm")
 region = Rect2(0, 576, 384, 288)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaimb"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(59, 50, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtpgt"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(365, 50, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skfku"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(671, 50, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cujja"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(59, 269, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5trk"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(365, 269, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmlwv"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(671, 269, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2oim"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(59, 488, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddtdv"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(365, 488, 272, 202)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvvkq"]
+atlas = ExtResource("33_oya1n")
+region = Rect2(671, 488, 272, 202)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_56emo"]
 animations = [{
 "frames": [{
@@ -362,6 +463,38 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qaimb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wtpgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skfku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cujja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5trk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmlwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2oim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddtdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nvvkq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u3nu3"]
@@ -533,7 +666,8 @@ position = Vector2(229, 397)
 position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
-animation = &"walk"
+animation = &"idle"
+frame_progress = 0.9981264
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow1"]
@@ -548,7 +682,8 @@ position = Vector2(634, 581)
 position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
-animation = &"walk"
+animation = &"idle"
+frame_progress = 0.13371392
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow3"]
@@ -563,7 +698,8 @@ position = Vector2(97, 723)
 position = Vector2(6.0000153, 29)
 scale = Vector2(0.52380955, 0.5308547)
 sprite_frames = SubResource("SpriteFrames_tc4uw")
-animation = &"walk"
+animation = &"idle"
+frame_progress = 0.17777698
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Cow2"]
@@ -594,8 +730,8 @@ position = Vector2(462, 372)
 position = Vector2(-0.99154663, -2.487793)
 scale = Vector2(0.656294, 0.59383464)
 sprite_frames = SubResource("SpriteFrames_56emo")
-frame = 2
-frame_progress = 0.19129471
+animation = &"idle"
+frame_progress = 0.91611755
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Sheep3"]
