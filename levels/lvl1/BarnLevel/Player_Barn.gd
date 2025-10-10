@@ -10,6 +10,8 @@ var track = load("res://music/Bongi Farm/Bongi Farm (mastered).mp3")
 var has_feed = false
 var area = null
 var last_position: Vector2
+var error = false
+signal levelWon(error: bool)
 
 func _ready():
 	area_entered.connect(_on_area_entered)
@@ -32,6 +34,7 @@ func action_pickup():
 			pickup_sound.play()
 	else:
 		label.text = "Go to the bag and pickup"
+		error = true
 
 func action_feed():
 	if area and area.name.begins_with("Chicken") and has_feed:
@@ -48,8 +51,10 @@ func action_feed():
 		check_win()
 	elif area and area.name.begins_with("Chicken") and not has_feed:
 		label.text = "Pickup feed first"
+		error = true
 	else:
 		label.text = "Go to a chicken to feed it"
+		error = true
 
 func _on_area_entered(area2):
 	area = area2
@@ -62,4 +67,4 @@ func check_win():
 	var fed = get_tree().get_nodes_in_group("fed").size()
 	
 	if fed == 3:
-		label.text = "Chickens are all fed"
+		emit_signal("levelWon", error)

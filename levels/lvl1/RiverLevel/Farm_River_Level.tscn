@@ -1,14 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://diy7hae64ygie"]
+[gd_scene load_steps=25 format=3 uid="uid://diy7hae64ygie"]
 
-[ext_resource type="AudioStream" uid="uid://7a1y0qf38b2n" path="res://music/Bongi Rainforest/Bongi Rainforest (mastered).wav" id="1_fckal"]
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
-[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://Levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
+[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
 [ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://assets/Farm/River/River_Level/River_Level.jpg" id="3_0vwdd"]
 [ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
+[ext_resource type="AudioStream" uid="uid://di8swled3gb5b" path="res://sounds/River_Level_Sounds/splash-by-blaukreuz-6261.mp3" id="5_fckal"]
 [ext_resource type="Texture2D" uid="uid://g2u1dyukuoam" path="res://assets/Farm/River/River_Level/Butterfly_01.png" id="5_okv6a"]
 [ext_resource type="Texture2D" uid="uid://buvgrobxohu4k" path="res://assets/Farm/River/River_Level/Butterfly_02.png" id="6_p1icf"]
-[ext_resource type="AudioStream" uid="uid://di8swled3gb5b" path="res://sounds/River_Level_Sounds/splash-by-blaukreuz-6261.mp3" id="5_fckal"]
-[ext_resource type="AudioStream" uid="uid://b7y0fxjxvkwov" path="res://sounds/River_Level_Sounds/soothing-river-flow-372456.mp3" id="6_wiq6v"]
 [ext_resource type="Texture2D" uid="uid://dfmj8fb6yftmp" path="res://assets/Farm/River/River_Level/Butterfly_03.png" id="7_81u7j"]
 [ext_resource type="Texture2D" uid="uid://dt8ogwalfdr10" path="res://assets/Farm/River/River_Level/River_Level_river01.png" id="8_q3h31"]
 [ext_resource type="Texture2D" uid="uid://cfd6y6vp4y5w2" path="res://assets/Farm/River/River_Level/River_Level_river02.png" id="9_u6x0v"]
@@ -16,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://e7evunkrkkix" path="res://assets/Farm/River/River_Level/River_Level_river04.png" id="11_jwwh0"]
 [ext_resource type="Texture2D" uid="uid://cx4r6b6a1v6dc" path="res://assets/Farm/River/River_Level/River_Level_river05 (2).png" id="12_2wi8o"]
 [ext_resource type="Texture2D" uid="uid://bxlx4o4ihiae3" path="res://assets/Farm/River/River_Level/River_Level_river06.png" id="13_gkdh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiq6v"]
+size = Vector2(102, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1pdk"]
 animations = [{
@@ -60,12 +61,6 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuhoc"]
-size = Vector2(129, 129)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiq6v"]
-size = Vector2(102, 133)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fckal"]
 size = Vector2(137.75, 140.75)
 
@@ -84,12 +79,10 @@ size = Vector2(128.5, 174)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0s3ts"]
 size = Vector2(114, 148)
 
-[node name="FarmRiverLevel" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuhoc"]
+size = Vector2(129, 129)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("1_fckal")
-volume_db = -15.0
-autoplay = true
+[node name="FarmRiverLevel" type="Node2D"]
 
 [node name="MainUI" parent="." instance=ExtResource("1_wiq6v")]
 offset_top = 450.0
@@ -129,46 +122,10 @@ centered = false
 position = Vector2(1138, 590)
 script = ExtResource("2_fckal")
 
-[node name="Butterfly2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Butterfly2"]
-position = Vector2(1043.5, 245.5)
-scale = Vector2(0.08300784, 0.09277345)
-sprite_frames = SubResource("SpriteFrames_m1pdk")
-frame_progress = 0.042259056
-
-[node name="River" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
-
-[node name="River_level" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/River"]
-position = Vector2(598.99994, 448.5)
-scale = Vector2(1.0152028, 1.0474536)
-sprite_frames = SubResource("SpriteFrames_jrkv7")
-frame_progress = 0.5367395
-
-[node name="Butterfly" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
-
-[node name="Sprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Butterfly"]
-position = Vector2(171.50002, 289)
-scale = Vector2(0.12402342, 0.124999985)
-sprite_frames = SubResource("SpriteFrames_m1pdk")
-frame_progress = 0.8501428
-
-[node name="Rock1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6" groups=["Rocks"]]
 [node name="SplashSoundPlayer" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
 stream = ExtResource("5_fckal")
 
-[node name="Rock1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3" groups=["Rocks"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock1"]
-position = Vector2(1141.5, 591.5)
-shape = SubResource("RectangleShape2D_uuhoc")
-
-[node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock1"]
-position = Vector2(1169, 700.00006)
-scale = Vector2(0.21791662, 0.2195833)
-texture = ExtResource("5_e1fgg")
-
-[node name="Rock2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7" groups=["Rocks"]]
+[node name="Rock2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock2"]
 position = Vector2(953, 592)
@@ -179,7 +136,31 @@ position = Vector2(953.00006, 700.00006)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
-[node name="Rock3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["Rocks"]]
+[node name="Butterfly2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Butterfly2"]
+position = Vector2(1043.5, 245.5)
+scale = Vector2(0.08300784, 0.09277345)
+sprite_frames = SubResource("SpriteFrames_m1pdk")
+frame_progress = 0.042259056
+
+[node name="River" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+
+[node name="River_level" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/River"]
+position = Vector2(598.99994, 448.5)
+scale = Vector2(1.0152028, 1.0474536)
+sprite_frames = SubResource("SpriteFrames_jrkv7")
+frame_progress = 0.5367395
+
+[node name="Butterfly" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Butterfly"]
+position = Vector2(171.50002, 289)
+scale = Vector2(0.12402342, 0.124999985)
+sprite_frames = SubResource("SpriteFrames_m1pdk")
+frame_progress = 0.8501428
+
+[node name="Rock3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock3"]
 position = Vector2(541, 607)
@@ -190,7 +171,7 @@ position = Vector2(953.00006, 476.00006)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
-[node name="Rock4" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9" groups=["Rocks"]]
+[node name="Rock4" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock4"]
 position = Vector2(758, 387.5)
@@ -201,7 +182,7 @@ position = Vector2(758, 476.00003)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
-[node name="Rock5" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10" groups=["Rocks"]]
+[node name="Rock5" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock5"]
 position = Vector2(123, 569)
@@ -212,7 +193,7 @@ position = Vector2(536, 476)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
-[node name="Rock6" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="11" groups=["Rocks"]]
+[node name="Rock6" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock6"]
 position = Vector2(338, 569)
@@ -223,7 +204,7 @@ position = Vector2(527, 700.00006)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
-[node name="Rock7" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="12" groups=["Rocks"]]
+[node name="Rock7" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="11" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock7"]
 position = Vector2(933, 396)
@@ -234,7 +215,7 @@ position = Vector2(326, 700)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
-[node name="Rock8" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="13" groups=["Rocks"]]
+[node name="Rock8" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="12" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock8"]
 position = Vector2(541, 370)
@@ -243,6 +224,19 @@ shape = SubResource("RectangleShape2D_0s3ts")
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock8"]
 position = Vector2(117, 700)
 scale = Vector2(0.218, 0.218)
+texture = ExtResource("5_e1fgg")
+
+[node name="Rock9" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="13" groups=["Rocks"]]
+
+[node name="Rock1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="14" groups=["Rocks"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock1"]
+position = Vector2(1141.5, 591.5)
+shape = SubResource("RectangleShape2D_uuhoc")
+
+[node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock1"]
+position = Vector2(1169, 700.00006)
+scale = Vector2(0.21791662, 0.2195833)
 texture = ExtResource("5_e1fgg")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]

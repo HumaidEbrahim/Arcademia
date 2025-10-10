@@ -8,7 +8,7 @@ var original_position: Vector2
 @onready var anim_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
 @onready var splash_sound: AudioStreamPlayer2D = get_node("SplashSoundPlayer")
 
-var track = load("res:/music/Bongi_Blues/Bongi_Blues (mastered).mp3")
+var track = load("res://music/Bongi_Blues/Bongi_Blues (mastered).mp3")
 
 var _last_position: Vector2
 var _schedule_check_running: bool = false
