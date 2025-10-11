@@ -8,9 +8,9 @@
 			"progress": {
 				"levels": {
 					"CowLevel": {
-						"completed_at": 1760189617.204,
-						"stars": 3,
-						"time_taken": 24.6663501818178
+						"completed_at": 1760190035.722,
+						"stars": 2,
+						"time_taken": 40.0092592592587
 					},
 					"FarmTractor": {
 						"completed_at": 1760097395.925,
@@ -23,10 +23,10 @@
 						"time_taken": 28.383258333333
 					}
 				},
-				"total_stars": 9.0,
-				"total_time": 78.3268993795082
+				"total_stars": 8.0,
+				"total_time": 93.6698084569491
 			},
-			"updated_at": 1760189617.205
+			"updated_at": 1760190035.722
 		},
 		{
 			"avatar": 1.0,

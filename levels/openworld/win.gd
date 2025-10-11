@@ -34,7 +34,7 @@ func on_win(error) -> void:
 	
 	var stars = 1
 	
-	if blocks_used == optimal_blocks:
+	if blocks_used <= optimal_blocks:
 		stars += 1
 	else:
 		message += "Try using less blocks"
