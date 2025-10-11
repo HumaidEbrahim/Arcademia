@@ -81,11 +81,11 @@ func move_animal(animal: Node2D, gate_opened_now: bool):
 	var duration = 1.5
 
 	if gate_opened_now:
-		target_pos = Vector2(1500, animal.position.y + randi_range(467, 615))
-		duration = 3.0
+		target_pos = Vector2(1500,  randi_range(467, 615))
+		duration = 5.0
 	else:
 		target_pos = animal.position + Vector2(80, randf_range(-10, 10))
-		duration = 1.0
+		duration = 2.0
 
 	var tween = get_tree().create_tween()
 	tween.tween_property(animal, "position", target_pos, duration)
