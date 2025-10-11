@@ -35,7 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://ceijxethstbbm" path="res://sounds/CowLevel/gate-latch-90988.mp3" id="23_waicu"]
 [ext_resource type="AudioStream" uid="uid://0t60rdc3twbl" path="res://sounds/CowLevel/sheep-352668.mp3" id="24_x46kd"]
 [ext_resource type="AudioStream" uid="uid://byh8mr2g3aj6t" path="res://sounds/CowLevel/cow-mooing-343423.mp3" id="25_fhpxi"]
-[ext_resource type="Texture2D" uid="uid://cqoggy771jfty" path="res://assets/Farm/Cows/Cow_Idel (1).png" id="27_mqb6f"]
+[ext_resource type="Texture2D" uid="uid://su4g0432d63o" path="res://assets/Farm/Cows/Cow_Idel (1).png" id="27_mqb6f"]
 [ext_resource type="Texture2D" uid="uid://tyyo780rur8e" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="33_oya1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
