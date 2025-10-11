@@ -49,7 +49,6 @@ func _process(delta):
 func action_whistle():
 	label.text = "Whistle"
 	
-	
 	if whistle_sound:
 		whistle_sound.play()
 	
@@ -61,10 +60,12 @@ func action_whistle():
 	animals = get_tree().get_nodes_in_group("animals")
 	if animals.size() == 0:
 		return
+	
+	# pick random animal
 	chosen_animal = animals.pick_random()
 	var sprite = chosen_animal.get_node("AnimatedSprite2D")
 	sprite.play()
-
+	
 	var target_pos = Vector2()
 	var duration = 3
 	if gate_opened:
@@ -112,6 +113,9 @@ func _on_area_entered(area2):
 			cow_moo_sound.play()  # <-- play cow sound
 
 	check_win()
+	
+func get_chosen_animal():
+	return chosen_animal
 
 func check_win():
 	if cow_count == 3:

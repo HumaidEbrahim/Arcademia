@@ -35,6 +35,8 @@ func _on_pressed() -> void:
 
 # This method will be called by main_ui.gd to evaluate the condition
 func check_condition() -> bool:
+	
+	var animated_sprite = null
 	if not sprite:
 		push_error("Player not assigned to if-block")
 		return false
@@ -44,11 +46,13 @@ func check_condition() -> bool:
 		var current_area = sprite.get_current_area()
 		if not current_area:
 			return false
-		
 		# Get the AnimatedSprite2D from the pot
-		var animated_sprite = current_area.get_node_or_null("AnimatedSprite2D")
+		animated_sprite = current_area.get_node_or_null("AnimatedSprite2D")
 		if not animated_sprite:
 			return false
+	
+	elif sprite.has_method("get_chosen_animal"):
+		var chosen_animal = sprite.get_chosen_animal()
 		
 		match condition_type.to_lower():
 			"has_plant":
@@ -60,9 +64,15 @@ func check_condition() -> bool:
 				if animated_sprite.animation == "" or (animated_sprite.animation == "plant" and animated_sprite.frame == 0):
 					return true
 				return false
-			"gate_opened":
-				print("open")
-			"gate_closed":
-				print("closed")
+			"is_cow":
+				if chosen_animal.name.contains("Cow"):
+					print("is cow")
+					return true
+				return false 
+			"not_cow":
+				if chosen_animal.name.contains("Sheep"):
+					print("is sheep")
+					return true
+				return false 
 	
 	return false
