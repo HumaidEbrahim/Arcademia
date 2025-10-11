@@ -605,6 +605,9 @@ audio_listener_enable_3d = true
 position = Vector2(601, 450)
 texture = ExtResource("2_bu5ki")
 
+[node name="TextBox" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+offset_left = 425.0
+
 [node name="Text" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="0"]
 text = "Whistle to call the cows. 
 Only let the cows in.

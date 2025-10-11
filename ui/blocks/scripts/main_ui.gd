@@ -134,6 +134,9 @@ func execute_commands(commands: Array) -> void:
 	
 	var i = 0
 	while i < commands.size():
+		while Global.GamePaused:
+			await get_tree().process_frame
+
 		var action = commands[i]
 		var actual_button = get_actual_button(action)
 		if not actual_button:

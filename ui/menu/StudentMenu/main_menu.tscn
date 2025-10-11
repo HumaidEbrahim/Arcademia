@@ -72,6 +72,7 @@ expand_margin_bottom = 5.0
 shadow_size = 3
 
 [node name="MainMenu" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
