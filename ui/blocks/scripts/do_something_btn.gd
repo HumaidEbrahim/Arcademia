@@ -69,7 +69,8 @@ func spriteAnimation():
 	
 	# Wait for the tween to finish
 	await tween.finished
-
+	
+	await get_tree().create_timer(0.2).timeout
 	# IMPORTANT - Send finished signal so next item in queue can start
 	emit_signal("finished")
 

@@ -7,6 +7,11 @@
 			"name": "XCD",
 			"progress": {
 				"levels": {
+					"CowLevel": {
+						"completed_at": 1760189078.296,
+						"stars": 3,
+						"time_taken": 38.1914420000007
+					},
 					"FarmTractor": {
 						"completed_at": 1760097395.925,
 						"stars": 3.0,
@@ -18,10 +23,10 @@
 						"time_taken": 28.383258333333
 					}
 				},
-				"total_stars": 6.0,
-				"total_time": 53.6605491976904
+				"total_stars": 9.0,
+				"total_time": 91.8519911976911
 			},
-			"updated_at": 1760129436.185
+			"updated_at": 1760189078.305
 		},
 		{
 			"avatar": 1.0,

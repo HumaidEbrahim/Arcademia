@@ -48,7 +48,7 @@ func _process(delta):
 # --- Player actions ---
 func action_whistle():
 	label.text = "Whistle"
-	
+
 	if whistle_sound:
 		whistle_sound.play()
 	
@@ -59,24 +59,39 @@ func action_whistle():
 
 	animals = get_tree().get_nodes_in_group("animals")
 	if animals.size() == 0:
+		chosen_animal = null
 		return
 	
-	# pick random animal
 	chosen_animal = animals.pick_random()
 	var sprite = chosen_animal.get_node("AnimatedSprite2D")
 	sprite.play()
 	
-	var target_pos = Vector2()
-	var duration = 3
-	if gate_opened:
-		target_pos = Vector2(1500, randi_range(467, 615))
+	print("You whistled for " + chosen_animal.name)
+	
+	if chosen_animal.name.contains("Sheep"):
+		print("remove sheep")
+		chosen_animal.remove_from_group("animals")
+
+
+func move_animal(animal: Node2D, gate_opened_now: bool):
+	var sprite = animal.get_node("AnimatedSprite2D")
+	sprite.play("walk")
+
+	var target_pos = animal.position
+	var duration = 1.5
+
+	if gate_opened_now:
+		target_pos = Vector2(1500, animal.position.y + randf_range(-10, 10))
+		duration = 3.0
 	else:
-		target_pos = chosen_animal.position + Vector2(50, 2)
-		duration = 1
+		target_pos = animal.position + Vector2(80, randf_range(-10, 10))
+		duration = 1.0
 
 	var tween = get_tree().create_tween()
-	tween.tween_property(chosen_animal, "position", target_pos, duration)
+	tween.tween_property(animal, "position", target_pos, duration)
 	tween.tween_callback(func(): sprite.pause())
+
+
 
 func action_openGate():
 	if not gate_opened:
@@ -84,6 +99,11 @@ func action_openGate():
 		if open_gate_sound:
 			open_gate_sound.play()
 	gate_opened = true
+	
+	# if an animal was called, move it now
+	if chosen_animal:
+		move_animal(chosen_animal, gate_opened)
+
 
 func action_closeGate():
 	if gate_opened:
@@ -91,6 +111,11 @@ func action_closeGate():
 		if close_gate_sound:
 			close_gate_sound.play()
 	gate_opened = false
+	
+	# move animal
+	if chosen_animal:
+		move_animal(chosen_animal, gate_opened)
+
 
 # --- Detect animals entering the area ---
 func _on_area_entered(area2):
@@ -98,7 +123,7 @@ func _on_area_entered(area2):
 		return
 
 	area2.remove_from_group("animals")
-
+	
 	if area2.name.contains("Sheep"):
 		label.text = "Whoops, you allowed a sheep in!"
 		error = true
@@ -106,17 +131,20 @@ func _on_area_entered(area2):
 			error_sound.play()
 		if sheep_baa_sound:
 			sheep_baa_sound.play()
-	else: 
-		label.text = "cow!"
+			
+	elif area2.name.contains("Cow"):
+		area2.remove_from_group("animals")
+		label.text = "Nicely done!"
 		cow_count += 1
+		check_win()
 		if cow_moo_sound:
-			cow_moo_sound.play()  # <-- play cow sound
+			cow_moo_sound.play()  
 
-	check_win()
-	
 func get_chosen_animal():
 	return chosen_animal
 
 func check_win():
+	print("Checking win")
+	print(cow_count)
 	if cow_count == 3:
 		emit_signal("levelWon", error)

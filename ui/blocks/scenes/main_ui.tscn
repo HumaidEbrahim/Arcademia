@@ -177,6 +177,7 @@ size = Vector2i(1200, 900)
 render_target_update_mode = 4
 
 [node name="TextBox" type="ColorRect" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport"]
+z_index = 1
 offset_left = 326.0
 offset_top = -1.0
 offset_right = 877.0
