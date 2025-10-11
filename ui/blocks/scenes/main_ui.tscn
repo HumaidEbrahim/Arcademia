@@ -189,6 +189,7 @@ offset_left = 86.0
 offset_top = 10.0
 offset_right = 126.0
 offset_bottom = 33.0
+theme_override_constants/line_spacing = 1
 text = "Hi"
 
 [node name="Player" parent="HBoxContainer/GameArea/SubViewportContainer/SubViewport" instance=ExtResource("12_pbjw5")]

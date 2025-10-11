@@ -54,6 +54,7 @@ func check_condition() -> bool:
 	elif sprite.has_method("get_chosen_animal"):
 		var chosen_animal = sprite.get_chosen_animal()
 		
+		
 		match condition_type.to_lower():
 			"has_plant":
 				if animated_sprite.animation == "grow" and not animated_sprite.is_playing():
@@ -65,13 +66,11 @@ func check_condition() -> bool:
 					return true
 				return false
 			"is_cow":
-				if chosen_animal.name.contains("Cow"):
-					print("is cow")
+				if chosen_animal and chosen_animal.name.contains("Cow"):
 					return true
 				return false 
 			"not_cow":
-				if chosen_animal.name.contains("Sheep"):
-					print("is sheep")
+				if chosen_animal and chosen_animal.name.contains("Sheep"):
 					return true
 				return false 
 	
