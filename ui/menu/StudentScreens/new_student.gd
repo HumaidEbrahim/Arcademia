@@ -81,6 +81,8 @@ func _on_enter_pressed() -> void: # check for appropriate length and Read/Save e
 	else:
 		ProfileDB.add_student(newPlayerName, 0)
 		Global.PersonToEdit = newPlayerName
+		Global.ActiveStudent = Global.PersonToEdit
+		print(Global.ActiveStudent);
 		get_tree().change_scene_to_file(AVATAR_MENU_PATH)
 		
 	

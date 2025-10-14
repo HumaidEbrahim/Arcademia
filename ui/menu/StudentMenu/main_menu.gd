@@ -20,8 +20,7 @@ var buttons: Array
 func _ready() -> void:
 	btn_back.pressed.connect(_on_back_pressed)
 	btn_NewGame.pressed.connect(_on_new_game_pressed)
-	btn2.pressed.connect(_on_resume)
-	buttons = [btn1, btn2, btn3, btn4]
+	buttons = [btn1, btn3, btn4]
 	buttons[selected_index].grab_focus()
 
 func _on_back_pressed() -> void:
@@ -29,17 +28,12 @@ func _on_back_pressed() -> void:
 		get_tree().change_scene_to_file(STUDENT_SELECTION_PATH)
 	else:
 		Pause.toggle_pause()
-		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
-		
+		get_tree().change_scene_to_file(STUDENT_SELECTION_PATH)
+	
 func _on_new_game_pressed() -> void:
 	if not Global.GamePaused:
 		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
 	else:
 		Pause.toggle_pause()
-		get_tree().change_scene_to_file(STUDENT_SELECTION_PATH)
-		
+		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
 	MusicPlayer.play_stream(new_music, 2.5)
-
-func _on_resume() -> void:
-	MusicPlayer.play_stream(new_music, 2.5)
-	Pause.toggle_pause()

@@ -113,9 +113,9 @@ func sorted_students() -> Array:
 	)
 	return arr
 
-func update_level_result(student_name: String, level_id: String, stars: int, time_taken: float) -> void:
+func update_level_result(level_id: String, stars: int, time_taken: float) -> void:
 	for s in students:
-		if s.get("name", "") == student_name:
+		if s.get("name", "") == Global.ActiveStudent:
 			var progress = s.get("progress", {})
 			var levels = progress.get("levels", {})
 			

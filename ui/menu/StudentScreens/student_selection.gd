@@ -228,6 +228,8 @@ func _refresh_list() -> void:
 		var avatar_num = int(s.get("avatar", 0))
 		btn.pressed.connect(func(avatar :int= avatar_num):
 			Global.SelectedCharacter = avatar;
+			Global.ActiveStudent = name;
+			print(Global.ActiveStudent);
 			get_tree().change_scene_to_file(PATH_AFTER_SELECT)
 )
 		list.add_child(btn)

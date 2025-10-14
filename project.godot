@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Arcademia (The good team)"
-run/main_scene="uid://bpx27qfoucswx"
+run/main_scene="uid://v8jrmklnvuvr"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -3,7 +3,7 @@ extends Node
 
 var pause_scene_path := "res://ui/menu/StudentMenu/main_menu.tscn"
 var pause_scene_instance :Node= null
-@onready var scenes = ["FarmMap","GardenLevel","BarnLevel","FarmRiverLevel","BarnLevel","TractorLevel"]
+@onready var scenes = ["FarmMap","GardenLevel","BarnLevel","FarmRiverLevel","BarnLevel","TractorLevel","CowLevel"]
 
 
 	

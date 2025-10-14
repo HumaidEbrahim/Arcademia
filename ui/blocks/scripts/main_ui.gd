@@ -475,3 +475,6 @@ func resetFocusToInit() -> void:
 	if has_node("HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button"):
 		$HBoxContainer/FunctionPanel/VBoxContainer/Move_Right/Action_Button.grab_focus()
 	return
+
+func _on_back_pressed() -> void:
+	get_tree().change_scene_to_file("res://Levels/openworld/FarmMap.tscn")

@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq4uh6see762d"]
+[gd_scene load_steps=11 format=3 uid="uid://dq4uh6see762d"]
 
 [ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/UIBackground/Background2.0.png" id="1_agktw"]
 [ext_resource type="Script" uid="uid://roc6fg7jqgfx" path="res://ui/menu/StudentMenu/main_menu.gd" id="1_fsnij"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_fsnij"]
 [ext_resource type="Texture2D" uid="uid://bv8aqm3y8ptdm" path="res://assets/IngeUI/UIIcons/play.png" id="3_61j2i"]
-[ext_resource type="Texture2D" uid="uid://dca73njn43dkn" path="res://assets/IngeUI/UIIcons/redo.png" id="4_8cy6t"]
 [ext_resource type="Texture2D" uid="uid://bguvvnle6sjok" path="res://assets/IngeUI/UIIcons/joystick.png" id="5_jbnbq"]
 [ext_resource type="Texture2D" uid="uid://cvpmm56cwn0ea" path="res://assets/IngeUI/UIIcons/arrowleft.png" id="6_jttsa"]
 
@@ -153,8 +152,6 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 focus_neighbor_top = NodePath("../BtnBack")
-focus_neighbor_bottom = NodePath("../BtnResume")
-focus_next = NodePath("../BtnResume")
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
 theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
 theme_override_constants/outline_size = 4
@@ -165,33 +162,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-text = "NEW GAME"
+text = "START GAME"
 icon = ExtResource("3_61j2i")
-
-[node name="BtnResume" type="Button" parent="CenterContainer/Menu"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-focus_neighbor_top = NodePath("../BtnNewGame")
-focus_neighbor_bottom = NodePath("../BtnControls")
-focus_next = NodePath("../BtnControls")
-theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
-theme_override_colors/font_outline_color = Color(0.415686, 0.211765, 0.0313726, 1)
-theme_override_constants/outline_size = 4
-theme_override_constants/h_separation = -72
-theme_override_fonts/font = ExtResource("2_fsnij")
-theme_override_font_sizes/font_size = 38
-theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
-theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-text = "RESUME
-"
-icon = ExtResource("4_8cy6t")
 
 [node name="BtnControls" type="Button" parent="CenterContainer/Menu"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
-focus_neighbor_top = NodePath("../BtnResume")
 focus_neighbor_bottom = NodePath("../BtnBack")
 focus_next = NodePath("../BtnBack")
 theme_override_colors/font_color = Color(1, 0.92549, 0.796078, 1)
@@ -223,5 +199,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_fu7sn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jix8l")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7vrkn")
 theme_override_styles/focus = SubResource("StyleBoxFlat_7vrkn")
-text = "BACK"
+text = "STUDENT SELECTION"
 icon = ExtResource("6_jttsa")

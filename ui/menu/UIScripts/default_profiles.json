@@ -44,7 +44,18 @@
 			"avatar": 0.0,
 			"created_at": 1759999004.77,
 			"name": "HELP",
-			"updated_at": 1759999006.998
+			"progress": {
+				"levels": {
+					"TractorLevel": {
+						"completed_at": 1760479695.945,
+						"stars": 3.0,
+						"time_taken": 36.4386916666706
+					}
+				},
+				"total_stars": 3.0,
+				"total_time": 36.4386916666706
+			},
+			"updated_at": 1760479695.945
 		},
 		{
 			"avatar": 1.0,
@@ -60,17 +71,43 @@
 			"updated_at": 1760470351.189
 		},
 		{
-			"avatar": 0,
+			"avatar": 0.0,
 			"created_at": 1760470386.756,
 			"name": "CDE",
 			"progress": {
 				"levels": {
 
 				},
-				"total_stars": 0,
+				"total_stars": 0.0,
 				"total_time": 0.0
 			},
 			"updated_at": 1760470388.077
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760472960.893,
+			"name": "WWW",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1760472962.783
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760478712.518,
+			"name": "CHA",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1760478713.736
 		}
 	]
 }

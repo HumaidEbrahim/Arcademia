@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c4phshtsyfg0g"]
+[gd_scene load_steps=30 format=3 uid="uid://c4phshtsyfg0g"]
 
 [ext_resource type="Script" uid="uid://ciadw632faq78" path="res://ui/blocks/scripts/main_ui.gd" id="1_bqloa"]
 [ext_resource type="Texture2D" uid="uid://duwpvq4fagg1p" path="res://assets/JuaneBtns/Left_Initial.png" id="3_0kc8j"]
@@ -13,14 +13,28 @@
 [ext_resource type="Texture2D" uid="uid://dldkhyew14rqv" path="res://assets/JuaneBtns/Down_Focus.png" id="11_rdbyt"]
 [ext_resource type="PackedScene" uid="uid://dakwsq3euxbda" path="res://ui/blocks/scenes/player.tscn" id="12_pbjw5"]
 [ext_resource type="PackedScene" uid="uid://bfdysmu7nej3t" path="res://ui/blocks/scenes/bottom_loop_block.tscn" id="12_sje6e"]
-[ext_resource type="PackedScene" uid="uid://ysnoknyjyvop" path="res://levels/openworld/WinScreen.tscn" id="14_ol5qr"]
+[ext_resource type="PackedScene" uid="uid://ysnoknyjyvop" path="res://Levels/openworld/WinScreen.tscn" id="14_ol5qr"]
 [ext_resource type="Texture2D" uid="uid://djvjdyy7nre7u" path="res://assets/JuaneBtns/btn_initial.png" id="14_rdbyt"]
 [ext_resource type="Texture2D" uid="uid://c8ejgrnncy0pl" path="res://assets/JuaneBtns/btn_focus.png" id="15_7x6s0"]
-[ext_resource type="Script" uid="uid://bq4oxkmgxjynm" path="res://levels/openworld/win.gd" id="15_kdqsy"]
+[ext_resource type="Script" uid="uid://bwo0ii7l3x3b1" path="res://ui/blocks/scenes/back.gd" id="15_20m1x"]
+[ext_resource type="Script" uid="uid://bq4oxkmgxjynm" path="res://Levels/openworld/win.gd" id="15_kdqsy"]
 [ext_resource type="Texture2D" uid="uid://yusux3ep8mba" path="res://assets/JuaneBtns/btn_disabled.png" id="15_xlywj"]
-[ext_resource type="Texture2D" uid="uid://ipjoqsox4qa5" path="res://assets/JuaneBtns/clear_btn_initial.png" id="16_eql5s"]
 [ext_resource type="Texture2D" uid="uid://bhx07gi7bhdlv" path="res://assets/JuaneBtns/clear_btn_focus.png" id="17_xlywj"]
 [ext_resource type="Texture2D" uid="uid://1hmhxs0vs8vo" path="res://assets/JuaneBtns/clear_btn_disabled.png" id="18_20m1x"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_btn54"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/clear_btn_initial.png-440007f88f100c1d979e711b29cdec86.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1nffv"]
+texture = SubResource("CompressedTexture2D_btn54")
+modulate_color = Color(2.7738805, 0.07566608, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p2td"]
+texture = ExtResource("18_20m1x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn54"]
+texture = ExtResource("17_xlywj")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eql5s"]
 texture = ExtResource("14_rdbyt")
@@ -32,13 +46,7 @@ texture = ExtResource("15_xlywj")
 texture = ExtResource("15_7x6s0")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_20m1x"]
-texture = ExtResource("16_eql5s")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p2td"]
-texture = ExtResource("18_20m1x")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_btn54"]
-texture = ExtResource("17_xlywj")
+texture = SubResource("CompressedTexture2D_btn54")
 
 [node name="MainUI" type="Control"]
 layout_mode = 3
@@ -160,6 +168,27 @@ offset_top = 386.0
 offset_right = 85.0
 offset_bottom = 441.0
 
+[node name="Back" type="Control" parent="HBoxContainer/FunctionPanel"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="HBoxContainer/FunctionPanel/Back"]
+z_index = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 817.0
+offset_right = 174.0
+offset_bottom = 863.0
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxTexture_1nffv")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_1p2td")
+theme_override_styles/focus = SubResource("StyleBoxTexture_btn54")
+text = "Back"
+autowrap_trim_flags = 0
+script = ExtResource("15_20m1x")
+
 [node name="GameArea" type="PanelContainer" parent="HBoxContainer"]
 show_behind_parent = true
 z_index = -10
@@ -253,6 +282,7 @@ text = "Clear"
 visible = false
 script = ExtResource("15_kdqsy")
 
+[connection signal="pressed" from="HBoxContainer/FunctionPanel/Back/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Run" to="." method="_on_run_pressed"]
 [connection signal="pressed" from="HBoxContainer/ScriptPanel/RunClear/Clear" to="." method="_on_clear_pressed"]
 

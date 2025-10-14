@@ -1,3 +1,3 @@
-[gd_scene load_steps=0 format=3 uid="uid://cdjcvpjiowwki"]
+[gd_scene format=3 uid="uid://cdjcvpjiowwki"]
 
 [node name="FarmTractor" type="Node2D"]

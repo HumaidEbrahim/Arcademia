@@ -59,4 +59,4 @@ func on_win(error) -> void:
 
 	print(message)		
 	feedback.text = message
-	ProfileDB.update_level_result(ProfileDB.active_student, get_tree().current_scene.name, stars, time_elapsed)
+	ProfileDB.update_level_result(get_tree().current_scene.name, stars, time_elapsed)

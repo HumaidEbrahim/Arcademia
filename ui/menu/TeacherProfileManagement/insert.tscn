@@ -732,10 +732,10 @@ theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
 theme_override_fonts/font = ExtResource("2_xd10w")
 theme_override_font_sizes/font_size = 35
-theme_override_styles/focus = SubResource("StyleBoxFlat_g8w1a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_g8w1a")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bt3ql")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oapja")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bt3ql")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g8w1a")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g8w1a")
 text = "SWITCH"
 
 [node name="BtnBack" type="Button" parent="."]
