@@ -12,11 +12,11 @@ func _ready():
 	btn_boy.grab_focus()
 
 func _on_girl_pressed():
-	ProfileDB.update_student(PersonToUpdate,"",0);
-	Global.SelectedCharacter = 0;
+	ProfileDB.update_student(PersonToUpdate,"",1);
+	Global.SelectedCharacter = 1;
 	get_tree().change_scene_to_file(GAME_PATH)
 
 func _on_boy_pressed():
-	ProfileDB.update_student(PersonToUpdate,"",1);
-	Global.SelectedCharacter = 1;
+	ProfileDB.update_student(PersonToUpdate,"",0);
+	Global.SelectedCharacter = 0;
 	get_tree().change_scene_to_file(GAME_PATH)

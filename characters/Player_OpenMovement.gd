@@ -32,10 +32,10 @@ func _ready():
 	scale = Vector2.ONE * scale_factor;
 
 	
-	if Global.SelectedCharacter == 0:
+	if Global.SelectedCharacter == 1:
 		walk = "Girl_Walk"
 		idle = "Girl_Idle"
-	elif Global.SelectedCharacter == 1:
+	elif Global.SelectedCharacter == 0:
 		walk = "Boy_Walk"
 		idle = "Boy_Idle"
 		

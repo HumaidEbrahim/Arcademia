@@ -122,7 +122,7 @@ func _on_switch_avatar() -> void:
 	_update_avatar_visuals()
 
 func _update_avatar_visuals() -> void:
-	if selected_character == 0:
+	if selected_character == 1:
 		avatar_image.texture = AVATAR_GIRL
 		btn_switch.text = "Switch"
 	else:
