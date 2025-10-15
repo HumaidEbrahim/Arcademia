@@ -83,8 +83,6 @@ text = "PROFILE MANAGEMENT"
 
 [node name="Scroll" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 horizontal_scroll_mode = 0
 
 [node name="List" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Scroll"]

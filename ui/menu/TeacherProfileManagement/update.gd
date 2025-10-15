@@ -52,7 +52,8 @@ const AVATAR_GIRL : Texture2D = preload("res://assets/IngeUI/UIAvatars/stickergi
 # --------- DATA ---------
 # 0 = boy, 1 = girl
 var selected_character: int = 0
-var alphabet := ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+var alphabet := ['-', 'Z','Y','X','W','V','U','T','S','R','Q','P','O','N','M','L','K','J','I','H','G','F','E','D','C','B','A']
+#var alphabet := ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 func _ready() -> void:
 	# Wire buttons

@@ -22,3 +22,4 @@ func _on_boy_pressed():
 	Global.SelectedCharacter = 0;
 	get_tree().change_scene_to_file(GAME_PATH)
 	Global.ActiveStudent = PersonToUpdate;
+	print(Global.ActiveStudent);

@@ -1,33 +1,6 @@
 {
-	"active_student": "XCD",
+	"active_student": "",
 	"students": [
-		{
-			"avatar": 1.0,
-			"created_at": 1759008984.982,
-			"name": "XCD",
-			"progress": {
-				"levels": {
-					"CowLevel": {
-						"completed_at": 1760190035.722,
-						"stars": 2.0,
-						"time_taken": 40.0092592592587
-					},
-					"FarmTractor": {
-						"completed_at": 1760097395.925,
-						"stars": 3.0,
-						"time_taken": 25.2772908643574
-					},
-					"GardenLevel": {
-						"completed_at": 1760129436.185,
-						"stars": 3.0,
-						"time_taken": 28.383258333333
-					}
-				},
-				"total_stars": 8.0,
-				"total_time": 93.6698084569491
-			},
-			"updated_at": 1760190035.722
-		},
 		{
 			"avatar": 0.0,
 			"created_at": 1759009406.457,
@@ -71,19 +44,6 @@
 			"updated_at": 1760470351.189
 		},
 		{
-			"avatar": 0.0,
-			"created_at": 1760470386.756,
-			"name": "CDE",
-			"progress": {
-				"levels": {
-
-				},
-				"total_stars": 0.0,
-				"total_time": 0.0
-			},
-			"updated_at": 1760470388.077
-		},
-		{
 			"avatar": 1.0,
 			"created_at": 1760472960.893,
 			"name": "WWW",
@@ -97,9 +57,9 @@
 			"updated_at": 1760472962.783
 		},
 		{
-			"avatar": 1.0,
-			"created_at": 1760478712.518,
-			"name": "CHA",
+			"avatar": 0.0,
+			"created_at": 1760491049.298,
+			"name": "ECC",
 			"progress": {
 				"levels": {
 
@@ -107,7 +67,20 @@
 				"total_stars": 0.0,
 				"total_time": 0.0
 			},
-			"updated_at": 1760478713.736
+			"updated_at": ""
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760491617.804,
+			"name": "CCE",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": ""
 		}
 	]
 }
