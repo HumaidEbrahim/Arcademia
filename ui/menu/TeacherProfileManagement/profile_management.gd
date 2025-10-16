@@ -213,7 +213,7 @@ func _refresh_list() -> void:
 		var row := _make_row_panel(student_name, false, false)
 		var main_btn: Button = row.get_node("HBox/MainButton")
 		main_btn.pressed.connect(func():
-			Global.ActiveStudent = student_name
+			Global.PersonToEdit = student_name
 			get_tree().change_scene_to_file(UPDATE_PATH)
 		)
 		list.add_child(row)
@@ -267,7 +267,7 @@ func _make_row_panel(text: String, accent: bool, is_new: bool) -> Panel:
 
 	# Right-side icons
 	if not is_new:
-		#h.add_child(_make_icon_button(PENCIL_ICON, func(): _on_edit_clicked(text)))
+		h.add_child(_make_icon_button(STAR_ICON, func(): _on_star_clicked(text)))
 		h.add_child(_make_icon_button(TRASH_ICON, func(): _on_delete_clicked(text)))
 
 	return panel
