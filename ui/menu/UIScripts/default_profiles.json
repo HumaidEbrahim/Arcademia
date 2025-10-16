@@ -2,12 +2,6 @@
 	"active_student": "",
 	"students": [
 		{
-			"avatar": 0.0,
-			"created_at": 1759009406.457,
-			"name": "AACDGD",
-			"updated_at": 1760468923.586
-		},
-		{
 			"avatar": 1.0,
 			"created_at": 1759012247.147,
 			"name": "DCCBCC",
@@ -62,17 +56,34 @@
 			"name": "ECC",
 			"progress": {
 				"levels": {
-
+					"GardenLevel": {
+						"completed_at": 1760605527.837,
+						"stars": 3.0,
+						"time_taken": 37.6733556666658
+					}
 				},
-				"total_stars": 0.0,
-				"total_time": 0.0
+				"total_stars": 3.0,
+				"total_time": 37.6733556666658
 			},
-			"updated_at": ""
+			"updated_at": 1760605527.837
 		},
 		{
 			"avatar": 1.0,
 			"created_at": 1760491617.804,
 			"name": "CCE",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1760644065.418
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1760605321.721,
+			"name": "YUW",
 			"progress": {
 				"levels": {
 

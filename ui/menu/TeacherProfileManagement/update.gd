@@ -1,4 +1,4 @@
-# res://ui/menu/StudentScreens/update_student.gd  (name it to match your scene)
+# res://ui/menu/StudentScreens/update_student.gd
 extends Control
 
 const STUDENT_SELECTION_PATH := "res://ui/menu/Selection/student_selection.tscn"
@@ -14,34 +14,31 @@ var PersonToUpdate: String = Global.PersonToEdit
 # --------- NAME INPUT (6-character spinner) ---------
 @onready var label_enter_name: Label = $Card/Label
 # Char 1
-@onready var label_one:  Label  = $Card/Input/ScrollOne/LabelOne
-@onready var btn_up_one: Button = $Card/Input/ScrollOne/ScrollUpOne
-@onready var btn_down_one: Button = $Card/Input/ScrollOne/ScrollDownOne
+@onready var label_one:      Label  = $Card/Input/ScrollOne/LabelOne
+@onready var btn_up_one:     BaseButton = $Card/Input/ScrollOne/ScrollUpOne
+@onready var btn_down_one:   BaseButton = $Card/Input/ScrollOne/ScrollDownOne
 # Char 2
-@onready var label_two:  Label  = $Card/Input/ScrollTwo/LabelTwo
-@onready var btn_up_two: Button = $Card/Input/ScrollTwo/ScrollUpTwo
-@onready var btn_down_two: Button = $Card/Input/ScrollTwo/ScrollDownTwo
+@onready var label_two:      Label  = $Card/Input/ScrollTwo/LabelTwo
+@onready var btn_up_two:     BaseButton = $Card/Input/ScrollTwo/ScrollUpTwo
+@onready var btn_down_two:   BaseButton = $Card/Input/ScrollTwo/ScrollDownTwo
 # Char 3
-@onready var label_three:  Label  = $Card/Input/ScrollThree/LabelThree
-@onready var btn_up_three: Button = $Card/Input/ScrollThree/ScrollUpThree
-@onready var btn_down_three: Button = $Card/Input/ScrollThree/ScrollDownThree
+@onready var label_three:    Label  = $Card/Input/ScrollThree/LabelThree
+@onready var btn_up_three:   BaseButton = $Card/Input/ScrollThree/ScrollUpThree
+@onready var btn_down_three: BaseButton = $Card/Input/ScrollThree/ScrollDownThree
 # Char 4
-@onready var label_four:  Label  = $Card/Input/ScrollFour/LabelFour
-@onready var btn_up_four: Button = $Card/Input/ScrollFour/ScrollUpFour
-@onready var btn_down_four: Button = $Card/Input/ScrollFour/ScrollDownFour
+@onready var label_four:     Label  = $Card/Input/ScrollFour/LabelFour
+@onready var btn_up_four:    BaseButton = $Card/Input/ScrollFour/ScrollUpFour
+@onready var btn_down_four:  BaseButton = $Card/Input/ScrollFour/ScrollDownFour
 # Char 5
-@onready var label_five:  Label  = $Card/Input/ScrollFive/LabelFive
-@onready var btn_up_five: Button = $Card/Input/ScrollFive/ScrollUpFive
-@onready var btn_down_five: Button = $Card/Input/ScrollFive/ScrollDownFive
+@onready var label_five:     Label  = $Card/Input/ScrollFive/LabelFive
+@onready var btn_up_five:    BaseButton = $Card/Input/ScrollFive/ScrollUpFive
+@onready var btn_down_five:  BaseButton = $Card/Input/ScrollFive/ScrollDownFive
 # Char 6
-@onready var label_six:  Label  = $Card/Input/ScrollSix/LabelSix
-@onready var btn_up_six: Button = $Card/Input/ScrollSix/ScrollUpSix
-@onready var btn_down_six: Button = $Card/Input/ScrollSix/ScrollDownSix
+@onready var label_six:      Label  = $Card/Input/ScrollSix/LabelSix
+@onready var btn_up_six:     BaseButton = $Card/Input/ScrollSix/ScrollUpSix
+@onready var btn_down_six:   BaseButton = $Card/Input/ScrollSix/ScrollDownSix
 
 # --------- AVATAR PANEL (right) ---------
-# Expected children:
-#   CardAvatar/AvatarImage (TextureRect)
-#   CardAvatar/BtnSwitch   (Button)
 @onready var avatar_image : TextureRect = $CardAvatar/AvatarImage
 @onready var btn_switch   : Button      = $CardAvatar/BtnSwitch
 
@@ -49,17 +46,20 @@ var PersonToUpdate: String = Global.PersonToEdit
 const AVATAR_BOY  : Texture2D = preload("res://assets/IngeUI/UIAvatars/stickerboy.png")
 const AVATAR_GIRL : Texture2D = preload("res://assets/IngeUI/UIAvatars/stickergirl.png")
 
+# --------- WHITE FOCUS ICONS ---------
+const ICON_UP_WHITE   : Texture2D = preload("res://assets/IngeUI/UIIcons/triangleupwhite.png")
+const ICON_DOWN_WHITE : Texture2D = preload("res://assets/IngeUI/UIIcons/triangledownwhite.png")
+
 # --------- DATA ---------
 # 0 = boy, 1 = girl
 var selected_character: int = 0
 var alphabet := ['-', 'Z','Y','X','W','V','U','T','S','R','Q','P','O','N','M','L','K','J','I','H','G','F','E','D','C','B','A']
-#var alphabet := ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+# var alphabet := ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 func _ready() -> void:
 	# Wire buttons
 	btn_back.pressed.connect(_on_back_pressed)
 	btn_enter.pressed.connect(_on_enter_pressed)
-	btn_down_one.grab_focus()
 
 	# Name spinners wiring
 	label_enter_name.text = "ENTER NAME"
@@ -90,12 +90,49 @@ func _ready() -> void:
 	_update_avatar_visuals()
 	btn_switch.pressed.connect(_on_switch_avatar)
 
+	# ---- Focus → white icon wiring for ALL scroll buttons ----
+	# Works for Button or TextureButton.
+	_attach_focus_icon(btn_up_one,   ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_one, ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_two,   ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_two, ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_three, ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_three, ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_four,  ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_four,ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_five,  ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_five,ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_six,   ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_six, ICON_DOWN_WHITE)
+
+	# Give initial focus so the effect is visible immediately
+	btn_down_one.grab_focus()
+
+
+# =========================================================
+# Helpers: Focus icon handling (Option 3)
+# =========================================================
+func _attach_focus_icon(btn: BaseButton, white_tex: Texture2D) -> void:
+	# If it's a TextureButton, use built-in focused texture.
+	if btn is TextureButton:
+		var tb := btn as TextureButton
+		tb.texture_focused = white_tex
+		tb.focus_mode = Control.FOCUS_ALL
+		return
+
+	# Otherwise treat it as a regular Button using the `icon` property.
+	# Save the original icon once, then swap on focus in/out.
+	if btn is Button:
+		var b := btn as Button
+		b.focus_mode = Control.FOCUS_ALL
+		var original_icon: Texture2D = b.icon
+		b.focus_entered.connect(func(): b.icon = white_tex)
+		b.focus_exited.connect(func():  b.icon = original_icon)
+
 
 # --------- NAVIGATION ---------
 func _on_back_pressed() -> void:
-	pass
-	#TODO change scene to previous scene
-	get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH) 
+	get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
 
 func _on_enter_pressed() -> void: # check for appropriate length and Read/Save entered name 
 	var nameLabels = [label_one, label_two, label_three, label_four, label_five, label_six]
@@ -108,13 +145,10 @@ func _on_enter_pressed() -> void: # check for appropriate length and Read/Save e
 			newPlayerName += label.text
 			
 	if charCount < 3:
-		# Ask the user to select at least 3 characters.
 		label_enter_name.text = "ENTER AT LEAST \n THREE CHARACTERS"
 	else:
-		#TODO Write new player name to text file.
 		ProfileDB.update_student(PersonToUpdate, newPlayerName, selected_character)
 		get_tree().change_scene_to_file(PROFILE_MANAGEMENT_PATH)
-	#TODO change scene to next screen
 
 
 # --------- NAME SPINNER HELPERS ---------

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://byv1m502ofqaw"]
+[gd_scene load_steps=26 format=3 uid="uid://byv1m502ofqaw"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_1hht2"]
 [ext_resource type="Script" uid="uid://djspt8im7yakf" path="res://ui/menu/TeacherProfileManagement/update.gd" id="1_alyyl"]
@@ -45,10 +45,14 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg7va"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d0s"]
-bg_color = Color(0.6, 0.6, 0.6, 0.454902)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63kp6"]
+bg_color = Color(1, 1, 1, 0)
 shadow_color = Color(0, 0, 0, 0)
-shadow_size = 3
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d0s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgfx1"]
 bg_color = Color(0.945098, 0.890196, 0.784314, 1)
@@ -317,7 +321,7 @@ grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i6ppo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rg7va")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_63kp6")
 icon = ExtResource("3_bcubo")
 
 [node name="ScrollDownOne" type="Button" parent="Card/Input/ScrollOne"]
