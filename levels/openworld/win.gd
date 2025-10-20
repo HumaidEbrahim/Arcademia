@@ -22,7 +22,7 @@ func _ready() -> void:
 	player.connect("levelWon", Callable(self, "on_win"))
 	
 	btn_continue.pressed.connect(func():get_tree().change_scene_to_file("res://levels/openworld/FarmMap.tscn"))
-	btn_retry.pressed.connect(func():get_tree().reload_current_scene())
+	btn_retry.pressed.connect(on_try)
 
 func on_win(error) -> void:
 	running = false
@@ -60,3 +60,7 @@ func on_win(error) -> void:
 	print(message)		
 	feedback.text = message
 	ProfileDB.update_level_result(get_tree().current_scene.name, stars, time_elapsed)
+	
+func on_try() -> void:
+	Global.populatedExecuteQue.clear() 
+	get_tree().reload_current_scene() 
