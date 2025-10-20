@@ -454,6 +454,7 @@ autoplay = "Smoke"
 [node name="Barn" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
 target_level = "res://levels/lvl1/BarnLevel/BarnLevel.tscn"
+progress_level = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Barn"]
 position = Vector2(1399, 656)
@@ -468,6 +469,7 @@ shape = SubResource("RectangleShape2D_bi5to")
 
 [node name="House" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
+progress_level = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="House"]
 position = Vector2(682.22644, 650.7499)
@@ -481,6 +483,7 @@ shape = SubResource("RectangleShape2D_gfkuq")
 [node name="Cows" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
 target_level = "res://levels/lvl1/CowLevel/Cow_Level.tscn"
+progress_level = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cows"]
 position = Vector2(1003.97, 731.003)
@@ -528,6 +531,7 @@ texture = ExtResource("62_kjeei")
 [node name="Flowers" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
 target_level = "res://levels/lvl1/GardenLevel/GardenLevel.tscn"
+progress_level = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers"]
 position = Vector2(446, 695)

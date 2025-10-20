@@ -63,4 +63,6 @@ func on_win(error) -> void:
 	
 func on_try() -> void:
 	Global.populatedExecuteQue.clear() 
+	print(Global.populatedExecuteQue)
+	print("End of array")
 	get_tree().reload_current_scene() 

@@ -81,6 +81,91 @@
 				"total_time": 0.0
 			},
 			"updated_at": ""
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1760991086.598,
+			"name": "AZZ",
+			"progress": {
+				"levels": {
+					"BarnLevel": {
+						"completed": 1.0,
+						"completed_at": 1760991330.434,
+						"stars": 2.0,
+						"time_taken": 22.0421480909103
+					}
+				},
+				"total_stars": 2.0,
+				"total_time": 22.0421480909103
+			},
+			"updated_at": 1760991330.434
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760991882.289,
+			"name": "YXX",
+			"progress": {
+				"levels": {
+					"BarnLevel": {
+						"completed": 1.0,
+						"completed_at": 1760992090.479,
+						"stars": 2.0,
+						"time_taken": 38.1479487878803
+					}
+				},
+				"total_stars": 2.0,
+				"total_time": 38.1479487878803
+			},
+			"updated_at": 1760992090.479
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760992552.827,
+			"name": "EKED",
+			"progress": {
+				"levels": {
+					"BarnLevel": {
+						"completed": 1.0,
+						"completed_at": 1760994802.031,
+						"stars": 2.0,
+						"time_taken": 15.6200908787875
+					},
+					"CowLevel": {
+						"completed": 1.0,
+						"completed_at": 1760994602.631,
+						"stars": 3.0,
+						"time_taken": 42.8287623636374
+					},
+					"GardenLevel": {
+						"completed": 1.0,
+						"completed_at": 1760994251.393,
+						"stars": 3.0,
+						"time_taken": 31.6324563333367
+					},
+					"TractorLevel": {
+						"completed": 1.0,
+						"completed_at": 1760994211.786,
+						"stars": 3.0,
+						"time_taken": 22.4042369696982
+					}
+				},
+				"total_stars": 11.0,
+				"total_time": 112.48554654546
+			},
+			"updated_at": 1760994802.031
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1760996556.664,
+			"name": "AAAAAA",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1760996558.615
 		}
 	]
 }
