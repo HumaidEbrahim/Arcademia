@@ -9,17 +9,13 @@ var player_inside := false
 
 var current_level_portal: Area2D = null
 
-var track = load("res://music/Bongi Eepy/Bongi Eepy (mastered).mp3")
-
 func _ready():
-	MusicPlayer.play_stream(track, 2.5)
-	
 	original_scale = sprite.scale
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Player": 
+	if body.name == "Player" && ProfileDB.get_total_completed_levels(Global.ActiveStudent) >= progress_level: 
 		player_inside = true
 		sprite.modulate = Color(1, 1, 0.5) 
 		sprite.scale *= 1.1

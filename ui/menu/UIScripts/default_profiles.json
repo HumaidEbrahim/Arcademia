@@ -155,14 +155,14 @@
 			"updated_at": 1760994802.031
 		},
 		{
-			"avatar": 0,
+			"avatar": 0.0,
 			"created_at": 1760996556.664,
 			"name": "AAAAAA",
 			"progress": {
 				"levels": {
 
 				},
-				"total_stars": 0,
+				"total_stars": 0.0,
 				"total_time": 0.0
 			},
 			"updated_at": 1760996558.615
