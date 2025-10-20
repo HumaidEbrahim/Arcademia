@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://diy7hae64ygie"]
+
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_uogxr"]
+[ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://levels/lvl1/River_Level.jpg" id="2_ool8g"]
+[ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://levels/lvl1/Rock.png" id="3_ool8g"]
+[ext_resource type="AudioStream" uid="uid://cuc7od0bw0gb3" path="res://music/Bongi XMas/Bongi XMas (mastered).wav" id="4_t1n2c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ool8g"]
+size = Vector2(377.5, 177)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1n2c"]
+size = Vector2(179, 269.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyx1x"]
+size = Vector2(359.5, 186.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoy7n"]
+size = Vector2(156, 228.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8p5f"]
+size = Vector2(373, 226)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1fy7"]
+size = Vector2(435.5, 213.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ool8g"]
+texture = ExtResource("3_ool8g")
+texture_region_size = Vector2i(128, 128)
+2:1/size_in_atlas = Vector2i(6, 8)
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t1n2c"]
+sources/0 = SubResource("TileSetAtlasSource_ool8g")
+
+[node name="FarmRiverLevel" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("1_uogxr")]
+offset_top = 450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+position = Vector2(1138, 590)
+
+[node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+scale = Vector2(0.21405636, 0.22710067)
+texture = ExtResource("2_ool8g")
+centered = false
+
+[node name="SafeArea" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(1012.75, 590)
+shape = SubResource("RectangleShape2D_ool8g")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(913, 765)
+shape = SubResource("RectangleShape2D_t1n2c")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(673.75, 809.25)
+shape = SubResource("RectangleShape2D_pyx1x")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(572, 616.25)
+shape = SubResource("RectangleShape2D_qoy7n")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(464.5, 615)
+shape = SubResource("RectangleShape2D_f8p5f")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea"]
+position = Vector2(216.75, 690.75)
+shape = SubResource("RectangleShape2D_y1fy7")
+
+[node name="TileMap" type="TileMap" parent="."]
+light_mask = 2
+visibility_layer = 2
+scale = Vector2(0.2, 0.2)
+tile_set = SubResource("TileSet_t1n2c")
+collision_visibility_mode = 1
+format = 2
+layer_0/tile_data = PackedInt32Array(13893981, 131072, 1, 15139164, 131072, 1, 16449883, 131072, 1, 16646453, 131072, 1, 16646416, 131072, 1, 16580850, 131072, 1, 14614770, 131072, 1, 12976371, 131072, 1, 12976333, 131072, 1, 12910767, 131072, 1, 14483629, 131072, 1, 14483591, 131072, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_t1n2c")
+autoplay = true
+
+[connection signal="area_entered" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" to="MainUI" method="_on_player_area_entered"]
+[connection signal="area_entered" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea" to="MainUI" method="_on_safe_area_area_entered"]
+[connection signal="area_exited" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/SafeArea" to="MainUI" method="_on_safe_area_area_exited"]
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
