@@ -267,7 +267,7 @@ position = Vector2(1036.5, 592)
 shape = SubResource("RectangleShape2D_wiq6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock2"]
-position = Vector2(953.00006, 700.00006)
+position = Vector2(953, 700)
 scale = Vector2(0.218, 0.218)
 texture = ExtResource("5_e1fgg")
 
@@ -276,9 +276,9 @@ texture = ExtResource("5_e1fgg")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Butterfly2"]
 visible = false
 position = Vector2(1043.5, 245.5)
-scale = Vector2(0.08300784, 0.09277345)
+scale = Vector2(0.0830078, 0.0927735)
 sprite_frames = SubResource("SpriteFrames_m1pdk")
-frame_progress = 0.042259056
+frame_progress = 0.0422591
 
 [node name="River" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
 
@@ -289,7 +289,7 @@ visible = false
 position = Vector2(171.50002, 289)
 scale = Vector2(0.12402342, 0.124999985)
 sprite_frames = SubResource("SpriteFrames_m1pdk")
-frame_progress = 0.8501428
+frame_progress = 0.850143
 
 [node name="Rock3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["Rocks"]]
 
