@@ -89,12 +89,24 @@
 						"completed_at": 1760991330.434,
 						"stars": 2.0,
 						"time_taken": 22.0421480909103
+					},
+					"FarmRiverLevel": {
+						"completed": 1.0,
+						"completed_at": 1761002914.243,
+						"stars": 3.0,
+						"time_taken": 19.3461944545459
+					},
+					"TractorLevel": {
+						"completed": 1.0,
+						"completed_at": 1761002950.463,
+						"stars": 3.0,
+						"time_taken": 24.7175623636381
 					}
 				},
-				"total_stars": 2.0,
-				"total_time": 22.0421480909103
+				"total_stars": 8.0,
+				"total_time": 66.1059049090943
 			},
-			"updated_at": 1760991330.434
+			"updated_at": 1761002950.463
 		},
 		{
 			"avatar": 1.0,
@@ -149,19 +161,6 @@
 				"total_time": 112.48554654546
 			},
 			"updated_at": 1760994802.031
-		},
-		{
-			"avatar": 0.0,
-			"created_at": 1760996556.664,
-			"name": "AAAAAA",
-			"progress": {
-				"levels": {
-
-				},
-				"total_stars": 0.0,
-				"total_time": 0.0
-			},
-			"updated_at": 1760996558.615
 		}
 	]
 }

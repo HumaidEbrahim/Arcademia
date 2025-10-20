@@ -38,3 +38,6 @@ func _on_new_game_pressed() -> void:
 	else:
 		Pause.toggle_pause()
 		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
+		
+func _on_help_pressed() -> void:
+	pass

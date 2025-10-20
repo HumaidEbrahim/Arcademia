@@ -477,4 +477,5 @@ func resetFocusToInit() -> void:
 	return
 
 func _on_back_pressed() -> void:
+	Global.populatedExecuteQue.clear()
 	get_tree().change_scene_to_file("res://Levels/openworld/FarmMap.tscn")
