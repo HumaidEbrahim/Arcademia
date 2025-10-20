@@ -35,43 +35,35 @@ func _on_pressed() -> void:
 
 # This method will be called by main_ui.gd to evaluate the condition
 func check_condition() -> bool:
-	
-	var animated_sprite = null
 	if not sprite:
 		push_error("Player not assigned to if-block")
 		return false
-	
-	# Check if player is in an area (pot)
+
+	var animated_sprite = null
+	var chosen_animal = null
+
+	# Try to get area sprite
 	if sprite.has_method("get_current_area"):
 		var current_area = sprite.get_current_area()
-		if not current_area:
-			return false
-		# Get the AnimatedSprite2D from the pot
-		animated_sprite = current_area.get_node_or_null("AnimatedSprite2D")
-		if not animated_sprite:
-			return false
-	
-	elif sprite.has_method("get_chosen_animal"):
-		var chosen_animal = sprite.get_chosen_animal()
-		
-		
-		match condition_type.to_lower():
-			"has_plant":
-				if animated_sprite.animation == "grow" and not animated_sprite.is_playing():
-					return true
-				return false
-				
-			"is_empty":
-				if animated_sprite.animation == "" or (animated_sprite.animation == "plant" and animated_sprite.frame == 0):
-					return true
-				return false
-			"is_cow":
-				if chosen_animal and chosen_animal.name.contains("Cow"):
-					return true
-				return false 
-			"not_cow":
-				if chosen_animal and chosen_animal.name.contains("Sheep"):
-					return true
-				return false 
-	
+		if current_area:
+			animated_sprite = current_area.get_node_or_null("AnimatedSprite2D")
+
+	# Try to get chosen animal
+	if sprite.has_method("get_chosen_animal"):
+		chosen_animal = sprite.get_chosen_animal()
+
+	match condition_type.to_lower():
+		"has_plant":
+			if animated_sprite and animated_sprite.animation == "grow" and not animated_sprite.is_playing():
+				return true
+		"is_empty":
+			if animated_sprite and (animated_sprite.animation == "" or (animated_sprite.animation == "plant" and animated_sprite.frame == 0)):
+				return true
+		"is_cow":
+			if chosen_animal and chosen_animal.name.contains("Cow"):
+				return true
+		"not_cow":
+			if chosen_animal and not chosen_animal.name.contains("Cow"):
+				return true
+
 	return false
