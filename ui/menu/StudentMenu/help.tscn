@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://ohtb1hw18ghv"]
+[gd_scene load_steps=27 format=3 uid="uid://ohtb1hw18ghv"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_015ip"]
+[ext_resource type="Script" uid="uid://dsd3uf3each6u" path="res://ui/menu/StudentMenu/help.gd" id="1_u7wq6"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_4qoes"]
 [ext_resource type="Texture2D" uid="uid://dq2u55mcnv8y" path="res://assets/JuaneBtns/Up_Focus.png" id="3_vigq6"]
 [ext_resource type="Texture2D" uid="uid://8ocnalu5aik0" path="res://assets/JuaneBtns/Right_Focus.png" id="4_d1458"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://cn2t3058mr26i" path="res://assets/JuaneBtns/Pickup_Focus.png" id="17_7uoe1"]
 [ext_resource type="Texture2D" uid="uid://diinjljectwqk" path="res://assets/JuaneBtns/Plant_Focus.png" id="18_sq486"]
 [ext_resource type="Texture2D" uid="uid://dmt8kxgfee3gs" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="19_5kcqw"]
+[ext_resource type="Texture2D" uid="uid://o7yvyr5nxjph" path="res://assets/JuaneBtns/Whistle_Focus.png" id="21_i3jnn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubtbo"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -46,6 +48,44 @@ corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
 shadow_size = 12
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xair"]
+bg_color = Color(0.7411765, 0.5019608, 0.2784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.43137255, 0.27450982, 0.13725491, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylb6r"]
+bg_color = Color(1, 0.968627, 0.890196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7wq6"]
+bg_color = Color(0.807033, 0.567642, 0.349084, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
 [node name="Help" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -53,6 +93,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u7wq6")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -105,9 +146,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 117.0
-offset_top = -307.0
+offset_top = -327.0
 offset_right = 713.0
-offset_bottom = -31.0
+offset_bottom = -51.0
 grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
@@ -129,7 +170,7 @@ theme_override_fonts/font = ExtResource("2_4qoes")
 theme_override_font_sizes/font_size = 54
 text = "Movement"
 
-[node name="TextureRect" type="TextureRect" parent="Background/CardMovement"]
+[node name="MoveUp" type="TextureRect" parent="Background/CardMovement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -141,7 +182,7 @@ offset_bottom = 21.0
 grow_vertical = 2
 texture = ExtResource("3_vigq6")
 
-[node name="TextureRect2" type="TextureRect" parent="Background/CardMovement"]
+[node name="MoveRight" type="TextureRect" parent="Background/CardMovement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -153,7 +194,7 @@ offset_bottom = 116.0
 grow_vertical = 2
 texture = ExtResource("4_d1458")
 
-[node name="TextureRect3" type="TextureRect" parent="Background/CardMovement"]
+[node name="MoveLeft" type="TextureRect" parent="Background/CardMovement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -165,7 +206,7 @@ offset_bottom = 21.0
 grow_vertical = 2
 texture = ExtResource("5_maopo")
 
-[node name="TextureRect4" type="TextureRect" parent="Background/CardMovement"]
+[node name="MoveDown" type="TextureRect" parent="Background/CardMovement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -184,9 +225,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 877.0
-offset_top = 239.0
+offset_top = 170.0
 offset_right = 1473.0
-offset_bottom = 419.0
+offset_bottom = 350.0
 grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
@@ -208,7 +249,7 @@ theme_override_fonts/font = ExtResource("2_4qoes")
 theme_override_font_sizes/font_size = 54
 text = "Loop"
 
-[node name="TextureRect" type="TextureRect" parent="Background/CardLoops"]
+[node name="Repeat" type="TextureRect" parent="Background/CardLoops"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -220,7 +261,7 @@ offset_bottom = 74.0
 grow_vertical = 2
 texture = ExtResource("7_nuh06")
 
-[node name="TextureRect4" type="TextureRect" parent="Background/CardLoops"]
+[node name="EndRepeat" type="TextureRect" parent="Background/CardLoops"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -239,9 +280,9 @@ anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 107.0
-offset_top = 29.0
+offset_top = -27.0
 offset_right = 703.0
-offset_bottom = 420.0
+offset_bottom = 364.0
 grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
@@ -263,7 +304,7 @@ theme_override_fonts/font = ExtResource("2_4qoes")
 theme_override_font_sizes/font_size = 54
 text = "IF Statement"
 
-[node name="TextureRect" type="TextureRect" parent="Background/CardIFStatement"]
+[node name="IfPlant" type="TextureRect" parent="Background/CardIFStatement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -276,7 +317,7 @@ grow_vertical = 2
 rotation = -0.004235216
 texture = ExtResource("9_5xair")
 
-[node name="TextureRect2" type="TextureRect" parent="Background/CardIFStatement"]
+[node name="IfEnd" type="TextureRect" parent="Background/CardIFStatement"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -291,7 +332,7 @@ grow_horizontal = 2
 grow_vertical = 0
 texture = ExtResource("10_ylb6r")
 
-[node name="TextureRect4" type="TextureRect" parent="Background/CardIFStatement"]
+[node name="IfEmpty" type="TextureRect" parent="Background/CardIFStatement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -303,7 +344,7 @@ offset_bottom = 61.0
 grow_vertical = 2
 texture = ExtResource("11_u7wq6")
 
-[node name="TextureRect3" type="TextureRect" parent="Background/CardIFStatement"]
+[node name="IfCow" type="TextureRect" parent="Background/CardIFStatement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -317,7 +358,7 @@ rotation = -0.004235216
 texture = ExtResource("12_i3jnn")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="Background/CardIFStatement"]
+[node name="IfNotCow" type="TextureRect" parent="Background/CardIFStatement"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -331,21 +372,21 @@ rotation = -0.004235216
 texture = ExtResource("13_th1m4")
 expand_mode = 1
 
-[node name="CardMovement3" type="Panel" parent="Background"]
+[node name="CardAction" type="Panel" parent="Background"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 877.0
-offset_top = -312.0
+offset_top = -327.0
 offset_right = 1473.0
-offset_bottom = 161.0
+offset_bottom = 146.0
 grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
 
-[node name="LblMovement" type="Label" parent="Background/CardMovement3"]
+[node name="LblMovement" type="Label" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -362,7 +403,7 @@ theme_override_fonts/font = ExtResource("2_4qoes")
 theme_override_font_sizes/font_size = 54
 text = "Actions"
 
-[node name="TextureRect" type="TextureRect" parent="Background/CardMovement3"]
+[node name="FeedChic" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -376,7 +417,7 @@ rotation = -0.004235216
 texture = ExtResource("14_7p0jj")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Background/CardMovement3"]
+[node name="OpenGate" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -389,7 +430,7 @@ grow_vertical = 2
 texture = ExtResource("15_5ssa6")
 expand_mode = 1
 
-[node name="TextureRect4" type="TextureRect" parent="Background/CardMovement3"]
+[node name="WaterSprout" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -402,7 +443,7 @@ grow_vertical = 2
 texture = ExtResource("16_455co")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="Background/CardMovement3"]
+[node name="PickUp" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -416,7 +457,7 @@ rotation = -0.004235216
 texture = ExtResource("17_7uoe1")
 expand_mode = 1
 
-[node name="TextureRect5" type="TextureRect" parent="Background/CardMovement3"]
+[node name="PlantSprout" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -430,7 +471,7 @@ rotation = -0.004235216
 texture = ExtResource("18_sq486")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Background/CardMovement3"]
+[node name="CloseGate" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -444,7 +485,7 @@ rotation = -0.004235216
 texture = ExtResource("19_5kcqw")
 expand_mode = 1
 
-[node name="TextureRect7" type="TextureRect" parent="Background/CardMovement3"]
+[node name="Whistle" type="TextureRect" parent="Background/CardAction"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -455,5 +496,64 @@ offset_right = 416.0001
 offset_bottom = 226.99997
 grow_vertical = 2
 rotation = -0.004235216
-texture = ExtResource("19_5kcqw")
+texture = ExtResource("21_i3jnn")
 expand_mode = 1
+
+[node name="CardDisplay" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 783.0
+offset_top = 370.0
+offset_right = 1572.0
+offset_bottom = 437.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
+
+[node name="LblDisplay" type="Label" parent="Background/CardDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.875
+offset_top = -26.0
+offset_right = 55.875
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 35
+text = "Loop"
+
+[node name="BtnBack" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1323.0
+offset_top = -139.0
+offset_right = -1070.0
+offset_bottom = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xair")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ylb6r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u7wq6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u7wq6")
+text = "BACK"
