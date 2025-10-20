@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var target_level:String = ""
+@export var progress_level = 0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var original_scale: Vector2
