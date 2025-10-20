@@ -21,6 +21,10 @@ var _has_played_splash: bool = false
 const MOVE_THRESHOLD := 0.1
 var _jump_played_for_current_slot: bool = false
 
+# --- Animations names based on gender ---
+var idle_anim: String
+var jump_anim: String
+
 # --- Life cycle ---
 func _ready() -> void:
 	original_position = position
@@ -38,6 +42,15 @@ func _ready() -> void:
 	# ✅ Display starting message
 	if text_box_label:
 		text_box_label.text = "Cross the river!"
+
+	# Set animations based on selected character
+	if "SelectedCharacter" in Global:
+		if Global.SelectedCharacter == 0:
+			idle_anim = "Boy_Idle"
+			jump_anim = "Boy_Jump"
+		elif Global.SelectedCharacter == 1:
+			idle_anim = "Girl_Idle"
+			jump_anim = "Girl_Jump"
 
 	MusicPlayer.play_stream(track, 2.0)
 	_play_idle_animation()
@@ -109,14 +122,20 @@ func is_on_rock() -> bool:
 
 # --- Animations ---
 func _play_movement_animation() -> void:
-	if anim_sprite and (anim_sprite.animation != "Girl_Jump" or not anim_sprite.is_playing()):
-		anim_sprite.animation = "Girl_Jump"
+	if not anim_sprite or jump_anim == "":
+		return
+
+	if anim_sprite.animation != jump_anim or not anim_sprite.is_playing():
+		anim_sprite.animation = jump_anim
 		anim_sprite.frame = 0
 		anim_sprite.play()
 
 func _play_idle_animation() -> void:
-	if anim_sprite and (anim_sprite.animation != "Girl_Idle" or not anim_sprite.is_playing()):
-		anim_sprite.animation = "Girl_Idle"
+	if not anim_sprite or idle_anim == "":
+		return
+
+	if anim_sprite.animation != idle_anim or not anim_sprite.is_playing():
+		anim_sprite.animation = idle_anim
 		anim_sprite.frame = 0
 		anim_sprite.play()
 

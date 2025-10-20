@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://diy7hae64ygie"]
+[gd_scene load_steps=41 format=3 uid="uid://diy7hae64ygie"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
 [ext_resource type="VideoStream" uid="uid://bkd8jtksenisx" path="res://assets/Farm/River/YTDown.com_YouTube_4K-Animated-cartoon-background-river-lan_Media_Aguo-0hAqfU_001_1080p-_2_.ogv" id="2_e1fgg"]
@@ -8,9 +8,42 @@
 [ext_resource type="AudioStream" uid="uid://di8swled3gb5b" path="res://sounds/River_Level_Sounds/splash-by-blaukreuz-6261.mp3" id="5_fckal"]
 [ext_resource type="Texture2D" uid="uid://g2u1dyukuoam" path="res://assets/Farm/River/River_Level/Butterfly_01.png" id="5_okv6a"]
 [ext_resource type="Texture2D" uid="uid://cyji17cbowng6" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="5_pyw0y"]
+[ext_resource type="Texture2D" uid="uid://dppbgbgaalikf" path="res://levels/lvl1/RiverLevel/Final Boy Sprite 448x448.png" id="6_0s3ts"]
 [ext_resource type="Texture2D" uid="uid://buvgrobxohu4k" path="res://assets/Farm/River/River_Level/Butterfly_02.png" id="6_p1icf"]
 [ext_resource type="Texture2D" uid="uid://dfmj8fb6yftmp" path="res://assets/Farm/River/River_Level/Butterfly_03.png" id="7_81u7j"]
 [ext_resource type="Script" uid="uid://b71g7mpy5b1vn" path="res://levels/lvl1/RiverLevel/win_rock.gd" id="11_b4xwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgxtw"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(0, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtoun"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(448, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpdaa"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(896, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sc6su"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(1344, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms5j4"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(4032, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4qda"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(4480, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xssn5"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(4928, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvwsl"]
+atlas = ExtResource("6_0s3ts")
+region = Rect2(5376, 0, 448, 448)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyw0y"]
 atlas = ExtResource("5_pyw0y")
@@ -50,6 +83,40 @@ region = Rect2(5824, 0, 448, 448)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sgxtw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgxtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtoun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpdaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sc6su")
+}],
+"loop": true,
+"name": &"Boy_Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms5j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4qda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xssn5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvwsl")
+}],
+"loop": true,
+"name": &"Boy_Jump",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pyw0y")
@@ -190,7 +257,7 @@ stream = ExtResource("5_fckal")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="3"]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_sgxtw")
-animation = &"Girl_Idle"
+animation = &"Boy_Jump"
 flip_h = true
 
 [node name="Rock2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4" groups=["Rocks"]]
