@@ -109,7 +109,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fckal"]
-size = Vector2(137.75, 351)
+size = Vector2(125.875, 351)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vwdd"]
 size = Vector2(302.5, 148)
@@ -227,7 +227,7 @@ frame_progress = 0.8501428
 [node name="Rock3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock3"]
-position = Vector2(541, 472.5)
+position = Vector2(546.9375, 472.5)
 shape = SubResource("RectangleShape2D_fckal")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock3"]

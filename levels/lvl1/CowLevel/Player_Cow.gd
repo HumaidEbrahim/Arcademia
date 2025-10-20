@@ -7,6 +7,7 @@ extends Area2D
 
 # --- Player Node & Sounds ---
 var player_node: Node = null
+var player_collision: CollisionShape2D = null
 var whistle_sound: AudioStreamPlayer2D = null
 var open_gate_sound: AudioStreamPlayer2D = null
 var close_gate_sound: AudioStreamPlayer2D = null
@@ -29,7 +30,7 @@ var is_animating = false
 var track = load("res://music/Moo Melody.mp3")
 
 func _ready():
-	# Connect Area2D signal
+	# Connect Area2D signals
 	area_entered.connect(_on_area_entered)
 
 	# Play background music
@@ -45,18 +46,25 @@ func _ready():
 		open_anim = "Boy_Open"
 		idle_anim = "Boy_Idle"
 
-	# Safely assign the Player node using the exact path
+	# Get player node and sounds
 	player_node = get_tree().get_current_scene().get_node(
-        "MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"
+		"MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"
 	)
 
 	if player_node:
+		player_collision = player_node.get_node("CollisionShape2D")
 		whistle_sound = player_node.get_node("WhistleSoundPlayer")
 		open_gate_sound = player_node.get_node("OpenGateSound")
 		close_gate_sound = player_node.get_node("CloseGateSound")
 		error_sound = player_node.get_node("SheepErrorSound")
-		sheep_baa_sound = player_node.get_node("SheepBaaSound")  # FIXED path
+		sheep_baa_sound = player_node.get_node("SheepBaaSound")
 		cow_moo_sound = player_node.get_node("CowMooSound")
+
+		# Connect when a sheep enters player's area
+		if player_node.has_signal("area_entered"):
+			player_node.area_entered.connect(_on_player_area_entered)
+		elif player_node.has_signal("body_entered"):
+			player_node.body_entered.connect(_on_player_body_entered)
 
 func _process(delta):
 	if not is_animating:
@@ -128,23 +136,22 @@ func action_closeGate():
 	if chosen_animal:
 		move_animal(chosen_animal, gate_opened)
 
-# --- Area entered (animals) ---
+# --- Area entered (animals entering the gate area) ---
 func _on_area_entered(area2):
 	if not area2.is_in_group("animals"):
 		return
 
 	area2.remove_from_group("animals")
-
 	var name_lower = area2.name.to_lower()
 
 	if name_lower.contains("sheep"):
 		label.text = "Whoops, you allowed a sheep in!"
 		error = true
-		print("Sheep entered! Playing sounds...")
+		print("Sheep entered the gate area!")
 		if error_sound:
 			error_sound.play()
 		if sheep_baa_sound:
-			sheep_baa_sound.play()  # WILL NOW PLAY
+			sheep_baa_sound.play()
 
 	elif name_lower.contains("cow"):
 		label.text = "Nicely done!"
@@ -152,6 +159,30 @@ func _on_area_entered(area2):
 		if cow_moo_sound:
 			cow_moo_sound.play()
 		check_win()
+
+# --- Player area/body entered (sheep touching player) ---
+func _on_player_area_entered(area):
+	_play_animal_touch_sound(area)
+
+func _on_player_body_entered(body):
+	_play_animal_touch_sound(body)
+
+# --- Shared logic for player contact ---
+func _play_animal_touch_sound(target):
+	if not target.is_in_group("animals"):
+		return
+
+	var name_lower = target.name.to_lower()
+
+	if name_lower.contains("sheep"):
+		print("Sheep touched player! Baaa!")
+		if sheep_baa_sound:
+			sheep_baa_sound.play()
+
+	elif name_lower.contains("cow"):
+		print("Cow touched player! Moo!")
+		if cow_moo_sound:
+			cow_moo_sound.play()
 
 # --- Helpers ---
 func get_chosen_animal():

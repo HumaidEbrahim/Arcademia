@@ -10,6 +10,7 @@ var original_position: Vector2
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var splash_sound: AudioStreamPlayer2D = $SplashSoundPlayer
 @onready var win_screen: CanvasItem
+@onready var text_box_label: Label = get_tree().get_current_scene().get_node("MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox/Text")
 
 var track = load("res://music/Bongi_Blues/Bongi_Blues (mastered).mp3")
 
@@ -33,6 +34,10 @@ func _ready() -> void:
 	win_screen = get_tree().get_current_scene().get_node("MainUI/HBoxContainer/WinScreen")
 	if win_screen:
 		win_screen.visible = false
+
+	# ✅ Display starting message
+	if text_box_label:
+		text_box_label.text = "Cross the river!"
 
 	MusicPlayer.play_stream(track, 2.0)
 	_play_idle_animation()
@@ -80,6 +85,11 @@ func check_reset_needed() -> void:
 			splash_sound.play()
 			_has_played_splash = true
 		emit_signal("left_safe_area")
+
+		# ✅ Update textbox message on reset
+		if text_box_label:
+			text_box_label.text = "You fell in the water, try again!"
+
 		return
 
 	if currently_on_rock:
