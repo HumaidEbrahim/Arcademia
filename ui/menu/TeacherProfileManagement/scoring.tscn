@@ -1,0 +1,506 @@
+[gd_scene load_steps=9 format=3 uid="uid://bbdc4qksj4371"]
+
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_0p8ia"]
+[ext_resource type="Script" uid="uid://5nnr83q35i3r" path="res://ui/menu/TeacherProfileManagement/scoring.gd" id="1_vv2re"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_vv2re"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kia3f"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0yfao"]
+bg_color = Color(0.7411765, 0.5019608, 0.2784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.43137255, 0.27450982, 0.13725491, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7wy8"]
+bg_color = Color(1, 0.968627, 0.890196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okr1c"]
+bg_color = Color(0.807033, 0.567642, 0.349084, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_utmco"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 12
+
+[node name="Scoring" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vv2re")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0p8ia")
+
+[node name="HeaderPanel" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -719.0
+offset_top = 117.0
+offset_right = 711.0
+offset_bottom = 211.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kia3f")
+
+[node name="Label" type="Label" parent="Background/HeaderPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -37.5
+offset_right = 176.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 64
+text = "STUDENT SCORE"
+
+[node name="BtnBack" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -535.0
+offset_top = -318.0
+offset_right = -213.0
+offset_bottom = -222.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_0yfao")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l7wy8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_okr1c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_okr1c")
+text = "BACK"
+
+[node name="Card" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -636.0
+offset_top = -237.5
+offset_right = -170.0
+offset_bottom = 117.5
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_utmco")
+
+[node name="Scores" type="Label" parent="Background/Card"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.5
+offset_right = 156.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 64
+text = "Total Score"
+
+[node name="LblTotalStars" type="Label" parent="Background/Card"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "Total Stars:"
+
+[node name="DisTotalStars" type="Label" parent="Background/Card/LblTotalStars"]
+layout_mode = 0
+offset_left = 218.0
+offset_right = 389.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="LblTotalTime" type="Label" parent="Background/Card"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -105.0
+offset_right = 300.0
+offset_bottom = -30.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "Total Time:"
+
+[node name="DisTotalTime" type="Label" parent="Background/Card/LblTotalTime"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 218.0
+offset_top = -75.0
+offset_right = 391.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="CardLevel" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -242.75
+offset_right = 783.0
+offset_bottom = 324.75
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_utmco")
+
+[node name="DisStudentName" type="Label" parent="CardLevel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.0
+offset_right = 203.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 64
+text = "Student Name"
+horizontal_alignment = 1
+
+[node name="LblRiver" type="Label" parent="CardLevel"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 300.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "River  Level:"
+
+[node name="DisRiverStar" type="Label" parent="CardLevel/LblRiver"]
+layout_mode = 0
+offset_left = 281.5
+offset_top = 3.25
+offset_right = 452.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="DisRiverTime" type="Label" parent="CardLevel/LblRiver"]
+layout_mode = 0
+offset_left = 503.5
+offset_top = 3.25
+offset_right = 674.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="LblFlower" type="Label" parent="CardLevel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -651.5
+offset_top = -67.0
+offset_right = -381.5
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "Flower  Level:"
+
+[node name="DisFlowerStar" type="Label" parent="CardLevel/LblFlower"]
+layout_mode = 0
+offset_left = 281.5
+offset_top = 3.25
+offset_right = 452.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="DisFlowerTime" type="Label" parent="CardLevel/LblFlower"]
+layout_mode = 0
+offset_left = 503.5
+offset_top = 3.25
+offset_right = 674.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="LblTractor" type="Label" parent="CardLevel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.5
+offset_top = -367.0
+offset_right = 300.5
+offset_bottom = -292.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "Tractor  Level:"
+
+[node name="DisTractorStar" type="Label" parent="CardLevel/LblTractor"]
+layout_mode = 0
+offset_left = 281.5
+offset_top = 3.25
+offset_right = 452.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="DisTractorTime" type="Label" parent="CardLevel/LblTractor"]
+layout_mode = 0
+offset_left = 503.5
+offset_top = 3.25
+offset_right = 674.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="LblCow" type="Label" parent="CardLevel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -651.5
+offset_top = 400.5
+offset_right = -381.5
+offset_bottom = 475.5
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "Cow  Level:"
+
+[node name="DisCowStar" type="Label" parent="CardLevel/LblCow"]
+layout_mode = 0
+offset_left = 281.5
+offset_top = 3.25
+offset_right = 452.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="DisCowTime" type="Label" parent="CardLevel/LblCow"]
+layout_mode = 0
+offset_left = 503.5
+offset_top = 3.25
+offset_right = 674.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="LblBarn" type="Label" parent="CardLevel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -311.0
+offset_top = 16.75
+offset_right = -41.0
+offset_bottom = 91.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "Barn  Level:"
+
+[node name="DisBarnStar" type="Label" parent="CardLevel/LblBarn"]
+layout_mode = 0
+offset_left = 281.5
+offset_top = 3.25
+offset_right = 452.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"
+
+[node name="DisBarnTime" type="Label" parent="CardLevel/LblBarn"]
+layout_mode = 0
+offset_left = 503.5
+offset_top = 3.25
+offset_right = 674.5
+offset_bottom = 78.25
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_vv2re")
+theme_override_font_sizes/font_size = 43
+text = "N/A"

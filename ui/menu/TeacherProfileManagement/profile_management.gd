@@ -213,7 +213,7 @@ func _refresh_list() -> void:
 		var row := _make_row_panel(student_name, false, false)
 		var main_btn: Button = row.get_node("HBox/MainButton")
 		main_btn.pressed.connect(func():
-			Global.ActiveStudent = student_name
+			Global.PersonToEdit = student_name
 			get_tree().change_scene_to_file(UPDATE_PATH)
 		)
 		list.add_child(row)
@@ -266,37 +266,37 @@ func _make_row_panel(text: String, accent: bool, is_new: bool) -> Panel:
 	h.add_child(btn)
 
 	# Right-side icons
-	if not is_new:
-		#h.add_child(_make_icon_button(PENCIL_ICON, func(): _on_edit_clicked(text)))
-		h.add_child(_make_icon_button(TRASH_ICON, func(): _on_delete_clicked(text)))
+	#if not is_new:
+	#	h.add_child(_make_icon_button(STAR_ICON, func(): _on_star_clicked(text)))
+	#	h.add_child(_make_icon_button(TRASH_ICON, func(): _on_delete_clicked(text)))
 
 	return panel
 
-func _make_icon_button(tex: Texture2D, cb: Callable) -> TextureButton:
-	var t := TextureButton.new()
-	t.texture_normal = tex
-	t.focus_mode = Control.FOCUS_ALL
-	t.custom_minimum_size = Vector2(ICON_SIZE, ICON_SIZE)
-	t.stretch_mode = TextureButton.STRETCH_KEEP_CENTERED
-	t.modulate = Color.WHITE
-	t.mouse_entered.connect(func(): t.modulate = Color(1.1,1.1,1.1))
-	t.mouse_exited.connect(func(): if not t.has_focus(): t.modulate = Color.WHITE)
-	t.focus_entered.connect(func(): t.modulate = Color(0.9, 0.85, 0.084, 1.0))
-	t.focus_exited.connect(func(): t.modulate = Color.WHITE)
-	t.pressed.connect(cb)
-	return t
+#func _make_icon_button(tex: Texture2D, cb: Callable) -> TextureButton:
+#	var t := TextureButton.new()
+#	t.texture_normal = tex
+#	t.focus_mode = Control.FOCUS_ALL
+#	t.custom_minimum_size = Vector2(ICON_SIZE, ICON_SIZE)
+#	t.stretch_mode = TextureButton.STRETCH_KEEP_CENTERED
+#	t.modulate = Color.WHITE
+#	t.mouse_entered.connect(func(): t.modulate = Color(1.1,1.1,1.1))
+#	t.mouse_exited.connect(func(): if not t.has_focus(): t.modulate = Color.WHITE)
+#	t.focus_entered.connect(func(): t.modulate = Color(0.9, 0.85, 0.084, 1.0))
+#	t.focus_exited.connect(func(): t.modulate = Color.WHITE)
+#	t.pressed.connect(cb)
+#	return t
 
 # =======================
 # ICON CALLBACKS
 # =======================
-func _on_star_clicked(student_name: String) -> void:
-	print("Star clicked:", student_name)
+#func _on_star_clicked(student_name: String) -> void:
+#	print("Star clicked:", student_name)
 
-func _on_edit_clicked(student_name: String) -> void:
-	Global.PersonToEdit = student_name
-	get_tree().change_scene_to_file(UPDATE_PATH)
+#func _on_edit_clicked(student_name: String) -> void:
+#	Global.PersonToEdit = student_name
+#	get_tree().change_scene_to_file(UPDATE_PATH)
 
-func _on_delete_clicked(student_name: String) -> void:
-	Global.PersonToGogga = student_name
-	ProfileDB.delete_student(student_name)
-	get_tree().reload_current_scene()
+#func _on_delete_clicked(student_name: String) -> void:
+#	Global.PersonToGogga = student_name
+#	ProfileDB.delete_student(student_name)
+#	get_tree().reload_current_scene()

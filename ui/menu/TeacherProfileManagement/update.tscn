@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://byv1m502ofqaw"]
+[gd_scene load_steps=33 format=3 uid="uid://byv1m502ofqaw"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_1hht2"]
 [ext_resource type="Script" uid="uid://djspt8im7yakf" path="res://ui/menu/TeacherProfileManagement/update.gd" id="1_alyyl"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b0se0pxo7xs7v" path="res://assets/IngeUI/UIIcons/triangleup.png" id="3_bcubo"]
 [ext_resource type="Texture2D" uid="uid://cyhu3wg2mnx34" path="res://assets/IngeUI/UIIcons/triangledown.png" id="4_xw7bh"]
 [ext_resource type="Texture2D" uid="uid://biql40u43hq3p" path="res://assets/IngeUI/UIAvatars/stickerboy.png" id="6_63kp6"]
+[ext_resource type="Texture2D" uid="uid://cxuut0om6h777" path="res://assets/IngeUI/UIIcons/star.png" id="6_wry8j"]
+[ext_resource type="Texture2D" uid="uid://ct8tlatcv0lk7" path="res://assets/IngeUI/UIIcons/trash.png" id="7_isneu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g2rjs"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -45,10 +47,14 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg7va"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d0s"]
-bg_color = Color(0.6, 0.6, 0.6, 0.454902)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63kp6"]
+bg_color = Color(1, 1, 1, 0)
 shadow_color = Color(0, 0, 0, 0)
-shadow_size = 3
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q0d0s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+shadow_color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgfx1"]
 bg_color = Color(0.945098, 0.890196, 0.784314, 1)
@@ -63,13 +69,13 @@ corner_radius_bottom_right = 16
 corner_radius_bottom_left = 16
 shadow_size = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcubo"]
-bg_color = Color(0.740949, 0.501192, 0.278082, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdsnc"]
+bg_color = Color(0.7411765, 0.5019608, 0.2784314, 1)
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
-border_color = Color(0.431373, 0.27451, 0.137255, 1)
+border_color = Color(0.43137255, 0.27450982, 0.13725491, 1)
 corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
@@ -137,6 +143,76 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av3y0"]
+bg_color = Color(0.91459835, 0.7412062, 0.18900526, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.75081533, 0.6030485, 0.11558408, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ackwh"]
+bg_color = Color(0.9526946, 0.78035754, 0.24948719, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.75081533, 0.6030485, 0.11558408, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcubo"]
+bg_color = Color(1, 0.21960784, 0.08627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.67058825, 0.101960786, 0, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3obs"]
+bg_color = Color(1, 0.40096655, 0.29891187, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.67058825, 0.101960786, 0, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ll53n"]
+bg_color = Color(1, 0.40096655, 0.29891187, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.67058825, 0.101960786, 0, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf486"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -317,7 +393,7 @@ grow_horizontal = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_048l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i6ppo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rg7va")
-theme_override_styles/focus = SubResource("StyleBoxFlat_q0d0s")
+theme_override_styles/focus = SubResource("StyleBoxFlat_63kp6")
 icon = ExtResource("3_bcubo")
 
 [node name="ScrollDownOne" type="Button" parent="Card/Input/ScrollOne"]
@@ -707,7 +783,7 @@ theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
 theme_override_fonts/font = ExtResource("2_alyyl")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/normal = SubResource("StyleBoxFlat_bcubo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_cdsnc")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_alyyl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1hht2")
 theme_override_styles/focus = SubResource("StyleBoxFlat_1hht2")
@@ -721,9 +797,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 223.0
-offset_top = 62.0
+offset_top = 63.0
 offset_right = 548.0
-offset_bottom = 158.0
+offset_bottom = 159.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
@@ -736,6 +812,52 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yrb6b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xw7bh")
 theme_override_styles/focus = SubResource("StyleBoxFlat_xw7bh")
 text = "ENTER"
+
+[node name="BtnScore" type="Button" parent="Card"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 465.0
+offset_top = 62.0
+offset_right = 691.0
+offset_bottom = 158.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_av3y0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alyyl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ackwh")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ackwh")
+text = "  SCORE"
+icon = ExtResource("6_wry8j")
+alignment = 0
+
+[node name="BtnDelete" type="Button" parent="Card"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 727.0
+offset_top = 62.0
+offset_right = 953.0
+offset_bottom = 158.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_alyyl")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_bcubo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_alyyl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_r3obs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ll53n")
+text = "  DELETE"
+icon = ExtResource("7_isneu")
+alignment = 0
 
 [node name="CardAvatar" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)

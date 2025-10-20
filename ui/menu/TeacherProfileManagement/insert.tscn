@@ -46,9 +46,8 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u42dq"]
-bg_color = Color(0.6, 0.6, 0.6, 0.454902)
+bg_color = Color(0.6, 0.6, 0.6, 0)
 shadow_color = Color(0, 0, 0, 0)
-shadow_size = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eksia"]
 bg_color = Color(0.945098, 0.890196, 0.784314, 1)
