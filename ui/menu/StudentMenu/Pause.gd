@@ -8,7 +8,7 @@ var pause_scene_instance :Node= null
 
 	
 func _input(event):
-	if event.is_action_pressed("btn_4"):
+	if event.is_action_pressed("btn_pause"):
 		var scene = get_tree().current_scene.name
 		if scene in scenes:
 			toggle_pause()

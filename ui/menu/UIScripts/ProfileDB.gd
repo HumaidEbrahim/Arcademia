@@ -123,7 +123,8 @@ func update_level_result(level_id: String, stars: int, time_taken: float) -> voi
 			levels[level_id] = {
 				"stars": stars,
 				"time_taken": time_taken,
-				"completed_at": Time.get_unix_time_from_system()
+				"completed_at": Time.get_unix_time_from_system(),
+				"completed": 1
 			}
 			
 			# Recalculate totals
@@ -141,3 +142,15 @@ func update_level_result(level_id: String, stars: int, time_taken: float) -> voi
 			print("Added level result")
 			save_db()
 			return
+func get_total_completed_levels(student_name: String) -> int:
+	for s in students:
+		if s.get("name", "") == student_name:
+			var progress = s.get("progress", {})
+			var levels = progress.get("levels", {})
+			
+			var completed_count = 0
+			for level_data in levels.values():
+				completed_count += int(level_data.get("completed", 0))
+			
+			return completed_count
+	return 0

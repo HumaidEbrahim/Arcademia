@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var target_level:String = ""
+@export var progress_level = 0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 var original_scale: Vector2
@@ -14,7 +15,7 @@ func _ready():
 	body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Player": 
+	if body.name == "Player" && ProfileDB.get_total_completed_levels(Global.ActiveStudent) >= progress_level: 
 		player_inside = true
 		sprite.modulate = Color(1, 1, 0.5) 
 		sprite.scale *= 1.1
