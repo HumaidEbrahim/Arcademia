@@ -1,9 +1,10 @@
-[gd_scene load_steps=45 format=3 uid="uid://ytfctjva1p2f"]
+[gd_scene load_steps=51 format=3 uid="uid://ytfctjva1p2f"]
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cuum5v4hpj5k1" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
 [ext_resource type="Texture2D" uid="uid://bvqdbmfqjbwou" path="res://assets/Characters/Boy_448x448_Final.png" id="2_bd51o"]
-[ext_resource type="Texture2D" uid="uid://hunwnxuq8ay" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
+[ext_resource type="Texture2D" uid="uid://dnitfqjt24kgb" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
+[ext_resource type="Texture2D" uid="uid://cyji17cbowng6" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="4_bjfpg"]
 [ext_resource type="AudioStream" uid="uid://dwn4l3gpp72ru" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
 [ext_resource type="AudioStream" uid="uid://bmfrkb0le4ptg" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
 [ext_resource type="AudioStream" uid="uid://geyfgb364kms" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
@@ -106,6 +107,26 @@ region = Rect2(896, 0, 448, 448)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wg7m2"]
 atlas = SubResource("CompressedTexture2D_8nidd")
 region = Rect2(1344, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lplbi"]
+atlas = ExtResource("4_bjfpg")
+region = Rect2(3584, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx4r1"]
+atlas = ExtResource("4_bjfpg")
+region = Rect2(4032, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knrfc"]
+atlas = ExtResource("4_bjfpg")
+region = Rect2(4480, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r52qm"]
+atlas = ExtResource("4_bjfpg")
+region = Rect2(4928, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj13d"]
+atlas = ExtResource("4_bjfpg")
+region = Rect2(5376, 0, 448, 448)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57nx8"]
 atlas = SubResource("CompressedTexture2D_8nidd")
@@ -249,6 +270,26 @@ animations = [{
 "name": &"Girl_Idle",
 "speed": 5.0
 }, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lplbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx4r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knrfc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r52qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj13d")
+}],
+"loop": true,
+"name": &"Girl_Jump",
+"speed": 5.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"Girl_Plant",
@@ -301,7 +342,7 @@ script = ExtResource("1_5ynbo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.99996)
 sprite_frames = SubResource("SpriteFrames_nn6ss")
-animation = &"Boy_Water"
+animation = &"Girl_Jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
