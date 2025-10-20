@@ -1,0 +1,193 @@
+[gd_scene load_steps=10 format=3 uid="uid://v8jrmklnvuvr"]
+
+[ext_resource type="Texture2D" uid="uid://ut3abc034wuw" path="res://assets/IngeUI/UIBackground/Background2.0.png" id="1_8x44b"]
+[ext_resource type="Script" uid="uid://deauiljmkk7mn" path="res://ui/menu/StartScreen/user_selection.gd" id="1_j7f56"]
+[ext_resource type="Texture2D" uid="uid://30s45pv2abeo" path="res://assets/IngeUI/UIAvatars/Teacher.png" id="2_j7f56"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_mrju7"]
+[ext_resource type="Texture2D" uid="uid://d0amvscg1suk" path="res://assets/IngeUI/UIAvatars/Student.png" id="4_yh0gi"]
+[ext_resource type="PackedScene" uid="uid://db0ksevt3xaul" path="res://MusicPlayer.tscn" id="6_kxddf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l03oh"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iolb4"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffrsd"]
+bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="UserSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j7f56")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8x44b")
+
+[node name="Teacher" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 252.0
+offset_top = -231.0
+offset_right = 663.0
+offset_bottom = 231.0
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Student")
+focus_neighbor_right = NodePath("../Student")
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iolb4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
+icon = ExtResource("2_j7f56")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Background/Teacher"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 116.0
+offset_right = 178.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9823, 0.899216, 0.846284, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_mrju7")
+theme_override_font_sizes/font_size = 64
+text = "TEACHER"
+horizontal_alignment = 1
+
+[node name="Student" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -659.0
+offset_top = -229.0
+offset_right = -248.0
+offset_bottom = 233.0
+grow_horizontal = 0
+grow_vertical = 2
+focus_neighbor_left = NodePath("../Teacher")
+focus_neighbor_right = NodePath("../Teacher")
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_l03oh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l03oh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ffrsd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ffrsd")
+icon = ExtResource("4_yh0gi")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="Background/Student"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = 116.0
+offset_right = 178.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.980392, 0.898039, 0.847059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_mrju7")
+theme_override_font_sizes/font_size = 64
+text = "STUDENT"
+horizontal_alignment = 1
+
+[node name="HeaderPanel" type="Panel" parent="."]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -709.0
+offset_top = 32.0
+offset_right = 731.0
+offset_bottom = 126.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_l03oh")
+
+[node name="Label" type="Label" parent="HeaderPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -37.5
+offset_right = 176.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_mrju7")
+theme_override_font_sizes/font_size = 64
+text = "USER SELECTION"
+
+[node name="MusicPlayer" parent="." instance=ExtResource("6_kxddf")]

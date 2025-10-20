@@ -1,0 +1,86 @@
+{
+	"active_student": "",
+	"students": [
+		{
+			"avatar": 0.0,
+			"created_at": 1759009406.457,
+			"name": "AACDGD",
+			"updated_at": 1760468923.586
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1759012247.147,
+			"name": "DCCBCC",
+			"updated_at": 1759012250.152
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1759999004.77,
+			"name": "HELP",
+			"progress": {
+				"levels": {
+					"TractorLevel": {
+						"completed_at": 1760479695.945,
+						"stars": 3.0,
+						"time_taken": 36.4386916666706
+					}
+				},
+				"total_stars": 3.0,
+				"total_time": 36.4386916666706
+			},
+			"updated_at": 1760479695.945
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760470343.786,
+			"name": "WYZ",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1760470351.189
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760472960.893,
+			"name": "WWW",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1760472962.783
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1760491049.298,
+			"name": "ECC",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": ""
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1760491617.804,
+			"name": "CCE",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": ""
+		}
+	]
+}
