@@ -1,88 +1,147 @@
 extends Area2D
 
+# --- Signals ---
 signal left_safe_area
 signal entered_safe_area
+signal levelWon
 
+# --- Variables ---
 var original_position: Vector2
-@onready var main_ui_node = get_node("../main_ui")  
-@onready var anim_sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
-@onready var splash_sound: AudioStreamPlayer2D = get_node("SplashSoundPlayer")
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var splash_sound: AudioStreamPlayer2D = $SplashSoundPlayer
+@onready var win_screen: CanvasItem
+@onready var text_box_label: Label = get_tree().get_current_scene().get_node("MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox/Text")
 
 var track = load("res://music/Bongi_Blues/Bongi_Blues (mastered).mp3")
 
 var _last_position: Vector2
 var _schedule_check_running: bool = false
 const _CHECK_DEBOUNCE := 0.15
+var _has_played_splash: bool = false
+const MOVE_THRESHOLD := 0.1
+var _jump_played_for_current_slot: bool = false
 
-# Track whether the player is currently off rocks
-var _off_rock_since_last_reset: bool = false
+# --- Animations names based on gender ---
+var idle_anim: String
+var jump_anim: String
 
+# --- Life cycle ---
 func _ready() -> void:
 	original_position = position
 	monitoring = true
 	monitorable = true
 	_last_position = position
-	_off_rock_since_last_reset = false
-	
-	MusicPlayer.play_stream(track, 2.0)
+	_has_played_splash = false
+	_jump_played_for_current_slot = false
 
-func _physics_process(_delta: float) -> void:
-	if position != _last_position:
-		if not _schedule_check_running:
-			_schedule_check_running = true
-			_check_after_debounce()
-		_last_position = position
-		_play_movement_animation()
+	# Correctly get WinScreen from current scene
+	win_screen = get_tree().get_current_scene().get_node("MainUI/HBoxContainer/WinScreen")
+	if win_screen:
+		win_screen.visible = false
+
+	#  Display starting message
+	if text_box_label:
+		text_box_label.text = "Cross the river!"
+
+	# Set animations based on selected character
+	if "SelectedCharacter" in Global:
+		if Global.SelectedCharacter == 0:
+			idle_anim = "Boy_Idle"
+			jump_anim = "Boy_Jump"
+		elif Global.SelectedCharacter == 1:
+			idle_anim = "Girl_Idle"
+			jump_anim = "Girl_Jump"
+
+	MusicPlayer.play_stream(track, 2.0)
+	_play_idle_animation()
+
+# --- Physics / movement ---
+func _physics_process(delta: float) -> void:
+	var distance_moved = position.distance_to(_last_position)
+
+	# --- Flip sprite based on horizontal movement ---
+	var delta_x = position.x - _last_position.x
+	if delta_x < -0.01:
+		anim_sprite.flip_h = true
+	elif delta_x > 0.01:
+		anim_sprite.flip_h = false
+
+	# --- Handle animations ---
+	if distance_moved > MOVE_THRESHOLD:
+		if not _jump_played_for_current_slot:
+			_play_movement_animation()
+			_jump_played_for_current_slot = true
 	else:
+		if _jump_played_for_current_slot:
+			_jump_played_for_current_slot = false
 		_play_idle_animation()
 
+	_last_position = position
+
+	if not _schedule_check_running:
+		_schedule_check_running = true
+		_check_after_debounce()
+
+# --- Debounced splash/reset ---
 func _check_after_debounce() -> void:
 	await get_tree().create_timer(_CHECK_DEBOUNCE).timeout
 	_schedule_check_running = false
-	_last_position = position
 	check_reset_needed()
 
+# --- Splash / reset ---
 func check_reset_needed() -> void:
 	var currently_on_rock = is_on_rock()
 
-	# Reset condition: off rock AND not at original position
 	if not currently_on_rock and position != original_position:
-		_off_rock_since_last_reset = true  # mark that the player left a rock
 		position = original_position
-		print("Player reset to origin")
-
-		# Only play splash if leaving rock caused reset
-		if splash_sound and _off_rock_since_last_reset:
+		if not _has_played_splash and splash_sound:
 			splash_sound.play()
-			_off_rock_since_last_reset = false  # reset the flag after playing sound
-
+			_has_played_splash = true
 		emit_signal("left_safe_area")
-		if main_ui_node and main_ui_node.has_method("_on_clear_pressed"):
-			main_ui_node._on_clear_pressed()
+
+		#  Update textbox message on reset
+		if text_box_label:
+			text_box_label.text = "You fell in the water, try again!"
+
 		return
 
-	# If player is safely on a rock, reset the off-rock tracker
 	if currently_on_rock:
-		_off_rock_since_last_reset = false
+		_has_played_splash = false
 		emit_signal("entered_safe_area")
 
 func is_on_rock() -> bool:
 	for a in get_overlapping_areas():
 		if a and a.is_in_group("Rocks"):
 			return true
-
 	for b in get_overlapping_bodies():
 		if b and b.is_in_group("Rocks"):
 			return true
 		if b and b.get_parent() and b.get_parent().is_in_group("Rocks"):
 			return true
-
 	return false
 
+# --- Animations ---
 func _play_movement_animation() -> void:
-	if anim_sprite and anim_sprite.animation != "Boy_Jump":
-		anim_sprite.play("Boy_Jump")
+	if not anim_sprite or jump_anim == "":
+		return
+
+	if anim_sprite.animation != jump_anim or not anim_sprite.is_playing():
+		anim_sprite.animation = jump_anim
+		anim_sprite.frame = 0
+		anim_sprite.play()
 
 func _play_idle_animation() -> void:
-	if anim_sprite and anim_sprite.animation != "Boy_Idle":
-		anim_sprite.play("Boy_Idle")
+	if not anim_sprite or idle_anim == "":
+		return
+
+	if anim_sprite.animation != idle_anim or not anim_sprite.is_playing():
+		anim_sprite.animation = idle_anim
+		anim_sprite.frame = 0
+		anim_sprite.play()
+
+# --- Level completion ---
+func win_level(error: bool = false) -> void:
+	print("WIN LEVEL TRIGGERED! error =", error)
+	emit_signal("levelWon", error)
+	if win_screen:
+		win_screen.visible = true
