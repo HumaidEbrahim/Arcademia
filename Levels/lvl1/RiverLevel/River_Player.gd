@@ -3,7 +3,7 @@ extends Area2D
 # --- Signals ---
 signal left_safe_area
 signal entered_safe_area
-signal levelWon
+signal levelWon(error: bool)
 
 # --- Variables ---
 var original_position: Vector2
@@ -11,8 +11,9 @@ var original_position: Vector2
 @onready var splash_sound: AudioStreamPlayer2D = $SplashSoundPlayer
 @onready var win_screen: CanvasItem
 @onready var text_box_label: Label = get_tree().get_current_scene().get_node("MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox/Text")
-
+@onready var win_node: Area2D = get_tree().get_current_scene().get_node("MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/WinNode")
 var track = load("res://music/Bongi_Blues/Bongi_Blues (mastered).mp3")
+var error = false
 
 var _last_position: Vector2
 var _schedule_check_running: bool = false
@@ -27,6 +28,7 @@ var jump_anim: String
 
 # --- Life cycle ---
 func _ready() -> void:
+	win_node.area_entered.connect(win_level)
 	original_position = position
 	monitoring = true
 	monitorable = true
@@ -140,8 +142,7 @@ func _play_idle_animation() -> void:
 		anim_sprite.play()
 
 # --- Level completion ---
-func win_level(error: bool = false) -> void:
-	print("WIN LEVEL TRIGGERED! error =", error)
-	emit_signal("levelWon", error)
-	if win_screen:
-		win_screen.visible = true
+func win_level(player):
+	if player == self:
+		print("WIN LEVEL TRIGGERED! error =", error)
+		emit_signal("levelWon", error)

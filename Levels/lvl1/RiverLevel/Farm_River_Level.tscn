@@ -377,6 +377,9 @@ script = ExtResource("11_b4xwp")
 position = Vector2(143.5, 569)
 shape = SubResource("RectangleShape2D_h571a")
 
+[node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
+optimal_blocks = 7
+
 [connection signal="area_exited" from="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" to="MainUI" method="_on_player_area_exited"]
 
 [editable path="MainUI"]
