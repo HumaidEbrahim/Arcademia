@@ -89,7 +89,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wiq6v"]
-size = Vector2(326, 133)
+size = Vector2(329, 133)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1pdk"]
 animations = [{
@@ -118,7 +118,7 @@ size = Vector2(302.5, 148)
 size = Vector2(159, 136.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1fgg"]
-size = Vector2(313.5, 150.5)
+size = Vector2(328.5, 150.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4xwp"]
 size = Vector2(128.5, 303)
@@ -196,7 +196,7 @@ flip_h = true
 [node name="Rock2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock2"]
-position = Vector2(1038, 592)
+position = Vector2(1036.5, 592)
 shape = SubResource("RectangleShape2D_wiq6v")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock2"]
@@ -260,7 +260,7 @@ texture = ExtResource("5_e1fgg")
 [node name="Rock6" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="11" groups=["Rocks"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock6"]
-position = Vector2(438.25, 575.75)
+position = Vector2(445.75, 575.75)
 shape = SubResource("RectangleShape2D_e1fgg")
 
 [node name="Sprite2D" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Rock6"]
