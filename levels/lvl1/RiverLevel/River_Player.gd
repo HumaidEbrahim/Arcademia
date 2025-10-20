@@ -39,7 +39,7 @@ func _ready() -> void:
 	if win_screen:
 		win_screen.visible = false
 
-	# ✅ Display starting message
+	#  Display starting message
 	if text_box_label:
 		text_box_label.text = "Cross the river!"
 
@@ -99,7 +99,7 @@ func check_reset_needed() -> void:
 			_has_played_splash = true
 		emit_signal("left_safe_area")
 
-		# ✅ Update textbox message on reset
+		#  Update textbox message on reset
 		if text_box_label:
 			text_box_label.text = "You fell in the water, try again!"
 
