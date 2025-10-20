@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7a1y0qf38b2n"
+path="res://.godot/imported/Bongi Rainforest (mastered).wav-3f7c1d8bfb7673a26517254ff5524742.sample"
+
+[deps]
+
+source_file="res://music/Bongi Rainforest/Bongi Rainforest (mastered).wav"
+dest_files=["res://.godot/imported/Bongi Rainforest (mastered).wav-3f7c1d8bfb7673a26517254ff5524742.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
