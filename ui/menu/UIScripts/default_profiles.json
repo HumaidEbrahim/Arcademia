@@ -2,12 +2,6 @@
 	"active_student": "",
 	"students": [
 		{
-			"avatar": 1.0,
-			"created_at": 1759012247.147,
-			"name": "DCCBCC",
-			"updated_at": 1759012250.152
-		},
-		{
 			"avatar": 0.0,
 			"created_at": 1759999004.77,
 			"name": "HELP",
@@ -83,32 +77,6 @@
 				"total_time": 20.8083286666668
 			},
 			"updated_at": 1760961294.32
-		},
-		{
-			"avatar": 0.0,
-			"created_at": 1760605321.721,
-			"name": "YUW",
-			"progress": {
-				"levels": {
-
-				},
-				"total_stars": 0.0,
-				"total_time": 0.0
-			},
-			"updated_at": ""
-		},
-		{
-			"avatar": 1.0,
-			"created_at": 1760961414.22,
-			"name": "RAK",
-			"progress": {
-				"levels": {
-
-				},
-				"total_stars": 0.0,
-				"total_time": 0.0
-			},
-			"updated_at": 1760961415.837
 		}
 	]
 }

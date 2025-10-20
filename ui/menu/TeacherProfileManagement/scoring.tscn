@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbdc4qksj4371"]
+[gd_scene load_steps=9 format=3 uid="uid://bbdc4qksj4371"]
 
 [ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_0p8ia"]
+[ext_resource type="Script" uid="uid://5nnr83q35i3r" path="res://ui/menu/TeacherProfileManagement/scoring.gd" id="1_vv2re"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_vv2re"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kia3f"]
@@ -74,6 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vv2re")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -239,7 +241,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="Card" type="Panel" parent="."]
+[node name="CardLevel" type="Panel" parent="."]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 4
@@ -253,7 +255,7 @@ grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_utmco")
 
-[node name="DisStudentName" type="Label" parent="Card"]
+[node name="DisStudentName" type="Label" parent="CardLevel"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -270,7 +272,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 64
 text = "Student Name"
 
-[node name="LblRiver" type="Label" parent="Card"]
+[node name="LblRiver" type="Label" parent="CardLevel"]
 layout_mode = 1
 offset_left = 30.0
 offset_top = 100.0
@@ -284,7 +286,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "River  Level:"
 
-[node name="DisRiverStar" type="Label" parent="Card/LblRiver"]
+[node name="DisRiverStar" type="Label" parent="CardLevel/LblRiver"]
 layout_mode = 0
 offset_left = 281.5
 offset_top = 3.25
@@ -298,7 +300,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="DisRiverTime" type="Label" parent="Card/LblRiver"]
+[node name="DisRiverTime" type="Label" parent="CardLevel/LblRiver"]
 layout_mode = 0
 offset_left = 503.5
 offset_top = 3.25
@@ -312,7 +314,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="LblFlower" type="Label" parent="Card"]
+[node name="LblFlower" type="Label" parent="CardLevel"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -333,7 +335,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "Flower  Level:"
 
-[node name="DisFlowerStar" type="Label" parent="Card/LblFlower"]
+[node name="DisFlowerStar" type="Label" parent="CardLevel/LblFlower"]
 layout_mode = 0
 offset_left = 281.5
 offset_top = 3.25
@@ -347,7 +349,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="DisFlowerTime" type="Label" parent="Card/LblFlower"]
+[node name="DisFlowerTime" type="Label" parent="CardLevel/LblFlower"]
 layout_mode = 0
 offset_left = 503.5
 offset_top = 3.25
@@ -361,7 +363,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="LblTractor" type="Label" parent="Card"]
+[node name="LblTractor" type="Label" parent="CardLevel"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -379,7 +381,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "Tractor  Level:"
 
-[node name="DisTractorStar" type="Label" parent="Card/LblTractor"]
+[node name="DisTractorStar" type="Label" parent="CardLevel/LblTractor"]
 layout_mode = 0
 offset_left = 281.5
 offset_top = 3.25
@@ -393,7 +395,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="DisTractorTime" type="Label" parent="Card/LblTractor"]
+[node name="DisTractorTime" type="Label" parent="CardLevel/LblTractor"]
 layout_mode = 0
 offset_left = 503.5
 offset_top = 3.25
@@ -407,7 +409,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="LblCow" type="Label" parent="Card"]
+[node name="LblCow" type="Label" parent="CardLevel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -425,7 +427,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "Cow  Level:"
 
-[node name="DisCowStar" type="Label" parent="Card/LblCow"]
+[node name="DisCowStar" type="Label" parent="CardLevel/LblCow"]
 layout_mode = 0
 offset_left = 281.5
 offset_top = 3.25
@@ -439,7 +441,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="DisCowTime" type="Label" parent="Card/LblCow"]
+[node name="DisCowTime" type="Label" parent="CardLevel/LblCow"]
 layout_mode = 0
 offset_left = 503.5
 offset_top = 3.25
@@ -453,7 +455,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="LblBarn" type="Label" parent="Card"]
+[node name="LblBarn" type="Label" parent="CardLevel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -474,7 +476,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "Barn  Level:"
 
-[node name="DisBarnStar" type="Label" parent="Card/LblBarn"]
+[node name="DisBarnStar" type="Label" parent="CardLevel/LblBarn"]
 layout_mode = 0
 offset_left = 281.5
 offset_top = 3.25
@@ -488,7 +490,7 @@ theme_override_fonts/font = ExtResource("2_vv2re")
 theme_override_font_sizes/font_size = 43
 text = "N/A"
 
-[node name="DisBarnTime" type="Label" parent="Card/LblBarn"]
+[node name="DisBarnTime" type="Label" parent="CardLevel/LblBarn"]
 layout_mode = 0
 offset_left = 503.5
 offset_top = 3.25
