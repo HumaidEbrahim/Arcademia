@@ -1,0 +1,321 @@
+[gd_scene load_steps=42 format=3 uid="uid://bx2ta16vsi55j"]
+
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://levels/lvl1/BarnLevel/Action_btn.gd" id="2_egmrn"]
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="2_qghum"]
+[ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
+[ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="3_xwafh"]
+[ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
+[ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
+[ext_resource type="Texture2D" uid="uid://ba5vkwx8sprm" path="res://assets/Farm/Barn/Barn01.png" id="4_s8e1t"]
+[ext_resource type="Texture2D" uid="uid://18gj13xmkpyd" path="res://assets/Farm/Barn/Barn02.png" id="5_3ro4f"]
+[ext_resource type="Texture2D" uid="uid://cfqkji01kttnw" path="res://assets/Farm/Barn/Barn03.png" id="7_52y21"]
+[ext_resource type="Texture2D" uid="uid://nkcqlyfyxsgd" path="res://assets/Effects/Leaves/leaves_00_delay-0.1s (1).png" id="8_6x1hn"]
+[ext_resource type="Texture2D" uid="uid://0xpyn0f2rouc" path="res://assets/Effects/Leaves/leaves_04_delay-0.1s (2).png" id="9_d22s8"]
+[ext_resource type="Texture2D" uid="uid://dt0a72w67sc0e" path="res://assets/Effects/Leaves/leaves_08_delay-0.1s (3).png" id="10_bxgin"]
+[ext_resource type="Texture2D" uid="uid://cgi6pkryfxtcm" path="res://assets/Effects/Leaves/leaves_12_delay-0.1s (4).png" id="11_jhwss"]
+[ext_resource type="Texture2D" uid="uid://bdhcoao1d4sap" path="res://assets/Effects/Leaves/leaves_16_delay-0.1s (5).png" id="12_ul8jc"]
+[ext_resource type="Texture2D" uid="uid://oealq4v6nxte" path="res://assets/Effects/Leaves/leaves_20_delay-0.1s (6).png" id="13_pqsbj"]
+[ext_resource type="Texture2D" uid="uid://cpi1ugxof2rdd" path="res://assets/Effects/Leaves/leaves_24_delay-0.1s (7).png" id="14_t0v76"]
+[ext_resource type="Texture2D" uid="uid://flf40jq7sd7q" path="res://assets/Effects/Leaves/leaves_28_delay-0.1s (8).png" id="15_uitrl"]
+[ext_resource type="Texture2D" uid="uid://duw1jdc17ile5" path="res://assets/Effects/Leaves/leaves_32_delay-0.1s (9).png" id="16_bcal8"]
+[ext_resource type="Texture2D" uid="uid://c411xbxpewgg0" path="res://assets/Effects/Leaves/leaves_36_delay-0.1s (10).png" id="17_2wefm"]
+[ext_resource type="Texture2D" uid="uid://csmywmq3hdbgo" path="res://assets/Effects/Leaves/leaves_40_delay-0.1s (11).png" id="18_qduet"]
+[ext_resource type="Texture2D" uid="uid://cc10bwrr0ogvj" path="res://assets/Effects/Leaves/leaves_44_delay-0.1s (12).png" id="19_lkm0e"]
+[ext_resource type="Texture2D" uid="uid://dmm6anpiousik" path="res://assets/Effects/Leaves/leaves_48_delay-0.1s (13).png" id="20_y6mu8"]
+[ext_resource type="Texture2D" uid="uid://ftq0af4qela0" path="res://assets/Effects/Leaves/leaves_52_delay-0.1s (14).png" id="21_t1wcu"]
+[ext_resource type="Texture2D" uid="uid://bcn6sw0sfynwq" path="res://assets/Effects/Leaves/leaves_56_delay-0.1s (15).png" id="22_6vw6p"]
+[ext_resource type="Texture2D" uid="uid://cnkmnoea0y125" path="res://assets/Effects/Leaves/leaves_60_delay-0.1s (16).png" id="23_bef7e"]
+[ext_resource type="Texture2D" uid="uid://c2xc5vlfbk10u" path="res://assets/Effects/Leaves/leaves_64_delay-0.1s (17).png" id="24_1w557"]
+[ext_resource type="Texture2D" uid="uid://b8ycrahrqj1g5" path="res://assets/Effects/Leaves/leaves_68_delay-0.1s (18).png" id="25_cxlpk"]
+[ext_resource type="Texture2D" uid="uid://7lxnht0yscnp" path="res://assets/Effects/Leaves/leaves_72_delay-0.1s (19).png" id="26_xq5nu"]
+[ext_resource type="Texture2D" uid="uid://doe75kdf4lmes" path="res://assets/Effects/Leaves/leaves_76_delay-0.1s (20).png" id="27_fy20g"]
+[ext_resource type="Texture2D" uid="uid://dpc0n8a5pwjkg" path="res://assets/Farm/Barn/ChickenIdle_01.png" id="29_uitrl"]
+[ext_resource type="Texture2D" uid="uid://dgsgg22dxsmlc" path="res://assets/Farm/Barn/ChickenIdle_02.png" id="30_bcal8"]
+[ext_resource type="Texture2D" uid="uid://btkh70vrgosyg" path="res://assets/Farm/Barn/ChickenEat_02.png" id="32_qduet"]
+[ext_resource type="Texture2D" uid="uid://bqaxtb6egbs5l" path="res://assets/Farm/Barn/ChickenEat_01.png" id="33_lkm0e"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqak5"]
+size = Vector2(170, 100)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qghum"]
+size = Vector2(170, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6x1hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d22s8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bxgin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jhwss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ul8jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pqsbj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t0v76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uitrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bcal8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_2wefm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qduet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_lkm0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_y6mu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_t1wcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6vw6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bef7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1w557")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_cxlpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xq5nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_fy20g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2vuc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_s8e1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3ro4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_52y21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qghum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_52y21")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52y21"]
+size = Vector2(188, 183)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_egmrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_uitrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bcal8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_uitrl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_lkm0e")
+}, {
+"duration": 1.5,
+"texture": ExtResource("32_qduet")
+}],
+"loop": true,
+"name": &"eat",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm5u6"]
+size = Vector2(193.125, 154.75)
+
+[node name="BarnLevel" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("2_qghum")]
+offset_left = 801.0
+offset_top = 450.0
+offset_right = 801.0
+offset_bottom = 450.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+target_sprite = NodePath("")
+step_size = 200
+move_duration = 1.5
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+target_sprite = NodePath("")
+step_size = 200
+move_duration = 1.5
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+target_sprite = NodePath("")
+step_size = 100
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+target_sprite = NodePath("")
+step_size = 100
+move_duration = 1.0
+
+[node name="Pickup" type="Control" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="4"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Pickup"]
+layout_mode = 0
+offset_left = -93.0
+offset_top = 469.0
+offset_right = 89.0
+offset_bottom = 575.0
+texture_normal = SubResource("PlaceholderTexture2D_xqak5")
+script = ExtResource("2_egmrn")
+action = "pickup"
+
+[node name="Feed" type="Control" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="5"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Feed"]
+layout_mode = 0
+offset_left = -91.0
+offset_top = 585.0
+offset_right = 79.0
+offset_bottom = 685.0
+texture_normal = SubResource("PlaceholderTexture2D_qghum")
+script = ExtResource("2_egmrn")
+action = "feed"
+
+[node name="TextureRect2" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+offset_right = 789.0
+offset_bottom = 469.0
+texture = ExtResource("3_xwafh")
+expand_mode = 1
+
+[node name="Leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect2"]
+position = Vector2(638.18756, 316.81253)
+scale = Vector2(0.2783855, 0.41171885)
+sprite_frames = SubResource("SpriteFrames_jhwss")
+autoplay = "default"
+frame_progress = 0.5670908
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect2"]
+position = Vector2(863.42694, 252.75)
+scale = Vector2(0.6455949, 0.6240809)
+sprite_frames = SubResource("SpriteFrames_e2vuc")
+autoplay = "default"
+frame_progress = 0.78462875
+
+[node name="TextureRect" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+offset_right = 1200.0
+offset_bottom = 900.0
+texture = ExtResource("3_egmrn")
+
+[node name="Feed" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+position = Vector2(600, 374)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Feed"]
+position = Vector2(112, 34)
+scale = Vector2(0.355556, 0.347222)
+sprite_frames = SubResource("SpriteFrames_qghum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Feed"]
+position = Vector2(112, 17.5)
+shape = SubResource("RectangleShape2D_52y21")
+
+[node name="Chicken2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+position = Vector2(733, 684)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
+position = Vector2(167, -109.999985)
+scale = Vector2(0.16017814, 0.14658697)
+sprite_frames = SubResource("SpriteFrames_egmrn")
+autoplay = "default"
+frame_progress = 0.8710849
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
+position = Vector2(165, -107)
+shape = SubResource("RectangleShape2D_mm5u6")
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+position = Vector2(278, 399)
+script = ExtResource("4_egmrn")
+
+[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
+scale = Vector2(0.7, 0.7)
+frame = 1
+frame_progress = 0.670441
+
+[node name="Chicken1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+position = Vector2(254, 618)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken1"]
+position = Vector2(-92.00001, 99.00003)
+scale = Vector2(0.16459462, 0.15062872)
+sprite_frames = SubResource("SpriteFrames_egmrn")
+autoplay = "default"
+frame_progress = 0.88229865
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken1"]
+position = Vector2(-99, 93)
+shape = SubResource("RectangleShape2D_mm5u6")
+
+[node name="Chicken3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7"]
+position = Vector2(733, 684)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken3"]
+position = Vector2(-17, 137)
+scale = Vector2(0.16017814, 0.14658697)
+sprite_frames = SubResource("SpriteFrames_egmrn")
+autoplay = "default"
+frame_progress = 0.8108581
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken3"]
+position = Vector2(-23, 132)
+shape = SubResource("RectangleShape2D_mm5u6")
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]

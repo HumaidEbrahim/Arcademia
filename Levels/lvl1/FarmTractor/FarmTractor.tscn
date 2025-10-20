@@ -1,9 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://cdjcvpjiowwki"]
+[gd_scene load_steps=24 format=3 uid="uid://cdjcvpjiowwki"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wbkxu"]
 [ext_resource type="Texture2D" uid="uid://c8ur3gjkhjyxd" path="res://assets/Farm/FarmLvl_Tractor.png" id="2_xb1bg"]
 [ext_resource type="Texture2D" uid="uid://cfsym1duj7aa2" path="res://assets/Farm/TractorActor/TractorPlay01.png" id="3_ctjss"]
-[ext_resource type="Script" uid="uid://dyelf6irpblia" path="res://levels/lvl1/FarmTractor/PlayerTractorLevelgd.gd" id="3_f18w4"]
+[ext_resource type="Script" uid="uid://dyelf6irpblia" path="res://Levels/lvl1/FarmTractor/PlayerTractorLevelgd.gd" id="3_f18w4"]
 [ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="4_4hy2w"]
 [ext_resource type="Texture2D" uid="uid://ji2rufs3bfn8" path="res://assets/Farm/TractorActor/TractorPlay02.png" id="4_f18w4"]
 [ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="5_g5gjk"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://dwv4hgqa06wpo" path="res://assets/Farm/TractorActor/TractorPlay07.png" id="9_vf36m"]
 [ext_resource type="Texture2D" uid="uid://dnhgvbdy1xy1h" path="res://assets/Farm/TractorActor/TractorPlay08.png" id="10_ecpiv"]
 [ext_resource type="AudioStream" uid="uid://d1px76phhqc28" path="res://sounds/Tractor_Level_Sounds/bush-cut-103503.mp3" id="20_4oapr"]
-[ext_resource type="AudioStream" uid="uid://itlrae6e0rtd" path="res://music/Bongi Farm/Bongi Farm (mastered).mp3" id="20_tenat"]
 [ext_resource type="AudioStream" uid="uid://dhe41pseskhwv" path="res://sounds/Tractor_Level_Sounds/tractor-sound-and-ambient-farm-sounds-145531.mp3" id="21_ifi7g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpjmn"]
@@ -119,6 +118,12 @@ move_duration = 1.0
 level_bound = 890
 step_size = 195
 move_duration = 1.0
+
+[node name="Top_Loop_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="4"]
+visible = false
+
+[node name="Bottom_Loop_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="5"]
+visible = false
 
 [node name="SubViewport" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="0"]
 audio_listener_enable_2d = true
@@ -275,10 +280,6 @@ stream = ExtResource("20_4oapr")
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
 optimal_blocks = 11
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("20_tenat")
-autoplay = true
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("21_ifi7g")

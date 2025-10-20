@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://l3hv6oitfol1"]
+
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_gid1p"]
+
+[node name="Space1" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("1_gid1p")]
+offset_top = 450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]

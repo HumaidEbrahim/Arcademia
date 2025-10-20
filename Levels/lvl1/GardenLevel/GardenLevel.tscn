@@ -1,0 +1,414 @@
+[gd_scene load_steps=45 format=3 uid="uid://bwpyfjmbsk8ou"]
+
+[ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2vog3"]
+[ext_resource type="Texture2D" uid="uid://co1lofo8thlb4" path="res://assets/JuaneBtns/Plant_Initial.png" id="2_dmm27"]
+[ext_resource type="Texture2D" uid="uid://bmld6xsqtku3v" path="res://assets/Farm/Garden/FarmLvl_Garden2.jpg" id="2_g4ln1"]
+[ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_nkxik"]
+[ext_resource type="Script" uid="uid://cebss3n06xcgo" path="res://levels/lvl1/GardenLevel/Player_Garden.gd" id="3_0a0vv"]
+[ext_resource type="Texture2D" uid="uid://b53fm2xj7pyul" path="res://assets/JuaneBtns/Plant_Focus.png" id="3_nkxik"]
+[ext_resource type="Texture2D" uid="uid://b63beig7gy8fa" path="res://assets/Farm/Garden/FlowerPot.png" id="3_p85ah"]
+[ext_resource type="Texture2D" uid="uid://drju6h2j3tpdx" path="res://assets/JuaneBtns/Water_Initial.png" id="5_c5gh3"]
+[ext_resource type="Texture2D" uid="uid://cf3vetwi580ln" path="res://assets/JuaneBtns/Water_Focus.png" id="6_coqvr"]
+[ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_4way2"]
+[ext_resource type="AudioStream" uid="uid://j5nvcuj3sybs" path="res://sounds/GardenLevel/WateringCan.mp3" id="9_poicm"]
+[ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://levels/lvl1/GardenLevel/endif_block.gd" id="9_tii1p"]
+[ext_resource type="AudioStream" uid="uid://cwnyhvbckng6s" path="res://sounds/GardenLevel/hit-plant-03-266292.mp3" id="10_mndbt"]
+[ext_resource type="Texture2D" uid="uid://cr0k1ofuhdkqu" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_rhidi"]
+[ext_resource type="Script" uid="uid://p8011ubitbd3" path="res://levels/lvl1/GardenLevel/Flowers.gd" id="11_c5gh3"]
+[ext_resource type="Texture2D" uid="uid://cakm4aeop7qps" path="res://assets/JuaneBtns/If_End_Focus.png" id="11_dj04c"]
+[ext_resource type="Texture2D" uid="uid://34bu6jbnx52g" path="res://assets/Farm/Garden/flowerbloomspritersheet.png" id="11_jyhvo"]
+[ext_resource type="AudioStream" uid="uid://drh8xpgmur56t" path="res://sounds/Walking/Walk1.mp3" id="11_lui6u"]
+[ext_resource type="PackedScene" uid="uid://b6qnjrbr26lkq" path="res://ui/blocks/scenes/if_condition_block.tscn" id="11_wul3c"]
+[ext_resource type="Texture2D" uid="uid://bn7psg0sa71xr" path="res://assets/Farm/Garden/flower_fence1.png" id="12_jyhvo"]
+[ext_resource type="AudioStream" uid="uid://bxgmlnhpae7ks" path="res://sounds/Walking/Walk2.mp3" id="12_kox0e"]
+[ext_resource type="Texture2D" uid="uid://cn12liowmhgjo" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="12_o28s5"]
+[ext_resource type="Texture2D" uid="uid://s8a1o7grtugm" path="res://assets/JuaneBtns/If_Empty_Focus.png" id="13_o54r1"]
+[ext_resource type="Texture2D" uid="uid://toi1baya7m15" path="res://assets/Farm/Garden/flower_fence2.png" id="13_poicm"]
+[ext_resource type="AudioStream" uid="uid://cbekycb5ip7xy" path="res://sounds/Walking/Walk3.mp3" id="13_y4x8x"]
+[ext_resource type="Texture2D" uid="uid://chuvltb7ivylv" path="res://assets/Farm/Garden/flower_fence3.png" id="14_mndbt"]
+[ext_resource type="Texture2D" uid="uid://ujb56ny06bly" path="res://assets/Farm/Garden/flower_fence4.png" id="15_lui6u"]
+[ext_resource type="Texture2D" uid="uid://do7at34m8yd6g" path="res://assets/Farm/Garden/flower_fence5.png" id="16_xabjf"]
+[ext_resource type="Texture2D" uid="uid://b82a4w5uv8nx5" path="res://assets/Farm/Garden/flower_fence6.png" id="17_kox0e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lui6u"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(360, 0, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xabjf"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(540, 0, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kox0e"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(720, 0, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4x8x"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(0, 176, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4way2"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(180, 176, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tii1p"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(360, 176, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2pfs"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(540, 176, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhidi"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(720, 176, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj04c"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(0, 352, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyhvo"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(180, 352, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poicm"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(0, 0, 180, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mndbt"]
+atlas = ExtResource("11_jyhvo")
+region = Rect2(180, 0, 180, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p85ah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lui6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xabjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kox0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4x8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4way2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tii1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2pfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhidi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj04c")
+}],
+"loop": false,
+"name": &"grow",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyhvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poicm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mndbt")
+}],
+"loop": false,
+"name": &"plant",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0a0vv"]
+size = Vector2(157, 154.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kox0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jyhvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_poicm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mndbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lui6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xabjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kox0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="GardenLevel" type="Node2D"]
+
+[node name="MainUI" parent="." instance=ExtResource("1_2vog3")]
+offset_top = 450.0
+offset_right = 800.0
+offset_bottom = 450.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right" index="0"]
+level_bound = 1100
+step_size = 180
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left" index="0"]
+level_bound = 58
+step_size = 180
+move_duration = 1.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up" index="0"]
+script = ExtResource("2_nkxik")
+action = "plant"
+timer = 1.01
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="0"]
+texture = ExtResource("2_dmm27")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up/Action_Button" index="1"]
+texture = ExtResource("3_nkxik")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down" index="0"]
+script = ExtResource("2_nkxik")
+action = "water"
+timer = 1.01
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="0"]
+texture = ExtResource("5_c5gh3")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down/Action_Button" index="1"]
+texture = ExtResource("6_coqvr")
+texture_scale = Vector2(7.06, 7.06)
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block" index="0"]
+offset_left = -91.0
+offset_top = 540.0
+offset_right = 84.0
+offset_bottom = 595.0
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block" index="0"]
+offset_left = -93.0
+offset_top = 616.0
+offset_right = 82.0
+offset_bottom = 671.0
+
+[node name="End_if_btn" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="6" instance=ExtResource("7_4way2")]
+layout_mode = 2
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn" index="0"]
+custom_minimum_size = Vector2(160, 55)
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = -90.0
+offset_top = 457.0
+offset_right = 70.0
+offset_bottom = 512.0
+grow_vertical = 1
+script = ExtResource("9_tii1p")
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn/Action_Button" index="0"]
+texture = ExtResource("10_rhidi")
+polygon = PackedVector2Array(0.12334156, 5.187191, 0.4931432, 4.2218933, 1.2037691, 3.6258848, 1.868548, 2.9840293, 2.4874802, 2.4338675, 3.2439528, 1.8607821, 4.2102437, 1.1450796, 5.18105, 0.6458076, 24.89714, 0.39555794, 26.367527, 1.2301326, 27.281322, 2.3125021, 28.306992, 4.060261, 29.72282, 5.947933, 31.363314, 8.142864, 32.944954, 8.9953575, 47.827805, 9.38555, 48.464535, 8.5531225, 49.324696, 7.777705, 50.186394, 6.5834656, 51.10387, 5.334366, 51.74091, 3.8353214, 52.544987, 2.5036232, 53.850174, 0.8640635, 56.04756, 0.11791721, 148.32251, -0.08008194, 149.21437, 0.3361206, 150.22514, 1.1685257, 151.05756, 2.536045, 151.94942, 3.7846527, 152.6629, 4.795429, 152.96019, 5.3305454, 153.0791, 46.837547, 152.72235, 47.907784, 152.2467, 49.037476, 151.17647, 49.929337, 149.69003, 50.999573, 47.749214, 51.95089, 45.72766, 52.72384, 44.716885, 53.912987, 43.82502, 55.637253, 42.814247, 57.599342, 41.6251, 58.966866, 40.554863, 59.979088, 22.95546, 60.098007, 21.609396, 58.849396, 20.895906, 57.36296, 19.528383, 55.28195, 18.160864, 53.6766, 16.13931, 52.844196, 5.7937145, 52.60637, 4.0099926, 52.130707, 2.3451843, 50.94156, 1.5127792, 49.871323, 0.20471573, 48.028145, 0.7800684, 48.85196, 0.7800684, 48.85196, 17.134918, 53.20716, 18.833164, 54.57314, 20.051472, 56.12371, 43.310062, 56.45598, 44.294823, 54.794647, 150.37436, 50.512115)
+uv = PackedVector2Array(0.12334156, 5.187191, 0.4931432, 4.2218933, 1.2037691, 3.6258848, 1.868548, 2.9840293, 2.4874802, 2.4338675, 3.2439528, 1.8607821, 4.2102437, 1.1450796, 5.18105, 0.6458076, 24.89714, 0.39555794, 26.367527, 1.2301326, 27.281322, 2.3125021, 28.306992, 4.060261, 29.72282, 5.947933, 31.363314, 8.142864, 32.944954, 8.9953575, 47.827805, 9.38555, 48.464535, 8.5531225, 49.324696, 7.777705, 50.186394, 6.5834656, 51.10387, 5.334366, 51.74091, 3.8353214, 52.544987, 2.5036232, 53.850174, 0.8640635, 56.04756, 0.11791721, 148.32251, -0.08008194, 149.21437, 0.3361206, 150.22514, 1.1685257, 151.05756, 2.536045, 151.94942, 3.7846527, 152.6629, 4.795429, 152.96019, 5.3305454, 153.0791, 46.837547, 152.72235, 47.907784, 152.2467, 49.037476, 151.17647, 49.929337, 149.69003, 50.999573, 47.749214, 51.95089, 45.72766, 52.72384, 44.716885, 53.912987, 43.82502, 55.637253, 42.814247, 57.599342, 41.6251, 58.966866, 40.554863, 59.979088, 22.95546, 60.098007, 21.609396, 58.849396, 20.895906, 57.36296, 19.528383, 55.28195, 18.160864, 53.6766, 16.13931, 52.844196, 5.7937145, 52.60637, 4.0099926, 52.130707, 2.3451843, 50.94156, 1.5127792, 49.871323, 0.20471573, 48.028145, 0.7800684, 48.85196, 0.7800684, 48.85196, 17.134918, 53.20716, 18.833164, 54.57314, 20.051472, 56.12371, 43.310062, 56.45598, 44.294823, 54.794647, 150.37436, 50.512115)
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn/Action_Button" index="1"]
+position = Vector2(0, 1)
+texture = ExtResource("11_dj04c")
+polygon = PackedVector2Array(-0.14767265, 4.635067, 0.2023015, 3.6267908, 0.7066169, 3.1476915, 1.1857162, 2.4668663, 2.1186986, 1.685178, 2.6986613, 1.2312944, 3.4299178, 0.55046916, 4.4133325, -0.0042774677, 24.913738, 0.07136989, 26.267342, 0.52518153, 27.477695, 1.6598904, 28.259384, 2.7441676, 29.242798, 4.0553865, 29.696682, 5.1144485, 30.528801, 6.249157, 31.411354, 7.35865, 32.369553, 8.619438, 47.52797, 8.770732, 48.13315, 7.8881807, 48.94005, 6.5769615, 49.973896, 4.8875065, 50.755585, 3.450209, 51.638138, 2.4920104, 52.419823, 1.3068697, 53.83191, 0.121729374, 149.19998, -0.010109711, 149.96005, 0.5309418, 150.8815, 1.3126302, 151.55656, 1.9912809, 152.24097, 2.734058, 152.80145, 3.560875, 153.24934, 4.838449, 153.325, 47.658524, 152.67183, 49.504387, 151.45929, 50.514427, 150.56163, 51.323032, 149.50833, 52.000267, 148.46872, 52.42459, 44.756264, 52.172432, 43.495476, 53.459297, 42.436417, 54.64444, 41.780804, 56.207817, 40.92347, 57.872055, 39.183582, 59.965343, 17.94954, 60.015774, 16.890478, 58.90628, 15.856632, 57.267258, 14.671492, 55.40129, 13.435921, 53.257954, 4.7636523, 53.484894, 3.6793752, 52.602345, 2.4185877, 51.54328, 1.1578002, 50.358143, 0.17438579, 49.526024)
+uv = PackedVector2Array(-0.14767265, 4.635067, 0.2023015, 3.6267908, 0.7066169, 3.1476915, 1.1857162, 2.4668663, 2.1186986, 1.685178, 2.6986613, 1.2312944, 3.4299178, 0.55046916, 4.4133325, -0.0042774677, 24.913738, 0.07136989, 26.267342, 0.52518153, 27.477695, 1.6598904, 28.259384, 2.7441676, 29.242798, 4.0553865, 29.696682, 5.1144485, 30.528801, 6.249157, 31.411354, 7.35865, 32.369553, 8.619438, 47.52797, 8.770732, 48.13315, 7.8881807, 48.94005, 6.5769615, 49.973896, 4.8875065, 50.755585, 3.450209, 51.638138, 2.4920104, 52.419823, 1.3068697, 53.83191, 0.121729374, 149.19998, -0.010109711, 149.96005, 0.5309418, 150.8815, 1.3126302, 151.55656, 1.9912809, 152.24097, 2.734058, 152.80145, 3.560875, 153.24934, 4.838449, 153.325, 47.658524, 152.67183, 49.504387, 151.45929, 50.514427, 150.56163, 51.323032, 149.50833, 52.000267, 148.46872, 52.42459, 44.756264, 52.172432, 43.495476, 53.459297, 42.436417, 54.64444, 41.780804, 56.207817, 40.92347, 57.872055, 39.183582, 59.965343, 17.94954, 60.015774, 16.890478, 58.90628, 15.856632, 57.267258, 14.671492, 55.40129, 13.435921, 53.257954, 4.7636523, 53.484894, 3.6793752, 52.602345, 2.4185877, 51.54328, 1.1578002, 50.358143, 0.17438579, 49.526024)
+internal_vertex_count = 0
+
+[node name="If_Empty_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="7" instance=ExtResource("11_wul3c")]
+layout_mode = 2
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block" index="0"]
+offset_left = -90.0
+offset_top = 305.0
+offset_right = 70.0
+offset_bottom = 360.0
+condition_type = "is_empty"
+
+[node name="Initial" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block/Action_Button" index="0"]
+texture = ExtResource("12_o28s5")
+
+[node name="Focus" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block/Action_Button" index="1"]
+texture = ExtResource("13_o54r1")
+
+[node name="If_Plant_Block" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer" index="8" instance=ExtResource("11_wul3c")]
+layout_mode = 2
+
+[node name="Action_Button" parent="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Plant_Block" index="0"]
+offset_left = -88.0
+offset_top = 375.0
+offset_right = 72.0
+offset_bottom = 430.0
+
+[node name="SubViewport" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer" index="0"]
+audio_listener_enable_2d = true
+audio_listener_enable_3d = true
+
+[node name="FarmLvlGarden2" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="0"]
+position = Vector2(600, 449)
+texture = ExtResource("2_g4ln1")
+
+[node name="Text" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="0"]
+offset_left = 83.0
+offset_top = 8.0
+offset_right = 500.0
+offset_bottom = 83.0
+text = "If there are flowers in the pots then water them.
+If there are no flowers in the pot then plant new ones."
+
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+z_index = 0
+position = Vector2(54, 606)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("3_0a0vv")
+
+[node name="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="0"]
+animation = &"Boy_Idle"
+frame = 0
+frame_progress = 0.0
+
+[node name="PlayerWateringSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
+stream = ExtResource("9_poicm")
+
+[node name="PlayerPlantingSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="3"]
+stream = ExtResource("10_mndbt")
+
+[node name="PlayerWalkingSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="4"]
+stream = ExtResource("11_lui6u")
+volume_db = 19.158
+
+[node name="PlayerWalkingSound2" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="5"]
+stream = ExtResource("12_kox0e")
+
+[node name="PlayerWalkingSound3" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="6"]
+stream = ExtResource("13_y4x8x")
+
+[node name="Timer" type="Timer" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="7"]
+wait_time = 0.2
+
+[node name="FlowerPot" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+position = Vector2(694, 729)
+scale = Vector2(0.8325, 1)
+texture = ExtResource("3_p85ah")
+
+[node name="Pot_Full1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full1"]
+position = Vector2(279, 650)
+scale = Vector2(0.5397726, 0.5397727)
+sprite_frames = SubResource("SpriteFrames_p85ah")
+animation = &"grow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full1"]
+position = Vector2(273, 694.25)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Empty1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty1"]
+position = Vector2(454, 650)
+scale = Vector2(0.54, 0.54)
+sprite_frames = SubResource("SpriteFrames_p85ah")
+animation = &"plant"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty1"]
+position = Vector2(445, 704)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Full2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full2"]
+position = Vector2(614, 650)
+scale = Vector2(0.543, 0.543)
+sprite_frames = SubResource("SpriteFrames_p85ah")
+animation = &"grow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full2"]
+position = Vector2(611, 704)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Full3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full3"]
+position = Vector2(778, 647)
+scale = Vector2(0.54, 0.54)
+sprite_frames = SubResource("SpriteFrames_p85ah")
+animation = &"grow"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full3"]
+position = Vector2(778, 695)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Empty2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty2"]
+position = Vector2(949, 650)
+scale = Vector2(0.54, 0.54)
+sprite_frames = SubResource("SpriteFrames_p85ah")
+animation = &"plant"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty2"]
+position = Vector2(945.5, 695)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="Pot_Empty3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9"]
+script = ExtResource("11_c5gh3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty3"]
+position = Vector2(1117, 650)
+scale = Vector2(0.54, 0.54)
+sprite_frames = SubResource("SpriteFrames_p85ah")
+animation = &"plant"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty3"]
+position = Vector2(1115, 696)
+shape = SubResource("RectangleShape2D_0a0vv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10"]
+position = Vector2(259.00003, 739.00006)
+scale = Vector2(0.49907407, 0.49907407)
+sprite_frames = SubResource("SpriteFrames_kox0e")
+frame_progress = 0.009179345
+
+[node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
+optimal_blocks = 12
+
+[editable path="MainUI"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Left"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Up"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Down"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Top_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Bottom_Loop_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/End_if_btn"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Empty_Block"]
+[editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/If_Plant_Block"]
+[editable path="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player"]
+[editable path="MainUI/HBoxContainer/WinScreen"]

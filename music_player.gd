@@ -19,22 +19,30 @@ func play_stream(new_stream: AudioStream, fade_time: float = 1.0):
 		return
 
 	if active_player.stream == new_stream:
-		return
+		return  # already playing this track
 
+	# Prepare inactive player
 	inactive_player.stop()
 	inactive_player.stream = new_stream
 	inactive_player.volume_db = SILENCE_DB
 	inactive_player.play()
 
+	# Fade in new track
 	var tween_in = create_tween()
 	tween_in.tween_property(inactive_player, "volume_db", 0.0, fade_time)
 
+	# Fade out old track
 	var tween_out = create_tween()
 	tween_out.tween_property(active_player, "volume_db", SILENCE_DB, fade_time)
 
+	# Wait for fade-out to finish
 	await tween_out.finished
-	active_player.stop()
 
+	# Only stop old player if new track is playing
+	if inactive_player.playing:
+		active_player.stop()
+
+	# Swap players
 	var temp = active_player
 	active_player = inactive_player
 	inactive_player = temp

@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://bpx27qfoucswx"]
+[gd_scene load_steps=84 format=3 uid="uid://bpx27qfoucswx"]
 
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="1_7yifi"]
 [ext_resource type="Texture2D" uid="uid://dp1q36qnkcfmr" path="res://assets/Effects/Birds/birds01.png" id="2_goeqc"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://baufn6eb1iptk" path="res://assets/Effects/Smoke/frame_11_delay-0.07s.png" id="13_5hgic"]
 [ext_resource type="Texture2D" uid="uid://cc10bwrr0ogvj" path="res://assets/Effects/Leaves/leaves_44_delay-0.1s (12).png" id="13_htkvy"]
 [ext_resource type="Texture2D" uid="uid://dmm6anpiousik" path="res://assets/Effects/Leaves/leaves_48_delay-0.1s (13).png" id="14_bi5to"]
+[ext_resource type="Texture2D" uid="uid://boha7jusf0ekt" path="res://assets/Farm/FarmMap_House.png" id="14_l0jcl"]
 [ext_resource type="Texture2D" uid="uid://ftq0af4qela0" path="res://assets/Effects/Leaves/leaves_52_delay-0.1s (14).png" id="15_gfkuq"]
 [ext_resource type="Texture2D" uid="uid://bcn6sw0sfynwq" path="res://assets/Effects/Leaves/leaves_56_delay-0.1s (15).png" id="16_u26ar"]
 [ext_resource type="Texture2D" uid="uid://cnkmnoea0y125" path="res://assets/Effects/Leaves/leaves_60_delay-0.1s (16).png" id="17_oi3vk"]
@@ -49,7 +50,6 @@
 [ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="28_4t6sw"]
 [ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="29_pmr81"]
 [ext_resource type="Texture2D" uid="uid://cda7sgmr7d53o" path="res://assets/Farm/Mielie/Mielie_03.png" id="30_rmhjy"]
-[ext_resource type="Script" uid="uid://cxmft53f0l46o" path="res://Levels/openworld/Birds.gd" id="30_u26ar"]
 [ext_resource type="Texture2D" uid="uid://c14yw70ysnpwx" path="res://assets/Farm/Mielie/Mielie_04.png" id="31_f4d0c"]
 [ext_resource type="Texture2D" uid="uid://cjgqf8vrhescl" path="res://assets/Farm/Mielie/Mielie_05.png" id="32_mcune"]
 [ext_resource type="Texture2D" uid="uid://0l1t2a5l5d2h" path="res://assets/Farm/Mielie/Mielie_06.png" id="33_vom2k"]
@@ -58,7 +58,6 @@
 [ext_resource type="Texture2D" uid="uid://bfi6p4bo5o5al" path="res://assets/Farm/Cows/Cow_Eating_03.png" id="36_vom2k"]
 [ext_resource type="Texture2D" uid="uid://d00shxlglltj2" path="res://assets/Farm/Cows/Cow_Standing_01.png" id="40_nvegv"]
 [ext_resource type="Texture2D" uid="uid://dhoj3xvxlysef" path="res://assets/Farm/Cows/Cow_Standing_02.png" id="41_u851h"]
-[ext_resource type="Texture2D" uid="uid://boha7jusf0ekt" path="res://assets/Farm/FarmMap_House.png" id="42_htkvy"]
 [ext_resource type="Texture2D" uid="uid://w0tlaonb7pdl" path="res://assets/Farm/Cows/Cow_Standing_03.png" id="42_q3b8s"]
 [ext_resource type="Texture2D" uid="uid://wi20mtjpk4od" path="res://assets/Farm/River/FarmRiver01.png" id="61_cdtih"]
 [ext_resource type="Texture2D" uid="uid://nbe8b8r5m8hf" path="res://assets/Farm/River/FarmRiver02.png" id="62_htkvy"]
@@ -68,20 +67,12 @@
 [ext_resource type="Texture2D" uid="uid://46ey4xpes2kp" path="res://assets/Farm/River/FarmRiver04.png" id="64_gfkuq"]
 [ext_resource type="Texture2D" uid="uid://bfkv1pp7lu14e" path="res://assets/Farm/River/FarmRiver05.png" id="65_u26ar"]
 [ext_resource type="Texture2D" uid="uid://dny8j8n10tuy6" path="res://assets/Farm/River/FarmRiver06.png" id="66_oi3vk"]
-[ext_resource type="Texture2D" uid="uid://bn7psg0sa71xr" path="res://assets/Farm/Garden/flower_fence1.png" id="67_lvoov"]
 [ext_resource type="Texture2D" uid="uid://cycrm2fxdbl20" path="res://assets/Farm/River/FarmRiver07.png" id="67_vg46o"]
 [ext_resource type="Texture2D" uid="uid://u4xi2r0tsnvs" path="res://assets/Farm/River/FarmRiver08.png" id="68_2kaw3"]
-[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://Levels/openworld/Level_Select.gd" id="68_bi5to"]
-[ext_resource type="Texture2D" uid="uid://toi1baya7m15" path="res://assets/Farm/Garden/flower_fence2.png" id="68_r1e0c"]
-[ext_resource type="Texture2D" uid="uid://chuvltb7ivylv" path="res://assets/Farm/Garden/flower_fence3.png" id="69_ydehy"]
 [ext_resource type="Texture2D" uid="uid://bx416t0gq0vy4" path="res://assets/Farm/River/FarmRiver09.png" id="69_yriht"]
-[ext_resource type="Texture2D" uid="uid://ujb56ny06bly" path="res://assets/Farm/Garden/flower_fence4.png" id="70_fa23j"]
 [ext_resource type="Texture2D" uid="uid://4s14plqodcet" path="res://assets/Farm/River/FarmRiver10.png" id="70_sw8nl"]
-[ext_resource type="Texture2D" uid="uid://do7at34m8yd6g" path="res://assets/Farm/Garden/flower_fence5.png" id="71_k5c63"]
 [ext_resource type="Texture2D" uid="uid://gyem0pehmerl" path="res://assets/Farm/River/FarmRiver11.png" id="71_lvoov"]
-[ext_resource type="Texture2D" uid="uid://b82a4w5uv8nx5" path="res://assets/Farm/Garden/flower_fence6.png" id="72_xw1lu"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="73_htkvy"]
-[ext_resource type="AudioStream" uid="uid://tnvpcdl6f0ev" path="res://sounds/Open_World_Sounds/farm-rooster-63323.mp3" id="78_2kaw3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lvoov"]
 animations = [{
@@ -247,22 +238,19 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bi5to"]
-size = Vector2(128, 76)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bi5to"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qovtx"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("42_htkvy")
+"texture": ExtResource("26_pn4mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_swuhb")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfkuq"]
-size = Vector2(167, 119.75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_axulr"]
 animations = [{
@@ -283,9 +271,6 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3vk"]
-size = Vector2(111.75, 33)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ayt2f"]
 animations = [{
@@ -348,52 +333,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u26ar"]
-size = Vector2(293.5, 95.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vg46o"]
-size = Vector2(114, 56)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vg46o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("67_lvoov")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_r1e0c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69_ydehy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("70_fa23j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71_k5c63")
-}, {
-"duration": 1.0,
-"texture": ExtResource("72_xw1lu")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qovtx"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("26_pn4mh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_swuhb")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_nhv08"]
 animations = [{
 "frames": [{
@@ -421,7 +360,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_htkvy"]
-size = Vector2(260.25, 71.25)
+size = Vector2(278.5, 92.5)
 
 [node name="FarmMap" type="Node2D"]
 
@@ -437,128 +376,73 @@ autoplay = "default"
 frame_progress = 0.701616
 
 [node name="Birds" type="AnimatedSprite2D" parent="."]
-position = Vector2(113, 308)
+position = Vector2(137, 305)
 scale = Vector2(0.401639, 0.360132)
 sprite_frames = SubResource("SpriteFrames_4t6sw")
-autoplay = "default"
 frame_progress = 0.930413
-script = ExtResource("30_u26ar")
 
 [node name="Smoke" type="AnimatedSprite2D" parent="."]
-position = Vector2(794.22644, 268.74988)
-scale = Vector2(1.3333334, 3.57843)
+position = Vector2(758, 274)
+scale = Vector2(1.7549, 3.57843)
 sprite_frames = SubResource("SpriteFrames_goeqc")
 animation = &"Smoke"
 autoplay = "Smoke"
 
-[node name="Barn" type="Area2D" parent="."]
-script = ExtResource("68_bi5to")
-target_level = "res://levels/lvl1/BarnLevel/BarnLevel.tscn"
-progress_level = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Barn"]
+[node name="Barn" type="AnimatedSprite2D" parent="."]
 position = Vector2(1399, 656)
 scale = Vector2(0.389706, 0.389706)
 sprite_frames = SubResource("SpriteFrames_nvegv")
 autoplay = "default"
 frame_progress = 0.999259
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Barn"]
-position = Vector2(1313, 678)
-shape = SubResource("RectangleShape2D_bi5to")
+[node name="FarmMapHouse" type="Sprite2D" parent="."]
+position = Vector2(633, 655)
+scale = Vector2(0.363566, 0.363566)
+texture = ExtResource("14_l0jcl")
 
-[node name="House" type="Area2D" parent="."]
-script = ExtResource("68_bi5to")
-progress_level = 3
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="House"]
-position = Vector2(682.22644, 650.7499)
-scale = Vector2(0.355911, 0.355911)
-sprite_frames = SubResource("SpriteFrames_bi5to")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
-position = Vector2(673.22644, 652.7499)
-shape = SubResource("RectangleShape2D_gfkuq")
-
-[node name="Cows" type="Area2D" parent="."]
-script = ExtResource("68_bi5to")
-target_level = "res://levels/lvl1/CowLevel/Cow_Level.tscn"
-progress_level = 3
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cows"]
-position = Vector2(1003.97, 731.003)
-scale = Vector2(0.101509, 0.0850708)
-sprite_frames = SubResource("SpriteFrames_axulr")
-autoplay = "default"
-frame_progress = 0.789242
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cows"]
-position = Vector2(1031.13, 720.5)
-shape = SubResource("RectangleShape2D_oi3vk")
-
-[node name="Cow2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1088.13, 724.781)
-scale = Vector2(0.158488, 0.158488)
-sprite_frames = SubResource("SpriteFrames_ayt2f")
-autoplay = "default"
-
-[node name="Huts2" type="Sprite2D" parent="."]
-position = Vector2(72, 688)
-scale = Vector2(0.129849, 0.104282)
-texture = ExtResource("63_6wkvg")
-
-[node name="River" type="Area2D" parent="."]
-monitorable = false
-script = ExtResource("68_bi5to")
-target_level = "res://levels/lvl1/RiverLevel/Farm_River_Level.tscn"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="River"]
-position = Vector2(53, 841)
-scale = Vector2(0.406738, 0.420166)
-sprite_frames = SubResource("SpriteFrames_cdtih")
-autoplay = "default"
-frame_progress = 0.747943
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="River"]
-position = Vector2(147.25, 849.75)
-shape = SubResource("RectangleShape2D_u26ar")
-
-[node name="Bridge" type="Sprite2D" parent="."]
-position = Vector2(183, 734)
-scale = Vector2(0.116071, 0.116071)
-texture = ExtResource("62_kjeei")
-
-[node name="Flowers" type="Area2D" parent="."]
-script = ExtResource("68_bi5to")
-target_level = "res://levels/lvl1/GardenLevel/GardenLevel.tscn"
-progress_level = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flowers"]
-position = Vector2(446, 695)
-shape = SubResource("RectangleShape2D_vg46o")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Flowers"]
-position = Vector2(447, 708)
-scale = Vector2(0.11990743, 0.11990743)
-sprite_frames = SubResource("SpriteFrames_vg46o")
-autoplay = "default"
-frame_progress = 0.25429446
-
-[node name="Player" parent="." instance=ExtResource("73_htkvy")]
-position = Vector2(-237, 183)
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+[node name="Tractor" type="AnimatedSprite2D" parent="."]
 position = Vector2(1450, 804)
 scale = Vector2(0.197998, 0.197998)
 sprite_frames = SubResource("SpriteFrames_qovtx")
 autoplay = "default"
 frame_progress = 0.0652872
 
-[node name="Mielies" type="Area2D" parent="."]
-script = ExtResource("68_bi5to")
-target_level = "res://levels/lvl1/FarmTractor/FarmTractor.tscn"
+[node name="Cow1" type="AnimatedSprite2D" parent="."]
+position = Vector2(1003.97, 731.003)
+scale = Vector2(0.101509, 0.0850708)
+sprite_frames = SubResource("SpriteFrames_axulr")
+autoplay = "default"
+frame_progress = 0.789242
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mielies"]
+[node name="Cow2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1088.13, 724.781)
+scale = Vector2(0.158488, 0.158488)
+sprite_frames = SubResource("SpriteFrames_ayt2f")
+autoplay = "default"
+frame_progress = 0.494019
+
+[node name="Huts2" type="Sprite2D" parent="."]
+position = Vector2(72, 688)
+scale = Vector2(0.129849, 0.104282)
+texture = ExtResource("63_6wkvg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(53, 824.875)
+scale = Vector2(0.406738, 0.420166)
+sprite_frames = SubResource("SpriteFrames_cdtih")
+autoplay = "default"
+frame_progress = 0.747943
+
+[node name="Bridge" type="Sprite2D" parent="."]
+position = Vector2(183, 734)
+scale = Vector2(0.116071, 0.116071)
+texture = ExtResource("62_kjeei")
+
+[node name="Player" parent="." instance=ExtResource("73_htkvy")]
+
+[node name="Mielies" type="Area2D" parent="."]
+
+[node name="Mielie" type="AnimatedSprite2D" parent="Mielies"]
 position = Vector2(1226, 874)
 scale = Vector2(0.352539, 0.221191)
 sprite_frames = SubResource("SpriteFrames_nhv08")
@@ -566,12 +450,5 @@ autoplay = "default"
 frame_progress = 0.903062
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mielies"]
-position = Vector2(1215.13, 864.375)
+position = Vector2(1205.75, 854.25)
 shape = SubResource("RectangleShape2D_htkvy")
-
-[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("78_2kaw3")
-volume_db = -5.0
-autoplay = true
-
-[connection signal="child_exiting_tree" from="House/CollisionShape2D" to="Barn" method="_on_collision_shape_2d_child_exiting_tree"]

@@ -113,7 +113,7 @@ func move_animal(animal: Node2D, gate_opened_now: bool):
 
 	var tween = get_tree().create_tween()
 	tween.tween_property(animal, "position", target_pos, duration)
-	tween.tween_callback(func(): sprite.pause())
+	#tween.tween_callback(func(): sprite.pause())
 
 # --- Gate actions ---
 func action_openGate():

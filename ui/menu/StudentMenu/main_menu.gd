@@ -4,7 +4,6 @@ extends Control
 const STUDENT_SELECTION_PATH := "res://ui/menu/StudentScreens/student_selection.tscn"
 const NEWGAME_SELECTION_PATH := "res://Levels/openworld/FarmMap.tscn"
 
-var new_music = load("res://music/Bongi Eepy/Bongi Eepy (mastered).mp3")
 
 @onready var btn1: Button = $CenterContainer/Menu/BtnNewGame
 @onready var btn2: Button = $CenterContainer/Menu/BtnResume
@@ -36,4 +35,3 @@ func _on_new_game_pressed() -> void:
 	else:
 		Pause.toggle_pause()
 		get_tree().change_scene_to_file(NEWGAME_SELECTION_PATH)
-	MusicPlayer.play_stream(new_music, 2.5)
