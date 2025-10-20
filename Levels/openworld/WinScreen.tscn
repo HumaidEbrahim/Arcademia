@@ -1,29 +1,28 @@
-[gd_scene load_steps=27 format=3 uid="uid://ysnoknyjyvop"]
+[gd_scene load_steps=32 format=3 uid="uid://ysnoknyjyvop"]
 
-[ext_resource type="Texture2D" uid="uid://cir7ovpom7ygp" path="res://assets/Effects/Stars/star-Photoroom(1).png" id="1_dgxgy"]
-[ext_resource type="Texture2D" uid="uid://ip1khvaa4p3c" path="res://assets/Effects/Stars/star-Photoroom(2).png" id="2_52l10"]
-[ext_resource type="Texture2D" uid="uid://0pbu8pghbmag" path="res://assets/Effects/Stars/star-Photoroom(3).png" id="3_x866s"]
-[ext_resource type="Texture2D" uid="uid://dqtba5ybvhlsk" path="res://assets/Effects/Stars/star-Photoroom(4).png" id="4_dim3i"]
-[ext_resource type="Texture2D" uid="uid://c2wf58xnf6bw8" path="res://assets/Effects/Stars/star-Photoroom(5).png" id="5_rchh6"]
-[ext_resource type="Texture2D" uid="uid://cbignx26j4c5d" path="res://assets/Effects/Stars/star-Photoroom(6).png" id="6_g1pbk"]
-[ext_resource type="Texture2D" uid="uid://cva70tcy3sfyk" path="res://assets/Effects/Stars/star-Photoroom(7).png" id="7_tohi7"]
-[ext_resource type="Texture2D" uid="uid://jh1pk6q4sswa" path="res://assets/Effects/Stars/star-Photoroom(8).png" id="8_y65sg"]
-[ext_resource type="Texture2D" uid="uid://b7o2eew05pbht" path="res://assets/Effects/Stars/star-Photoroom(9).png" id="9_tlht2"]
-[ext_resource type="Texture2D" uid="uid://v3qlssimhpln" path="res://assets/Effects/Stars/star-Photoroom.png" id="10_hmn01"]
-[ext_resource type="Texture2D" uid="uid://baltl1x5dke5i" path="res://assets/Effects/Stars/star 3(1).png" id="11_qkskq"]
-[ext_resource type="Texture2D" uid="uid://ckhwi1dumuvo3" path="res://assets/Effects/Stars/star 3(2).png" id="12_7xqp4"]
-[ext_resource type="Texture2D" uid="uid://bjph0agnal643" path="res://assets/Effects/Stars/star 3(3).png" id="13_d10jv"]
-[ext_resource type="Texture2D" uid="uid://d4igfl7hqci3r" path="res://assets/Effects/Stars/star 3(4).png" id="14_4ekdk"]
-[ext_resource type="Texture2D" uid="uid://bwsmq35vf70uq" path="res://assets/Effects/Stars/star 3(5).png" id="15_dcx3a"]
-[ext_resource type="Texture2D" uid="uid://bxb0aclx7ju4g" path="res://assets/Effects/Stars/star 3(6).png" id="16_lahds"]
-[ext_resource type="Texture2D" uid="uid://crhoed2np5eeh" path="res://assets/Effects/Stars/star 3.png" id="17_k7yye"]
-[ext_resource type="Texture2D" uid="uid://suk0thhulv5q" path="res://assets/Effects/Stars/star 2(1).png" id="18_6bijs"]
-[ext_resource type="Texture2D" uid="uid://c1wlnyn5ws8l5" path="res://assets/Effects/Stars/star 2(2).png" id="19_y11qv"]
-[ext_resource type="Texture2D" uid="uid://cih45to8eyk5u" path="res://assets/Effects/Stars/star 2(3).png" id="20_wecvf"]
-[ext_resource type="Texture2D" uid="uid://d17g151a2nokd" path="res://assets/Effects/Stars/star 2(4).png" id="21_perc1"]
-[ext_resource type="Texture2D" uid="uid://b1x5ob08flsv1" path="res://assets/Effects/Stars/star 2.png" id="22_tbhou"]
+[ext_resource type="Texture2D" uid="uid://blxavwjfry24p" path="res://assets/Effects/Stars/star-Photoroom(1).png" id="1_dgxgy"]
+[ext_resource type="Texture2D" uid="uid://ucdju3h8icjh" path="res://assets/Effects/Stars/star-Photoroom(2).png" id="2_52l10"]
+[ext_resource type="Texture2D" uid="uid://bpxgrb4t0n8x6" path="res://assets/Effects/Stars/star-Photoroom(3).png" id="3_x866s"]
+[ext_resource type="Texture2D" uid="uid://jpwdgl3t155b" path="res://assets/Effects/Stars/star-Photoroom(4).png" id="4_dim3i"]
+[ext_resource type="Texture2D" uid="uid://cgbcifhgk58vy" path="res://assets/Effects/Stars/star-Photoroom(5).png" id="5_rchh6"]
+[ext_resource type="Texture2D" uid="uid://cdf648gffi0w3" path="res://assets/Effects/Stars/star-Photoroom(6).png" id="6_g1pbk"]
+[ext_resource type="Texture2D" uid="uid://dn8dwny2pg61y" path="res://assets/Effects/Stars/star-Photoroom(7).png" id="7_tohi7"]
+[ext_resource type="Texture2D" uid="uid://dk88w0fdxp566" path="res://assets/Effects/Stars/star-Photoroom(8).png" id="8_y65sg"]
+[ext_resource type="Texture2D" uid="uid://cwigpmy0h4ngv" path="res://assets/Effects/Stars/star-Photoroom(9).png" id="9_tlht2"]
+[ext_resource type="Texture2D" uid="uid://cf3650p5gaeyw" path="res://assets/Effects/Stars/star-Photoroom.png" id="10_hmn01"]
+[ext_resource type="Texture2D" uid="uid://bj1dtxxu53ki0" path="res://assets/Effects/Stars/star 3(1).png" id="11_qkskq"]
+[ext_resource type="Texture2D" uid="uid://dkptdcj5gawvq" path="res://assets/Effects/Stars/star 3(2).png" id="12_7xqp4"]
+[ext_resource type="Texture2D" uid="uid://b70ha4mnm6bt6" path="res://assets/Effects/Stars/star 3(3).png" id="13_d10jv"]
+[ext_resource type="Texture2D" uid="uid://blgteoj7nofjg" path="res://assets/Effects/Stars/star 3(4).png" id="14_4ekdk"]
+[ext_resource type="Texture2D" uid="uid://cium0y4kcv8ob" path="res://assets/Effects/Stars/star 3(5).png" id="15_dcx3a"]
+[ext_resource type="Texture2D" uid="uid://cbtg2244u3jy8" path="res://assets/Effects/Stars/star 3(6).png" id="16_lahds"]
+[ext_resource type="Texture2D" uid="uid://chunk3logu1c" path="res://assets/Effects/Stars/star 3.png" id="17_k7yye"]
+[ext_resource type="Texture2D" uid="uid://dqwcr6yiih6ip" path="res://assets/Effects/Stars/star 2(1).png" id="18_6bijs"]
+[ext_resource type="Texture2D" uid="uid://uhnkfp4oxk1d" path="res://assets/Effects/Stars/star 2(2).png" id="19_y11qv"]
+[ext_resource type="Texture2D" uid="uid://bjqu4yihujd8n" path="res://assets/Effects/Stars/star 2(3).png" id="20_wecvf"]
+[ext_resource type="Texture2D" uid="uid://bw67eeec436n7" path="res://assets/Effects/Stars/star 2(4).png" id="21_perc1"]
+[ext_resource type="Texture2D" uid="uid://khqt6xfc0xtt" path="res://assets/Effects/Stars/star 2.png" id="22_tbhou"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="23_52l10"]
-[ext_resource type="Texture2D" uid="uid://dca73njn43dkn" path="res://assets/IngeUI/UIIcons/redo.png" id="24_x866s"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x866s"]
 bg_color = Color(0.956863, 0.784314, 0.258824, 1)
@@ -122,6 +121,84 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dim3i"]
+bg_color = Color(0.740949, 0.501192, 0.278082, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tohi7"]
+bg_color = Color(1, 0.968627, 0.890196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1pbk"]
+bg_color = Color(0.807033, 0.567642, 0.349084, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.7176471)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rchh6"]
+bg_color = Color(0.298039, 0.686275, 0.313726, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.180392, 0.435294, 0.207843, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y65sg"]
+bg_color = Color(0.227451, 0.580392, 0.25098, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.180392, 0.435294, 0.207843, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlht2"]
+bg_color = Color(0.383203, 0.825988, 0.396028, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.180392, 0.435294, 0.207843, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_size = 10
+
 [node name="WinScreen" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -138,62 +215,92 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -348.0
-offset_top = -375.0
-offset_right = 365.0
-offset_bottom = 405.0
+offset_left = -356.5
+offset_top = -390.0
+offset_right = 356.5
+offset_bottom = 390.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_x866s")
 
 [node name="Stars" type="AnimatedSprite2D" parent="ColorRect"]
-position = Vector2(839.00006, 252.00002)
+position = Vector2(806, 252)
 scale = Vector2(0.48333332, 0.43333337)
 sprite_frames = SubResource("SpriteFrames_7dm2v")
 animation = &"threeStar"
 
-[node name="Praise" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 486.0
-offset_top = 367.0
-offset_right = 1153.0
-offset_bottom = 498.0
+[node name="Btn_TryAgain" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = -174.0
+offset_right = 707.0
+offset_bottom = -102.0
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("23_52l10")
-theme_override_font_sizes/font_size = 72
-text = "Good Job!"
-horizontal_alignment = 1
-autowrap_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dim3i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tohi7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g1pbk")
+text = "Try Again"
+
+[node name="Btn_Continue" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -687.0
+offset_top = -174.0
+offset_right = -489.5
+offset_bottom = -101.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("23_52l10")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_rchh6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_y65sg")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tlht2")
+text = "Continue"
 
 [node name="Feedback" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 492.0
-offset_top = 514.0
-offset_right = 1145.0
-offset_bottom = 589.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -326.5
+offset_top = 5.5
+offset_right = 326.5
+offset_bottom = 80.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("23_52l10")
 theme_override_font_sizes/font_size = 53
 text = "You dumb"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Btn_TryAgain" type="Button" parent="ColorRect"]
-layout_mode = 0
-offset_left = 561.0
-offset_top = 749.0
-offset_right = 738.0
-offset_bottom = 821.0
+[node name="Praise" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -333.5
+offset_top = -89.5
+offset_right = 333.5
+offset_bottom = 41.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("23_52l10")
-theme_override_font_sizes/font_size = 32
-theme_override_icons/icon = ExtResource("24_x866s")
-text = "Try Again"
-
-[node name="Btn_Continue" type="Button" parent="ColorRect"]
-layout_mode = 0
-offset_left = 891.0
-offset_top = 748.0
-offset_right = 1065.0
-offset_bottom = 821.0
-theme_override_fonts/font = ExtResource("23_52l10")
-theme_override_font_sizes/font_size = 32
-text = "Continue"
+theme_override_font_sizes/font_size = 72
+text = "Good Job!"
+horizontal_alignment = 1
+autowrap_mode = 2
