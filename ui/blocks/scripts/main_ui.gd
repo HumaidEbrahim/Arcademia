@@ -105,6 +105,9 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("btn_4"):
 		pass
 
+	if Input.is_action_just_pressed("btn_clear"):
+		clear_button.emit_signal("pressed")
+
 func _on_run_pressed() -> void:
 	# FIX: This function now correctly handles the two-stage run/reset logic
 	# while calling the new, robust execute_commands function.
