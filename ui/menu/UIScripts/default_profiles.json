@@ -51,17 +51,35 @@
 			"name": "AAA",
 			"progress": {
 				"levels": {
+					"BarnLevel": {
+						"completed": 1.0,
+						"completed_at": 1761008445.265,
+						"stars": 2.0,
+						"time_taken": 25.9558383030324
+					},
 					"FarmRiverLevel": {
 						"completed": 1.0,
 						"completed_at": 1761005770.924,
 						"stars": 3.0,
 						"time_taken": 15.5298690909087
+					},
+					"GardenLevel": {
+						"completed": 1.0,
+						"completed_at": 1761007285.244,
+						"stars": 3.0,
+						"time_taken": 35.7076871818224
+					},
+					"TractorLevel": {
+						"completed": 1.0,
+						"completed_at": 1761006751.689,
+						"stars": 3.0,
+						"time_taken": 29.7288217575789
 					}
 				},
-				"total_stars": 3.0,
-				"total_time": 15.5298690909087
+				"total_stars": 11.0,
+				"total_time": 106.922216333342
 			},
-			"updated_at": 1761005770.924
+			"updated_at": 1761008445.265
 		},
 		{
 			"avatar": 1.0,
@@ -82,12 +100,41 @@
 			"name": "CCC",
 			"progress": {
 				"levels": {
-
+					"BarnLevel": {
+						"completed": 1,
+						"completed_at": 1761008696.351,
+						"stars": 2,
+						"time_taken": 101.140905151496
+					},
+					"CowLevel": {
+						"completed": 1,
+						"completed_at": 1761008812.514,
+						"stars": 3,
+						"time_taken": 37.558919060609
+					},
+					"FarmRiverLevel": {
+						"completed": 1,
+						"completed_at": 1761008537.341,
+						"stars": 3,
+						"time_taken": 14.5139076969693
+					},
+					"GardenLevel": {
+						"completed": 1,
+						"completed_at": 1761008749.844,
+						"stars": 3,
+						"time_taken": 48.8216680000021
+					},
+					"TractorLevel": {
+						"completed": 1,
+						"completed_at": 1761008579.189,
+						"stars": 3,
+						"time_taken": 24.1210888787896
+					}
 				},
-				"total_stars": 0.0,
-				"total_time": 0.0
+				"total_stars": 14,
+				"total_time": 226.156488787866
 			},
-			"updated_at": ""
+			"updated_at": 1761008812.514
 		}
 	]
 }

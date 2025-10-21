@@ -17,14 +17,13 @@ func _process(delta: float) -> void:
 		time_elapsed += delta
 
 func _ready() -> void:
-	btn_continue.grab_focus()
-	btn_retry.grab_focus()
 	var player = get_tree().root.find_child("Player", true, false)
 	player.connect("levelWon", Callable(self, "on_win"))
 	
 	btn_continue.pressed.connect(func():get_tree().change_scene_to_file("res://levels/openworld/FarmMap.tscn"))
 	btn_retry.pressed.connect(on_try)
-	
+	btn_continue.grab_focus()
+	btn_retry.grab_focus()
 
 func on_win(error) -> void:
 	running = false

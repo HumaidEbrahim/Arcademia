@@ -23,6 +23,10 @@ Utils="*res://levels/openworld/Utils.gd"
 MusicPlayer="*res://MusicPlayer.tscn"
 Pause="*res://ui/menu/StudentMenu/Pause.gd"
 
+[debug]
+
+settings/stdout/verbose_stdout=true
+
 [display]
 
 window/size/viewport_width=1600

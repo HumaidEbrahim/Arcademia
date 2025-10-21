@@ -267,12 +267,27 @@ func resetPlayerScene() -> void:
 func rebuildScriptQue() -> void:
 	var scriptPanel = $HBoxContainer/ScriptPanel/ExecQueContainer/ScrollContainer/VBoxContainer
 	
-	#Clear script panel manually - avoids duplication event
+	# Clear script panel
 	for child in scriptPanel.get_children():
 		child.queue_free()
-		
-	for saved in Global.populatedExecuteQue:
-		scriptPanel.add_child(saved)
+	
+	await get_tree().process_frame
+	
+	# Recreate the entire hierarchy properly
+	for saved_container in Global.populatedExecuteQue:
+		if saved_container is MarginContainer:
+			# Create new margin container
+			var new_margin = MarginContainer.new()
+			var indent_pixels = saved_container.get_theme_constant("margin_left")
+			new_margin.add_theme_constant_override("margin_left", indent_pixels)
+			
+			# Duplicate the button child
+			if saved_container.get_child_count() > 0:
+				var original_button = saved_container.get_child(0)
+				var new_button = original_button.duplicate()
+				new_margin.add_child(new_button)
+				
+			scriptPanel.add_child(new_margin)
 
 #Add children of ScriptPanel container to execution array
 func populateActionsArray() -> void:
