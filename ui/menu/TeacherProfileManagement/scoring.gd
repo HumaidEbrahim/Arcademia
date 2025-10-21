@@ -100,7 +100,7 @@ func _populate_scoring(student_name: String) -> void:
 
 	# Per-level (left card)
 	_set_level_row(levels, "FarmRiverLevel",   LblRiverStar,   LblRiverTime)
-	_set_level_row(levels, "FarmTractor", LblTractorStar, LblTractorTime)
+	_set_level_row(levels, "TractorLevel", LblTractorStar, LblTractorTime)
 	_set_level_row(levels, "BarnLevel",    LblBarnStar,    LblBarnTime)
 	_set_level_row(levels, "CowLevel",     LblCowStar,     LblCowTime)
 	_set_level_row(levels, "GardenLevel",  LblFlowerStar,  LblFlowerTime) # Flower row
