@@ -59,9 +59,9 @@
 					},
 					"FarmRiverLevel": {
 						"completed": 1.0,
-						"completed_at": 1761009869.187,
-						"stars": 3.0,
-						"time_taken": 18.5352243030305
+						"completed_at": 1761059796.08,
+						"stars": 2.0,
+						"time_taken": 8.31329266666666
 					},
 					"GardenLevel": {
 						"completed": 1.0,
@@ -76,10 +76,10 @@
 						"time_taken": 31.4954545454582
 					}
 				},
-				"total_stars": 11.0,
-				"total_time": 94.0223983636423
+				"total_stars": 10.0,
+				"total_time": 83.8004667272786
 			},
-			"updated_at": 1761010006.114
+			"updated_at": 1761059796.08
 		},
 		{
 			"avatar": 1.0,
