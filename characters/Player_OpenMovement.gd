@@ -42,7 +42,10 @@ func _ready():
 		idle = "Boy_Idle"
 		
 	walk_timer.timeout.connect(_on_walk_timer_timeout)
-		
+
+func _input(event):
+	if event.is_action_pressed("btn_eat"):
+		print("magwinya")
 
 func _physics_process(delta: float) -> void:
 	var input_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
