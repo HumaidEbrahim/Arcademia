@@ -11,7 +11,7 @@ func _input(event):
 	if event.is_action_pressed("btn_pause"):
 		var scene = get_tree().current_scene.name
 		if scene in scenes:
-			toggle_pause()
+			get_tree().change_scene_to_file(pause_scene_path)
 
 func toggle_pause():
 	Global.GamePaused = !Global.GamePaused

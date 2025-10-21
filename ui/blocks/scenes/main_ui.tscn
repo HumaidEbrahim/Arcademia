@@ -50,6 +50,7 @@ texture = ExtResource("15_7x6s0")
 texture = SubResource("CompressedTexture2D_btn54")
 
 [node name="MainUI" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
