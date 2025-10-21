@@ -99,8 +99,8 @@ func _populate_scoring(student_name: String) -> void:
 		LblTotalTime.text = _fmt_time(float(progress.get("total_time", 0.0)))
 
 	# Per-level (left card)
-	_set_level_row(levels, "RiverLevel",   LblRiverStar,   LblRiverTime)
-	_set_level_row(levels, "TractorLevel", LblTractorStar, LblTractorTime)
+	_set_level_row(levels, "FarmRiverLevel",   LblRiverStar,   LblRiverTime)
+	_set_level_row(levels, "FarmTractor", LblTractorStar, LblTractorTime)
 	_set_level_row(levels, "BarnLevel",    LblBarnStar,    LblBarnTime)
 	_set_level_row(levels, "CowLevel",     LblCowStar,     LblCowTime)
 	_set_level_row(levels, "GardenLevel",  LblFlowerStar,  LblFlowerTime) # Flower row
