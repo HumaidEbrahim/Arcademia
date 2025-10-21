@@ -6,8 +6,10 @@ var top_y = bottom_y - 170;
 @export var right_bound := 1300;
 @export var bottom_bound := 900;
 @export var top_bound := bottom_bound - 170;
-var min_scale = 0.20;
-var max_scale = 0.5;
+@export var min_scale = 0.20;
+@export var max_scale = 0.5;
+@export var x_speed = 150.0
+@export var min_speed = 50.0
 var anim_sprite : AnimatedSprite2D;
 var last_direction := Vector2();
 var depth :float = 0;
@@ -52,8 +54,8 @@ func _physics_process(delta: float) -> void:
 	scale_factor = lerp(max_scale, min_scale, depth)
 	scale = Vector2.ONE * scale_factor
 	# Speeds
-	var x_speed = 150.0
-	var y_speed = lerp(150.0, 50.0, depth)
+
+	var y_speed = lerp(x_speed, min_speed, depth)
 	# Apply movement
 	velocity = Vector2(direction.x * x_speed, direction.y * y_speed)
 	position += velocity * delta
