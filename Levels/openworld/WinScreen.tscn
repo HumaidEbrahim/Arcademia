@@ -1,27 +1,27 @@
 [gd_scene load_steps=32 format=3 uid="uid://ysnoknyjyvop"]
 
-[ext_resource type="Texture2D" uid="uid://blxavwjfry24p" path="res://assets/Effects/Stars/star-Photoroom(1).png" id="1_dgxgy"]
-[ext_resource type="Texture2D" uid="uid://ucdju3h8icjh" path="res://assets/Effects/Stars/star-Photoroom(2).png" id="2_52l10"]
-[ext_resource type="Texture2D" uid="uid://bpxgrb4t0n8x6" path="res://assets/Effects/Stars/star-Photoroom(3).png" id="3_x866s"]
-[ext_resource type="Texture2D" uid="uid://jpwdgl3t155b" path="res://assets/Effects/Stars/star-Photoroom(4).png" id="4_dim3i"]
-[ext_resource type="Texture2D" uid="uid://cgbcifhgk58vy" path="res://assets/Effects/Stars/star-Photoroom(5).png" id="5_rchh6"]
-[ext_resource type="Texture2D" uid="uid://cdf648gffi0w3" path="res://assets/Effects/Stars/star-Photoroom(6).png" id="6_g1pbk"]
-[ext_resource type="Texture2D" uid="uid://dn8dwny2pg61y" path="res://assets/Effects/Stars/star-Photoroom(7).png" id="7_tohi7"]
-[ext_resource type="Texture2D" uid="uid://dk88w0fdxp566" path="res://assets/Effects/Stars/star-Photoroom(8).png" id="8_y65sg"]
-[ext_resource type="Texture2D" uid="uid://cwigpmy0h4ngv" path="res://assets/Effects/Stars/star-Photoroom(9).png" id="9_tlht2"]
-[ext_resource type="Texture2D" uid="uid://cf3650p5gaeyw" path="res://assets/Effects/Stars/star-Photoroom.png" id="10_hmn01"]
-[ext_resource type="Texture2D" uid="uid://bj1dtxxu53ki0" path="res://assets/Effects/Stars/star 3(1).png" id="11_qkskq"]
-[ext_resource type="Texture2D" uid="uid://dkptdcj5gawvq" path="res://assets/Effects/Stars/star 3(2).png" id="12_7xqp4"]
-[ext_resource type="Texture2D" uid="uid://b70ha4mnm6bt6" path="res://assets/Effects/Stars/star 3(3).png" id="13_d10jv"]
-[ext_resource type="Texture2D" uid="uid://blgteoj7nofjg" path="res://assets/Effects/Stars/star 3(4).png" id="14_4ekdk"]
-[ext_resource type="Texture2D" uid="uid://cium0y4kcv8ob" path="res://assets/Effects/Stars/star 3(5).png" id="15_dcx3a"]
-[ext_resource type="Texture2D" uid="uid://cbtg2244u3jy8" path="res://assets/Effects/Stars/star 3(6).png" id="16_lahds"]
-[ext_resource type="Texture2D" uid="uid://chunk3logu1c" path="res://assets/Effects/Stars/star 3.png" id="17_k7yye"]
-[ext_resource type="Texture2D" uid="uid://dqwcr6yiih6ip" path="res://assets/Effects/Stars/star 2(1).png" id="18_6bijs"]
-[ext_resource type="Texture2D" uid="uid://uhnkfp4oxk1d" path="res://assets/Effects/Stars/star 2(2).png" id="19_y11qv"]
-[ext_resource type="Texture2D" uid="uid://bjqu4yihujd8n" path="res://assets/Effects/Stars/star 2(3).png" id="20_wecvf"]
-[ext_resource type="Texture2D" uid="uid://bw67eeec436n7" path="res://assets/Effects/Stars/star 2(4).png" id="21_perc1"]
-[ext_resource type="Texture2D" uid="uid://khqt6xfc0xtt" path="res://assets/Effects/Stars/star 2.png" id="22_tbhou"]
+[ext_resource type="Texture2D" uid="uid://bx2idfpkbeamt" path="res://assets/Effects/Stars/star-Photoroom(1).png" id="1_dgxgy"]
+[ext_resource type="Texture2D" uid="uid://dgranq2n1t1to" path="res://assets/Effects/Stars/star-Photoroom(2).png" id="2_52l10"]
+[ext_resource type="Texture2D" uid="uid://cly38qbdqn7n" path="res://assets/Effects/Stars/star-Photoroom(3).png" id="3_x866s"]
+[ext_resource type="Texture2D" uid="uid://bh63vscvqjux2" path="res://assets/Effects/Stars/star-Photoroom(4).png" id="4_dim3i"]
+[ext_resource type="Texture2D" uid="uid://b1kjqi1vo1twv" path="res://assets/Effects/Stars/star-Photoroom(5).png" id="5_rchh6"]
+[ext_resource type="Texture2D" uid="uid://c14bbhax701it" path="res://assets/Effects/Stars/star-Photoroom(6).png" id="6_g1pbk"]
+[ext_resource type="Texture2D" uid="uid://c8amtddqoabku" path="res://assets/Effects/Stars/star-Photoroom(7).png" id="7_tohi7"]
+[ext_resource type="Texture2D" uid="uid://m350obentmg6" path="res://assets/Effects/Stars/star-Photoroom(8).png" id="8_y65sg"]
+[ext_resource type="Texture2D" uid="uid://sjnivdj0upb8" path="res://assets/Effects/Stars/star-Photoroom(9).png" id="9_tlht2"]
+[ext_resource type="Texture2D" uid="uid://nliiw62ka2nu" path="res://assets/Effects/Stars/star-Photoroom.png" id="10_hmn01"]
+[ext_resource type="Texture2D" uid="uid://d101n5hvom7ee" path="res://assets/Effects/Stars/star 3(1).png" id="11_qkskq"]
+[ext_resource type="Texture2D" uid="uid://ck12mn3ayb56l" path="res://assets/Effects/Stars/star 3(2).png" id="12_7xqp4"]
+[ext_resource type="Texture2D" uid="uid://dtfnn3hej0h5p" path="res://assets/Effects/Stars/star 3(3).png" id="13_d10jv"]
+[ext_resource type="Texture2D" uid="uid://b6c15mc88y04v" path="res://assets/Effects/Stars/star 3(4).png" id="14_4ekdk"]
+[ext_resource type="Texture2D" uid="uid://crsixfsqjki6l" path="res://assets/Effects/Stars/star 3(5).png" id="15_dcx3a"]
+[ext_resource type="Texture2D" uid="uid://chsjimvcrt5yp" path="res://assets/Effects/Stars/star 3(6).png" id="16_lahds"]
+[ext_resource type="Texture2D" uid="uid://x1pm5t00op67" path="res://assets/Effects/Stars/star 3.png" id="17_k7yye"]
+[ext_resource type="Texture2D" uid="uid://htmrhnujwhcm" path="res://assets/Effects/Stars/star 2(1).png" id="18_6bijs"]
+[ext_resource type="Texture2D" uid="uid://dl252bfsabx0s" path="res://assets/Effects/Stars/star 2(2).png" id="19_y11qv"]
+[ext_resource type="Texture2D" uid="uid://dfej861lxvtvm" path="res://assets/Effects/Stars/star 2(3).png" id="20_wecvf"]
+[ext_resource type="Texture2D" uid="uid://cddg5cc3t3x4i" path="res://assets/Effects/Stars/star 2(4).png" id="21_perc1"]
+[ext_resource type="Texture2D" uid="uid://cxdimoci6oro5" path="res://assets/Effects/Stars/star 2.png" id="22_tbhou"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="23_52l10"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x866s"]
@@ -240,6 +240,12 @@ offset_top = -174.0
 offset_right = 707.0
 offset_bottom = -102.0
 grow_vertical = 0
+focus_neighbor_left = NodePath("../Btn_Continue")
+focus_neighbor_top = NodePath("../Btn_Continue")
+focus_neighbor_right = NodePath("../Btn_Continue")
+focus_neighbor_bottom = NodePath("../Btn_Continue")
+focus_next = NodePath("../Btn_Continue")
+focus_previous = NodePath("../Btn_Continue")
 theme_override_fonts/font = ExtResource("23_52l10")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_dim3i")
@@ -260,6 +266,12 @@ offset_right = -489.5
 offset_bottom = -101.0
 grow_horizontal = 0
 grow_vertical = 0
+focus_neighbor_left = NodePath("../Btn_TryAgain")
+focus_neighbor_top = NodePath("../Btn_TryAgain")
+focus_neighbor_right = NodePath("../Btn_TryAgain")
+focus_neighbor_bottom = NodePath("../Btn_TryAgain")
+focus_next = NodePath("../Btn_TryAgain")
+focus_previous = NodePath("../Btn_TryAgain")
 theme_override_fonts/font = ExtResource("23_52l10")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_rchh6")

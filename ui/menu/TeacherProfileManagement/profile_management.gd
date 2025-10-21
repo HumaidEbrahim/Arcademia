@@ -89,29 +89,37 @@ func _focus_first_button() -> void:
 		scroll.ensure_control_visible(btns[0])
 
 func _move_focus(step: int) -> void:
-		var btns := _list_buttons()
-		if btns.is_empty(): return
-		if(back.has_focus()):
+	var btns := _list_buttons()
+	if btns.is_empty():
+		return
+	if(back.has_focus()):
 			btns[0].grab_focus();
 			scroll.ensure_control_visible(btns[0])
+			back.focus_mode = Control.FOCUS_NONE
 			return
-		var current := get_viewport().gui_get_focus_owner()
-		var idx := btns.find(current)
-		if idx == -1: idx = 0
-		var next_idx := idx + step
-		back.focus_mode = FOCUS_NONE
-		if next_idx >= btns.size():
-			back.focus_mode = FOCUS_ALL
-			back.grab_focus();
-			return
-		elif next_idx < 0:
-			back.focus_mode = FOCUS_ALL;
-			back.grab_focus()
-			scroll.ensure_control_visible(btns[btns.size() - 1])
-			return
-		back.focus_mode = Control.FOCUS_NONE
-		btns[next_idx].grab_focus()
-		scroll.ensure_control_visible(btns[next_idx])
+	var current := get_viewport().gui_get_focus_owner()
+
+	# If focus is on Back and we're going down, stay on Back; if going up, go to last list item
+
+	# We're inside the list; move within list first
+	var idx := btns.find(current)
+	if idx == -1:
+		idx = 0
+	var next_idx := idx + step
+
+	# If moving past last item -> go to Back; before first -> stay at first (or wrap to Back if you prefer)
+	if next_idx >= btns.size():
+		back.focus_mode = FOCUS_ALL;
+		back.grab_focus()
+		return
+	elif next_idx < 0:
+		back.focus_mode = FOCUS_ALL;
+		back.grab_focus()
+		scroll.ensure_control_visible(btns[btns.size() - 1])
+		return
+	back.focus_mode = Control.FOCUS_NONE
+	btns[next_idx].grab_focus()
+	scroll.ensure_control_visible(btns[next_idx])
 
 # =======================
 # STYLES / HELPERS

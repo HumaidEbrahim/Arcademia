@@ -2,165 +2,92 @@
 	"active_student": "",
 	"students": [
 		{
-			"avatar": 0.0,
-			"created_at": 1759999004.77,
-			"name": "HELP",
-			"progress": {
-				"levels": {
-					"TractorLevel": {
-						"completed_at": 1760479695.945,
-						"stars": 3.0,
-						"time_taken": 36.4386916666706
-					}
-				},
-				"total_stars": 3.0,
-				"total_time": 36.4386916666706
-			},
-			"updated_at": 1760479695.945
-		},
-		{
 			"avatar": 1.0,
-			"created_at": 1760470343.786,
-			"name": "WYZ",
+			"created_at": 1761005069.42,
+			"name": "TGIRL",
 			"progress": {
 				"levels": {
 
 				},
 				"total_stars": 0.0,
 				"total_time": 0.0
-			},
-			"updated_at": 1760470351.189
-		},
-		{
-			"avatar": 1.0,
-			"created_at": 1760472960.893,
-			"name": "WWW",
-			"progress": {
-				"levels": {
-
-				},
-				"total_stars": 0.0,
-				"total_time": 0.0
-			},
-			"updated_at": 1760472962.783
-		},
-		{
-			"avatar": 0.0,
-			"created_at": 1760491049.298,
-			"name": "ECC",
-			"progress": {
-				"levels": {
-					"GardenLevel": {
-						"completed_at": 1760605527.837,
-						"stars": 3.0,
-						"time_taken": 37.6733556666658
-					}
-				},
-				"total_stars": 3.0,
-				"total_time": 37.6733556666658
-			},
-			"updated_at": 1760995915.644
-		},
-		{
-			"avatar": 1.0,
-			"created_at": 1760491617.804,
-			"name": "CCE",
-			"progress": {
-				"levels": {
-					"CowLevel": {
-						"completed_at": 1760961294.319,
-						"stars": 3.0,
-						"time_taken": 20.8083286666668
-					}
-				},
-				"total_stars": 3.0,
-				"total_time": 20.8083286666668
 			},
 			"updated_at": ""
 		},
 		{
 			"avatar": 0.0,
-			"created_at": 1760991086.598,
-			"name": "AZZ",
+			"created_at": 1761005088.727,
+			"name": "TBOY",
 			"progress": {
 				"levels": {
-					"BarnLevel": {
-						"completed": 1.0,
-						"completed_at": 1760991330.434,
-						"stars": 2.0,
-						"time_taken": 22.0421480909103
-					},
 					"FarmRiverLevel": {
 						"completed": 1.0,
-						"completed_at": 1761002914.243,
+						"completed_at": 1761005481.807,
 						"stars": 3.0,
-						"time_taken": 19.3461944545459
-					},
-					"TractorLevel": {
-						"completed": 1.0,
-						"completed_at": 1761002950.463,
-						"stars": 3.0,
-						"time_taken": 24.7175623636381
+						"time_taken": 20.3847571515159
 					}
 				},
-				"total_stars": 8.0,
-				"total_time": 66.1059049090943
+				"total_stars": 3.0,
+				"total_time": 20.3847571515159
 			},
-			"updated_at": 1761002950.463
+			"updated_at": 1761005481.807
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1761005109.53,
+			"name": "DEV",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": ""
 		},
 		{
 			"avatar": 1.0,
-			"created_at": 1760991882.289,
-			"name": "YXX",
+			"created_at": 1761005225.748,
+			"name": "AAA",
 			"progress": {
 				"levels": {
-					"BarnLevel": {
+					"FarmRiverLevel": {
 						"completed": 1.0,
-						"completed_at": 1760992090.479,
-						"stars": 2.0,
-						"time_taken": 38.1479487878803
+						"completed_at": 1761005770.924,
+						"stars": 3.0,
+						"time_taken": 15.5298690909087
 					}
 				},
-				"total_stars": 2.0,
-				"total_time": 38.1479487878803
+				"total_stars": 3.0,
+				"total_time": 15.5298690909087
 			},
-			"updated_at": 1760992090.479
+			"updated_at": 1761005770.924
 		},
 		{
 			"avatar": 1.0,
-			"created_at": 1760992552.827,
-			"name": "EKED",
+			"created_at": 1761005229.418,
+			"name": "BBB",
 			"progress": {
 				"levels": {
-					"BarnLevel": {
-						"completed": 1.0,
-						"completed_at": 1760994802.031,
-						"stars": 2.0,
-						"time_taken": 15.6200908787875
-					},
-					"CowLevel": {
-						"completed": 1.0,
-						"completed_at": 1760994602.631,
-						"stars": 3.0,
-						"time_taken": 42.8287623636374
-					},
-					"GardenLevel": {
-						"completed": 1.0,
-						"completed_at": 1760994251.393,
-						"stars": 3.0,
-						"time_taken": 31.6324563333367
-					},
-					"TractorLevel": {
-						"completed": 1.0,
-						"completed_at": 1760994211.786,
-						"stars": 3.0,
-						"time_taken": 22.4042369696982
-					}
+
 				},
-				"total_stars": 11.0,
-				"total_time": 112.48554654546
+				"total_stars": 0.0,
+				"total_time": 0.0
 			},
-			"updated_at": 1760994802.031
+			"updated_at": ""
+		},
+		{
+			"avatar": 1.0,
+			"created_at": 1761005234.168,
+			"name": "CCC",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": ""
 		}
 	]
 }

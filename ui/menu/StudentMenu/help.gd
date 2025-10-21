@@ -37,6 +37,7 @@ var help_texts := {
 }
 
 func _ready() -> void:
+	BtnBack.grab_focus()
 	# Back button
 	if BtnBack:
 		BtnBack.pressed.connect(_on_back_pressed)

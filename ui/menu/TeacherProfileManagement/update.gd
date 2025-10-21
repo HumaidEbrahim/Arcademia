@@ -47,21 +47,34 @@ const ICON_DOWN_WHITE : Texture2D = preload("res://assets/IngeUI/UIIcons/triangl
 
 # --------- DATA ---------
 var selected_character: int = 0
-var alphabet := ['-', 'Z','Y','X','W','V','U','T','S','R','Q','P','O','N','M','L','K','J','I','H','G','F','E','D','C','B','A']
-
+#var alphabet := ['-', 'Z','Y','X','W','V','U','T','S','R','Q','P','O','N','M','L','K','J','I','H','G','F','E','D','C','B','A']
+var alphabet := ['-', 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 func _ready() -> void:
 	btn_back.pressed.connect(_on_back_pressed)
 	btn_enter.pressed.connect(_on_enter_pressed)
 	btn_score.pressed.connect(_on_score_pressed)
 	btn_delete.pressed.connect(_on_delete_pressed)
-
 	# Name spinners
 	label_enter_name.text = "ENTER NAME"
 	for i in [btn_up_one, btn_down_one, btn_up_two, btn_down_two, btn_up_three, btn_down_three,
 		btn_up_four, btn_down_four, btn_up_five, btn_down_five, btn_up_six, btn_down_six]:
 		i.focus_mode = Control.FOCUS_ALL
-
+	
+		# Focus → white icon wiring for ALL scroll buttons
+	_attach_focus_icon(btn_up_one,   ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_one, ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_two,   ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_two, ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_three, ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_three, ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_four,  ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_four,ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_five,  ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_five,ICON_DOWN_WHITE)
+	_attach_focus_icon(btn_up_six,   ICON_UP_WHITE)
+	_attach_focus_icon(btn_down_six, ICON_DOWN_WHITE)
+	
 	btn_up_one.pressed.connect(func(): _cycle_char_up(label_one))
 	btn_down_one.pressed.connect(func(): _cycle_char_down(label_one))
 	btn_up_two.pressed.connect(func(): _cycle_char_up(label_two))
@@ -74,7 +87,7 @@ func _ready() -> void:
 	btn_down_five.pressed.connect(func(): _cycle_char_down(label_five))
 	btn_up_six.pressed.connect(func(): _cycle_char_up(label_six))
 	btn_down_six.pressed.connect(func(): _cycle_char_down(label_six))
-
+	btn_down_one.grab_focus()
 	_populate_name_spinners(PersonToUpdate)
 
 	selected_character = _get_current_avatar_index(PersonToUpdate)
@@ -140,6 +153,22 @@ func _cycle_char_down(lbl: Label) -> void:
 	var next_pos := (current_pos + 1) % alphabet.size()
 	lbl.text = alphabet[next_pos]
 
+
+func _attach_focus_icon(btn: BaseButton, white_tex: Texture2D) -> void:
+	# TextureButton path: use built-in focused texture
+	if btn is TextureButton:
+		var tb := btn as TextureButton
+		tb.texture_focused = white_tex
+		tb.focus_mode = Control.FOCUS_ALL
+		return
+
+	# Button path: swap icon on focus/blur
+	if btn is Button:
+		var b := btn as Button
+		b.focus_mode = Control.FOCUS_ALL
+		var original_icon: Texture2D = b.icon
+		b.focus_entered.connect(func(): b.icon = white_tex)
+		b.focus_exited.connect(func():  b.icon = original_icon)
 
 # ---------------- AVATAR ----------------
 func _on_switch_avatar() -> void:

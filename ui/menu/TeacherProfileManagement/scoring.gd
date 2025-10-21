@@ -29,6 +29,7 @@ var LblFlowerTime  : Label
 func _ready() -> void:
 	# --- Resolve nodes using your current tree ---
 	BtnBack        = get_node_or_null("Background/BtnBack")
+	BtnBack.grab_focus();
 	if BtnBack == null:
 		BtnBack = get_node_or_null("Background/HeaderPanel/BtnBack")
 

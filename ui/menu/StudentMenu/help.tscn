@@ -9,18 +9,18 @@
 [ext_resource type="Texture2D" uid="uid://dldkhyew14rqv" path="res://assets/JuaneBtns/Down_Focus.png" id="6_n714b"]
 [ext_resource type="Texture2D" uid="uid://bc1onw57isu1i" path="res://assets/JuaneBtns/Top_Loop_Initial.png" id="7_nuh06"]
 [ext_resource type="Texture2D" uid="uid://cueupxa547p8t" path="res://assets/JuaneBtns/Bottom_Loop_Initial.png" id="8_kkrfh"]
-[ext_resource type="Texture2D" uid="uid://dcuyukd8gd2xu" path="res://assets/JuaneBtns/If_Plant_Initial.png" id="9_5xair"]
-[ext_resource type="Texture2D" uid="uid://d025pnno5dupp" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_ylb6r"]
-[ext_resource type="Texture2D" uid="uid://6nkwee84ubwg" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="11_u7wq6"]
-[ext_resource type="Texture2D" uid="uid://c0wc8quiq5gri" path="res://assets/JuaneBtns/IfCow_Initial.png" id="12_i3jnn"]
-[ext_resource type="Texture2D" uid="uid://stdrcphfd5al" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="13_th1m4"]
-[ext_resource type="Texture2D" uid="uid://bcb8jl8yt3n24" path="res://assets/JuaneBtns/Feed_Focus.png" id="14_7p0jj"]
-[ext_resource type="Texture2D" uid="uid://uo156bvp4ovl" path="res://assets/JuaneBtns/OpenGate_Focus.png" id="15_5ssa6"]
-[ext_resource type="Texture2D" uid="uid://dcsmmsvjxrluu" path="res://assets/JuaneBtns/Water_Focus.png" id="16_455co"]
-[ext_resource type="Texture2D" uid="uid://cn2t3058mr26i" path="res://assets/JuaneBtns/Pickup_Focus.png" id="17_7uoe1"]
-[ext_resource type="Texture2D" uid="uid://diinjljectwqk" path="res://assets/JuaneBtns/Plant_Focus.png" id="18_sq486"]
-[ext_resource type="Texture2D" uid="uid://dmt8kxgfee3gs" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="19_5kcqw"]
-[ext_resource type="Texture2D" uid="uid://o7yvyr5nxjph" path="res://assets/JuaneBtns/Whistle_Focus.png" id="21_i3jnn"]
+[ext_resource type="Texture2D" uid="uid://6i12tyhigc7y" path="res://assets/JuaneBtns/If_Plant_Initial.png" id="9_5xair"]
+[ext_resource type="Texture2D" uid="uid://cr0k1ofuhdkqu" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_ylb6r"]
+[ext_resource type="Texture2D" uid="uid://cn12liowmhgjo" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="11_u7wq6"]
+[ext_resource type="Texture2D" uid="uid://dhskxi10brhet" path="res://assets/JuaneBtns/IfCow_Initial.png" id="12_i3jnn"]
+[ext_resource type="Texture2D" uid="uid://sx50qe4pdx0p" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="13_th1m4"]
+[ext_resource type="Texture2D" uid="uid://y324xe7p5ai8" path="res://assets/JuaneBtns/Feed_Focus.png" id="14_7p0jj"]
+[ext_resource type="Texture2D" uid="uid://di5qf2gueqvfa" path="res://assets/JuaneBtns/OpenGate_Focus.png" id="15_5ssa6"]
+[ext_resource type="Texture2D" uid="uid://cf3vetwi580ln" path="res://assets/JuaneBtns/Water_Focus.png" id="16_455co"]
+[ext_resource type="Texture2D" uid="uid://t1hp3ffd5itc" path="res://assets/JuaneBtns/Pickup_Focus.png" id="17_7uoe1"]
+[ext_resource type="Texture2D" uid="uid://b53fm2xj7pyul" path="res://assets/JuaneBtns/Plant_Focus.png" id="18_sq486"]
+[ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="19_5kcqw"]
+[ext_resource type="Texture2D" uid="uid://bdj8gww50oy8x" path="res://assets/JuaneBtns/Whistle_Focus.png" id="21_i3jnn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubtbo"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -180,6 +180,7 @@ offset_top = -72.5
 offset_right = 273.0
 offset_bottom = 21.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("3_vigq6")
 
 [node name="MoveRight" type="TextureRect" parent="Background/CardMovement"]
@@ -192,6 +193,7 @@ offset_top = 22.5
 offset_right = 557.0
 offset_bottom = 116.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("4_d1458")
 
 [node name="MoveLeft" type="TextureRect" parent="Background/CardMovement"]
@@ -204,6 +206,7 @@ offset_top = -72.5
 offset_right = 557.0
 offset_bottom = 21.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("5_maopo")
 
 [node name="MoveDown" type="TextureRect" parent="Background/CardMovement"]
@@ -216,6 +219,7 @@ offset_top = 22.5
 offset_right = 273.0
 offset_bottom = 116.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("6_n714b")
 
 [node name="CardLoops" type="Panel" parent="Background"]
@@ -259,6 +263,7 @@ offset_top = -19.5
 offset_right = 273.0
 offset_bottom = 74.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("7_nuh06")
 
 [node name="EndRepeat" type="TextureRect" parent="Background/CardLoops"]
@@ -271,6 +276,7 @@ offset_top = -19.5
 offset_right = 553.0
 offset_bottom = 74.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("8_kkrfh")
 
 [node name="CardIFStatement" type="Panel" parent="Background"]
@@ -315,6 +321,7 @@ offset_right = 273.0
 offset_bottom = -32.0
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("9_5xair")
 
 [node name="IfEnd" type="TextureRect" parent="Background/CardIFStatement"]
@@ -330,6 +337,7 @@ offset_right = 123.5
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
+focus_mode = 2
 texture = ExtResource("10_ylb6r")
 
 [node name="IfEmpty" type="TextureRect" parent="Background/CardIFStatement"]
@@ -342,6 +350,7 @@ offset_top = -32.5
 offset_right = 273.0
 offset_bottom = 61.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("11_u7wq6")
 
 [node name="IfCow" type="TextureRect" parent="Background/CardIFStatement"]
@@ -355,6 +364,7 @@ offset_right = 568.0
 offset_bottom = -32.0
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("12_i3jnn")
 expand_mode = 1
 
@@ -369,6 +379,7 @@ offset_right = 568.0
 offset_bottom = 60.999985
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("13_th1m4")
 expand_mode = 1
 
@@ -414,6 +425,7 @@ offset_right = 273.0
 offset_bottom = -74.0
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("14_7p0jj")
 expand_mode = 1
 
@@ -427,6 +439,7 @@ offset_top = 32.5
 offset_right = 273.0
 offset_bottom = 126.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("15_5ssa6")
 expand_mode = 1
 
@@ -440,6 +453,7 @@ offset_top = -67.5
 offset_right = 273.0
 offset_bottom = 26.0
 grow_vertical = 2
+focus_mode = 2
 texture = ExtResource("16_455co")
 expand_mode = 1
 
@@ -454,6 +468,7 @@ offset_right = 558.66626
 offset_bottom = -73.859375
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("17_7uoe1")
 expand_mode = 1
 
@@ -468,6 +483,7 @@ offset_right = 558.66626
 offset_bottom = 26.140625
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("18_sq486")
 expand_mode = 1
 
@@ -482,6 +498,7 @@ offset_right = 558.0
 offset_bottom = 126.99997
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("19_5kcqw")
 expand_mode = 1
 
@@ -496,6 +513,7 @@ offset_right = 416.0001
 offset_bottom = 226.99997
 grow_vertical = 2
 rotation = -0.004235216
+focus_mode = 2
 texture = ExtResource("21_i3jnn")
 expand_mode = 1
 
