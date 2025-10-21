@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://co1lofo8thlb4" path="res://assets/JuaneBtns/Plant_Initial.png" id="2_dmm27"]
 [ext_resource type="Texture2D" uid="uid://bmld6xsqtku3v" path="res://assets/Farm/Garden/FarmLvl_Garden2.jpg" id="2_g4ln1"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="2_nkxik"]
-[ext_resource type="Script" uid="uid://cebss3n06xcgo" path="res://levels/lvl1/GardenLevel/Player_Garden.gd" id="3_0a0vv"]
+[ext_resource type="Script" uid="uid://cebss3n06xcgo" path="res://Levels/lvl1/GardenLevel/Player_Garden.gd" id="3_0a0vv"]
 [ext_resource type="Texture2D" uid="uid://b53fm2xj7pyul" path="res://assets/JuaneBtns/Plant_Focus.png" id="3_nkxik"]
 [ext_resource type="Texture2D" uid="uid://b63beig7gy8fa" path="res://assets/Farm/Garden/FlowerPot.png" id="3_p85ah"]
 [ext_resource type="Texture2D" uid="uid://drju6h2j3tpdx" path="res://assets/JuaneBtns/Water_Initial.png" id="5_c5gh3"]
 [ext_resource type="Texture2D" uid="uid://cf3vetwi580ln" path="res://assets/JuaneBtns/Water_Focus.png" id="6_coqvr"]
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="7_4way2"]
 [ext_resource type="AudioStream" uid="uid://j5nvcuj3sybs" path="res://sounds/GardenLevel/WateringCan.mp3" id="9_poicm"]
-[ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://levels/lvl1/GardenLevel/endif_block.gd" id="9_tii1p"]
+[ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://Levels/lvl1/GardenLevel/endif_block.gd" id="9_tii1p"]
 [ext_resource type="AudioStream" uid="uid://cwnyhvbckng6s" path="res://sounds/GardenLevel/hit-plant-03-266292.mp3" id="10_mndbt"]
 [ext_resource type="Texture2D" uid="uid://cr0k1ofuhdkqu" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_rhidi"]
-[ext_resource type="Script" uid="uid://p8011ubitbd3" path="res://levels/lvl1/GardenLevel/Flowers.gd" id="11_c5gh3"]
+[ext_resource type="Script" uid="uid://p8011ubitbd3" path="res://Levels/lvl1/GardenLevel/Flowers.gd" id="11_c5gh3"]
 [ext_resource type="Texture2D" uid="uid://cakm4aeop7qps" path="res://assets/JuaneBtns/If_End_Focus.png" id="11_dj04c"]
 [ext_resource type="Texture2D" uid="uid://d0as663q4fn8m" path="res://assets/Farm/Garden/flowerbloomspritersheet.png" id="11_jyhvo"]
 [ext_resource type="AudioStream" uid="uid://drh8xpgmur56t" path="res://sounds/Walking/Walk1.mp3" id="11_lui6u"]
@@ -397,7 +397,7 @@ sprite_frames = SubResource("SpriteFrames_kox0e")
 frame_progress = 0.009179345
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
-optimal_blocks = 12
+optimal_blocks = 6
 
 [editable path="MainUI"]
 [editable path="MainUI/HBoxContainer/FunctionPanel/VBoxContainer/Move_Right"]
