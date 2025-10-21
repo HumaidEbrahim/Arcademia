@@ -1,10 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://3pfrdutluosa"]
+[gd_scene load_steps=11 format=3 uid="uid://3pfrdutluosa"]
 
 [ext_resource type="Texture2D" uid="uid://dj87w4pr4sjc8" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="2_w7htn"]
 [ext_resource type="Texture2D" uid="uid://m7vyj7fmf3ap" path="res://assets/Characters/move 1-Photoroom_resized.png" id="3_iu6fq"]
 [ext_resource type="Script" uid="uid://2k85sferov6h" path="res://levels/openworld/Level_Select.gd" id="4_i27mc"]
 [ext_resource type="Texture2D" uid="uid://sn8n6qpum2r1" path="res://assets/Farm/Kithcen/kitcheendoor.png" id="5_letjs"]
+[ext_resource type="Texture2D" uid="uid://bgciaetc21bdf" path="res://assets/Farm/Kithcen/magwinyabowl.png" id="6_0gswr"]
+[ext_resource type="Texture2D" uid="uid://d2dc1m44qioro" path="res://assets/Farm/Kithcen/magwinyashrine.png" id="7_j2xlr"]
+[ext_resource type="Texture2D" uid="uid://xook85yscd2w" path="res://assets/Farm/Kithcen/gogosecret.jpg" id="8_28phn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i27mc"]
 animations = [{
@@ -27,9 +30,10 @@ position = Vector2(799, 449)
 texture = ExtResource("1_8362r")
 
 [node name="Move1PhotoroomResized" type="Sprite2D" parent="."]
-position = Vector2(1417, 388.99997)
-scale = Vector2(1.8763441, 1.9117647)
+position = Vector2(1418.625, 418.375)
+scale = Vector2(1.563172, 1.4852942)
 texture = ExtResource("3_iu6fq")
+flip_h = true
 
 [node name="Door" type="Area2D" parent="."]
 script = ExtResource("4_i27mc")
@@ -48,7 +52,22 @@ left_bound = 100
 right_bound = 1500
 bottom_bound = 770
 top_bound = 450
-min_scale = 0.6
-max_scale = 0.6
+min_scale = 0.8
+max_scale = 0.8
 x_speed = 200.0
 min_speed = 200.0
+
+[node name="Magwinyashrine" type="Sprite2D" parent="."]
+position = Vector2(1344.5, 773.25)
+scale = Vector2(0.3409586, 0.28594774)
+texture = ExtResource("7_j2xlr")
+
+[node name="Magwinyabowl" type="Sprite2D" parent="."]
+position = Vector2(1347, 668)
+scale = Vector2(0.3804915, 0.28773585)
+texture = ExtResource("6_0gswr")
+
+[node name="Gogosecret" type="Sprite2D" parent="."]
+position = Vector2(937, 177)
+scale = Vector2(0.23730464, 0.21679693)
+texture = ExtResource("8_28phn")

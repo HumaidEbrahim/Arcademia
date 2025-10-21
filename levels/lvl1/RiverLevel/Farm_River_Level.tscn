@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_wiq6v"]
 [ext_resource type="VideoStream" uid="uid://bkd8jtksenisx" path="res://assets/Farm/River/YTDown.com_YouTube_4K-Animated-cartoon-background-river-lan_Media_Aguo-0hAqfU_001_1080p-_2_.ogv" id="2_e1fgg"]
-[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://Levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
+[ext_resource type="Script" uid="uid://diqwtamcdwq5" path="res://levels/lvl1/RiverLevel/River_Player.gd" id="2_fckal"]
 [ext_resource type="Texture2D" uid="uid://di1pm002tjj7q" path="res://assets/Farm/River/River_Level/River_Level.jpg" id="3_0vwdd"]
 [ext_resource type="Texture2D" uid="uid://dmm4fdkilh1gh" path="res://assets/Farm/River/River_Level/Rock.png" id="5_e1fgg"]
 [ext_resource type="AudioStream" uid="uid://di8swled3gb5b" path="res://sounds/River_Level_Sounds/splash-by-blaukreuz-6261.mp3" id="5_fckal"]
 [ext_resource type="Texture2D" uid="uid://g2u1dyukuoam" path="res://assets/Farm/River/River_Level/Butterfly_01.png" id="5_okv6a"]
-[ext_resource type="Texture2D" uid="uid://cocyigfc3scof" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="5_pyw0y"]
-[ext_resource type="Texture2D" uid="uid://dg81jeft4tqkx" path="res://levels/lvl1/RiverLevel/Final Boy Sprite 448x448.png" id="6_0s3ts"]
+[ext_resource type="Texture2D" uid="uid://cyji17cbowng6" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="5_pyw0y"]
+[ext_resource type="Texture2D" uid="uid://dppbgbgaalikf" path="res://levels/lvl1/RiverLevel/Final Boy Sprite 448x448.png" id="6_0s3ts"]
 [ext_resource type="Texture2D" uid="uid://buvgrobxohu4k" path="res://assets/Farm/River/River_Level/Butterfly_02.png" id="6_p1icf"]
 [ext_resource type="Texture2D" uid="uid://dfmj8fb6yftmp" path="res://assets/Farm/River/River_Level/Butterfly_03.png" id="7_81u7j"]
-[ext_resource type="Script" uid="uid://b71g7mpy5b1vn" path="res://Levels/lvl1/RiverLevel/win_rock.gd" id="11_b4xwp"]
+[ext_resource type="Script" uid="uid://b71g7mpy5b1vn" path="res://levels/lvl1/RiverLevel/win_rock.gd" id="11_b4xwp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgxtw"]
 atlas = ExtResource("6_0s3ts")
