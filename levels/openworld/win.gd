@@ -20,10 +20,9 @@ func _ready() -> void:
 	var player = get_tree().root.find_child("Player", true, false)
 	player.connect("levelWon", Callable(self, "on_win"))
 	
-	btn_continue.pressed.connect(func():get_tree().change_scene_to_file("res://levels/openworld/FarmMap.tscn"))
+	btn_continue.pressed.connect(on_continue)
 	btn_retry.pressed.connect(on_try)
 	btn_continue.grab_focus()
-	btn_retry.grab_focus()
 
 func on_win(error) -> void:
 	running = false
@@ -60,6 +59,7 @@ func on_win(error) -> void:
 
 	print(message)		
 	feedback.text = message
+	btn_continue.grab_focus()
 	ProfileDB.update_level_result(get_tree().current_scene.name, stars, time_elapsed)
 	
 func on_try() -> void:
@@ -67,3 +67,9 @@ func on_try() -> void:
 	print(Global.populatedExecuteQue)
 	print("End of array")
 	get_tree().reload_current_scene() 
+	
+func on_continue() -> void:
+	Global.populatedExecuteQue.clear()
+	print(Global.populatedExecuteQue)
+	print("End of array")
+	get_tree().change_scene_to_file("res://levels/openworld/FarmMap.tscn")
