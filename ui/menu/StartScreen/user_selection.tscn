@@ -34,7 +34,7 @@ corner_radius_bottom_left = 24
 shadow_size = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffrsd"]
-bg_color = Color(0.92549, 0.572549, 0.298039, 0.905882)
+bg_color = Color(0.9647059, 0.7411765, 0.101960786, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -44,6 +44,8 @@ corner_radius_top_left = 24
 corner_radius_top_right = 24
 corner_radius_bottom_right = 24
 corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.8784314)
+shadow_size = 15
 
 [node name="UserSelection" type="Control"]
 layout_mode = 3

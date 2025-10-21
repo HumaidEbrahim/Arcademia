@@ -99,6 +99,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ax2m2"]
 bg_color = Color(0.298039, 0.686275, 0.313726, 1)
@@ -136,6 +137,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [node name="Insert" type="Control"]
 layout_mode = 3

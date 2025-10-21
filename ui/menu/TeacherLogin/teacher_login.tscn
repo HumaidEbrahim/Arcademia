@@ -67,6 +67,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t7ho"]
 bg_color = Color(0.298039, 0.686275, 0.313726, 1)
@@ -104,6 +105,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m1ron"]
 bg_color = Color(0.945098, 0.890196, 0.784314, 1)
