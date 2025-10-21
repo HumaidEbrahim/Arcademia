@@ -304,7 +304,7 @@ shape = SubResource("RectangleShape2D_52y21")
 position = Vector2(733, 684)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
-position = Vector2(167, -109.999985)
+position = Vector2(117.01123, -104.947464)
 scale = Vector2(0.16017814, 0.14658697)
 sprite_frames = SubResource("SpriteFrames_egmrn")
 autoplay = "default"
@@ -312,10 +312,11 @@ frame_progress = 0.8710849
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken2"]
-position = Vector2(165, -107)
+position = Vector2(115.01123, -101.94748)
 shape = SubResource("RectangleShape2D_mm5u6")
 
 [node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+z_index = 1
 position = Vector2(278, 399)
 script = ExtResource("4_egmrn")
 
@@ -352,14 +353,14 @@ shape = SubResource("RectangleShape2D_mm5u6")
 position = Vector2(575, 504)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken3"]
-position = Vector2(-17, 137)
+position = Vector2(-32, 224)
 scale = Vector2(0.16017814, 0.14658697)
 sprite_frames = SubResource("SpriteFrames_egmrn")
 autoplay = "default"
 frame_progress = 0.8108581
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Chicken3"]
-position = Vector2(-23, 132)
+position = Vector2(-32, 224)
 shape = SubResource("RectangleShape2D_mm5u6")
 
 [node name="Heysteck" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8"]
