@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bajgeneb4ayod"]
 
-[ext_resource type="Texture2D" uid="uid://dotgle1h0drtw" path="res://assets/Henri/HenriJumpScare.jpeg" id="1_7xpwi"]
+[ext_resource type="Texture2D" uid="uid://f8cvxc1o4u32" path="res://assets/Henri/HenriJumpScare.jpeg" id="1_7xpwi"]
 [ext_resource type="Script" uid="uid://y60gx0h7e475" path="res://Levels/openworld/henri.gd" id="1_lw35r"]
 [ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_y78kr"]
 

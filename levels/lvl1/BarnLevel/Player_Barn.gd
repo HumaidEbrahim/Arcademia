@@ -5,7 +5,7 @@ extends Area2D
 @onready var eat_sound: AudioStreamPlayer2D = get_node("../Player/EatSoundPlayer")  # Eating sound
 @onready var pickup_sound: AudioStreamPlayer2D = get_node("../Player/PickupSoundPlayer")  # Pickup sound
 
-var track = load("res://music/Bongi Farm/Bongi Farm (mastered).mp3")
+var track = load("res://music/MOOgwenya.mp3")
 
 var has_feed = false
 var area = null

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://spj1ehbms0q5" path="res://assets/Farm/FarmLvl_Barn.png" id="3_egmrn"]
 [ext_resource type="Texture2D" uid="uid://dn8iqvn5qvao5" path="res://assets/Farm/FarmMap_BG.png" id="3_xwafh"]
 [ext_resource type="Texture2D" uid="uid://bhi30pdskpwca" path="res://assets/Farm/Barn/chickenfeed.png" id="4_52y21"]
-[ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
+[ext_resource type="Script" uid="uid://dkqh1cudsriuw" path="res://Levels/lvl1/BarnLevel/Player_Barn.gd" id="4_egmrn"]
 [ext_resource type="Texture2D" uid="uid://t1hp3ffd5itc" path="res://assets/JuaneBtns/Pickup_Focus.png" id="4_qduet"]
 [ext_resource type="Texture2D" uid="uid://ba5vkwx8sprm" path="res://assets/Farm/Barn/Barn01.png" id="4_s8e1t"]
 [ext_resource type="Texture2D" uid="uid://18gj13xmkpyd" path="res://assets/Farm/Barn/Barn02.png" id="5_3ro4f"]
@@ -41,7 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://c53e4s7s6w87h" path="res://sounds/ChickenLevel/nom_c_06-89142.mp3" id="38_t1wcu"]
 [ext_resource type="AudioStream" uid="uid://ca7vig7ge357u" path="res://sounds/ChickenLevel/item-pickup-37089.mp3" id="40_bef7e"]
 [ext_resource type="Texture2D" uid="uid://bid6ft3rpgcmq" path="res://assets/Farm/Barn/heysteck.png" id="41_6vw6p"]
-[ext_resource type="Texture2D" uid="uid://kbvh5yh2f0ck" path="res://assets/Farm/Barn/potatwo.png" id="42_bef7e"]
+[ext_resource type="Texture2D" uid="uid://ciacssl534t4r" path="res://assets/Farm/Barn/potatwo.png" id="42_bef7e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jhwss"]
 animations = [{

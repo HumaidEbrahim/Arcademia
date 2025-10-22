@@ -10,7 +10,7 @@ var error = false
 
 signal levelWon(error: bool)
 
-var track = load("res://music/Bongi Farm/Bongi Farm (mastered).mp3")
+var track = load("res://music/Bongi Eepy/Bongi Eepy (mastered).mp3")
 
 func _ready() -> void:
 	label.text = "Harvest all the corn"

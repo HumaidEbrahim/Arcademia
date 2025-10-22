@@ -20,6 +20,8 @@ var eat: String = ""
 var is_eating = false
 var EAT
 
+var track = load("res://music/Bongi Farm/Bongi Farm (mastered).mp3")
+
 @onready var walk_sounds = [
 	$Walk1,
 	$Walk2,
@@ -46,6 +48,7 @@ func _ready():
 		eat = "Boy_Eat"
 		
 	walk_timer.timeout.connect(_on_walk_timer_timeout)
+	MusicPlayer.play_stream(track,2.0)
 
 func _input(event):
 	if event.is_action_pressed("btn_eat") and not is_eating and not is_moving and Global.magwinya > 0:

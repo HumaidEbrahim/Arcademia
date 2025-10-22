@@ -148,6 +148,61 @@
 				"total_time": 0.0
 			},
 			"updated_at": 1761157071.958
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1761160580.857,
+			"name": "ABC",
+			"progress": {
+				"levels": {
+					"BarnLevel": {
+						"completed": 1.0,
+						"completed_at": 1761160918.466,
+						"stars": 2.0,
+						"time_taken": 19.4655193333335
+					},
+					"CowLevel": {
+						"completed": 1.0,
+						"completed_at": 1761160989.079,
+						"stars": 3.0,
+						"time_taken": 51.3434619999984
+					},
+					"FarmRiverLevel": {
+						"completed": 1.0,
+						"completed_at": 1761160676.72,
+						"stars": 3.0,
+						"time_taken": 11.0674176666668
+					},
+					"GardenLevel": {
+						"completed": 1.0,
+						"completed_at": 1761161030.309,
+						"stars": 2.0,
+						"time_taken": 31.1764133333329
+					},
+					"TractorLevel": {
+						"completed": 1.0,
+						"completed_at": 1761160741.636,
+						"stars": 2.0,
+						"time_taken": 47.5321156666653
+					}
+				},
+				"total_stars": 12.0,
+				"total_time": 160.584927999997
+			},
+			"updated_at": 1761161030.309
+		},
+		{
+			"avatar": 1,
+			"created_at": 1761163916.611,
+			"name": "BCCC",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0,
+				"total_time": 0.0
+			},
+			"updated_at": 1761163917.429
 		}
 	]
 }

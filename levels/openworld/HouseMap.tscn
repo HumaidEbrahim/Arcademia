@@ -1,15 +1,15 @@
 [gd_scene load_steps=17 format=3 uid="uid://3pfrdutluosa"]
 
-[ext_resource type="Texture2D" uid="uid://l12pogd2no5u" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
+[ext_resource type="Texture2D" uid="uid://oac3w6d7vesl" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="2_w7htn"]
 [ext_resource type="Texture2D" uid="uid://m7vyj7fmf3ap" path="res://assets/Characters/move 1-Photoroom_resized.png" id="3_iu6fq"]
 [ext_resource type="Script" uid="uid://2k85sferov6h" path="res://Levels/openworld/Level_Select.gd" id="4_i27mc"]
-[ext_resource type="Texture2D" uid="uid://sn8n6qpum2r1" path="res://assets/Farm/Kithcen/kitcheendoor.png" id="5_letjs"]
-[ext_resource type="Texture2D" uid="uid://bgciaetc21bdf" path="res://assets/Farm/Kithcen/magwinyabowl.png" id="6_0gswr"]
-[ext_resource type="Texture2D" uid="uid://d2dc1m44qioro" path="res://assets/Farm/Kithcen/magwinyashrine.png" id="7_j2xlr"]
-[ext_resource type="Texture2D" uid="uid://xook85yscd2w" path="res://assets/Farm/Kithcen/gogosecret.jpg" id="8_28phn"]
-[ext_resource type="Texture2D" uid="uid://jtfpquk2717o" path="res://assets/Farm/Barn/chickenjockey.jpg" id="9_j2xlr"]
-[ext_resource type="Texture2D" uid="uid://bqj4c51bfk1g3" path="res://assets/Farm/Kithcen/bwead.png" id="10_4id6p"]
+[ext_resource type="Texture2D" uid="uid://po6kaxc40rmc" path="res://assets/Farm/Kithcen/kitcheendoor.png" id="5_letjs"]
+[ext_resource type="Texture2D" uid="uid://b2ymgmtkoggko" path="res://assets/Farm/Kithcen/magwinyabowl.png" id="6_0gswr"]
+[ext_resource type="Texture2D" uid="uid://cingnujexqxfk" path="res://assets/Farm/Kithcen/magwinyashrine.png" id="7_j2xlr"]
+[ext_resource type="Texture2D" uid="uid://ygclqdrg82j6" path="res://assets/Farm/Kithcen/gogosecret.jpg" id="8_28phn"]
+[ext_resource type="Texture2D" uid="uid://co7bfcwhqaaq1" path="res://assets/Farm/Barn/chickenjockey.jpg" id="9_j2xlr"]
+[ext_resource type="Texture2D" uid="uid://pl8qnjs7vr4f" path="res://assets/Farm/Kithcen/bwead.png" id="10_4id6p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i27mc"]
 animations = [{
@@ -65,6 +65,16 @@ scale = Vector2(1.563172, 1.4852942)
 texture = ExtResource("3_iu6fq")
 flip_h = true
 
+[node name="Gogosecret" type="Sprite2D" parent="."]
+position = Vector2(937, 177)
+scale = Vector2(0.23730464, 0.21679693)
+texture = ExtResource("8_28phn")
+
+[node name="Chickenjockey" type="Sprite2D" parent="."]
+position = Vector2(770, 280)
+scale = Vector2(0.26953128, 0.25585938)
+texture = ExtResource("9_j2xlr")
+
 [node name="Door" type="Area2D" parent="."]
 script = ExtResource("4_i27mc")
 target_level = "res://levels/openworld/FarmMap.tscn"
@@ -108,16 +118,6 @@ shape = SubResource("RectangleShape2D_28phn")
 position = Vector2(1346, 643)
 scale = Vector2(0.5, 0.41037735)
 sprite_frames = SubResource("SpriteFrames_j2xlr")
-
-[node name="Gogosecret" type="Sprite2D" parent="."]
-position = Vector2(937, 177)
-scale = Vector2(0.23730464, 0.21679693)
-texture = ExtResource("8_28phn")
-
-[node name="Chickenjockey" type="Sprite2D" parent="."]
-position = Vector2(770, 280)
-scale = Vector2(0.26953128, 0.25585938)
-texture = ExtResource("9_j2xlr")
 
 [node name="Bread" type="Area2D" parent="."]
 position = Vector2(770, 280)

@@ -49,7 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://bkrb5dr2oc86x" path="res://assets/Farm/Mielie/Mielie_01.png" id="28_4t6sw"]
 [ext_resource type="Texture2D" uid="uid://bpp8anl5dlg5g" path="res://assets/Farm/Mielie/Mielie_02.png" id="29_pmr81"]
 [ext_resource type="Texture2D" uid="uid://cda7sgmr7d53o" path="res://assets/Farm/Mielie/Mielie_03.png" id="30_rmhjy"]
-[ext_resource type="Script" uid="uid://cxmft53f0l46o" path="res://levels/openworld/Birds.gd" id="30_u26ar"]
+[ext_resource type="Script" uid="uid://cxmft53f0l46o" path="res://Levels/openworld/Birds.gd" id="30_u26ar"]
 [ext_resource type="Texture2D" uid="uid://c14yw70ysnpwx" path="res://assets/Farm/Mielie/Mielie_04.png" id="31_f4d0c"]
 [ext_resource type="Texture2D" uid="uid://cjgqf8vrhescl" path="res://assets/Farm/Mielie/Mielie_05.png" id="32_mcune"]
 [ext_resource type="Texture2D" uid="uid://0l1t2a5l5d2h" path="res://assets/Farm/Mielie/Mielie_06.png" id="33_vom2k"]
@@ -71,7 +71,7 @@
 [ext_resource type="Texture2D" uid="uid://bn7psg0sa71xr" path="res://assets/Farm/Garden/flower_fence1.png" id="67_lvoov"]
 [ext_resource type="Texture2D" uid="uid://cycrm2fxdbl20" path="res://assets/Farm/River/FarmRiver07.png" id="67_vg46o"]
 [ext_resource type="Texture2D" uid="uid://u4xi2r0tsnvs" path="res://assets/Farm/River/FarmRiver08.png" id="68_2kaw3"]
-[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://levels/openworld/Level_Select.gd" id="68_bi5to"]
+[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://Levels/openworld/Level_Select.gd" id="68_bi5to"]
 [ext_resource type="Texture2D" uid="uid://toi1baya7m15" path="res://assets/Farm/Garden/flower_fence2.png" id="68_r1e0c"]
 [ext_resource type="Texture2D" uid="uid://chuvltb7ivylv" path="res://assets/Farm/Garden/flower_fence3.png" id="69_ydehy"]
 [ext_resource type="Texture2D" uid="uid://bx416t0gq0vy4" path="res://assets/Farm/River/FarmRiver09.png" id="69_yriht"]
@@ -470,6 +470,7 @@ shape = SubResource("RectangleShape2D_bi5to")
 [node name="House" type="Area2D" parent="."]
 script = ExtResource("68_bi5to")
 target_level = "res://levels/openworld/HouseMap.tscn"
+progress_level = 5
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="House"]
 position = Vector2(682.22644, 650.7499)
@@ -571,7 +572,7 @@ shape = SubResource("RectangleShape2D_htkvy")
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("78_2kaw3")
-volume_db = -5.0
+volume_db = -10.049
 autoplay = true
 
 [connection signal="child_exiting_tree" from="House/CollisionShape2D" to="Barn" method="_on_collision_shape_2d_child_exiting_tree"]
