@@ -1,0 +1,577 @@
+[gd_scene load_steps=27 format=3 uid="uid://ohtb1hw18ghv"]
+
+[ext_resource type="Texture2D" uid="uid://dbvf0up20sqop" path="res://assets/IngeUI/UIBackground/Sky.png" id="1_015ip"]
+[ext_resource type="Script" uid="uid://dsd3uf3each6u" path="res://ui/menu/StudentMenu/help.gd" id="1_u7wq6"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="2_4qoes"]
+[ext_resource type="Texture2D" uid="uid://dq2u55mcnv8y" path="res://assets/JuaneBtns/Up_Focus.png" id="3_vigq6"]
+[ext_resource type="Texture2D" uid="uid://8ocnalu5aik0" path="res://assets/JuaneBtns/Right_Focus.png" id="4_d1458"]
+[ext_resource type="Texture2D" uid="uid://1qaks0h3suob" path="res://assets/JuaneBtns/Left_Focus.png" id="5_maopo"]
+[ext_resource type="Texture2D" uid="uid://dldkhyew14rqv" path="res://assets/JuaneBtns/Down_Focus.png" id="6_n714b"]
+[ext_resource type="Texture2D" uid="uid://bc1onw57isu1i" path="res://assets/JuaneBtns/Top_Loop_Initial.png" id="7_nuh06"]
+[ext_resource type="Texture2D" uid="uid://cueupxa547p8t" path="res://assets/JuaneBtns/Bottom_Loop_Initial.png" id="8_kkrfh"]
+[ext_resource type="Texture2D" uid="uid://6i12tyhigc7y" path="res://assets/JuaneBtns/If_Plant_Initial.png" id="9_5xair"]
+[ext_resource type="Texture2D" uid="uid://cr0k1ofuhdkqu" path="res://assets/JuaneBtns/If_End_Initial.png" id="10_ylb6r"]
+[ext_resource type="Texture2D" uid="uid://cn12liowmhgjo" path="res://assets/JuaneBtns/If_Empty_Initial.png" id="11_u7wq6"]
+[ext_resource type="Texture2D" uid="uid://dhskxi10brhet" path="res://assets/JuaneBtns/IfCow_Initial.png" id="12_i3jnn"]
+[ext_resource type="Texture2D" uid="uid://sx50qe4pdx0p" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="13_th1m4"]
+[ext_resource type="Texture2D" uid="uid://y324xe7p5ai8" path="res://assets/JuaneBtns/Feed_Focus.png" id="14_7p0jj"]
+[ext_resource type="Texture2D" uid="uid://di5qf2gueqvfa" path="res://assets/JuaneBtns/OpenGate_Focus.png" id="15_5ssa6"]
+[ext_resource type="Texture2D" uid="uid://cf3vetwi580ln" path="res://assets/JuaneBtns/Water_Focus.png" id="16_455co"]
+[ext_resource type="Texture2D" uid="uid://t1hp3ffd5itc" path="res://assets/JuaneBtns/Pickup_Focus.png" id="17_7uoe1"]
+[ext_resource type="Texture2D" uid="uid://b53fm2xj7pyul" path="res://assets/JuaneBtns/Plant_Focus.png" id="18_sq486"]
+[ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="19_5kcqw"]
+[ext_resource type="Texture2D" uid="uid://bdj8gww50oy8x" path="res://assets/JuaneBtns/Whistle_Focus.png" id="21_i3jnn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubtbo"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i5eb0"]
+bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.231373, 0.121569, 0.0392157, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xair"]
+bg_color = Color(0.7411765, 0.5019608, 0.2784314, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.43137255, 0.27450982, 0.13725491, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+shadow_color = Color(0, 0, 0, 0.643137)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ylb6r"]
+bg_color = Color(1, 0.968627, 0.890196, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u7wq6"]
+bg_color = Color(0.807033, 0.567642, 0.349084, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.431373, 0.27451, 0.137255, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[node name="Help" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u7wq6")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_015ip")
+
+[node name="HeaderPanel" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -388.0
+offset_top = 71.0
+offset_right = 388.0
+offset_bottom = 165.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ubtbo")
+
+[node name="Label" type="Label" parent="Background/HeaderPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -37.5
+offset_right = 176.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945247, 0.715264, 0.562705, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 64
+text = "HELP / BLOCKS"
+
+[node name="CardMovement" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 117.0
+offset_top = -327.0
+offset_right = 713.0
+offset_bottom = -51.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
+
+[node name="LblMovement" type="Label" parent="Background/CardMovement"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.25
+offset_right = 128.25
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 54
+text = "Movement"
+
+[node name="MoveUp" type="TextureRect" parent="Background/CardMovement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -72.5
+offset_right = 273.0
+offset_bottom = 21.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("3_vigq6")
+
+[node name="MoveRight" type="TextureRect" parent="Background/CardMovement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = 22.5
+offset_right = 557.0
+offset_bottom = 116.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("4_d1458")
+
+[node name="MoveLeft" type="TextureRect" parent="Background/CardMovement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.0
+offset_top = -72.5
+offset_right = 557.0
+offset_bottom = 21.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("5_maopo")
+
+[node name="MoveDown" type="TextureRect" parent="Background/CardMovement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = 22.5
+offset_right = 273.0
+offset_bottom = 116.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("6_n714b")
+
+[node name="CardLoops" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 877.0
+offset_top = 170.0
+offset_right = 1473.0
+offset_bottom = 350.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
+
+[node name="LblLoop" type="Label" parent="Background/CardLoops"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.875
+offset_right = 55.875
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 54
+text = "Loop"
+
+[node name="Repeat" type="TextureRect" parent="Background/CardLoops"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -19.5
+offset_right = 273.0
+offset_bottom = 74.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("7_nuh06")
+
+[node name="EndRepeat" type="TextureRect" parent="Background/CardLoops"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 306.0
+offset_top = -19.5
+offset_right = 553.0
+offset_bottom = 74.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("8_kkrfh")
+
+[node name="CardIFStatement" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 107.0
+offset_top = -27.0
+offset_right = 703.0
+offset_bottom = 364.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
+
+[node name="LblMovement" type="Label" parent="Background/CardIFStatement"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -156.5
+offset_right = 156.5
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 54
+text = "IF Statement"
+
+[node name="IfPlant" type="TextureRect" parent="Background/CardIFStatement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -125.5
+offset_right = 273.0
+offset_bottom = -32.0
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("9_5xair")
+
+[node name="IfEnd" type="TextureRect" parent="Background/CardIFStatement"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -123.5
+offset_top = -114.5
+offset_right = 123.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 2
+texture = ExtResource("10_ylb6r")
+
+[node name="IfEmpty" type="TextureRect" parent="Background/CardIFStatement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -32.5
+offset_right = 273.0
+offset_bottom = 61.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("11_u7wq6")
+
+[node name="IfCow" type="TextureRect" parent="Background/CardIFStatement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 321.0
+offset_top = -125.5
+offset_right = 568.0
+offset_bottom = -32.0
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("12_i3jnn")
+expand_mode = 1
+
+[node name="IfNotCow" type="TextureRect" parent="Background/CardIFStatement"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 321.0
+offset_top = -32.500015
+offset_right = 568.0
+offset_bottom = 60.999985
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("13_th1m4")
+expand_mode = 1
+
+[node name="CardAction" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 877.0
+offset_top = -327.0
+offset_right = 1473.0
+offset_bottom = 146.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
+
+[node name="LblMovement" type="Label" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.125
+offset_right = 89.125
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 54
+text = "Actions"
+
+[node name="FeedChic" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -167.5
+offset_right = 273.0
+offset_bottom = -74.0
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("14_7p0jj")
+expand_mode = 1
+
+[node name="OpenGate" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = 32.5
+offset_right = 273.0
+offset_bottom = 126.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("15_5ssa6")
+expand_mode = 1
+
+[node name="WaterSprout" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 26.0
+offset_top = -67.5
+offset_right = 273.0
+offset_bottom = 26.0
+grow_vertical = 2
+focus_mode = 2
+texture = ExtResource("16_455co")
+expand_mode = 1
+
+[node name="PickUp" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 311.66614
+offset_top = -167.35938
+offset_right = 558.66626
+offset_bottom = -73.859375
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("17_7uoe1")
+expand_mode = 1
+
+[node name="PlantSprout" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 311.66617
+offset_top = -67.359375
+offset_right = 558.66626
+offset_bottom = 26.140625
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("18_sq486")
+expand_mode = 1
+
+[node name="CloseGate" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 310.99997
+offset_top = 33.49997
+offset_right = 558.0
+offset_bottom = 126.99997
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("19_5kcqw")
+expand_mode = 1
+
+[node name="Whistle" type="TextureRect" parent="Background/CardAction"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 169.00003
+offset_top = 133.49997
+offset_right = 416.0001
+offset_bottom = 226.99997
+grow_vertical = 2
+rotation = -0.004235216
+focus_mode = 2
+texture = ExtResource("21_i3jnn")
+expand_mode = 1
+
+[node name="CardDisplay" type="Panel" parent="Background"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 783.0
+offset_top = 370.0
+offset_right = 1572.0
+offset_bottom = 437.0
+grow_vertical = 2
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i5eb0")
+
+[node name="LblDisplay" type="Label" parent="Background/CardDisplay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.875
+offset_top = -26.0
+offset_right = 55.875
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.989732, 0.941828, 0.911519, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.231373, 0.121569, 0.0392157, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 35
+text = "Loop"
+
+[node name="BtnBack" type="Button" parent="Background"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1323.0
+offset_top = -139.0
+offset_right = -1070.0
+offset_bottom = -75.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
+theme_override_colors/font_pressed_color = Color(0.290196, 0.227451, 0.164706, 1)
+theme_override_fonts/font = ExtResource("2_4qoes")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_5xair")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ylb6r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u7wq6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u7wq6")
+text = "BACK"

@@ -105,6 +105,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ch5v"]
 bg_color = Color(0.298039, 0.686275, 0.313726, 1)
@@ -142,6 +143,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_av3y0"]
 bg_color = Color(0.91459835, 0.7412062, 0.18900526, 1)
@@ -169,7 +171,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 shadow_color = Color(0, 0, 0, 0.643137)
-shadow_size = 4
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcubo"]
 bg_color = Color(1, 0.21960784, 0.08627451, 1)
@@ -211,7 +213,7 @@ corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
 shadow_color = Color(0, 0, 0, 0.643137)
-shadow_size = 4
+shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rf486"]
 bg_color = Color(0.682353, 0.4, 0.145098, 0.933333)
@@ -263,6 +265,7 @@ corner_radius_top_left = 18
 corner_radius_top_right = 18
 corner_radius_bottom_right = 18
 corner_radius_bottom_left = 18
+shadow_size = 10
 
 [node name="Update" type="Control"]
 layout_mode = 3
@@ -772,9 +775,9 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
+offset_left = 3.0
 offset_top = 62.0
-offset_right = 324.0
+offset_right = 325.0
 offset_bottom = 158.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
@@ -795,10 +798,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 223.0
-offset_top = 63.0
-offset_right = 548.0
-offset_bottom = 159.0
+offset_left = -328.0
+offset_top = 62.0
+offset_right = -9.0
+offset_bottom = 158.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
@@ -817,10 +820,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 465.0
-offset_top = 62.0
-offset_right = 691.0
-offset_bottom = 158.0
+offset_left = 366.0
+offset_top = 61.0
+offset_right = 484.0
+offset_bottom = 157.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
 theme_override_colors/font_focus_color = Color(1, 0.968627, 0.890196, 1)
@@ -831,18 +834,18 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_av3y0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_alyyl")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ackwh")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ackwh")
-text = "  SCORE"
 icon = ExtResource("6_wry8j")
 alignment = 0
+icon_alignment = 1
 
 [node name="BtnDelete" type="Button" parent="Card"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 727.0
+offset_left = 1077.0
 offset_top = 62.0
-offset_right = 953.0
+offset_right = 1303.0
 offset_bottom = 158.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(1, 0.968627, 0.890196, 1)
