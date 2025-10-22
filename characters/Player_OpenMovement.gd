@@ -47,8 +47,9 @@ func _ready():
 	walk_timer.timeout.connect(_on_walk_timer_timeout)
 
 func _input(event):
-	if event.is_action_pressed("btn_eat") and not is_eating and not is_moving:
+	if event.is_action_pressed("btn_eat") and not is_eating and not is_moving and Global.magwinya > 0:
 		is_eating = true
+		Global.magwinya -= 1
 		walk_timer.stop()
 		anim_sprite.play(eat)
 		print("magwinya")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://3pfrdutluosa"]
+[gd_scene load_steps=13 format=3 uid="uid://3pfrdutluosa"]
 
 [ext_resource type="Texture2D" uid="uid://dj87w4pr4sjc8" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="2_w7htn"]
@@ -22,6 +22,20 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gswr"]
 size = Vector2(163.5, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28phn"]
+size = Vector2(288, 166.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2xlr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0gswr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="HouseMap" type="Node2D"]
 
@@ -62,10 +76,17 @@ position = Vector2(1344.5, 773.25)
 scale = Vector2(0.3409586, 0.28594774)
 texture = ExtResource("7_j2xlr")
 
-[node name="Magwinyabowl" type="Sprite2D" parent="."]
-position = Vector2(1347, 668)
-scale = Vector2(0.3804915, 0.28773585)
-texture = ExtResource("6_0gswr")
+[node name="Magwinyabowl" type="Area2D" parent="."]
+script = ExtResource("4_i27mc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Magwinyabowl"]
+position = Vector2(1358, 679)
+shape = SubResource("RectangleShape2D_28phn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Magwinyabowl"]
+position = Vector2(1346, 643)
+scale = Vector2(0.5, 0.41037735)
+sprite_frames = SubResource("SpriteFrames_j2xlr")
 
 [node name="Gogosecret" type="Sprite2D" parent="."]
 position = Vector2(937, 177)
