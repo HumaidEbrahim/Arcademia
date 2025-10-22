@@ -81,6 +81,11 @@ func _physics_process(delta: float) -> void:
 		if is_moving:
 			is_moving = false
 			walk_timer.stop()
+			
+	if (Input.is_action_pressed("btn_1") and Input.is_action_pressed("btn_2") and Input.is_action_pressed("btn_3") and Input.is_action_pressed("btn_4")):
+		print("All four inputs are pressed at once!")
+		HenriJumpscare()
+
 
 
 
@@ -108,3 +113,6 @@ func _on_walk_timer_timeout() -> void:
 	if is_moving:
 		walk_sounds[walk_sound_index].play()
 		walk_sound_index = (walk_sound_index + 1) % walk_sounds.size()
+		
+func HenriJumpscare() -> void:
+	get_tree().change_scene_to_file("res://Levels/openworld/Henri.tscn")

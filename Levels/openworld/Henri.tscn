@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bajgeneb4ayod"]
+
+[ext_resource type="Texture2D" uid="uid://dotgle1h0drtw" path="res://assets/Henri/HenriJumpScare.jpeg" id="1_7xpwi"]
+[ext_resource type="Script" uid="uid://y60gx0h7e475" path="res://Levels/openworld/henri.gd" id="1_lw35r"]
+[ext_resource type="FontFile" uid="uid://dxnpu45uo35il" path="res://assets/IngeUI/LilitaOne-Regular.ttf" id="3_y78kr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uvkhh"]
+font = ExtResource("3_y78kr")
+font_size = 98
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_lw35r")
+
+[node name="Henri" type="TextureRect" parent="."]
+offset_right = 1600.0
+offset_bottom = 897.0
+texture = ExtResource("1_7xpwi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 1598.0
+offset_bottom = 261.0
+text = "STOP SPAMMING BUTTONS HENRI!!!!"
+label_settings = SubResource("LabelSettings_uvkhh")
