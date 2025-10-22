@@ -135,6 +135,19 @@
 				"total_time": 226.156488787866
 			},
 			"updated_at": 1761008812.514
+		},
+		{
+			"avatar": 0.0,
+			"created_at": 1761157071.793,
+			"name": "CCDDB",
+			"progress": {
+				"levels": {
+
+				},
+				"total_stars": 0.0,
+				"total_time": 0.0
+			},
+			"updated_at": 1761157071.958
 		}
 	]
 }
