@@ -32,4 +32,4 @@ func _process(delta):
 		if not target_level.is_empty():
 			get_tree().change_scene_to_file(target_level)
 		else:
-			print("Error: target_level is not set for this portal.")
+			Global.magwinya = 5
