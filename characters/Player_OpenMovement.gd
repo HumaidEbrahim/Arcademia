@@ -18,6 +18,7 @@ var walk:String = ""
 var idle:String = ""
 var eat: String = ""
 var is_eating = false
+var EAT
 
 @onready var walk_sounds = [
 	$Walk1,
@@ -52,6 +53,7 @@ func _input(event):
 		Global.magwinya -= 1
 		walk_timer.stop()
 		anim_sprite.play(eat)
+		$EAT.play()
 		print("magwinya")
 		await get_tree().create_timer(1).timeout
 		is_eating = false
