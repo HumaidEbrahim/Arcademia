@@ -533,8 +533,7 @@ z_index = 100
 position = Vector2(0, -1.00002)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jdoke")
-animation = &"Girl_Jump"
-frame_progress = 0.02963495
+animation = &"Boy_Pickup"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -16,6 +16,8 @@ var depth :float = 0;
 var scale_factor = 0;
 var walk:String = ""
 var idle:String = ""
+var eat: String = ""
+var is_eating = false
 
 @onready var walk_sounds = [
 	$Walk1,
@@ -33,19 +35,27 @@ func _ready():
 	scale_factor = lerp(max_scale, min_scale, depth);
 	scale = Vector2.ONE * scale_factor;
 
-	
 	if Global.SelectedCharacter == 1:
 		walk = "Girl_Walk"
 		idle = "Girl_Idle"
+		eat = "Girl_Eat"
 	elif Global.SelectedCharacter == 0:
 		walk = "Boy_Walk"
 		idle = "Boy_Idle"
+		eat = "Boy_Eat"
 		
 	walk_timer.timeout.connect(_on_walk_timer_timeout)
 
 func _input(event):
-	if event.is_action_pressed("btn_eat"):
+	if event.is_action_pressed("btn_eat") and not is_eating and not is_moving:
+		is_eating = true
+		walk_timer.stop()
+		anim_sprite.play(eat)
 		print("magwinya")
+		await get_tree().create_timer(1).timeout
+		is_eating = false
+		print("yum magwinya")
+		
 
 func _physics_process(delta: float) -> void:
 	var input_x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -97,7 +107,8 @@ func play_walk_animation(direction):
 		
 		
 func play_idle_animation(direction):
-	anim_sprite.play(idle);
+	if not is_eating:
+		anim_sprite.play(idle);
 	
 	if direction.x > 0:
 		anim_sprite.flip_h = false;

@@ -1,7 +1,8 @@
-[gd_scene load_steps=51 format=3 uid="uid://ytfctjva1p2f"]
+[gd_scene load_steps=55 format=3 uid="uid://ytfctjva1p2f"]
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cuum5v4hpj5k1" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
+[ext_resource type="Texture2D" uid="uid://cjjgqi3p410rr" path="res://assets/Characters/jabueaaat.png" id="2_amrm4"]
 [ext_resource type="Texture2D" uid="uid://bvqdbmfqjbwou" path="res://assets/Characters/Boy_448x448_Final.png" id="2_bd51o"]
 [ext_resource type="Texture2D" uid="uid://dnitfqjt24kgb" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
 [ext_resource type="Texture2D" uid="uid://cyji17cbowng6" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="4_bjfpg"]
@@ -9,6 +10,18 @@
 [ext_resource type="AudioStream" uid="uid://bmfrkb0le4ptg" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
 [ext_resource type="AudioStream" uid="uid://geyfgb364kms" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
 [ext_resource type="AudioStream" uid="uid://dygsara7rtut6" path="res://sounds/Walking/Walk4.wav" id="7_8nidd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxwip"]
+atlas = ExtResource("2_amrm4")
+region = Rect2(0, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edoe4"]
+atlas = ExtResource("2_amrm4")
+region = Rect2(896, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mf2n"]
+atlas = ExtResource("2_amrm4")
+region = Rect2(448, 0, 448, 448)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0k12"]
 load_path = "res://.godot/imported/Boy_448x448_Final.png-34c7cc115fb90fafc070c570ca283e74.ctex"
@@ -166,6 +179,20 @@ region = Rect2(12544, 0, 448, 448)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nn6ss"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxwip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edoe4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mf2n")
+}],
+"loop": true,
+"name": &"Boy_Eat",
+"speed": 3.0
+}, {
 "frames": [],
 "loop": true,
 "name": &"Boy_Feed",
@@ -342,7 +369,8 @@ script = ExtResource("1_5ynbo")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1.99996)
 sprite_frames = SubResource("SpriteFrames_nn6ss")
-animation = &"Girl_Jump"
+animation = &"Boy_Eat"
+frame_progress = 0.5303611
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)
