@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Bongi Farm (mastered).mp3-9431d84f10aab268d66
 [params]
 
 loop=true
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
