@@ -2,15 +2,16 @@
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cuum5v4hpj5k1" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
-[ext_resource type="Texture2D" uid="uid://cjjgqi3p410rr" path="res://assets/Characters/jabueaaat.png" id="2_amrm4"]
+[ext_resource type="Texture2D" uid="uid://r5g3g6381x7" path="res://assets/Characters/jabueaaat.png" id="2_amrm4"]
 [ext_resource type="Texture2D" uid="uid://bvqdbmfqjbwou" path="res://assets/Characters/Boy_448x448_Final.png" id="2_bd51o"]
-[ext_resource type="Texture2D" uid="uid://dnitfqjt24kgb" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
-[ext_resource type="Texture2D" uid="uid://cyji17cbowng6" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="4_bjfpg"]
+[ext_resource type="Texture2D" uid="uid://bgqwonwh7a1bv" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
+[ext_resource type="Texture2D" uid="uid://cocyigfc3scof" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="4_bjfpg"]
 [ext_resource type="AudioStream" uid="uid://dwn4l3gpp72ru" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
 [ext_resource type="Texture2D" uid="uid://bnbac0imvaux3" path="res://assets/Characters/bongieaaaat.png" id="5_1guou"]
 [ext_resource type="AudioStream" uid="uid://bmfrkb0le4ptg" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
 [ext_resource type="AudioStream" uid="uid://geyfgb364kms" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
 [ext_resource type="AudioStream" uid="uid://dygsara7rtut6" path="res://sounds/Walking/Walk4.wav" id="7_8nidd"]
+[ext_resource type="AudioStream" uid="uid://c53e4s7s6w87h" path="res://sounds/ChickenLevel/nom_c_06-89142.mp3" id="11_1guou"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxwip"]
 atlas = ExtResource("2_amrm4")
@@ -421,5 +422,8 @@ volume_db = 20.0
 
 [node name="WalkTimer" type="Timer" parent="."]
 wait_time = 0.45
+
+[node name="EAT" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_1guou")
 
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

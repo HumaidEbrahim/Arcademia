@@ -1,9 +1,9 @@
 [gd_scene load_steps=17 format=3 uid="uid://3pfrdutluosa"]
 
-[ext_resource type="Texture2D" uid="uid://dj87w4pr4sjc8" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
+[ext_resource type="Texture2D" uid="uid://l12pogd2no5u" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="2_w7htn"]
 [ext_resource type="Texture2D" uid="uid://m7vyj7fmf3ap" path="res://assets/Characters/move 1-Photoroom_resized.png" id="3_iu6fq"]
-[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://levels/openworld/Level_Select.gd" id="4_i27mc"]
+[ext_resource type="Script" uid="uid://2k85sferov6h" path="res://Levels/openworld/Level_Select.gd" id="4_i27mc"]
 [ext_resource type="Texture2D" uid="uid://sn8n6qpum2r1" path="res://assets/Farm/Kithcen/kitcheendoor.png" id="5_letjs"]
 [ext_resource type="Texture2D" uid="uid://bgciaetc21bdf" path="res://assets/Farm/Kithcen/magwinyabowl.png" id="6_0gswr"]
 [ext_resource type="Texture2D" uid="uid://d2dc1m44qioro" path="res://assets/Farm/Kithcen/magwinyashrine.png" id="7_j2xlr"]
@@ -84,8 +84,8 @@ bottom_bound = 770
 top_bound = 450
 min_scale = 0.8
 max_scale = 0.8
-x_speed = 200.0
-min_speed = 200.0
+x_speed = 400.0
+min_speed = 400.0
 
 [node name="Magwinyashrine" type="Sprite2D" parent="."]
 position = Vector2(1344.5, 773.25)
