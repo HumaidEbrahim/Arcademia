@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://3pfrdutluosa"]
+[gd_scene load_steps=17 format=3 uid="uid://3pfrdutluosa"]
 
 [ext_resource type="Texture2D" uid="uid://dj87w4pr4sjc8" path="res://assets/Farm/kitcheen.jpg" id="1_8362r"]
 [ext_resource type="PackedScene" uid="uid://ytfctjva1p2f" path="res://characters/Player.tscn" id="2_w7htn"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://bgciaetc21bdf" path="res://assets/Farm/Kithcen/magwinyabowl.png" id="6_0gswr"]
 [ext_resource type="Texture2D" uid="uid://d2dc1m44qioro" path="res://assets/Farm/Kithcen/magwinyashrine.png" id="7_j2xlr"]
 [ext_resource type="Texture2D" uid="uid://xook85yscd2w" path="res://assets/Farm/Kithcen/gogosecret.jpg" id="8_28phn"]
+[ext_resource type="Texture2D" uid="uid://jtfpquk2717o" path="res://assets/Farm/Barn/chickenjockey.jpg" id="9_j2xlr"]
+[ext_resource type="Texture2D" uid="uid://bqj4c51bfk1g3" path="res://assets/Farm/Kithcen/bwead.png" id="10_4id6p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_i27mc"]
 animations = [{
@@ -36,6 +38,20 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbdpb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_4id6p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wjqh"]
+size = Vector2(1025.2898, 692.878)
 
 [node name="HouseMap" type="Node2D"]
 
@@ -76,6 +92,11 @@ position = Vector2(1344.5, 773.25)
 scale = Vector2(0.3409586, 0.28594774)
 texture = ExtResource("7_j2xlr")
 
+[node name="Magwinyashrine" type="Sprite2D" parent="Magwinyashrine"]
+position = Vector2(-1000.1215, 63.412483)
+scale = Vector2(1.1533549, 0.88672477)
+texture = ExtResource("7_j2xlr")
+
 [node name="Magwinyabowl" type="Area2D" parent="."]
 script = ExtResource("4_i27mc")
 
@@ -92,3 +113,22 @@ sprite_frames = SubResource("SpriteFrames_j2xlr")
 position = Vector2(937, 177)
 scale = Vector2(0.23730464, 0.21679693)
 texture = ExtResource("8_28phn")
+
+[node name="Chickenjockey" type="Sprite2D" parent="."]
+position = Vector2(770, 280)
+scale = Vector2(0.26953128, 0.25585938)
+texture = ExtResource("9_j2xlr")
+
+[node name="Bread" type="Area2D" parent="."]
+position = Vector2(770, 280)
+scale = Vector2(0.26953128, 0.25585938)
+script = ExtResource("4_i27mc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bread"]
+position = Vector2(885.98535, 1611.5592)
+scale = Vector2(0.7321959, 0.5741225)
+sprite_frames = SubResource("SpriteFrames_dbdpb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bread"]
+position = Vector2(864.4637, 1547.7251)
+shape = SubResource("RectangleShape2D_7wjqh")

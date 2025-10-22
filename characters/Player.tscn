@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://ytfctjva1p2f"]
+[gd_scene load_steps=59 format=3 uid="uid://ytfctjva1p2f"]
 
 [ext_resource type="Script" uid="uid://2dun4bt15bb3" path="res://characters/Player_OpenMovement.gd" id="1_5ynbo"]
 [ext_resource type="Texture2D" uid="uid://cuum5v4hpj5k1" path="res://assets/Characters/Girl_448x448_Final.png" id="1_565d6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dnitfqjt24kgb" path="res://levels/lvl1/RiverLevel/Full_Boy_Sprite.png" id="3_iii86"]
 [ext_resource type="Texture2D" uid="uid://cyji17cbowng6" path="res://levels/lvl1/RiverLevel/Final Girl Sprite 448x448.png" id="4_bjfpg"]
 [ext_resource type="AudioStream" uid="uid://dwn4l3gpp72ru" path="res://sounds/Walking/Walk1.wav" id="4_v0k12"]
+[ext_resource type="Texture2D" uid="uid://bnbac0imvaux3" path="res://assets/Characters/bongieaaaat.png" id="5_1guou"]
 [ext_resource type="AudioStream" uid="uid://bmfrkb0le4ptg" path="res://sounds/Walking/Walk2.wav" id="5_8nidd"]
 [ext_resource type="AudioStream" uid="uid://geyfgb364kms" path="res://sounds/Walking/Walk3.wav" id="6_iii86"]
 [ext_resource type="AudioStream" uid="uid://dygsara7rtut6" path="res://sounds/Walking/Walk4.wav" id="7_8nidd"]
@@ -101,6 +102,18 @@ region = Rect2(12096, 0, 448, 448)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgxpv"]
 atlas = ExtResource("2_bd51o")
 region = Rect2(12544, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_loalp"]
+atlas = ExtResource("5_1guou")
+region = Rect2(0, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rxy0"]
+atlas = ExtResource("5_1guou")
+region = Rect2(896, 0, 448, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag5l0"]
+atlas = ExtResource("5_1guou")
+region = Rect2(448, 0, 448, 448)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8nidd"]
 load_path = "res://.godot/imported/Girl_448x448_Final.png-acbc2e25135217fdb33cc3b7621885cf.ctex"
@@ -281,6 +294,20 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_loalp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rxy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag5l0")
+}],
+"loop": true,
+"name": &"Girl_Eat",
+"speed": 3.0
+}, {
+"frames": [{
 "duration": 5.0,
 "texture": SubResource("AtlasTexture_p14in")
 }, {
@@ -370,7 +397,7 @@ script = ExtResource("1_5ynbo")
 position = Vector2(0, 1.99996)
 sprite_frames = SubResource("SpriteFrames_nn6ss")
 animation = &"Boy_Eat"
-frame_progress = 0.5303611
+frame_progress = 0.7155022
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 11)

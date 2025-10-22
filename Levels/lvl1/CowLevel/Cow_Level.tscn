@@ -10,14 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://wcll2ubw25yi" path="res://assets/JuaneBtns/CloseGate_Focus.png" id="5_jqlbn"]
 [ext_resource type="Texture2D" uid="uid://c0nohennd4fql" path="res://assets/Farm/CowLevel/Gate02.png" id="5_xomu3"]
 [ext_resource type="Texture2D" uid="uid://07ojklsxap72" path="res://assets/Farm/CowLevel/Gate03.png" id="6_eh817"]
-[ext_resource type="Texture2D" uid="uid://dhskxi10brhet" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
-[ext_resource type="Texture2D" uid="uid://ckkhw4helcady" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://b8okwm83rlyms" path="res://assets/JuaneBtns/IfCow_Initial.png" id="6_orq4x"]
+[ext_resource type="Texture2D" uid="uid://kfjavvkb21rk" path="res://assets/JuaneBtns/IfCow_Focus.png" id="7_mgeaw"]
 [ext_resource type="Texture2D" uid="uid://d142ty26xkdky" path="res://assets/Farm/CowLevel/Gate04.png" id="7_qkixp"]
 [ext_resource type="Texture2D" uid="uid://nems2ttuyao3" path="res://assets/Farm/CowLevel/Gate05.png" id="8_mc3ms"]
-[ext_resource type="Texture2D" uid="uid://c2qa73xwabwf3" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
-[ext_resource type="Texture2D" uid="uid://sx50qe4pdx0p" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
+[ext_resource type="Texture2D" uid="uid://g6y0cbof2btc" path="res://assets/JuaneBtns/IfNotCow_Focus.png" id="8_mgeaw"]
+[ext_resource type="Texture2D" uid="uid://cqt1jpoay1mu5" path="res://assets/JuaneBtns/IfNotCow_Initial.png" id="8_mgh5d"]
 [ext_resource type="Texture2D" uid="uid://bi1323q7tgrsw" path="res://assets/Farm/CowLevel/Gate06.png" id="9_rba47"]
-[ext_resource type="Script" uid="uid://btemdxkcdrba1" path="res://Levels/lvl1/GardenLevel/if_condition_block.gd" id="9_w0hc5"]
+[ext_resource type="Script" uid="uid://btemdxkcdrba1" path="res://levels/lvl1/GardenLevel/if_condition_block.gd" id="9_w0hc5"]
 [ext_resource type="Texture2D" uid="uid://cakm4aeop7qps" path="res://assets/JuaneBtns/If_End_Focus.png" id="9_wqo7n"]
 [ext_resource type="Texture2D" uid="uid://di3x8vxr2p623" path="res://assets/Farm/Cows/Cow_Walk_01.png" id="10_mc3ms"]
 [ext_resource type="Texture2D" uid="uid://c5cvrxpx3xt4t" path="res://assets/JuaneBtns/Whistle_Initial.png" id="11_dblru"]
@@ -27,9 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://da8wnedshs0uh" path="res://assets/Farm/Cows/Cow_Walk_04.png" id="13_3oxy5"]
 [ext_resource type="Script" uid="uid://b4t2sx1liu0gb" path="res://ui/blocks/scripts/Action_btn.gd" id="13_dblru"]
 [ext_resource type="PackedScene" uid="uid://dg2f0pnewvy4r" path="res://ui/blocks/scenes/move_button.tscn" id="13_ej5bv"]
-[ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://Levels/lvl1/GardenLevel/endif_block.gd" id="14_8isit"]
+[ext_resource type="Script" uid="uid://d2tpvgfekli3f" path="res://levels/lvl1/GardenLevel/endif_block.gd" id="14_8isit"]
 [ext_resource type="Texture2D" uid="uid://cr0k1ofuhdkqu" path="res://assets/JuaneBtns/If_End_Initial.png" id="16_rdahn"]
-[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://Levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
+[ext_resource type="Script" uid="uid://bbxtk62pl37ky" path="res://levels/lvl1/CowLevel/Player_Cow.gd" id="18_3qt78"]
 [ext_resource type="AudioStream" uid="uid://do2h4egrkmg7f" path="res://sounds/CowLevel/whistle-melody-12-362584.mp3" id="21_6er6f"]
 [ext_resource type="AudioStream" uid="uid://b4drmylr1ni7m" path="res://sounds/CowLevel/error-04-199275.mp3" id="23_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://dtm80miidtna7" path="res://assets/Farm/CowLevel/sheeps.png" id="23_s5bsm"]
@@ -37,7 +37,7 @@
 [ext_resource type="AudioStream" uid="uid://0t60rdc3twbl" path="res://sounds/CowLevel/sheep-352668.mp3" id="24_x46kd"]
 [ext_resource type="AudioStream" uid="uid://byh8mr2g3aj6t" path="res://sounds/CowLevel/cow-mooing-343423.mp3" id="25_fhpxi"]
 [ext_resource type="Texture2D" uid="uid://cqoggy771jfty" path="res://assets/Farm/Cows/Cow_Idel (1).png" id="27_mqb6f"]
-[ext_resource type="Texture2D" uid="uid://ds3xkqthgygcp" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="33_oya1n"]
+[ext_resource type="Texture2D" uid="uid://tyyo780rur8e" path="res://assets/Farm/CowLevel/sheepsIdle (12).png" id="33_oya1n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xcvnf"]
 animations = [{
@@ -669,7 +669,6 @@ script = ExtResource("18_3qt78")
 position = Vector2(-15, -91)
 animation = &"Boy_Idle"
 autoplay = "Boy_Idle"
-frame_progress = 0.0
 
 [node name="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="1"]
 position = Vector2(566, -24)
