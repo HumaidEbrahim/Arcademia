@@ -11,7 +11,7 @@ extends Area2D
 ]  # Cycling walking sounds
 @onready var _walk_timer: Timer = get_node("../Player/Timer")
 
-signal levelWon(error: bool)
+signal levelWon(error: bool) 
 
 var track = load("res://music/MOOgwenya.mp3")
 
@@ -79,7 +79,6 @@ func _play_next_walk_sound():
 		sound.play()
 	_walk_index = (_walk_index + 1) % walking_sounds.size()
 
-# --- WATERING ---
 func action_water():
 	if area and area.name.contains("Full"):
 		if area.name not in completed_areas:
@@ -92,12 +91,6 @@ func action_water():
 			
 			if watering_sound:
 				watering_sound.play()
-				# 🔸 Stop halfway through the sound duration
-				var half_duration = watering_sound.stream.get_length() / 2.0
-				get_tree().create_timer(half_duration).timeout.connect(func ():
-					if watering_sound.playing:
-						watering_sound.stop()
-				)
 			
 			success += 1
 			check_win()
@@ -107,8 +100,7 @@ func action_water():
 	else:
 		label.text = "You can only water a pot that has a plant."
 		error = true
-
-# --- PLANTING ---
+	
 func action_plant(): 
 	if area and area.name.contains("Empty"):
 		if area.name not in completed_areas:
@@ -131,7 +123,6 @@ func action_plant():
 		label.text = "You can only plant a new plant in an empty pot."
 		error = true
 
-# --- AREA EVENTS ---
 func _on_area_entered(area2):
 	area = area2
 
@@ -139,7 +130,6 @@ func _on_area_exited(area2):
 	if area == area2:
 		area = null
 
-# --- HELPERS ---
 func get_current_area():
 	return area
 
