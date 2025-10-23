@@ -42,6 +42,77 @@
 [ext_resource type="Texture2D" uid="uid://bt008rntkr6s6" path="res://assets/Farm/Trctorlvl_sky/FarmLvl_Tractor_sky_19.png" id="39_64146"]
 [ext_resource type="Texture2D" uid="uid://bct8i53nuvxbg" path="res://assets/Farm/Trctorlvl_sky/FarmLvl_Tractor_sky_20.png" id="40_fgec3"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5kbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_a0amn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_p7luk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_kuywi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_seavl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_uir1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_gbt5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_7wsdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_jl5qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jmboq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_502js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5dcvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wv5dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_rgt2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_8yiay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_k5hti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_l3d1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_8ys4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_215mu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_y5f25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_64146")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_fgec3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpjmn"]
 animations = [{
 "frames": [{
@@ -114,77 +185,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3fpj"]
 size = Vector2(166.99998, 123.99968)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_b5kbv"]
-animations = [{
-"frames": [{
-"duration": 1.81,
-"texture": ExtResource("20_a0amn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_p7luk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_kuywi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_seavl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_uir1e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_gbt5q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_7wsdo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_jl5qp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_jmboq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_502js")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_5dcvf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_wv5dd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_rgt2b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_8yiay")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_k5hti")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_l3d1c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_8ys4a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_215mu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_y5f25")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_64146")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_fgec3")
-}],
-"loop": true,
-"name": &"default",
-"speed": 3.0
-}]
-
 [node name="TractorLevel" type="Node2D"]
 
 [node name="MainUI" parent="." instance=ExtResource("1_wbkxu")]
@@ -227,12 +227,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("2_xb1bg")
 
-[node name="FarmLvlTractorClearSky(1)" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+[node name="FarmLvlTractorClearSky(1)" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
 position = Vector2(601, 83)
 scale = Vector2(1.0135136, 1)
 texture = ExtResource("3_llj0m")
 
-[node name="Mielie" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3" groups=["Mielies"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(600.5, 81)
+scale = Vector2(1.012669, 1)
+sprite_frames = SubResource("SpriteFrames_b5kbv")
+autoplay = "default"
+frame_progress = 0.3429246
+
+[node name="Mielie" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2" groups=["Mielies"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie"]
 position = Vector2(1046, 435.25)
@@ -245,7 +252,7 @@ frame_progress = 0.995857
 position = Vector2(1044, 477.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4" groups=["Mielies"]]
+[node name="Mielie2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3" groups=["Mielies"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie2"]
 position = Vector2(739, 411)
@@ -258,7 +265,7 @@ frame_progress = 0.387904
 position = Vector2(745, 460)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5" groups=["Mielies"]]
+[node name="Mielie3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4" groups=["Mielies"]]
 position = Vector2(-1, 160)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie3"]
@@ -272,7 +279,7 @@ frame_progress = 0.387904
 position = Vector2(735, 485.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie4" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6" groups=["Mielies"]]
+[node name="Mielie4" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5" groups=["Mielies"]]
 position = Vector2(-1, 160)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie4"]
@@ -286,7 +293,7 @@ frame_progress = 0.387904
 position = Vector2(1045, 488.5)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie5" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7" groups=["Mielies"]]
+[node name="Mielie5" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6" groups=["Mielies"]]
 position = Vector2(-12, 346)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie5"]
@@ -300,7 +307,7 @@ frame_progress = 0.387904
 position = Vector2(739, 475.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie6" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["Mielies"]]
+[node name="Mielie6" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7" groups=["Mielies"]]
 position = Vector2(7, 335)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie6"]
@@ -314,7 +321,7 @@ frame_progress = 0.387904
 position = Vector2(1043, 493.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie7" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9" groups=["Mielies"]]
+[node name="Mielie7" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8" groups=["Mielies"]]
 position = Vector2(-641, 244)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie7"]
@@ -328,7 +335,7 @@ frame_progress = 0.387904
 position = Vector2(1069, 417.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie8" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10" groups=["Mielies"]]
+[node name="Mielie8" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9" groups=["Mielies"]]
 position = Vector2(-857, 354)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie8"]
@@ -342,7 +349,7 @@ frame_progress = 0.387904
 position = Vector2(1018, 481.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Mielie9" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="11" groups=["Mielies"]]
+[node name="Mielie9" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10" groups=["Mielies"]]
 position = Vector2(-586, 354)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Mielie9"]
@@ -356,7 +363,7 @@ frame_progress = 0.387904
 position = Vector2(1018, 481.25)
 shape = SubResource("RectangleShape2D_7id0o")
 
-[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="12"]
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="11"]
 z_index = 0
 position = Vector2(132, 506)
 script = ExtResource("3_f18w4")
@@ -374,14 +381,6 @@ shape = SubResource("RectangleShape2D_a3fpj")
 
 [node name="PlayerCutSound" type="AudioStreamPlayer2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="2"]
 stream = ExtResource("20_4oapr")
-
-[node name="sky" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="13"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/sky"]
-position = Vector2(600.5, 81)
-scale = Vector2(1.012669, 1)
-sprite_frames = SubResource("SpriteFrames_b5kbv")
-frame_progress = 0.84558326
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
 optimal_blocks = 11

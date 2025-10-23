@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bwpyfjmbsk8ou"]
+[gd_scene load_steps=80 format=3 uid="uid://bwpyfjmbsk8ou"]
 
 [ext_resource type="PackedScene" uid="uid://c4phshtsyfg0g" path="res://ui/blocks/scenes/main_ui.tscn" id="1_2vog3"]
 [ext_resource type="Texture2D" uid="uid://co1lofo8thlb4" path="res://assets/JuaneBtns/Plant_Initial.png" id="2_dmm27"]
@@ -26,9 +26,176 @@
 [ext_resource type="Texture2D" uid="uid://toi1baya7m15" path="res://assets/Farm/Garden/flower_fence2.png" id="13_poicm"]
 [ext_resource type="AudioStream" uid="uid://cbekycb5ip7xy" path="res://sounds/Walking/Walk3.mp3" id="13_y4x8x"]
 [ext_resource type="Texture2D" uid="uid://chuvltb7ivylv" path="res://assets/Farm/Garden/flower_fence3.png" id="14_mndbt"]
+[ext_resource type="Texture2D" uid="uid://nkcqlyfyxsgd" path="res://assets/Effects/Leaves/leaves_00_delay-0.1s (1).png" id="15_5nvdh"]
 [ext_resource type="Texture2D" uid="uid://ujb56ny06bly" path="res://assets/Farm/Garden/flower_fence4.png" id="15_lui6u"]
+[ext_resource type="Texture2D" uid="uid://0xpyn0f2rouc" path="res://assets/Effects/Leaves/leaves_04_delay-0.1s (2).png" id="16_6vp6a"]
 [ext_resource type="Texture2D" uid="uid://do7at34m8yd6g" path="res://assets/Farm/Garden/flower_fence5.png" id="16_xabjf"]
 [ext_resource type="Texture2D" uid="uid://b82a4w5uv8nx5" path="res://assets/Farm/Garden/flower_fence6.png" id="17_kox0e"]
+[ext_resource type="Texture2D" uid="uid://dt0a72w67sc0e" path="res://assets/Effects/Leaves/leaves_08_delay-0.1s (3).png" id="17_l8l8o"]
+[ext_resource type="Texture2D" uid="uid://cgi6pkryfxtcm" path="res://assets/Effects/Leaves/leaves_12_delay-0.1s (4).png" id="18_2m0du"]
+[ext_resource type="Texture2D" uid="uid://bdhcoao1d4sap" path="res://assets/Effects/Leaves/leaves_16_delay-0.1s (5).png" id="19_xhhvf"]
+[ext_resource type="Texture2D" uid="uid://oealq4v6nxte" path="res://assets/Effects/Leaves/leaves_20_delay-0.1s (6).png" id="20_jqq5f"]
+[ext_resource type="Texture2D" uid="uid://cpi1ugxof2rdd" path="res://assets/Effects/Leaves/leaves_24_delay-0.1s (7).png" id="21_2gt37"]
+[ext_resource type="Texture2D" uid="uid://flf40jq7sd7q" path="res://assets/Effects/Leaves/leaves_28_delay-0.1s (8).png" id="22_6tlfn"]
+[ext_resource type="Texture2D" uid="uid://duw1jdc17ile5" path="res://assets/Effects/Leaves/leaves_32_delay-0.1s (9).png" id="23_vvafw"]
+[ext_resource type="Texture2D" uid="uid://c411xbxpewgg0" path="res://assets/Effects/Leaves/leaves_36_delay-0.1s (10).png" id="24_76kww"]
+[ext_resource type="Texture2D" uid="uid://csmywmq3hdbgo" path="res://assets/Effects/Leaves/leaves_40_delay-0.1s (11).png" id="25_3yf2k"]
+[ext_resource type="Texture2D" uid="uid://cc10bwrr0ogvj" path="res://assets/Effects/Leaves/leaves_44_delay-0.1s (12).png" id="26_cmkq5"]
+[ext_resource type="Texture2D" uid="uid://dmm6anpiousik" path="res://assets/Effects/Leaves/leaves_48_delay-0.1s (13).png" id="27_mtptf"]
+[ext_resource type="Texture2D" uid="uid://ftq0af4qela0" path="res://assets/Effects/Leaves/leaves_52_delay-0.1s (14).png" id="28_0h4a7"]
+[ext_resource type="Texture2D" uid="uid://bcn6sw0sfynwq" path="res://assets/Effects/Leaves/leaves_56_delay-0.1s (15).png" id="29_hghyr"]
+[ext_resource type="Texture2D" uid="uid://cnkmnoea0y125" path="res://assets/Effects/Leaves/leaves_60_delay-0.1s (16).png" id="30_yjkbd"]
+[ext_resource type="Texture2D" uid="uid://c2xc5vlfbk10u" path="res://assets/Effects/Leaves/leaves_64_delay-0.1s (17).png" id="31_wcvyg"]
+[ext_resource type="Texture2D" uid="uid://b8ycrahrqj1g5" path="res://assets/Effects/Leaves/leaves_68_delay-0.1s (18).png" id="32_lh5yy"]
+[ext_resource type="Texture2D" uid="uid://7lxnht0yscnp" path="res://assets/Effects/Leaves/leaves_72_delay-0.1s (19).png" id="33_y5txh"]
+[ext_resource type="Texture2D" uid="uid://doe75kdf4lmes" path="res://assets/Effects/Leaves/leaves_76_delay-0.1s (20).png" id="34_rm3xo"]
+[ext_resource type="Texture2D" uid="uid://b8adq1jt10g2u" path="res://assets/Farm/Garden/FarmLvl_Garden_House.png" id="35_uyby1"]
+[ext_resource type="Texture2D" uid="uid://c8jgfvacvrf3" path="res://assets/Farm/Garden/middle Tree/middle_tree_blue.png" id="36_lb6u5"]
+[ext_resource type="Texture2D" uid="uid://dpofuudensysa" path="res://assets/Farm/Garden/FarmLvl_Garden_lefttree_blue.png" id="37_onl6u"]
+[ext_resource type="Texture2D" uid="uid://bq537eski2xrq" path="res://assets/Farm/Garden/FarmLvl_Garden_left_tree0.png" id="53_ffbah"]
+[ext_resource type="Texture2D" uid="uid://cxbpjl6hjunh8" path="res://assets/Farm/Garden/FarmLvl_Garden_left_tree1.png" id="54_kkp23"]
+[ext_resource type="Texture2D" uid="uid://bvbiq0x16u0sv" path="res://assets/Farm/Garden/FarmLvl_Garden_left_tree2.png" id="55_q8c1y"]
+[ext_resource type="Texture2D" uid="uid://b428itmom6q5v" path="res://assets/Farm/Garden/FarmLvl_Garden_left_tree3.png" id="56_84xf1"]
+[ext_resource type="Texture2D" uid="uid://dnvyu88ojutba" path="res://assets/Farm/Garden/middle Tree/middle_tree0.png" id="57_erfg5"]
+[ext_resource type="Texture2D" uid="uid://d2vrxtua1ia10" path="res://assets/Farm/Garden/middle Tree/middle_tree1.png" id="58_b13k8"]
+[ext_resource type="Texture2D" uid="uid://cte6ld5hema8i" path="res://assets/Farm/Garden/middle Tree/middle_tree2.png" id="59_1ptjg"]
+[ext_resource type="Texture2D" uid="uid://be0r0nhsc00la" path="res://assets/Farm/Garden/middle Tree/middle_tree3.png" id="60_m1sg4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5nvdh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaktm"]
+animations = [{
+"frames": [{
+"duration": 2.21,
+"texture": ExtResource("15_5nvdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6vp6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_l8l8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2m0du")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xhhvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jqq5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2gt37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_6tlfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vvafw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_76kww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_3yf2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_cmkq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mtptf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0h4a7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hghyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_yjkbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wcvyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lh5yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_y5txh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_rm3xo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3w28w"]
+animations = [{
+"frames": [{
+"duration": 3.01,
+"texture": ExtResource("53_ffbah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_kkp23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_q8c1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_84xf1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcg7e"]
+animations = [{
+"frames": [{
+"duration": 1.41,
+"texture": ExtResource("57_erfg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_b13k8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_1ptjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_m1sg4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kox0e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jyhvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_poicm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mndbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_lui6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xabjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kox0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lui6u"]
 atlas = ExtResource("11_jyhvo")
@@ -129,32 +296,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0a0vv"]
 size = Vector2(157, 154.5)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kox0e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_jyhvo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_poicm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_mndbt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_lui6u")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_xabjf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_kox0e")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
-}]
 
 [node name="GardenLevel" type="Node2D"]
 
@@ -270,6 +411,51 @@ audio_listener_enable_3d = true
 position = Vector2(600, 449)
 texture = ExtResource("2_g4ln1")
 
+[node name="TextureRect" type="TextureRect" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="1"]
+offset_left = -2.0
+offset_right = 1178.0
+offset_bottom = 650.0
+texture = SubResource("CompressedTexture2D_5nvdh")
+expand_mode = 1
+
+[node name="leaves" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(1072, 503.99997)
+scale = Vector2(0.30312493, 0.4656249)
+sprite_frames = SubResource("SpriteFrames_vaktm")
+autoplay = "default"
+frame_progress = 0.5810561
+
+[node name="MiddleTreeBlue" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(602, 447)
+texture = ExtResource("36_lb6u5")
+
+[node name="FarmLvlGardenLefttreeBlue" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(602, 449)
+texture = ExtResource("37_onl6u")
+
+[node name="FarmLvlGardenHouse" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(575, 458)
+texture = ExtResource("35_uyby1")
+
+[node name="left tree" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(602, 448)
+sprite_frames = SubResource("SpriteFrames_3w28w")
+autoplay = "default"
+frame_progress = 0.07777247
+
+[node name="middle tree" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(602, 447)
+sprite_frames = SubResource("SpriteFrames_kcg7e")
+autoplay = "default"
+frame_progress = 0.37713045
+
+[node name="fence flowes" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextureRect"]
+position = Vector2(261.00003, 739.00006)
+scale = Vector2(0.49907407, 0.49907407)
+sprite_frames = SubResource("SpriteFrames_kox0e")
+autoplay = "default"
+frame_progress = 0.12195735
+
 [node name="Text" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/TextBox" index="0"]
 offset_left = 83.0
 offset_top = 8.0
@@ -278,7 +464,7 @@ offset_bottom = 83.0
 text = "If there are flowers in the pots then water them.
 If there are no flowers in the pot then plant new ones."
 
-[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="2"]
+[node name="Player" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
 z_index = 0
 position = Vector2(54, 606)
 scale = Vector2(1.2, 1.2)
@@ -306,12 +492,12 @@ stream = ExtResource("13_y4x8x")
 [node name="Timer" type="Timer" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Player" index="7"]
 wait_time = 0.2
 
-[node name="FlowerPot" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="3"]
+[node name="FlowerPot" type="Sprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
 position = Vector2(694, 729)
 scale = Vector2(0.8325, 1)
 texture = ExtResource("3_p85ah")
 
-[node name="Pot_Full1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="4"]
+[node name="Pot_Full1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
 script = ExtResource("11_c5gh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full1"]
@@ -324,7 +510,7 @@ animation = &"grow"
 position = Vector2(273, 694.25)
 shape = SubResource("RectangleShape2D_0a0vv")
 
-[node name="Pot_Empty1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="5"]
+[node name="Pot_Empty1" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
 script = ExtResource("11_c5gh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty1"]
@@ -337,7 +523,7 @@ animation = &"plant"
 position = Vector2(445, 704)
 shape = SubResource("RectangleShape2D_0a0vv")
 
-[node name="Pot_Full2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="6"]
+[node name="Pot_Full2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7"]
 script = ExtResource("11_c5gh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full2"]
@@ -350,7 +536,7 @@ animation = &"grow"
 position = Vector2(611, 704)
 shape = SubResource("RectangleShape2D_0a0vv")
 
-[node name="Pot_Full3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="7"]
+[node name="Pot_Full3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8"]
 script = ExtResource("11_c5gh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Full3"]
@@ -363,7 +549,7 @@ animation = &"grow"
 position = Vector2(778, 695)
 shape = SubResource("RectangleShape2D_0a0vv")
 
-[node name="Pot_Empty2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="8"]
+[node name="Pot_Empty2" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9"]
 script = ExtResource("11_c5gh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty2"]
@@ -376,7 +562,7 @@ animation = &"plant"
 position = Vector2(945.5, 695)
 shape = SubResource("RectangleShape2D_0a0vv")
 
-[node name="Pot_Empty3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="9"]
+[node name="Pot_Empty3" type="Area2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10"]
 script = ExtResource("11_c5gh3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty3"]
@@ -388,12 +574,6 @@ animation = &"plant"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport/Pot_Empty3"]
 position = Vector2(1115, 696)
 shape = SubResource("RectangleShape2D_0a0vv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MainUI/HBoxContainer/GameArea/SubViewportContainer/SubViewport" index="10"]
-position = Vector2(259.00003, 739.00006)
-scale = Vector2(0.49907407, 0.49907407)
-sprite_frames = SubResource("SpriteFrames_kox0e")
-frame_progress = 0.009179345
 
 [node name="WinScreen" parent="MainUI/HBoxContainer" index="3"]
 optimal_blocks = 9
