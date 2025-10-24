@@ -1,17 +1,17 @@
-🎮 Arcademia
+# 🎮 Arcademia
 
 Code. Play. Learn.
 
 Arcademia is an educational arcade platform that teaches children fundamental coding concepts through interactive gameplay. Designed to run offline on a custom-built arcade machine, Arcademia combines fun and learning to make programming logic engaging and accessible for all learners.
 
-🚀 About the Project
+### 🚀 About the Project
 
 Arcademia was developed to address the growing need for interactive and affordable coding education. Many schools lack access to reliable internet or modern computing resources, which limits exposure to hands-on coding.
 Arcademia provides a self-contained, offline arcade system that introduces programming concepts through visual block-based puzzles.
 
 Learners control an in-game character by arranging coding blocks such as movement, actions, loops, and conditionals. This approach turns programming logic into a game, helping students understand how code structure translates into behavior.
 
-🧩 Key Features
+### 🧩 Key Features
 
 Offline Operation – No internet required. Runs entirely on local hardware.
 
@@ -25,7 +25,7 @@ Five Progressive Coding Levels – Introduces sequencing, actions, loops, and co
 
 Accessible Design – Ideal for classrooms, learning centers, and young beginners.
 
-🕹️ Gameplay Overview
+### 🕹️ Gameplay Overview
 
 The Open Map is the main hub where players explore and access themed coding challenges.
 Each glowing icon represents a level that teaches a new programming concept.
@@ -42,7 +42,7 @@ Modify and retry until the correct result is achieved.
 
 Earn up to 3 stars for efficient, error-free solutions.
 
-🌾 Levels Overview
+### 🌾 Levels Overview
 🌊 River Level
 
 Learn the basics of sequencing by crossing a river using movement blocks. Players must plan each move carefully to step on every stone.
@@ -73,7 +73,7 @@ Assign avatars and manage progress.
 
 View scores and completion times for performance tracking.
 
-🧠 Learning Outcomes
+### 🧠 Learning Outcomes
 
 Arcademia teaches students to:
 
@@ -85,7 +85,7 @@ Debug and optimize solutions.
 
 Learn coding fundamentals in a fun, engaging environment.
 
-⚙️ System Requirements
+### ⚙️ System Requirements
 
 Platform: HP EliteDesk i5 Mini PC (or equivalent)
 
@@ -95,21 +95,21 @@ Dependencies: Godot Engine 4.x
 
 Peripherals: Arcade joystick + button input configuration
 
-🛠️ Installation (Developer Version)
+### 🛠️ Installation (Developer Version)
 
 To run or modify the game:
 
-# Clone the repository
+ Clone the repository
 git clone https://github.com/<your-username>/Arcademia.git
 
-# Open in Godot
+ Open in Godot
 cd Arcademia
 godot .
 
 
 Export to your target platform (Windows/Linux) through the Godot export menu.
 
-🧩 Controls
+### 🧩 Controls
 Action	Description
 Power	Turn system on/off
 Menu	Return to main menu
@@ -119,26 +119,27 @@ Clear	Clear all blocks in the sequence
 Change	Reorder existing blocks
 Repeat	Modify the value inside a loop block
 Eat	Activates eating animation in open world
-💾 Data & Maintenance
+
+### 💾 Data & Maintenance
 
 Offline Operation: All data stored locally for security.
 
 Manual Backup: Teachers can back up profiles and scores via USB.
 
-Updates: New versions can be installed from a USB or GitHub release.
+Updates: New versions can be installed from  GitHub.
 
-🧑‍💻 Development Team
+### 🧑‍💻 Development Team
 
 Developed by CMPG323 Students under project supervision.
 Designed to make coding education fun, accessible, and meaningful.
 
-📜 License
+### 📜 License
 
 This project is licensed under the MIT License
 .
 Feel free to use, modify, and share responsibly.
 
-✨ Acknowledgements
+### ✨ Acknowledgements
 
 Special thanks to:
 
